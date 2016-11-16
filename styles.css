@@ -14,6 +14,101 @@ h2, h3 {
   font-weight: lighter;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
   margin: 2em;
 }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*h1,h2{
+  text-align: center;
+  font-family: monospace;
+}*/
+
+/* Styles Board */
+.container {
+  margin-bottom: 100px;
+}
+
+.dad-board{
+  width: 450px;
+  height: 450px;
+  margin: 10px auto;
+}
+
+.dad-row{
+  width: 450px;
+  height: 50px;
+  display: flex;
+}
+
+.dad-row .dad-cell {
+  width: 50px;
+  height: 50px;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  line-height: 50px;
+  text-align: center;
+}
+
+.dad-row .dad-cell input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  outline: none;
+  border: none;
+  display: block;
+  margin: 4px;
+}
+
+.dad-row:first-child .dad-cell{
+  border-top: 2px solid black;
+}
+
+.dad-row:last-child .dad-cell{
+  border-bottom: 1px solid black;
+}
+
+.dad-row .dad-cell:first-child {
+ border-left: 2px solid black; 
+}
+
+.dad-row .dad-cell:last-child {
+ border-right: 2px solid black; 
+}
+
+.dad-row:last-child .dad-cell{
+  border-bottom: 2px solid black;
+}
+
+/*
+.dad-row .dad-cell:last-child{
+  border-right: 1px solid black;
+}
+
+.dad-row:nth-child(3n) .dad-cell{
+  border-bottom: 2px solid black;
+}
+
+.dad-row .dad-cell:nth-child(3n) {
+ border-right: 2px solid black; 
+}*/
+
+.controls{
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+p.coordenadas {		/* TODO */
+	color: red;
+	font-size: 20px;
+	margin: 10px;  
+}
+

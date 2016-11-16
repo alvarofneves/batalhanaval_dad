@@ -1,1 +1,32 @@
 GRUPO 64
+
+Afonso Santos - nr. 2130653
+Alvaro Neves - nr. 2120771
+Tiago Rodrigues - nr. 2092015
+
+Turno PL1 - Regime Pós-Laboral
+
+URL da App - 
+
+Credenciais de acesso - 
+
+
+
+/* ___________________________________________________________________________ */
+Funcionalidades implementadas:  [OK, PARCIAL, NÃO IMPLEMENTADO]
+
+Jogo - 
+Top Ten - 
+Identificação e Autorização - 
+Histórico de Jogos – 
+Game Lobby – 
+Jogos Múltiplos -
+
+Outras Funcionalidades – 
+	Bots 
+	Serviços de Autenticação Externos
+	Avatares 
+	Chat Rooms
+	Repetição de Jogo
+	Mobile App
+	Vídeo em Real-time dos jogadores (webcams) 
