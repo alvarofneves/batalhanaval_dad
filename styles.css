@@ -37,29 +37,29 @@ body {
 }
 
 .dad-board{
-  width: 450px;
-  height: 450px;
+  width: 270px;
+  height: 270px;
   margin: 10px auto;
 }
 
 .dad-row{
-  width: 450px;
-  height: 50px;
+  width: 250px;
+  height: 35px;
   display: flex;
 }
 
 .dad-row .dad-cell {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-left: 1px solid black;
   border-top: 1px solid black;
-  line-height: 50px;
+  line-height: 35px;
   text-align: center;
 }
 
 .dad-row .dad-cell input {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   text-align: center;
   outline: none;
   border: none;
@@ -68,7 +68,7 @@ body {
 }
 
 .dad-row:first-child .dad-cell{
-  border-top: 2px solid black;
+  border-top: 1px solid black;
 }
 
 .dad-row:last-child .dad-cell{
@@ -76,15 +76,15 @@ body {
 }
 
 .dad-row .dad-cell:first-child {
- border-left: 2px solid black; 
+ border-left: 1px solid black; 
 }
 
 .dad-row .dad-cell:last-child {
- border-right: 2px solid black; 
+ border-right: 1px solid black; 
 }
 
 .dad-row:last-child .dad-cell{
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
 
 /*
@@ -106,9 +106,47 @@ body {
   text-align: center;
 }
 
-p.coordenadas {		/* TODO */
-	color: red;
-	font-size: 20px;
+p.coordenadas {		
+	color: black;
+	font-size: 12px;
 	margin: 10px;  
+}
+
+table {
+    margin: 10px auto;
+    width: 15%;
+    height: 15%;
+}
+
+.battlefield-table {
+    border-style: none;
+}
+
+.battlefield-row {
+    /*width: 200px;
+    height: 35px;*/
+}
+
+.battlefield-cell {
+    border: thin solid black;
+    width: 35px;
+    height: 35px;
+}
+
+ .battlefield-cell-label .battlefield-cell{
+    border-style: none;
+    text-align: center;
+}
+
+.battlefield-row-label {
+    border-style: none;
+}
+
+.cell-hit-water {
+    color: #4286f4;
+}
+
+.cell-hit-ship {
+    color: #ff3333;
 }
 
