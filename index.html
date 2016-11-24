@@ -24,10 +24,10 @@
   
   <!-- 3. Display the application -->
   <body>
-
-  <table class="battlefield-table">
-      <tbody>
-          <tr class="battlefield-row">
+    <div class="board">
+      <table class="battlefield-table">
+          <tbody>
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">A</td>
               <td class="battlefield-cell" data-line="0" data-column="0"></td>
               <td class="battlefield-cell" data-line="0" data-column="1"></td>
@@ -40,7 +40,7 @@
               <td class="battlefield-cell" data-line="0" data-column="8"></td>
               <td class="battlefield-cell" data-line="0" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row">
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">B</td>
               <td class="battlefield-cell" data-line="1" data-column="0"></td>
               <td class="battlefield-cell" data-line="1" data-column="1"></td>
@@ -53,7 +53,7 @@
               <td class="battlefield-cell" data-line="1" data-column="8"></td>
               <td class="battlefield-cell" data-line="1" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row">
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">C</td>
               <td class="battlefield-cell" data-line="2" data-column="0"></td>
               <td class="battlefield-cell" data-line="2" data-column="1"></td>
@@ -66,7 +66,7 @@
               <td class="battlefield-cell" data-line="2" data-column="8"></td>
               <td class="battlefield-cell" data-line="2" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row">
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">D</td>
               <td class="battlefield-cell" data-line="3" data-column="0"></td>
               <td class="battlefield-cell" data-line="3" data-column="1"></td>
@@ -79,7 +79,7 @@
               <td class="battlefield-cell" data-line="3" data-column="8"></td>
               <td class="battlefield-cell" data-line="3" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row">
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">E</td>
               <td class="battlefield-cell" data-line="4" data-column="0"></td>
               <td class="battlefield-cell" data-line="4" data-column="1"></td>
@@ -92,7 +92,7 @@
               <td class="battlefield-cell" data-line="4" data-column="8"></td>
               <td class="battlefield-cell" data-line="4" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row">
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">F</td>
               <td class="battlefield-cell" data-line="5" data-column="0"></td>
               <td class="battlefield-cell" data-line="5" data-column="1"></td>
@@ -105,7 +105,7 @@
               <td class="battlefield-cell" data-line="5" data-column="8"></td>
               <td class="battlefield-cell" data-line="5" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row">
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">G</td>
               <td class="battlefield-cell" data-line="6" data-column="0"></td>
               <td class="battlefield-cell" data-line="6" data-column="1"></td>
@@ -118,7 +118,7 @@
               <td class="battlefield-cell" data-line="6" data-column="8"></td>
               <td class="battlefield-cell" data-line="6" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row">
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">H</td>
               <td class="battlefield-cell" data-line="7" data-column="0"></td>
               <td class="battlefield-cell" data-line="7" data-column="1"></td>
@@ -131,7 +131,7 @@
               <td class="battlefield-cell" data-line="7" data-column="8"></td>
               <td class="battlefield-cell" data-line="7" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row">
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">I</td>
               <td class="battlefield-cell" data-line="8" data-column="0"></td>
               <td class="battlefield-cell" data-line="8" data-column="1"></td>
@@ -144,7 +144,7 @@
               <td class="battlefield-cell" data-line="8" data-column="8"></td>
               <td class="battlefield-cell" data-line="8" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row">
+          <tr> <!--class="battlefield-row"-->
               <td class="battlefield-cell-label">J</td>
               <td class="battlefield-cell" data-line="9" data-column="0"></td>
               <td class="battlefield-cell" data-line="9" data-column="1"></td>
@@ -157,7 +157,7 @@
               <td class="battlefield-cell" data-line="9" data-column="8"></td>
               <td class="battlefield-cell" data-line="9" data-column="9"></td>
           </tr>
-          <tr class="battlefield-row-label">
+          <tr> <!--class="battlefield-row-label"-->
               <td class="battlefield-cell-label"></td>
               <td class="battlefield-cell-label">1</td>
               <td class="battlefield-cell-label">2</td>
@@ -170,9 +170,27 @@
               <td class="battlefield-cell-label">9</td>
               <td class="battlefield-cell-label">10</td>
           </tr>
-      </tbody> 
-  </table>
-
+          </tbody>
+      </table>
+    </div>
+    <div id="initBtns">
+        <button id="btn-PA" class="btn btn-primary siderBtn">Porta-Aviões</button>
+        <button id="btn-C" class="btn btn-primary siderBtn">Couraçado</button>
+        <button id="btn-CR" class="btn btn-primary siderBtn">Cruzadore</button>
+        <button id="btn-CT" class="btn btn-primary siderBtn">Contra-Torpedeiro</button>
+        <button id="btn-S" class="btn btn-primary siderBtn">Submarino</button>
+        <br>
+        <table id="boatPreview">
+            <tr><td class="boatPreviewCell">N</td><td class="boatPreviewCell">N</td>
+                <td class="boatPreviewCell">N</td><td class="boatPreviewCell">N</td></tr>
+            <tr><td class="boatPreviewCell"></td><td class="boatPreviewCell"></td>
+                <td class="boatPreviewCell"></td><td class="boatPreviewCell"></td></tr>
+            <tr><td class="boatPreviewCell"></td><td class="boatPreviewCell"></td>
+                <td class="boatPreviewCell"></td><td class="boatPreviewCell"></td></tr>
+            <tr><td class="boatPreviewCell"></td><td class="boatPreviewCell"></td>
+                <td class="boatPreviewCell"></td><td class="boatPreviewCell"></td></tr>
+        </table>
+    </div>
       <div class="controls">
           <button id="btn-check" class="btn btn-danger">Reset Board</button>
           <button id="btn-new" class="btn btn-success">Start Game</button>
