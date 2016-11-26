@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'batalha-naval',
-	template: `
+	// 
+	templateUrl: './app/views/gameBoard.html',
+	
+
+	/*template: `
 		<h1>{{title}}</h1>			
   		<h2>Batalha Naval "DAD"   h2</h2>
 			<div class="dad-board">
@@ -359,7 +363,9 @@ import { Component } from '@angular/core';
 					<div><p class="coordenadas">10</p></div>
 				</div>
 			</div>
-  		`
+  		`*/
 })
 
-export class AppComponent { }
+export class AppComponent { 
+	@Input('batalha') title: string;
+}
