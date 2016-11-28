@@ -7,17 +7,17 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-    console.log("início 00.53h....");
+    console.log("início 01.45h....");
 
-    let $btnStart = $('#btn-start');
-    let $btnReset = $('#btn-reset');
+    /*let $btnStart = $('#btn-start');
+    let $btnReset = $('#btn-reset');*/
 
     // testar app Node.js
-	let var_a = 999;
-	console.log("Print test <main.ts> ...." + var_a);
+	let varA = 999;
+	console.log("Print test <main.ts> ...." + vaAr);
 
-	$btnStart.click(newGame).click;
-	$btnReset.click(resetBoard).click;
+	/*$btnStart.click(newGame).click;
+	$btnReset.click(resetBoard).click;*/
 
     //TODO selecionar cell clicada
 	function selectedCell() {

@@ -61,7 +61,7 @@ body {
     text-align: center;
 }
 
-/* TODO usar na board do 2º player */
+/* TODO usar na board do 2º player. Qd grid estiver bloqueada */
 .boardPlayer2 {
     background-color: #adad85;
 }
@@ -103,6 +103,10 @@ body {
 
 .cell-hit-ship {
     color: #ff3333;
+}
+
+#test-bar {
+    background-color: yellow;
 }
 
 /* ********************** TODO apagar regras ñ usadas */
