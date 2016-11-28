@@ -5,7 +5,7 @@ var platform = platform_browser_dynamic_1.platformBrowserDynamic();
 platform.bootstrapModule(app_module_1.AppModule);
 (function () {
     'use strict';
-    console.log("início 00.38h....");
+    console.log("início 00.43h....");
     var $btnStart = $('#btn-start');
     var $btnReset = $('#btn-reset');
     // testar app Node.js
