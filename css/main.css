@@ -1,0 +1,195 @@
+/* Master Styles */
+/* full set of master styles -> https://github.com/angular/angular.io/blob/master/public/docs/_examples/_boilerplate/styles.css    */
+
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
+
+h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 2em;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*h1,h2{
+  text-align: center;
+  font-family: monospace;
+}*/
+
+.board {
+    width: 350px;
+    height: 350px;
+    display: inline-block;
+    margin-left: 350px;
+}
+
+.battlefield-table {
+    margin: 10px auto;
+    table-layout: fixed;
+    width: 330px;       /* 330px / 11 colunas,linhas = 30px cd */
+    height: 330px;
+}
+
+.battlefield-table tr td {
+    width: 30px;
+    height: 30px;
+    border:  1px solid black;
+}
+
+.battlefield-table tr td:first-child {
+    border-color: transparent;
+    border-right: black;
+}
+
+.battlefield-table tr:last-child td {
+    border-color: transparent;
+    border-top: black;
+    text-align: center;
+}
+
+/* TODO usar na board do 2º player */
+.boardPlayer2 {
+    background-color: #adad85;
+}
+
+.labelPlayerName {
+    color: #ff3333;
+    font-size: 15px;
+    text-align: center;
+}
+
+.controls {
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+#initBtns {
+    width: 40%;
+    display: inline-block;
+    float: right;
+}
+
+/*
+.siderBtn {
+    display: block;
+    width: inherit;
+}
+
+#boatPreview {
+}*/
+
+.boatPreviewCell {
+    border: thin solid black;
+}
+
+.cell-hit-water {
+    color: #4286f4;
+}
+
+.cell-hit-ship {
+    color: #ff3333;
+}
+
+/* ********************** TODO apagar regras ñ usadas */
+/*
+.container {
+    margin-bottom: 100px;
+}
+
+.dad-row .dad-cell {
+    width: 45px;
+    height: 45px;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    line-height: 45px;
+    text-align: center;
+}
+
+.dad-row .dad-cell input {
+    width: 45px;
+    height: 45px; 
+    text-align: center;
+    outline: none;
+    border: none;
+    display: block;
+    margin: 4px;
+}
+
+.dad-board {
+    width: 290px;
+    height: 290px;
+    margin: 10px auto;
+}
+
+.dad-row {
+    width: 250px;
+    height: 35px;
+    display: flex;
+}*/
+
+
+/*
+.dad-row:first-child .dad-cell {
+    border-top: 1px solid black;
+}
+
+.dad-row:last-child .dad-cell {
+    border-bottom: 1px solid black;
+}
+
+.dad-row .dad-cell:first-child {
+    border-left: 1px solid black; 
+}
+
+.dad-row .dad-cell:last-child {
+    border-right: 1px solid black; 
+}
+
+.dad-row:last-child .dad-cell {
+    border-bottom: 1px solid black;
+}*/
+
+/*
+.dad-row .dad-cell:last-child{
+  border-right: 1px solid black;
+}
+
+.dad-row:nth-child(3n) .dad-cell{
+  border-bottom: 2px solid black;
+}
+
+.dad-row .dad-cell:nth-child(3n) {
+ border-right: 2px solid black; 
+}*/
+
+/*.battlefield-row {
+    width: 200px;
+    height: 35px;
+}
+
+.battlefield-cell {
+    border: thin solid black;
+    text-align: center;
+}
+
+.battlefield-cell-label {
+    border-style: none;
+    text-align: center;
+}*/
+
+

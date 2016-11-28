@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var BoardComponent = (function () {
+    function BoardComponent() {
     }
-    AppComponent = __decorate([
+    BoardComponent = __decorate([
         core_1.Component({
-            selector: 'application',
-            templateUrl: './app/views/application.html',
+            selector: 'battlefield-board',
+            templateUrl: './app/views/gameBoard.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], BoardComponent);
+    return BoardComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.BoardComponent = BoardComponent;
+//# sourceMappingURL=board.component.js.map

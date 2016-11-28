@@ -7,6 +7,7 @@
     paths: {
       // paths serve as alias
       'npm:': 'node_modules/'
+      //'application/*': './js/mobile/dist/*'   //TODO AS 27/11 - indicar caminho p onde ficam ficheiros compilados?
     },
     // map tells the System loader where to look for things
     map: {

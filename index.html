@@ -1,219 +1,29 @@
 <html>
-  <head>
-    <title>Batalha Naval "DAD"</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <title>Batalha Naval @DAD</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha256-rByPlHULObEjJ6XQxW/flG2r+22R5dKiAoef+aXWfik=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha256-rByPlHULObEjJ6XQxW/flG2r+22R5dKiAoef+aXWfik=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./css/main.css">
 
-    <!-- 1. Load libraries -->
-     <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
+        <!-- 1. Load libraries -->
+        <!-- Polyfill(s) for older browsers -->
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-    <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
-    <script>
-      System.import('app').catch(function(err){ console.error(err); });
-    </script>
-  </head>
+        <!-- 2. Configure SystemJS -->
+        <script src="systemjs.config.js"></script>
+        <script>
+            SystemJS.import('app').catch(function(err){ console.error(err); });
+        </script>
+    </head>
   
-  <!-- 3. Display the application -->
-  <body>
-
-    <!--
-    <div class="board">
-      <table class="battlefield-table">
-          <tbody>
-          <tr> 
-              <td class="battlefield-cell-label">A</td>
-              <td class="battlefield-cell" data-line="0" data-column="0"></td>
-              <td class="battlefield-cell" data-line="0" data-column="1"></td>
-              <td class="battlefield-cell" data-line="0" data-column="2"></td>
-              <td class="battlefield-cell" data-line="0" data-column="3"></td>
-              <td class="battlefield-cell" data-line="0" data-column="4"></td>
-              <td class="battlefield-cell" data-line="0" data-column="5"></td>
-              <td class="battlefield-cell" data-line="0" data-column="6"></td>
-              <td class="battlefield-cell" data-line="0" data-column="7"></td>
-              <td class="battlefield-cell" data-line="0" data-column="8"></td>
-              <td class="battlefield-cell" data-line="0" data-column="9"></td>
-          </tr>
-          <tr>
-              <td class="battlefield-cell-label">B</td>
-              <td class="battlefield-cell" data-line="1" data-column="0"></td>
-              <td class="battlefield-cell" data-line="1" data-column="1"></td>
-              <td class="battlefield-cell" data-line="1" data-column="2"></td>
-              <td class="battlefield-cell" data-line="1" data-column="3"></td>
-              <td class="battlefield-cell" data-line="1" data-column="4"></td>
-              <td class="battlefield-cell" data-line="1" data-column="5"></td>
-              <td class="battlefield-cell" data-line="1" data-column="6"></td>
-              <td class="battlefield-cell" data-line="1" data-column="7"></td>
-              <td class="battlefield-cell" data-line="1" data-column="8"></td>
-              <td class="battlefield-cell" data-line="1" data-column="9"></td>
-          </tr>
-          <tr>
-              <td class="battlefield-cell-label">C</td>
-              <td class="battlefield-cell" data-line="2" data-column="0"></td>
-              <td class="battlefield-cell" data-line="2" data-column="1"></td>
-              <td class="battlefield-cell" data-line="2" data-column="2"></td>
-              <td class="battlefield-cell" data-line="2" data-column="3"></td>
-              <td class="battlefield-cell" data-line="2" data-column="4"></td>
-              <td class="battlefield-cell" data-line="2" data-column="5"></td>
-              <td class="battlefield-cell" data-line="2" data-column="6"></td>
-              <td class="battlefield-cell" data-line="2" data-column="7"></td>
-              <td class="battlefield-cell" data-line="2" data-column="8"></td>
-              <td class="battlefield-cell" data-line="2" data-column="9"></td>
-          </tr>
-          <tr> 
-              <td class="battlefield-cell-label">D</td>
-              <td class="battlefield-cell" data-line="3" data-column="0"></td>
-              <td class="battlefield-cell" data-line="3" data-column="1"></td>
-              <td class="battlefield-cell" data-line="3" data-column="2"></td>
-              <td class="battlefield-cell" data-line="3" data-column="3"></td>
-              <td class="battlefield-cell" data-line="3" data-column="4"></td>
-              <td class="battlefield-cell" data-line="3" data-column="5"></td>
-              <td class="battlefield-cell" data-line="3" data-column="6"></td>
-              <td class="battlefield-cell" data-line="3" data-column="7"></td>
-              <td class="battlefield-cell" data-line="3" data-column="8"></td>
-              <td class="battlefield-cell" data-line="3" data-column="9"></td>
-          </tr>
-          <tr> 
-              <td class="battlefield-cell-label">E</td>
-              <td class="battlefield-cell" data-line="4" data-column="0"></td>
-              <td class="battlefield-cell" data-line="4" data-column="1"></td>
-              <td class="battlefield-cell" data-line="4" data-column="2"></td>
-              <td class="battlefield-cell" data-line="4" data-column="3"></td>
-              <td class="battlefield-cell" data-line="4" data-column="4"></td>
-              <td class="battlefield-cell" data-line="4" data-column="5"></td>
-              <td class="battlefield-cell" data-line="4" data-column="6"></td>
-              <td class="battlefield-cell" data-line="4" data-column="7"></td>
-              <td class="battlefield-cell" data-line="4" data-column="8"></td>
-              <td class="battlefield-cell" data-line="4" data-column="9"></td>
-          </tr>
-          <tr> 
-              <td class="battlefield-cell-label">F</td>
-              <td class="battlefield-cell" data-line="5" data-column="0"></td>
-              <td class="battlefield-cell" data-line="5" data-column="1"></td>
-              <td class="battlefield-cell" data-line="5" data-column="2"></td>
-              <td class="battlefield-cell" data-line="5" data-column="3"></td>
-              <td class="battlefield-cell" data-line="5" data-column="4"></td>
-              <td class="battlefield-cell" data-line="5" data-column="5"></td>
-              <td class="battlefield-cell" data-line="5" data-column="6"></td>
-              <td class="battlefield-cell" data-line="5" data-column="7"></td>
-              <td class="battlefield-cell" data-line="5" data-column="8"></td>
-              <td class="battlefield-cell" data-line="5" data-column="9"></td>
-          </tr>
-          <tr> 
-              <td class="battlefield-cell-label">G</td>
-              <td class="battlefield-cell" data-line="6" data-column="0"></td>
-              <td class="battlefield-cell" data-line="6" data-column="1"></td>
-              <td class="battlefield-cell" data-line="6" data-column="2"></td>
-              <td class="battlefield-cell" data-line="6" data-column="3"></td>
-              <td class="battlefield-cell" data-line="6" data-column="4"></td>
-              <td class="battlefield-cell" data-line="6" data-column="5"></td>
-              <td class="battlefield-cell" data-line="6" data-column="6"></td>
-              <td class="battlefield-cell" data-line="6" data-column="7"></td>
-              <td class="battlefield-cell" data-line="6" data-column="8"></td>
-              <td class="battlefield-cell" data-line="6" data-column="9"></td>
-          </tr>
-          <tr> 
-              <td class="battlefield-cell-label">H</td>
-              <td class="battlefield-cell" data-line="7" data-column="0"></td>
-              <td class="battlefield-cell" data-line="7" data-column="1"></td>
-              <td class="battlefield-cell" data-line="7" data-column="2"></td>
-              <td class="battlefield-cell" data-line="7" data-column="3"></td>
-              <td class="battlefield-cell" data-line="7" data-column="4"></td>
-              <td class="battlefield-cell" data-line="7" data-column="5"></td>
-              <td class="battlefield-cell" data-line="7" data-column="6"></td>
-              <td class="battlefield-cell" data-line="7" data-column="7"></td>
-              <td class="battlefield-cell" data-line="7" data-column="8"></td>
-              <td class="battlefield-cell" data-line="7" data-column="9"></td>
-          </tr>
-          <tr> 
-              <td class="battlefield-cell-label">I</td>
-              <td class="battlefield-cell" data-line="8" data-column="0"></td>
-              <td class="battlefield-cell" data-line="8" data-column="1"></td>
-              <td class="battlefield-cell" data-line="8" data-column="2"></td>
-              <td class="battlefield-cell" data-line="8" data-column="3"></td>
-              <td class="battlefield-cell" data-line="8" data-column="4"></td>
-              <td class="battlefield-cell" data-line="8" data-column="5"></td>
-              <td class="battlefield-cell" data-line="8" data-column="6"></td>
-              <td class="battlefield-cell" data-line="8" data-column="7"></td>
-              <td class="battlefield-cell" data-line="8" data-column="8"></td>
-              <td class="battlefield-cell" data-line="8" data-column="9"></td>
-          </tr>
-          <tr> 
-              <td class="battlefield-cell-label">J</td>
-              <td class="battlefield-cell" data-line="9" data-column="0"></td>
-              <td class="battlefield-cell" data-line="9" data-column="1"></td>
-              <td class="battlefield-cell" data-line="9" data-column="2"></td>
-              <td class="battlefield-cell" data-line="9" data-column="3"></td>
-              <td class="battlefield-cell" data-line="9" data-column="4"></td>
-              <td class="battlefield-cell" data-line="9" data-column="5"></td>
-              <td class="battlefield-cell" data-line="9" data-column="6"></td>
-              <td class="battlefield-cell" data-line="9" data-column="7"></td>
-              <td class="battlefield-cell" data-line="9" data-column="8"></td>
-              <td class="battlefield-cell" data-line="9" data-column="9"></td>
-          </tr>
-          <tr> 
-              <td class="battlefield-cell-label"></td>
-              <td class="battlefield-cell-label">1</td>
-              <td class="battlefield-cell-label">2</td>
-              <td class="battlefield-cell-label">3</td>
-              <td class="battlefield-cell-label">4</td>
-              <td class="battlefield-cell-label">5</td>
-              <td class="battlefield-cell-label">6</td>
-              <td class="battlefield-cell-label">7</td>
-              <td class="battlefield-cell-label">8</td>
-              <td class="battlefield-cell-label">9</td>
-              <td class="battlefield-cell-label">10</td>
-          </tr>
-          </tbody>
-      </table>
-    </div>
-    -->
-
-    <!--
-    <div id="initBtns">
-        <button id="btn-PA" class="btn btn-primary siderBtn">Porta-Aviões</button>
-        <button id="btn-C" class="btn btn-primary siderBtn">Couraçado</button>
-        <button id="btn-CR" class="btn btn-primary siderBtn">Cruzadore</button>
-        <button id="btn-CT" class="btn btn-primary siderBtn">Contra-Torpedeiro</button>
-        <button id="btn-S" class="btn btn-primary siderBtn">Submarino</button>
-        <br>
-        <table id="boatPreview">
-            <tr><td class="boatPreviewCell">N</td><td class="boatPreviewCell">N</td>
-                <td class="boatPreviewCell">N</td><td class="boatPreviewCell">N</td></tr>
-            <tr><td class="boatPreviewCell"></td><td class="boatPreviewCell"></td>
-                <td class="boatPreviewCell"></td><td class="boatPreviewCell"></td></tr>
-            <tr><td class="boatPreviewCell"></td><td class="boatPreviewCell"></td>
-                <td class="boatPreviewCell"></td><td class="boatPreviewCell"></td></tr>
-            <tr><td class="boatPreviewCell"></td><td class="boatPreviewCell"></td>
-                <td class="boatPreviewCell"></td><td class="boatPreviewCell"></td></tr>
-        </table>
-    </div>
-    -->
-
-      <!--
-      <div class="controls">
-          <button id="btn-check" class="btn btn-danger">Reset Board</button>
-          <button id="btn-new" class="btn btn-success">Start Game</button>
-      </div>
-      -->
-
-      <!--
-      <div class="btn-toolbar" role="toolbar" aria-label="...">
-          <div class="btn-group" role="group" aria-label="...">Submarino</div>
-          <div class="btn-group" role="group" aria-label="...">aaad</div>
-          <div class="btn-group" role="group" aria-label="...">vvvv</div>
-      </div>
-      -->
-    
-      <batalha-naval [batalha] = "'assaf'"></batalha-naval> 
-      <batalha-naval [batalha] = "'assaf'"></batalha-naval> 
-  </body>
+    <!-- 3. Display the application -->
+    <body>
+        <application></application>
+    </body>
 </html>

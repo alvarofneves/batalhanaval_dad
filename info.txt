@@ -22,11 +22,11 @@ Histórico de Jogos –
 Game Lobby – 
 Jogos Múltiplos -
 
-Outras Funcionalidades – 
-	Bots 
-	Serviços de Autenticação Externos
-	Avatares 
-	Chat Rooms
-	Repetição de Jogo
-	Mobile App
-	Vídeo em Real-time dos jogadores (webcams) 
+Outras Funcionalidades: 
+Bots -
+Serviços de Autenticação Externos -
+Avatares -
+Chat Rooms -
+Repetição de Jogo - 
+Mobile App - 
+
