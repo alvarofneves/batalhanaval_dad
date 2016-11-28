@@ -7,7 +7,7 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-    console.log("início 00.43h....");
+    console.log("início 00.53h....");
 
     let $btnStart = $('#btn-start');
     let $btnReset = $('#btn-reset');
