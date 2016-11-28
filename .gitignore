@@ -51,3 +51,6 @@ jspm_packages
 .yarn-integrity
 
 .idea/
+
+# Folder with compiled code files
+./app/dist/
