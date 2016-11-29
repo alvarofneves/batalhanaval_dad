@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-	selector: 'battlefield-board',	
-	templateUrl: './app/views/gameBoard.html',
+	selector: 'game-board',	
+	templateUrl: './app/gameBoard/board.component.html',
 })
 
 export class BoardComponent { 

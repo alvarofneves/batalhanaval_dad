@@ -6,8 +6,9 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': 'node_modules/'
-      //'application/*': './js/mobile/dist/*'   //TODO AS 27/11 - indicar caminho p onde ficam ficheiros compilados?
+      'npm:': 'node_modules/',
+      //'application/*': './js/mobile/dist/*'    
+      'app/*': './*'       
     },
     // map tells the System loader where to look for things
     map: {
@@ -29,13 +30,13 @@
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       app: {
-        main: './dist/main.js',     // as - pasta para onde é compilada a app
+        main: './compile/main.js',    
         defaultExtension: 'js'
       },
       rxjs: {
         defaultExtension: 'js'
       },
-      'angular-in-memory-web-api': {
+        'angular-in-memory-web-api': {
         main: './index.js',
         defaultExtension: 'js'
       }

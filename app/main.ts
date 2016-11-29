@@ -7,27 +7,16 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-    console.log("início 01.45h....");
-
-    /*let $btnStart = $('#btn-start');
-    let $btnReset = $('#btn-reset');*/
-
     // testar app Node.js
-	let varA = 999;
-	console.log("Print test <main.ts> ...." + vaAr);
+	let varA = 9999;
+	console.log("<main.ts> ...." + varA);
+    console.log("19.43");
 
-	/*$btnStart.click(newGame).click;
-	$btnReset.click(resetBoard).click;*/
-
-    //TODO selecionar cell clicada
-	function selectedCell() {
-	}
-
-	/**
-     * Default informations for the HTML page when loaded
-     */
-    function loadPage() {
-        //$grid.attr('disabled', 'disabled');       
+    /**
+    * Reset the board
+    */
+    function resetBoard() {
+        console.log("reset board");
     }
 
 	/**
@@ -37,10 +26,7 @@ platform.bootstrapModule(AppModule);
     	console.log("new game");
     }
 
-	/**
-    * Reset the board
-    */
-    function resetBoard() {
-    	console.log("reset board");
+    //TODO selecionar cell clicada
+    function selectedCell() {
     }
 })();

@@ -8,6 +8,6 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false,
-    "outDir": "./app/dist"       //as - adicionei local para ficheiros .js 
+    "outDir": "./app/compile"       //AS - adicionei path p/ onde se compila o projeto
   }
 }

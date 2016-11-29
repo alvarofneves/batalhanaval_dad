@@ -53,4 +53,4 @@ jspm_packages
 .idea/
 
 # Folder with compiled code files (as - 28/11)
-app/dist/**
+app/compile/**
