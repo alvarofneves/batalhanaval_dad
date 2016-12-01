@@ -50,8 +50,12 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+# New Rules - Proj. DAD
 # Folder from PHP Storm (@TIAGO)
 .idea/
 
 # Folder with compiled code files (@AS - 28/11)
 app/compile/**
+
+# Folder '/node/node_modules' (@AS - 01/12)
+node/node_modules/**

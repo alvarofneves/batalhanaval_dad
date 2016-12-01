@@ -1,6 +1,6 @@
 const restify = require('restify');
 const passport = require('passport');
-const path = require('path');
+const path = require('path');			//AS onde é usada?
 const database = require('./app.database');
 const websocket = require('./app.websockets');
 
@@ -40,7 +40,7 @@ server.get(/^\/(?!api\/).*/, restify.serveStatic({
 
 // Use connect method to connect to the server
 database.connect(url, () => {
-    server.listen(7777, () => console.log('%s (v%s) listening at %s', server.name, server.version, server.url));
+    server.listen(7777, () => console.log('SRV: %s (VER: %s) listening at URL: %s', server.name, server.version, server.url));
     // Websocket is initialized after the server
     websocket.init(server.server);
 });

@@ -4,6 +4,18 @@ const util = require('util');
 const players = module.exports = {};
 var settings = {};  // AS estava 'let'. Dava erro no nodemon
 
+function createPlayer(request, response, next) {
+    const player = request.body;
+    if (player === undefined) {
+        response.send(400, 'No player data');
+        return next();
+    }
+    database.db.collection('players')
+        .insertOne(player)
+        .then(result => returnPlayer(result.insertedId, response, next))
+        .catch(err => handleError(err, response, next));
+}
+
 function handleError(e, response, next) {
 	response.send(500, e);
 	return next();
@@ -55,18 +67,6 @@ function updatePlayer(request, response, next) {
             $set: player
         })
         .then(result => returnPlayer(id, response, next))
-        .catch(err => handleError(err, response, next));
-}
-
-function createPlayer(request, response, next) {
-    const player = request.body;
-    if (player === undefined) {
-        response.send(400, 'No player data');
-        return next();
-    }
-    database.db.collection('players')
-        .insertOne(player)
-        .then(result => returnPlayer(result.insertedId, response, next))
         .catch(err => handleError(err, response, next));
 }
 
