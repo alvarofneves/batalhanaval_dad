@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
+	moduleId: module.id,
 	selector: 'game-board',	
-	templateUrl: './app/gameBoard/board.component.html',
+	templateUrl: './board.component.html',
 })
 
 export class BoardComponent { 

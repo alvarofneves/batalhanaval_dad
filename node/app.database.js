@@ -3,11 +3,14 @@ const db = module.exports = {};
 
 //TODO AS rever nomes 'db'; legendar
 db.connect = function (url, callback) {
-	MongoClient.connect(url)
+	MongoClient
+		.connect(url)
         .then(database => {
-            db.db = database;
             console.log('Connection established to database %s', url);
+            db.db = database;
             callback();
         })
         .catch(console.error);
 };
+
+// db.close();   TODO qd fz isto?

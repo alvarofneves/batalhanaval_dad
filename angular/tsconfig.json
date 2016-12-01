@@ -11,3 +11,4 @@
     "outDir": "./app/compile"       //AS - adicionei path p/ onde se compila o projeto
   }
 }
+/* DESCRIPTION: Root files and the compiler options required to compile the project */

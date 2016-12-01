@@ -1,6 +1,7 @@
 const mongodb = require('mongodb');
 const database = require('./app.database');
 const games = module.exports = {};
+let settings = {};
 
 function handleError(err, response, next) {
 	response.send(500, err);
@@ -91,11 +92,12 @@ function deleteGame(request, response, next) {
 
 // Routes for the games
 // TODO-AS PARA Q SERVE?
-games.init = function(server, apiBaseUri) {
-    server.get(apiBaseUri + 'games', getGames);
-    server.get(apiBaseUri + 'games/:id', getGame);
-    server.put(apiBaseUri + 'games/:id', updateGame);
-    server.post(apiBaseUri + 'games', createGame);
-    server.del(apiBaseUri + 'games/:id', deleteGame);
+games.init = (server, options) => {
+    settings = options;
+    server.get(settings.prefix + 'games', settings.security.authorize, getGames);
+    server.get(settings.prefix + 'games/:id', settings.security.authorize, getGame);
+    server.put(settings.prefix + 'games/:id', settings.security.authorize, updateGame);
+    server.post(settings.prefix + 'games', settings.security.authorize, createGame);
+    server.del(settings.prefix + 'games/:id', settings.security.authorize, deleteGame);
     console.log("Games routes registered");
 };

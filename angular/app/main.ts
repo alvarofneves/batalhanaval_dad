@@ -10,7 +10,7 @@ platform.bootstrapModule(AppModule);
     // testar app Node.js
 	let varA = 9999;
 	console.log("<main.ts> ...." + varA);
-    console.log("19.43");
+    console.log("02.53");
 
     /**
     * Reset the board
