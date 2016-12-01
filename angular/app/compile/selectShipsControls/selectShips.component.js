@@ -14,6 +14,7 @@ var SelectShipsControlsComponent = (function () {
     }
     SelectShipsControlsComponent = __decorate([
         core_1.Component({
+            //moduleId: module.id,
             selector: 'select-ships-controls',
             templateUrl: './app/selectShipsControls/selectShips.component.html'
         }), 

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
+	//moduleId: module.id,
 	selector: 'game-app',	
 	templateUrl: './app/app.component.html',
 

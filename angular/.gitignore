@@ -55,9 +55,4 @@ jspm_packages
 .idea/
 
 # Folder with compiled code files (@AS - 28/11)
-angular/app/compile/**
-
-# Folders 'node_modules/' (@AS - 01/12)
-**/node_modules
-
-
+./angular/app/compile/**

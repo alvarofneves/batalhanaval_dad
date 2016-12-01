@@ -9,18 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var CellComponent = (function () {
+    function CellComponent() {
     }
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], CellComponent.prototype, "column", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], CellComponent.prototype, "line", void 0);
+    CellComponent = __decorate([
         core_1.Component({
-            //moduleId: module.id,
-            selector: 'game-app',
-            templateUrl: './app/app.component.html',
+            moduleId: module.id,
+            selector: 'cell-board',
+            templateUrl: './cell.component.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CellComponent);
+    return CellComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CellComponent = CellComponent;
+//# sourceMappingURL=cell.component.js.map
