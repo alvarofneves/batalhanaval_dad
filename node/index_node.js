@@ -1,7 +1,6 @@
 'use strict';
 (function(){
-	var str = 'ola node srv 12.49';
-	console.log(str+"\n");
-
+	var str = '$node/index-node  //ok';
+	console.log(str + "\n");
 
 }());

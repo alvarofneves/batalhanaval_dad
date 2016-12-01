@@ -1,7 +1,7 @@
 const authentication = module.exports = {};
 
 function login(request, response, next) {
-    let player = request.user;
+    var player = request.user;	// AS estava 'let'. Dava erro no nodemon
     response.json(player);
     return next();
 }

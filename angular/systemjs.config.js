@@ -8,7 +8,7 @@
       // paths serve as alias
       'npm:': 'node_modules/',
       //'application/*': './js/mobile/dist/*'    
-      'app/*': './*'       
+      //'app/*': './*'   OLD 30/11
     },
     // map tells the System loader where to look for things
     map: {
@@ -27,7 +27,12 @@
       'rxjs':                      'npm:rxjs',
       // Correção erro: 'zone.js:1382 GET http://localhost:3000/traceur 404 (Not Found)'
       //'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      
+      // Original (Socket.io-client versão 1.6)
+      //'socket.io-client': 'npm:socket.io-client/socket.io.js'
+      // Socket.io-client Versão 1.7
+      'socket.io-client': 'npm:socket.io-client/dist/socket.io.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

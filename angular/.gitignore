@@ -50,7 +50,8 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+# Folder from PHP Storm (@TIAGO)
 .idea/
 
-# Folder with compiled code files (as - 28/11)
+# Folder with compiled code files (@AS - 28/11)
 app/compile/**

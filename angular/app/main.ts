@@ -9,8 +9,7 @@ platform.bootstrapModule(AppModule);
 
     // testar app Node.js
 	let varA = 9999;
-	console.log("<main.ts> ...." + varA);
-    console.log("02.53");
+	console.log("$angular/app/main.ts  -- ok");
 
     /**
     * Reset the board

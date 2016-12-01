@@ -6,8 +6,9 @@ const websocket = require('./app.websockets');
 
 // Connection URL to DB
 const url = 'mongodb://localhost:27017/db_battlefield_game';	// 27017 - default port
+
 const server = restify.createServer({
-	name: 'server_battlefield_game',
+	name: 'srv_battlefield_game',
     version: '0.0.1'
 });
 

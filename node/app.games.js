@@ -1,7 +1,7 @@
 const mongodb = require('mongodb');
 const database = require('./app.database');
 const games = module.exports = {};
-let settings = {};
+var settings = {};      // AS estava 'let'. Dava erro no nodemon
 
 function handleError(err, response, next) {
 	response.send(500, err);
