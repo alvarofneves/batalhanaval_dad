@@ -55,4 +55,4 @@ jspm_packages
 .idea/
 
 # Folder with compiled code files (@AS - 28/11)
-./angular/app/compile/**
+#./angular/app/compile/**		#AS tirei qd deixei de ter 'angular/app/compile'

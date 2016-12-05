@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var SelectShipsControlsComponent = (function () {
-    function SelectShipsControlsComponent() {
+var AppComponent = (function () {
+    function AppComponent() {
     }
-    SelectShipsControlsComponent = __decorate([
+    AppComponent = __decorate([
         core_1.Component({
-            //moduleId: module.id,
-            selector: 'select-ships-controls',
-            templateUrl: './app/selectShipsControls/selectShips.component.html'
+            moduleId: module.id,
+            selector: 'game-app',
+            templateUrl: 'app.component.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], SelectShipsControlsComponent);
-    return SelectShipsControlsComponent;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.SelectShipsControlsComponent = SelectShipsControlsComponent;
-//# sourceMappingURL=selectShips.component.js.map
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map

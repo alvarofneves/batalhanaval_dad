@@ -9,18 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var BoardComponent = (function () {
-    function BoardComponent() {
+var CellComponent = (function () {
+    function CellComponent() {
     }
-    BoardComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], CellComponent.prototype, "column", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], CellComponent.prototype, "line", void 0);
+    CellComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'game-board',
-            templateUrl: './board.component.html',
+            selector: 'cell-board',
+            templateUrl: 'cell.component.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], BoardComponent);
-    return BoardComponent;
+    ], CellComponent);
+    return CellComponent;
 }());
-exports.BoardComponent = BoardComponent;
-//# sourceMappingURL=board.component.js.map
+exports.CellComponent = CellComponent;
+//# sourceMappingURL=cell.component.js.map

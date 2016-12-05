@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    //moduleId: module.id,
+    moduleId: module.id,
     selector: 'init-game-controls',
-    templateUrl: './app/initGameControls/controls.component.html'
+    templateUrl: 'controls.component.html'
 })
 
 export class InitGameControlsComponent { }

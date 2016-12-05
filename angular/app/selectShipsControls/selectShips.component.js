@@ -9,26 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var CellComponent = (function () {
-    function CellComponent() {
+var SelectShipsControlsComponent = (function () {
+    function SelectShipsControlsComponent() {
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], CellComponent.prototype, "column", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], CellComponent.prototype, "line", void 0);
-    CellComponent = __decorate([
+    SelectShipsControlsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'cell-board',
-            templateUrl: './cell.component.html',
+            selector: 'select-ships-controls',
+            templateUrl: 'selectShips.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], CellComponent);
-    return CellComponent;
+    ], SelectShipsControlsComponent);
+    return SelectShipsControlsComponent;
 }());
-exports.CellComponent = CellComponent;
-//# sourceMappingURL=cell.component.js.map
+exports.SelectShipsControlsComponent = SelectShipsControlsComponent;
+//# sourceMappingURL=selectShips.component.js.map

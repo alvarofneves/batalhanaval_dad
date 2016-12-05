@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var InitGameControlsComponent = (function () {
-    function InitGameControlsComponent() {
+var BoardComponent = (function () {
+    function BoardComponent() {
     }
-    InitGameControlsComponent = __decorate([
+    BoardComponent = __decorate([
         core_1.Component({
-            //moduleId: module.id,
-            selector: 'init-game-controls',
-            templateUrl: './app/initGameControls/controls.component.html'
+            moduleId: module.id,
+            selector: 'game-board',
+            templateUrl: 'board.component.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], InitGameControlsComponent);
-    return InitGameControlsComponent;
+    ], BoardComponent);
+    return BoardComponent;
 }());
-exports.InitGameControlsComponent = InitGameControlsComponent;
-//# sourceMappingURL=controls.component.js.map
+exports.BoardComponent = BoardComponent;
+//# sourceMappingURL=board.component.js.map

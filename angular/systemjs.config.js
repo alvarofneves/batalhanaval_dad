@@ -8,7 +8,7 @@
       // paths serve as alias
       'npm:': 'node_modules/',
       //'application/*': './js/mobile/dist/*'    
-      //'app/*': './*'   OLD 30/11
+      'app/*': './*'   
     },
     // map tells the System loader where to look for things
     map: {
@@ -37,7 +37,8 @@
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       app: {
-        main: './compile/main.js',    
+        //main: './compile/main.js',  //AS alterei qd deixei de compilar p '/compile'
+        main: 'main.js',   
         defaultExtension: 'js'
       },
       rxjs: {
