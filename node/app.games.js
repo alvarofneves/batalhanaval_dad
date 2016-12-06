@@ -1,7 +1,7 @@
 const mongodb = require('mongodb');
 const database = require('./app.database');
 const games = module.exports = {};
-var settings = {};      // AS estava 'let'. Dava erro no nodemon
+let settings = {};      // AS estava 'let'. Dava erro no nodemon
 
 function handleError(err, response, next) {
 	response.send(500, err);
@@ -60,7 +60,7 @@ function updateGame(request, response, next) {
 }
 
 function createGame(request, response, next) {
-	var game = request.body;
+	let game = request.body;
 	if (game === undefined) {
         response.send(400, 'No game data');
         return next();

@@ -9,7 +9,7 @@ platform.bootstrapModule(AppModule);
 
     // testar app Node.js
 	let varA = 9999;
-	console.log("$angular/app/main.ts  -- ok");
+	console.log("$angular/app/main.ts 00.48    //ok");
 
     /**
     * Reset the board
@@ -23,9 +23,5 @@ platform.bootstrapModule(AppModule);
     */
     function newGame() {
     	console.log("new game");
-    }
-
-    //TODO selecionar cell clicada
-    function selectedCell() {
     }
 })();

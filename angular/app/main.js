@@ -7,7 +7,7 @@ platform.bootstrapModule(app_module_1.AppModule);
     'use strict';
     // testar app Node.js
     var varA = 9999;
-    console.log("$angular/app/main.ts  -- ok");
+    console.log("$angular/app/main.ts 00.48    //ok");
     /**
     * Reset the board
     */
@@ -19,9 +19,6 @@ platform.bootstrapModule(app_module_1.AppModule);
     */
     function newGame() {
         console.log("new game");
-    }
-    //TODO selecionar cell clicada
-    function selectedCell() {
     }
 })();
 //# sourceMappingURL=main.js.map

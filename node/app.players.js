@@ -2,7 +2,7 @@ const mongodb = require('mongodb');
 const database = require('./app.database');
 const util = require('util');
 const players = module.exports = {};
-var settings = {};  // AS estava 'let'. Dava erro no nodemon
+let settings = {};  // AS estava 'let'. Dava erro no nodemon
 
 function createPlayer(request, response, next) {
     const player = request.body;
@@ -71,7 +71,7 @@ function updatePlayer(request, response, next) {
 }
 
 function deletePlayer(request, response, next) {
-    var id = new mongodb.ObjectID(request.params.id);
+    let id = new mongodb.ObjectID(request.params.id);
     database.db.collection('players')
         .deleteOne({
             _id: id
