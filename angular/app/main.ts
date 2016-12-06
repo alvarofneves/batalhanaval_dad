@@ -7,13 +7,13 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts    [21.34]");
+	console.log("$/angular/app/main.ts    [22.25]");
 
-    function resetBoard() {
+    /*function resetBoard() {
         console.log("reset board");
     }
 
     function newGame() {
     	console.log("new game");
-    }
+    }*/
 })();
