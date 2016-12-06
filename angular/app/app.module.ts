@@ -1,28 +1,27 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule }   from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';				// Tem as rotas da app
 
-import { routes } from './app.routes'				// Tem as rotas da app
 import { AppComponent }   from './app.component';
+
 import { LobbyModule } from './lobby/lobby.module';
+import { GameModule } from './game/game.module';		// Pág. do jogo (board + butões + etc)
 import { BoardModule } from './gameBoard/board.module';
 import { InitGameControlsModule } from './initGameControls/controls.module';
 import { SelectShipsControlsModule } from './selectShipsControls/selectShips.module';
 
 @NgModule({
 	imports: [ 
-		// Aqui coloco os MODULES
+		// ------------ MODULES ------------
 		BrowserModule, 
-		RouterModule.forRoot(			// forRoot - uso só 1x; Depois poderei ter Children
-			routes
-		),
+		AppRoutingModule,
 		LobbyModule,
 		BoardModule, 
 		InitGameControlsModule, 
 		SelectShipsControlsModule 
 	],
 	declarations: [ 
-		// Aqui coloco os COMPONENTS
+		// ------------ COMPONENTS ------------
 		AppComponent 
 	],
 	bootstrap: [ 

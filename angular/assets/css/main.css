@@ -63,6 +63,18 @@ body {
     text-align: center;
 }
 
+.game-cell {
+    color: #4286f4;
+}
+
+.cell-hit-water {
+    color: #4286f4;
+}
+
+.cell-hit-ship {
+    color: #ff3333;
+}
+
 /* TODO usar na board do 2º player. Qd grid estiver bloqueada */
 .boardPlayer2 {
     background-color: #adad85;
@@ -95,14 +107,6 @@ body {
 .boatPreviewCell {
     border: thin solid black;
 }  */
-
-.cell-hit-water {
-    color: #4286f4;
-}
-
-.cell-hit-ship {
-    color: #ff3333;
-}
 
 .headerBar {
     background-color: yellow;

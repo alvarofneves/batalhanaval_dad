@@ -7,20 +7,12 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-    // testar app Node.js
-	let varA = 9999;
-	console.log("$angular/app/main.ts 00.48    //ok");
+	console.log("$/angular/app/main.ts 15.09  //ok");
 
-    /**
-    * Reset the board
-    */
     function resetBoard() {
         console.log("reset board");
     }
 
-	/**
-    * Begin a new game
-    */
     function newGame() {
     	console.log("new game");
     }

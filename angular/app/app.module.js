@@ -10,8 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var router_1 = require('@angular/router');
-var app_routes_1 = require('./app.routes'); // Tem as rotas da app
+var app_routing_module_1 = require('./app-routing.module'); // Tem as rotas da app
 var app_component_1 = require('./app.component');
 var lobby_module_1 = require('./lobby/lobby.module');
 var board_module_1 = require('./gameBoard/board.module');
@@ -23,17 +22,16 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
-                // Aqui coloco os MODULES
+                // ------------ MODULES ------------
                 platform_browser_1.BrowserModule,
-                router_1.RouterModule.forRoot(// forRoot - uso só 1x; Depois poderei ter Children
-                app_routes_1.routes),
+                app_routing_module_1.AppRoutingModule,
                 lobby_module_1.LobbyModule,
                 board_module_1.BoardModule,
                 controls_module_1.InitGameControlsModule,
                 selectShips_module_1.SelectShipsControlsModule
             ],
             declarations: [
-                // Aqui coloco os COMPONENTS
+                // ------------ COMPONENTS ------------
                 app_component_1.AppComponent
             ],
             bootstrap: [

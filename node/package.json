@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/socket.io-client": "^1.4.29",
     "mongodb": "^2.2.11",
     "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1",
