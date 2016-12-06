@@ -2,18 +2,15 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
 
-import { LobbyComponent }   from './lobby.component';
+import { PageNotFoundComponent }   from './PageNotFound.component';
 
 @NgModule({
 	imports: [ 
 		BrowserModule, 
 	],
 	declarations: [ 
-		LobbyComponent
-	],
-	exports: [ 
-		LobbyComponent 
+		PageNotFoundComponent
 	]
 })
 
-export class LobbyModule { }
+export class PageNotFoundModule { }

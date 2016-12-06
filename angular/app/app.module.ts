@@ -4,8 +4,9 @@ import { AppRoutingModule } from './app-routing.module';				// Tem as rotas da a
 
 import { AppComponent }   from './app.component';
 
+import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { LobbyModule } from './lobby/lobby.module';
-import { GameModule } from './game/game.module';		// Pág. do jogo (board + butões + etc)
+// import { GameModule } from './game/game.module';			// Pág. do jogo (board + butões + etc)
 import { BoardModule } from './gameBoard/board.module';
 import { InitGameControlsModule } from './initGameControls/controls.module';
 import { SelectShipsControlsModule } from './selectShipsControls/selectShips.module';
@@ -14,6 +15,7 @@ import { SelectShipsControlsModule } from './selectShipsControls/selectShips.mod
 	imports: [ 
 		// ------------ MODULES ------------
 		BrowserModule, 
+		PageNotFoundModule,
 		AppRoutingModule,
 		LobbyModule,
 		BoardModule, 
