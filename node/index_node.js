@@ -1,6 +1,7 @@
 'use strict';
+
 (function(){
-	var str = '$node/index-node ola	   [22.36]';
+	var str = '$node/index-node   [00.41]';
 	console.log(str + "\n");
 
 }());

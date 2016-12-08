@@ -7,7 +7,7 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts    [22.25]");
+	console.log("$/angular/app/main.ts    [00.41]");
 
     /*function resetBoard() {
         console.log("reset board");
