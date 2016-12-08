@@ -1,6 +1,6 @@
 'use strict';
 (function(){
-	var str = '$node/index-node  //ok';
+	var str = '$node/index-node  t//ok';
 	console.log(str + "\n");
 
 }());

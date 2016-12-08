@@ -23,5 +23,5 @@ db.connect = function (url, callback) {
         	console.log('a inserir 1 jogador....');
         }  */ 
 
-        db.close();      
+        //db.close();      
 };

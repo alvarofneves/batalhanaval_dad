@@ -9,7 +9,7 @@ platform.bootstrapModule(AppModule);
 
     // testar app Node.js
 	let varA = 9999;
-	console.log("$angular/app/main.ts  -- ok");
+	console.log("$angular/app/main.ts  -- register user");
 
     /**
     * Reset the board
