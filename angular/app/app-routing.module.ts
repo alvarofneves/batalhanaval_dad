@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LobbyComponent }   from './lobby/lobby.component';
 import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
 import { BoardComponent }   from './gameBoard/board.component';
-import { GameComponent }   from './game/game.component';
+import { GamePageComponent }   from './gamePage/gamePage.component';
 
 // Array JSON de objectos
 const appRoutes: Routes = [
@@ -14,7 +14,7 @@ const appRoutes: Routes = [
 
 	{ path: 'board', component: BoardComponent },
 
-	{ path: 'game', component: GameComponent },	 		// add GUARD  
+	{ path: 'game', component: GamePageComponent },	 		// add GUARD  
 	//		children: [ { path: '/id', component: BoardComponent } ]
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida

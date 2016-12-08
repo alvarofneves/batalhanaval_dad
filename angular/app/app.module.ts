@@ -6,7 +6,7 @@ import { AppComponent }   from './app.component';
 
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { LobbyModule } from './lobby/lobby.module';
-import { GameModule } from './game/game.module';			// Pág. do jogo (board + botões + etc)
+import { GamePageModule } from './gamePage/gamePage.module';			// Pág. do jogo (board + botões + etc)
 import { BoardModule } from './gameBoard/board.module';
 import { InitGameControlsModule } from './initGameControls/controls.module';
 import { SelectShipsControlsModule } from './selectShipsControls/selectShips.module';
@@ -19,7 +19,7 @@ import { SelectShipsControlsModule } from './selectShipsControls/selectShips.mod
 		PageNotFoundModule,
 		LobbyModule,
 		BoardModule, 
-		GameModule,
+		GamePageModule,
 		InitGameControlsModule, 
 		SelectShipsControlsModule 
 	],
