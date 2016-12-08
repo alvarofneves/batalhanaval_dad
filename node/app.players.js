@@ -1,8 +1,10 @@
+'use strict';
+
 const mongodb = require('mongodb');
 const database = require('./app.database');
 const util = require('util');
 const players = module.exports = {};
-let settings = {};  // AS estava 'let'. Dava erro no nodemon
+let settings = {};  
 
 function createPlayer(request, response, next) {
     const player = request.body;

@@ -1,3 +1,5 @@
+'use strict';
+
 const authentication = module.exports = {};
 
 function login(request, response, next) {

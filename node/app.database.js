@@ -1,3 +1,5 @@
+'use strict';
+
 const MongoClient = require('mongodb').MongoClient;
 const db = module.exports = {};
 
@@ -23,5 +25,5 @@ db.connect = function (url, callback) {
         	console.log('a inserir 1 jogador....');
         }  */ 
 
-        db.close();      
+        //db.close();      
 };
