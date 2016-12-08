@@ -1,3 +1,5 @@
+"use strict";
+
 const restify = require('restify');
 const passport = require('passport');
 const path = require('path');			//AS onde é usada?

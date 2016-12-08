@@ -1,3 +1,5 @@
+"use strict";
+
 const mongodb = require('mongodb');
 const database = require('./app.database');
 const games = module.exports = {};

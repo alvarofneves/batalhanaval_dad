@@ -1,3 +1,5 @@
+"use strict";
+
 const passport = require('passport');
 const database = require('./app.database');
 const LocalStrategy = require('passport-local').Strategy;
