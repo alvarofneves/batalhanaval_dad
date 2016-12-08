@@ -58,6 +58,6 @@ jspm_packages
 #./angular/app/compile/**		#@AS tirei qd deixei de ter '/compile'
 
 # Extensions of Angular compiled files (@AS - 06/12)
-app/**/*.js
-app/**/*.map
-app/**/*.log
+angular/app/**/*.js
+angular/app/**/*.map
+angular/app/**/*.log
