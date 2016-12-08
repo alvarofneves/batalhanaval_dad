@@ -50,3 +50,14 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+# ------------------- Rules - Projeto DAD -------------------
+# Folder from PHP Storm (@TIAGO)
+.idea/
+
+# Folder with compiled code files (@AS - 28/11)
+#./angular/app/compile/**		#@AS tirei qd deixei de ter '/compile'
+
+# Extensions of Angular compiled files (@AS - 06/12)
+angular/app/**/*.js
+angular/app/**/*.map
+angular/app/**/*.log
