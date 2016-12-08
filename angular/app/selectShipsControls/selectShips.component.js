@@ -9,27 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var user_1 = require('../shared/user');
-var UserFormRegisterComponent = (function () {
-    function UserFormRegisterComponent() {
-        this.user = new user_1.User(1, 'John Doe', 'john@doe.com', 'john_password');
-        this.submitted = false;
+var SelectShipsControlsComponent = (function () {
+    function SelectShipsControlsComponent() {
     }
-    UserFormRegisterComponent.prototype.onSubmit = function () {
-        this.submitted = true;
-    };
-    UserFormRegisterComponent.prototype.addHero = function () {
-        this.user = new user_1.User(2, 'Marie', 'marie@serp.com', "marie_password");
-    };
-    UserFormRegisterComponent = __decorate([
+    SelectShipsControlsComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            selector: 'user-form-register',
-            templateUrl: 'register.html'
+            //moduleId: module.id,
+            selector: 'select-ships-controls',
+            templateUrl: './app/selectShipsControls/selectShips.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], UserFormRegisterComponent);
-    return UserFormRegisterComponent;
+    ], SelectShipsControlsComponent);
+    return SelectShipsControlsComponent;
 }());
-exports.UserFormRegisterComponent = UserFormRegisterComponent;
-//# sourceMappingURL=register.component.js.map
+exports.SelectShipsControlsComponent = SelectShipsControlsComponent;
+//# sourceMappingURL=selectShips.component.js.map

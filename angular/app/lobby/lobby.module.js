@@ -9,22 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var shared_module_1 = require('../shared/shared.module');
-var register_component_1 = require('./register.component');
-//import { HeroFormTemplate2Component } from './hero-form-template2.component';
-var HeroFormTemplateModule = (function () {
-    function HeroFormTemplateModule() {
+var platform_browser_1 = require('@angular/platform-browser');
+var lobby_component_1 = require('./lobby.component');
+var LobbyModule = (function () {
+    function LobbyModule() {
     }
-    HeroFormTemplateModule = __decorate([
+    LobbyModule = __decorate([
         core_1.NgModule({
-            imports: [shared_module_1.SharedModule, forms_1.FormsModule],
-            declarations: [register_component_1.UserFormRegisterComponent],
-            exports: [register_component_1.UserFormRegisterComponent]
+            imports: [
+                platform_browser_1.BrowserModule,
+            ],
+            declarations: [
+                lobby_component_1.LobbyComponent
+            ],
+            exports: [
+                lobby_component_1.LobbyComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], HeroFormTemplateModule);
-    return HeroFormTemplateModule;
+    ], LobbyModule);
+    return LobbyModule;
 }());
-exports.HeroFormTemplateModule = HeroFormTemplateModule;
-//# sourceMappingURL=register.module.js.map
+exports.LobbyModule = LobbyModule;
+//# sourceMappingURL=lobby.module.js.map

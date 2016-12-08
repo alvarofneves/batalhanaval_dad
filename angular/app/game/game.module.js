@@ -9,22 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var shared_module_1 = require('../shared/shared.module');
-var register_component_1 = require('./register.component');
-//import { HeroFormTemplate2Component } from './hero-form-template2.component';
-var HeroFormTemplateModule = (function () {
-    function HeroFormTemplateModule() {
+var platform_browser_1 = require('@angular/platform-browser');
+var game_component_1 = require('./game.component');
+var GameModule = (function () {
+    function GameModule() {
     }
-    HeroFormTemplateModule = __decorate([
+    GameModule = __decorate([
         core_1.NgModule({
-            imports: [shared_module_1.SharedModule, forms_1.FormsModule],
-            declarations: [register_component_1.UserFormRegisterComponent],
-            exports: [register_component_1.UserFormRegisterComponent]
+            imports: [
+                platform_browser_1.BrowserModule
+            ],
+            declarations: [
+                game_component_1.GameComponent
+            ],
+            exports: [
+                game_component_1.GameComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], HeroFormTemplateModule);
-    return HeroFormTemplateModule;
+    ], GameModule);
+    return GameModule;
 }());
-exports.HeroFormTemplateModule = HeroFormTemplateModule;
-//# sourceMappingURL=register.module.js.map
+exports.GameModule = GameModule;
+//# sourceMappingURL=game.module.js.map

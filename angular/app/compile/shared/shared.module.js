@@ -9,22 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var shared_module_1 = require('../shared/shared.module');
-var register_component_1 = require('./register.component');
-//import { HeroFormTemplate2Component } from './hero-form-template2.component';
-var HeroFormTemplateModule = (function () {
-    function HeroFormTemplateModule() {
+var common_1 = require('@angular/common');
+var forbidden_name_directive_1 = require('./forbidden-name.directive');
+var submitted_component_1 = require('./submitted.component');
+var SharedModule = (function () {
+    function SharedModule() {
     }
-    HeroFormTemplateModule = __decorate([
+    SharedModule = __decorate([
         core_1.NgModule({
-            imports: [shared_module_1.SharedModule, forms_1.FormsModule],
-            declarations: [register_component_1.UserFormRegisterComponent],
-            exports: [register_component_1.UserFormRegisterComponent]
+            imports: [common_1.CommonModule],
+            declarations: [forbidden_name_directive_1.ForbiddenValidatorDirective, submitted_component_1.SubmittedComponent],
+            exports: [forbidden_name_directive_1.ForbiddenValidatorDirective, submitted_component_1.SubmittedComponent,
+                common_1.CommonModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], HeroFormTemplateModule);
-    return HeroFormTemplateModule;
+    ], SharedModule);
+    return SharedModule;
 }());
-exports.HeroFormTemplateModule = HeroFormTemplateModule;
-//# sourceMappingURL=register.module.js.map
+exports.SharedModule = SharedModule;
+//# sourceMappingURL=shared.module.js.map

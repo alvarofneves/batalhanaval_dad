@@ -9,27 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var user_1 = require('../shared/user');
-var UserFormRegisterComponent = (function () {
-    function UserFormRegisterComponent() {
-        this.user = new user_1.User(1, 'John Doe', 'john@doe.com', 'john_password');
-        this.submitted = false;
+var LobbyComponent = (function () {
+    function LobbyComponent() {
     }
-    UserFormRegisterComponent.prototype.onSubmit = function () {
-        this.submitted = true;
-    };
-    UserFormRegisterComponent.prototype.addHero = function () {
-        this.user = new user_1.User(2, 'Marie', 'marie@serp.com', "marie_password");
-    };
-    UserFormRegisterComponent = __decorate([
+    LobbyComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'user-form-register',
-            templateUrl: 'register.html'
+            selector: 'lobby',
+            templateUrl: 'lobby.component.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], UserFormRegisterComponent);
-    return UserFormRegisterComponent;
+    ], LobbyComponent);
+    return LobbyComponent;
 }());
-exports.UserFormRegisterComponent = UserFormRegisterComponent;
-//# sourceMappingURL=register.component.js.map
+exports.LobbyComponent = LobbyComponent;
+//# sourceMappingURL=lobby.component.js.map
