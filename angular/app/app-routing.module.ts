@@ -6,6 +6,8 @@ import { LobbyComponent }   from './lobby/lobby.component';
 import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
 import { BoardComponent }   from './gameBoard/board.component';
 import { GameComponent }   from './game/game.component';
+//import { NotificationsComponent } from './notifications/notifications.component';
+//import { ChatComponent }   from './chat/chat.component';
 
 // Array JSON de objectos
 const appRoutes: Routes = [
@@ -16,6 +18,8 @@ const appRoutes: Routes = [
 
 	{ path: 'game', component: GameComponent },	 		// add GUARD  
 	//		children: [ { path: '/id', component: BoardComponent } ]
+
+	//{ path: 'chat', component: ChatComponent },
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
 	{ path: '**', component: PageNotFoundComponent }
