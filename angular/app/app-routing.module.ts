@@ -5,7 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { LobbyComponent }   from './lobby/lobby.component';
 import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
 import { BoardComponent }   from './gameBoard/board.component';
-import { GamePageComponent }   from './gamePage/gamePage.component';
+import { GameComponent }   from './game/game.component';
+import { NotificationsModule } from './notifications/notifications.module';
+import { ChatComponent }   from './chat/chat.component';
+import { WebSocketService } from './notifications/websocket.service';
 
 // Array JSON de objectos
 const appRoutes: Routes = [
@@ -16,6 +19,8 @@ const appRoutes: Routes = [
 
 	{ path: 'game', component: GamePageComponent },	 		// add GUARD  
 	//		children: [ { path: '/id', component: BoardComponent } ]
+
+	{ path: 'chat', component: ChatComponent },
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
 	{ path: '**', component: PageNotFoundComponent }

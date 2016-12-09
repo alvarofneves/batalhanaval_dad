@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const passport = require('passport');
 const database = require('./app.database');
@@ -6,7 +6,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const BearerStrategy = require('passport-http-bearer').Strategy;
 const sha1 = require('sha1');
 
-let security = module.exports = {};     // AS estava 'let'. Dava erro no nodemon
+let security = module.exports = {};    
 security.passport = passport;
 
 security.initMiddleware = function(server) {

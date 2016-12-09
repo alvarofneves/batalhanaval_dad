@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
 const authentication = module.exports = {};
 
 function login(request, response, next) {
-    let player = request.user;	// AS estava 'let'. Dava erro no nodemon
+    let player = request.user;	
     response.json(player);
     return next();
 }
