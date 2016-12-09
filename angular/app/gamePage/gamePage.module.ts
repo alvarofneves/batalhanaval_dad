@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { GamePageComponent } from './gamePage.component';
-// import { BoardComponent } from './board.component';
+import { BoardComponent } from '../gameBoard/board.component';
 
 @NgModule({
 	imports: [ 
@@ -10,11 +10,11 @@ import { GamePageComponent } from './gamePage.component';
 	],
 	declarations: [ 
 		GamePageComponent,
-		//BoardComponent
+		BoardComponent
 	],
 	exports: [ 
 		GamePageComponent,
-		//BoardComponent
+		BoardComponent
 	]
 })
 

@@ -8,7 +8,7 @@ import { ChatComponent } from './chat/chat.component';
 
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { LobbyModule } from './lobby/lobby.module';
-import { GameModule } from './game/game.module';			// Pág. do jogo (board + botões + etc)
+import { GamePageModule } from './gamePage/gamePage.module';		
 import { InitGameControlsModule } from './initGameControls/controls.module';
 import { SelectShipsControlsModule } from './selectShipsControls/selectShips.module';
 import { NotificationsModule } from './notifications/notifications.module';
@@ -21,12 +21,12 @@ import { WebSocketService } from './notifications/websocket.service';
 		BrowserModule, 
 		FormsModule,
 		AppRoutingModule,
-		PageNotFoundModule,
 		LobbyModule,
-		GameModule,
+		GamePageModule,
 		InitGameControlsModule, 
 		SelectShipsControlsModule,
-		NotificationsModule
+		NotificationsModule,
+		PageNotFoundModule
 	],
 	declarations: [ 
 		// ------------ COMPONENTS ------------

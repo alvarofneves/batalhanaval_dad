@@ -5,9 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LobbyComponent }   from './lobby/lobby.component';
 import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
 import { BoardComponent }   from './gameBoard/board.component';
-import { GameComponent }   from './game/game.component';
-import { NotificationsModule } from './notifications/notifications.module';
+import { GamePageComponent }   from './gamePage/gamePage.component';
 import { ChatComponent }   from './chat/chat.component';
+import { NotificationsModule } from './notifications/notifications.module';
 import { WebSocketService } from './notifications/websocket.service';
 
 // Array JSON de objectos
@@ -41,10 +41,6 @@ const appRoutes: Routes = [
   	// ------------ MODULES ------------
   	RouterModule.forRoot(appRoutes)		// forRoot - uso só 1x; Depois poderei ter Children
   ],
-  	//declarations: [
-  		//LobbyComponent
-  		//PageNotFoundComponent
-  //],
   exports: [
     	RouterModule
   ]
