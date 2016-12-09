@@ -7,7 +7,7 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts    [21.27]  chat branch");
+	console.log("$/angular/app/main.ts    [16.45]  chat branch");
 
     /*function resetBoard() {
         console.log("reset board");
