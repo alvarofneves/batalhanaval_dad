@@ -11,7 +11,7 @@ var ts = require('gulp-typescript');
  */
 gulp.task('server', function() {
     if (node) node.kill()
-    node = spawn('node', ['app.ts'], {stdio: 'inherit'})
+    node = spawn('node', ['app.js'], {stdio: 'inherit'})
     node.on('close', function (code) {
         if (code === 8) {
             gulp.log('Error detected, waiting for changes...');
@@ -25,7 +25,7 @@ gulp.task('server', function() {
  */
 gulp.task('default', ['server'], function() {
     //gulp.watch(['./index.js', './lib/**/*.js'], ['server']);
-    gulp.watch(['app.ts'], ['server']);
+    gulp.watch(['app.js'], ['server']);
 })
 
 

@@ -6,15 +6,14 @@ import { databaseConnection as database } from './app.database';
 import { WebSocketServer } from './app.websockets';
 import { HandlerSettings } from './handler.settings';
 
-// Connection URL to DB
-const url = 'mongodb://localhost:27017/db_battlefield_game';	// 27017 - default port
+// Connection URL to DB; 27017 - default port
+const url = 'mongodb://localhost:27017/db_battlefield_game';	
 
 // Create Restify and WebSocket Server
 const restifyServer = restify.createServer({
 	name: 'srv_battlefield_game',
 });
 const socketServer = new WebSocketServer();
-
 
 // Prepare and configure Restify Server
 restify.CORS.ALLOW_HEADERS.push("content-type");
@@ -34,7 +33,6 @@ let settings = new HandlerSettings(socketServer, security,'/api/v1/');
 // Authentication Handlers
 import { Authentication } from './app.authentication';
 new Authentication().init(restifyServer, settings);
-
 
 // Players Handler
 import { Player } from './app.players';
