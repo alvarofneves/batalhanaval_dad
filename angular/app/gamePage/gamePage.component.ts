@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
 	templateUrl: 'gamePage.component.html',
 })
 
-export class GamePageComponent { 
+export class GamePageComponent {
+
+	
 }
