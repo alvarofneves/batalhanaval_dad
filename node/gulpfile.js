@@ -1,4 +1,5 @@
-// source: https://gist.github.com/webdesserts/5632955
+// @info Algumas tasks retiradas de: https://gist.github.com/webdesserts/5632955
+// @state Ainda não está a ser usado
 
 var gulp = require('gulp'),
     spawn = require('child_process').spawn,
@@ -27,7 +28,6 @@ gulp.task('default', ['server'], function() {
     //gulp.watch(['./index.js', './lib/**/*.js'], ['server']);
     gulp.watch(['app.js'], ['server']);
 })
-
 
 // clean up if an error goes unhandled.
 process.on('exit', function() {

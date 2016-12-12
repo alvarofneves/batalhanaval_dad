@@ -9,8 +9,6 @@ import { ChatComponent } from './chat/chat.component';
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { LobbyModule } from './lobby/lobby.module';
 import { GamePageModule } from './gamePage/gamePage.module';		
-import { InitGameControlsModule } from './initGameControls/controls.module';
-import { SelectShipsControlsModule } from './selectShipsControls/selectShips.module';
 import { NotificationsModule } from './notifications/notifications.module';
 
 import { WebSocketService } from './notifications/websocket.service';
@@ -23,8 +21,6 @@ import { WebSocketService } from './notifications/websocket.service';
 		AppRoutingModule,
 		LobbyModule,
 		GamePageModule,
-		InitGameControlsModule, 
-		SelectShipsControlsModule,
 		NotificationsModule,
 		PageNotFoundModule
 	],

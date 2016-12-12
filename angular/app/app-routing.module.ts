@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 // import { AppComponent }   from './app.component';
 import { LobbyComponent }   from './lobby/lobby.component';
-import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
-import { BoardComponent }   from './gameBoard/board.component';
 import { GamePageComponent }   from './gamePage/gamePage.component';
+import { BoardComponent }   from './gameBoard/board.component';
+import { InitGameControlsComponent } from './initGameControls/controls.component';
+import { SelectShipsControlsComponent } from './selectShipsControls/selectShips.component';
 import { ChatComponent }   from './chat/chat.component';
 import { NotificationsModule } from './notifications/notifications.module';
 import { WebSocketService } from './notifications/websocket.service';
+import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
 
 // Array JSON de objectos
 const appRoutes: Routes = [

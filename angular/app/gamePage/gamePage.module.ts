@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { GamePageComponent } from './gamePage.component';
 import { BoardComponent } from '../gameBoard/board.component';
+import { InitGameControlsComponent } from '../initGameControls/controls.component';
+import { SelectShipsControlsComponent } from '../selectShipsControls/selectShips.component';
 
 @NgModule({
 	imports: [ 
@@ -10,11 +12,15 @@ import { BoardComponent } from '../gameBoard/board.component';
 	],
 	declarations: [ 
 		GamePageComponent,
-		BoardComponent
+		BoardComponent,
+		InitGameControlsComponent,
+		SelectShipsControlsComponent
 	],
 	exports: [ 
 		GamePageComponent,
-		BoardComponent
+		BoardComponent,
+		InitGameControlsComponent,
+		SelectShipsControlsComponent
 	]
 })
 
