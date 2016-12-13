@@ -61,8 +61,3 @@ jspm_packages
 angular/app/**/*.js
 angular/app/**/*.map
 angular/app/**/*.log
-
-# Exclude every folders with 'node_modules' in the name (@AS - 13/12)
-
-# Exclude folder '/node/__node_modules' (@AS - 13/12)
-node/__node_modules/

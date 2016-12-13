@@ -1,6 +1,6 @@
 const restify = require('restify');
 const passport = require('passport');
-const path = require('path');
+const path = require('path');		
 
 import { databaseConnection as database } from './app.database';
 import { WebSocketServer } from './app.websockets';
@@ -50,6 +50,9 @@ restifyServer.get(/^\/(?!api\/).*/, restify.serveStatic({
 // Use connect method to connect to the server
 database.connect(url, () => {
     restifyServer.listen(7777, () => console.log('%s listening at %s', restifyServer.name, restifyServer.url));
+
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
+
+    console.log("$/node/app.ts       	 [13/12, 23.23 AS]  /MASTER");
 });
