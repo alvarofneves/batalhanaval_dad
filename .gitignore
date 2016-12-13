@@ -55,9 +55,14 @@ jspm_packages
 .idea/
 
 # Folder with compiled code files (@AS - 28/11)
-#./angular/app/compile/**		#@AS tirei qd deixei de ter '/compile'
+#./angular/app/compile/**		@AS tirei qd deixei de ter '/compile'
 
 # Extensions of Angular compiled files (@AS - 06/12)
 angular/app/**/*.js
 angular/app/**/*.map
 angular/app/**/*.log
+
+# Exclude every folders with 'node_modules' in the name (@AS - 13/12)
+
+# Exclude folder '/node/__node_modules' (@AS - 13/12)
+node/__node_modules/

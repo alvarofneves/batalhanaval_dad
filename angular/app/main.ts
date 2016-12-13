@@ -7,7 +7,7 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts    [12.50h AS]  main");
+	console.log("$/angular/app/main.ts    [13/12, 18.17 AS]  main");
 
     /*function resetBoard() {
         console.log("reset board");

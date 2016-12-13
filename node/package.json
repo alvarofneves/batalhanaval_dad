@@ -1,12 +1,14 @@
 {
   "name": "node_srv",
   "version": "1.0.0",
-  "main": "app.js",      
+  "description": "",
+  "main": "app.js",
   "scripts": {
     "start": "npm run build:live",
-    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./app.ts",
+    "build:live": "nodemon --exec ts-node -- app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -23,8 +25,8 @@
   },
   "devDependencies": {
     "@types/node": "0.0.2",
+    "nodemon": "^1.11.0",
+    "ts-node": "^1.7.2",
     "typescript": "^2.1.4"
-  },
-  "keywords": [],
-  "description": ""
+  }
 }
