@@ -60,4 +60,4 @@ angular/app/**/*.map
 angular/app/**/*.log
 
 # Extensions of Node compiled files (@AS - 14/12)
-node/*.js
+node/**/*.js
