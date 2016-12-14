@@ -47,12 +47,12 @@ restifyServer.get(/^\/(?!api\/).*/, restify.serveStatic({
 	default: 'index.html'
 }));
 
-// Use connect method to connect to the server
+// Use connect method to connect to the servers
 database.connect(url, () => {
     restifyServer.listen(7777, () => console.log('%s listening at %s', restifyServer.name, restifyServer.url));
 
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
 
-    console.log("$/node/app.ts       	 [13/12, 23.23 AS]  /MASTER");
+    console.log("$/node/app.ts  >>> SRV NODE UP <<<  [14/12, 11.13h, AS]");
 });

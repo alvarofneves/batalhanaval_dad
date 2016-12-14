@@ -1,7 +1,7 @@
-/*
-@date 13/12
-@description Instruções para correr o jogo
-@author AS
+/**
+* @date 14/12
+* @description Instruções para correr a app; info sobre packages necessários; informações sobre nomes & portos usados
+* @author AS
 */
 
 LER ANTES DE CORRER O PROJETO:
@@ -33,7 +33,13 @@ $node app  					// Execução do script da App. Recarregar manualmente o SRV qua
 
 
 ======================= AO SAIR =======================
-No Docker, executar comando para parar Container da DB:
+* ANGULAR - Executar (na linha de comandos 'DAD_projeto_2/angular'):
+$CTRL + C 
+
+* NODE - Executar (nas 2 linhas de comandos 'DAD_projeto_2/node'):
+$CTRL + C 
+
+* DOCKER / BD: 
 $docker stop <mongo_game>						// <mongo_game>: nome do container criado para o jogo
 
 
@@ -48,4 +54,19 @@ socket.io
 socket.io-client
 @types
 
-Nota: instalar cada um globalmente. Se faltar aqui algum, consultar ficheiro 'package.json'
+Nota: instalar cada um globalmente. Se faltar aqui algum, consultar os ficheiros 'package.json'
+
+
+======================= INFO: NOMES & PORTOS =======================
+Container Docker com MongoDB: mongo_game
+
+Base de Dados MongoDB: 
+nome: db_battlefield_game
+porto: 27017
+
+Servidor NODE:
+nome: srv_node
+porto: 7777
+
+ANGULAR:
+porto: 80 ???
