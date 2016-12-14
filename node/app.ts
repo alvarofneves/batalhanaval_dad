@@ -54,5 +54,5 @@ database.connect(url, () => {
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
 
-    console.log("$/node/app.ts  >>> SRV NODE UP <<<  [14/12, 11.17h, AS]");
+    console.log("$/node/app.ts  >>> SRV NODE UP <<<  [14/12, 12h, AS]");
 });

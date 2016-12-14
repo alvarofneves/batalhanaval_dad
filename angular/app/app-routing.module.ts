@@ -22,7 +22,7 @@ const appRoutes: Routes = [
 	{ path: 'game', component: GamePageComponent },	 		// add GUARD  
 	//		children: [ { path: '/id', component: BoardComponent } ]
 
-	{ path: 'chat', component: ChatComponent },
+	//{ path: 'chat', component: ChatComponent },
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
 	{ path: '**', component: PageNotFoundComponent }

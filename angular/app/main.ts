@@ -7,7 +7,7 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[14/12, 11.17h, AS]");
+	console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[14/12, 12h, AS]");
 
     /*function resetBoard() {
         console.log("reset board");
