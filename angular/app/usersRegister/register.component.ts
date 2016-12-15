@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
-import { User }      from '../shared/user';
+import { Player }      from '../shared/player';
+
+
 @Component({
   moduleId:  module.id,
-  selector: 'user-form-register',
-  templateUrl: 'register.html'
+  selector: 'register',
+  templateUrl: 'register.component.html'
 })
-export class UserFormRegisterComponent {
+
+export class RegisterComponent {
   
-  user = new User(1, 'John Doe', 'john@doe.com','john_password');
+  player = new Player(1, 'John Doe', 'john@doe.com','john_password');
   submitted = false;
   onSubmit() {
     this.submitted = true;
   }
-  addHero() {
-    this.user = new User(2, 'Marie', 'marie@serp.com',"marie_password");
+  addPlayer() {
+    this.player = new Player(2, 'Marie', 'marie@serp.com',"marie_password");
   }
 }

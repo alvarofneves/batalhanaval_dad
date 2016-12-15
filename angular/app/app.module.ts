@@ -8,6 +8,7 @@ import { ChatComponent } from './chat/chat.component';
 
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { LobbyModule } from './lobby/lobby.module';
+import { RegisterModule } from './usersRegister/register.module';
 import { GamePageModule } from './gamePage/gamePage.module';		
 import { NotificationsModule } from './notifications/notifications.module';
 
@@ -22,7 +23,8 @@ import { WebSocketService } from './notifications/websocket.service';
 		LobbyModule,
 		GamePageModule,
 		NotificationsModule,
-		PageNotFoundModule
+		PageNotFoundModule,
+		RegisterModule
 	],
 	declarations: [ 
 		// ------------ COMPONENTS ------------

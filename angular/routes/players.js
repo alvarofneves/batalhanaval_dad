@@ -1,7 +1,7 @@
 'use strict';
 
 var mongodb = require('mongodb');
-var database = require('./mongo_game');
+var database = require('./db_battlefield_game');
 var players = module.exports = {};
 
 function getTopTen(request, response, next){

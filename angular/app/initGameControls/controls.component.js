@@ -14,9 +14,9 @@ var InitGameControlsComponent = (function () {
     }
     InitGameControlsComponent = __decorate([
         core_1.Component({
-            //moduleId: module.id,
+            moduleId: module.id,
             selector: 'init-game-controls',
-            templateUrl: './app/initGameControls/controls.component.html'
+            templateUrl: 'controls.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], InitGameControlsComponent);

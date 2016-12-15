@@ -1,12 +1,15 @@
 <div class="container">
   <div [hidden]="submitted">
-    <h1>User Register (Template)</h1>
-    <form #userForm="ngForm"  *ngIf="active"  (ngSubmit)="onSubmit()">
+    <h1>Player Register Form</h1>
+    
+    
+    <!--<form #playerForm="ngForm"  *ngIf="active"  (ngSubmit)="onSubmit()">-->
+      
       <div class="form-group">
-        <label for="name">User Name</label>
+        <label for="name">Player Name</label>
         <input type="text" id="name" class="form-control"
                required minlength="4" maxlength="24"
-               name="name" [(ngModel)]="user.name"
+               name="name" [(ngModel)]="player.name"
                #name="ngModel" >
         <div *ngIf="name.errors && (name.dirty || name.touched)"
              class="alert alert-danger">
@@ -25,26 +28,29 @@
         <label for="email">Email</label>
         <input type="email" id="email" class="form-control"
                name="email" required pattern="^[a-zA-Z0–9_.+-]+@[a-zA-Z0–9-]+.[a-zA-Z0–9-.]+$"
-               [(ngModel)]="user.email" >
+               [(ngModel)]="player.email" >
       </div>
+      
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" id="password" class="form-control" 
-        name="password" [ngModel]="user.password" required [(ngModel)]="user.password">
+        name="password" [ngModel]="player.password" required [(ngModel)]="player.password">
       </div>
 
       <div class="form-group">
         <label for="confirmPassword">Confirm Password</label>
         <input type="password" id="confirmPassword" class="form-control" 
-        name="confirmPassword" [ngModel]="user.confirmPassword" required validateEqual="password" [(ngModel)]="user.confirmPassword">
+        name="confirmPassword" [ngModel]="player.confirmPassword" required validateEqual="password" [(ngModel)]="player.confirmPassword">
       </div>
       
         
       <button type="submit" class="btn btn-default"
-             [disabled]="!userForm.form.valid">Submit</button>
+             [disabled]="!playerForm.form.valid">Submit</button>
       <button type="button" class="btn btn-default"
-             (click)="addHero()">New Hero</button>
-    </form>
+             (click)="addPlayer()">New Player</button>
+    <!--</form>-->
+
   </div>
-  <hero-submitted [hero]="hero" [(submitted)]="submitted"></hero-submitted>
+  <player-submitted [player]="player" [(submitted)]="submitted"></player-submitted>
+
 </div>

@@ -1,13 +1,22 @@
 import { NgModule }     from '@angular/core';
 import { FormsModule }  from '@angular/forms';
+import { RouterModule }   from '@angular/router';
 
-import { SharedModule }               from '../shared/shared.module';
-import { UserFormRegisterComponent } from './register.component';
-//import { HeroFormTemplate2Component } from './hero-form-template2.component';
+import { SharedModule }  from '../shared/shared.module';
+import { RegisterComponent } from './register.component';
 
 @NgModule({
-  imports:      [ SharedModule, FormsModule ],
-  declarations: [ UserFormRegisterComponent ],
-  exports:      [ UserFormRegisterComponent ]
+  imports:      [ 
+  		SharedModule, 
+  		FormsModule
+  ],
+  declarations: [ 
+  		RegisterComponent
+  ],
+  exports:      [ 
+  		RegisterComponent
+  ]
 })
-export class UserFormRegisterModule { }
+
+
+export class RegisterModule { }

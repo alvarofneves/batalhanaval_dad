@@ -14,9 +14,9 @@ var AppComponent = (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
-            //moduleId: module.id,
+            moduleId: module.id,
             selector: 'game-app',
-            templateUrl: './app/app.component.html',
+            templateUrl: 'app.component.html',
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

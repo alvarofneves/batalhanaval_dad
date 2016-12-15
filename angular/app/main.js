@@ -5,23 +5,13 @@ var platform = platform_browser_dynamic_1.platformBrowserDynamic();
 platform.bootstrapModule(app_module_1.AppModule);
 (function () {
     'use strict';
-    // testar app Node.js
-    var varA = 9999;
-    console.log("$angular/app/main.ts  -- register user");
-    /**
-    * Reset the board
-    */
-    function resetBoard() {
+    console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[14/12, 11.17h, AS]");
+    /*function resetBoard() {
         console.log("reset board");
     }
-    /**
-    * Begin a new game
-    */
+
     function newGame() {
         console.log("new game");
-    }
-    //TODO selecionar cell clicada
-    function selectedCell() {
-    }
+    }*/
 })();
 //# sourceMappingURL=main.js.map

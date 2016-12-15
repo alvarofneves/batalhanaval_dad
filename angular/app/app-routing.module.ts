@@ -10,7 +10,10 @@ import { SelectShipsControlsComponent } from './selectShipsControls/selectShips.
 import { ChatComponent }   from './chat/chat.component';
 import { NotificationsModule } from './notifications/notifications.module';
 import { WebSocketService } from './notifications/websocket.service';
+import { RegisterComponent } from './usersRegister/register.component';
+
 import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
+
 
 // Array JSON de objectos
 const appRoutes: Routes = [
@@ -24,8 +27,13 @@ const appRoutes: Routes = [
 
 	{ path: 'chat', component: ChatComponent },
 
+	//Redireciona para o formulario de registo
+	{ path: 'register', component: RegisterComponent },
+
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
 	{ path: '**', component: PageNotFoundComponent }
+
+
 	
 		
 	// { path: "app", component: AppComponent },
@@ -41,7 +49,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
   	// ------------ MODULES ------------
-  	RouterModule.forRoot(appRoutes)		// forRoot - uso só 1x; Depois poderei ter Children
+  	RouterModule.forRoot(appRoutes,{useHash: true})		// forRoot - uso só 1x; Depois poderei ter Children 
   ],
   exports: [
     	RouterModule

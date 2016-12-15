@@ -24,7 +24,7 @@ var CellComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'cell-board',
-            templateUrl: './cell.component.html',
+            templateUrl: 'cell.component.html',
         }), 
         __metadata('design:paramtypes', [])
     ], CellComponent);

@@ -16,7 +16,7 @@ var BoardComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'game-board',
-            templateUrl: './board.component.html',
+            templateUrl: 'board.component.html',
         }), 
         __metadata('design:paramtypes', [])
     ], BoardComponent);

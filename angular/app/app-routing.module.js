@@ -12,16 +12,21 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 // import { AppComponent }   from './app.component';
 var lobby_component_1 = require('./lobby/lobby.component');
-var PageNotFound_component_1 = require('./PageNotFound/PageNotFound.component');
+var gamePage_component_1 = require('./gamePage/gamePage.component');
 var board_component_1 = require('./gameBoard/board.component');
-var game_component_1 = require('./game/game.component');
+var chat_component_1 = require('./chat/chat.component');
+var register_component_1 = require('./usersRegister/register.component');
+var PageNotFound_component_1 = require('./PageNotFound/PageNotFound.component');
 // Array JSON de objectos
 var appRoutes = [
     { path: '', component: lobby_component_1.LobbyComponent },
     { path: 'lobby', component: lobby_component_1.LobbyComponent },
     { path: 'board', component: board_component_1.BoardComponent },
-    { path: 'game', component: game_component_1.GameComponent },
+    { path: 'game', component: gamePage_component_1.GamePageComponent },
     //		children: [ { path: '/id', component: BoardComponent } ]
+    { path: 'chat', component: chat_component_1.ChatComponent },
+    //Redireciona para o formulario de registo
+    { path: 'register', component: register_component_1.RegisterComponent },
     // Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
     { path: '**', component: PageNotFound_component_1.PageNotFoundComponent }
 ];
@@ -32,12 +37,8 @@ var AppRoutingModule = (function () {
         core_1.NgModule({
             imports: [
                 // ------------ MODULES ------------
-                router_1.RouterModule.forRoot(appRoutes) // forRoot - uso só 1x; Depois poderei ter Children
+                router_1.RouterModule.forRoot(appRoutes, { useHash: true }) // forRoot - uso só 1x; Depois poderei ter Children 
             ],
-            //declarations: [
-            //LobbyComponent
-            //PageNotFoundComponent
-            //],
             exports: [
                 router_1.RouterModule
             ]
