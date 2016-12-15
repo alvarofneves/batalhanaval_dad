@@ -1,7 +1,7 @@
 const io = require('socket.io');
 const ws = module.exports = {};
 
-var wsServer = null;	// AS estava 'let'. Dava erro no nodemon
+let wsServer = null;	// AS estava 'let'. Dava erro no nodemon
 
 ws.init = (server) => {
     wsServer = io.listen(server);

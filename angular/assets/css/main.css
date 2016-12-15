@@ -63,6 +63,18 @@ body {
     text-align: center;
 }
 
+.game-cell {
+    color: #4286f4;
+}
+
+.cell-hit-water {
+    color: #4286f4;
+}
+
+.cell-hit-ship {
+    color: #ff3333;
+}
+
 /* TODO usar na board do 2º player. Qd grid estiver bloqueada */
 .boardPlayer2 {
     background-color: #adad85;
@@ -92,110 +104,14 @@ body {
     width: inherit;
 }
 
-#boatPreview {
-}*/
-
 .boatPreviewCell {
     border: thin solid black;
-}
+}  */
 
-.cell-hit-water {
-    color: #4286f4;
-}
-
-.cell-hit-ship {
-    color: #ff3333;
-}
-
-#test-bar {
+.headerBar {
     background-color: yellow;
 }
 
-/* ********************** TODO apagar regras ñ usadas */
-/*
-.container {
-    margin-bottom: 100px;
+.footerBar {
+    background-color: grey;
 }
-
-.dad-row .dad-cell {
-    width: 45px;
-    height: 45px;
-    border-left: 1px solid black;
-    border-top: 1px solid black;
-    line-height: 45px;
-    text-align: center;
-}
-
-.dad-row .dad-cell input {
-    width: 45px;
-    height: 45px; 
-    text-align: center;
-    outline: none;
-    border: none;
-    display: block;
-    margin: 4px;
-}
-
-.dad-board {
-    width: 290px;
-    height: 290px;
-    margin: 10px auto;
-}
-
-.dad-row {
-    width: 250px;
-    height: 35px;
-    display: flex;
-}*/
-
-
-/*
-.dad-row:first-child .dad-cell {
-    border-top: 1px solid black;
-}
-
-.dad-row:last-child .dad-cell {
-    border-bottom: 1px solid black;
-}
-
-.dad-row .dad-cell:first-child {
-    border-left: 1px solid black; 
-}
-
-.dad-row .dad-cell:last-child {
-    border-right: 1px solid black; 
-}
-
-.dad-row:last-child .dad-cell {
-    border-bottom: 1px solid black;
-}*/
-
-/*
-.dad-row .dad-cell:last-child{
-  border-right: 1px solid black;
-}
-
-.dad-row:nth-child(3n) .dad-cell{
-  border-bottom: 2px solid black;
-}
-
-.dad-row .dad-cell:nth-child(3n) {
- border-right: 2px solid black; 
-}*/
-
-/*.battlefield-row {
-    width: 200px;
-    height: 35px;
-}
-
-.battlefield-cell {
-    border: thin solid black;
-    text-align: center;
-}
-
-.battlefield-cell-label {
-    border-style: none;
-    text-align: center;
-}*/
-
-
