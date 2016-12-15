@@ -10,4 +10,4 @@ import { UserFormRegisterComponent } from './register.component';
   declarations: [ UserFormRegisterComponent ],
   exports:      [ UserFormRegisterComponent ]
 })
-export class HeroFormTemplateModule { }
+export class UserFormRegisterModule { }

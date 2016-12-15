@@ -13,18 +13,18 @@ var forms_1 = require('@angular/forms');
 var shared_module_1 = require('../shared/shared.module');
 var register_component_1 = require('./register.component');
 //import { HeroFormTemplate2Component } from './hero-form-template2.component';
-var HeroFormTemplateModule = (function () {
-    function HeroFormTemplateModule() {
+var UserFormRegisterModule = (function () {
+    function UserFormRegisterModule() {
     }
-    HeroFormTemplateModule = __decorate([
+    UserFormRegisterModule = __decorate([
         core_1.NgModule({
             imports: [shared_module_1.SharedModule, forms_1.FormsModule],
             declarations: [register_component_1.UserFormRegisterComponent],
             exports: [register_component_1.UserFormRegisterComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], HeroFormTemplateModule);
-    return HeroFormTemplateModule;
+    ], UserFormRegisterModule);
+    return UserFormRegisterModule;
 }());
-exports.HeroFormTemplateModule = HeroFormTemplateModule;
+exports.UserFormRegisterModule = UserFormRegisterModule;
 //# sourceMappingURL=register.module.js.map
