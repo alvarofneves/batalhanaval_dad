@@ -1,17 +1,25 @@
 const passport = require('passport');
-const database = require('./app.database');
 const LocalStrategy = require('passport-local').Strategy;
 const BearerStrategy = require('passport-http-bearer').Strategy;
 const sha1 = require('sha1');
 
-let security = module.exports = {};     // AS estava 'let'. Dava erro no nodemon
-security.passport = passport;
+import {databaseConnection as database} from './app.database';
 
-security.initMiddleware = function(server) {
-    server.use(passport.initialize());
-};
+export class Security {
+    public passport = passport;
 
-passport.use(new LocalStrategy(function(username, password, done) {
+    public initMiddleware = (server : any) => {
+        server.use(passport.initialize());
+    };
+
+    public authorize = this.passport.authenticate('bearer', { session: false });
+}
+
+let validPassword = (player: any, password: any) => {
+    return sha1(password) === player.passwordHash;
+}
+
+passport.use(new LocalStrategy((username, password, done) => {
     database.db.collection('players').findOne({
         username: username
     }).then(player => {
@@ -33,15 +41,9 @@ passport.use(new LocalStrategy(function(username, password, done) {
     }).catch(err => done(err));
 }));
 
-passport.use(new BearerStrategy(function(token, done) {
+passport.use(new BearerStrategy((token, done) => {
     database.db.collection('players')
         .findOne({token: token})
         .then((user) => user ? done(null, user, {scope:'all'}) : done(null, false))
         .catch(err => done(err));
 }));
-
-security.authorize = security.passport.authenticate('bearer', { session: false });
-
-function validPassword(player, password) {
-    return sha1(password) === player.passwordHash;
-}
