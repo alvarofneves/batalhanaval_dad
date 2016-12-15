@@ -92,7 +92,8 @@ export class Player {
             })
             .catch(err => this.handleError(err, response, next));
     }
-        
+
+    /* função comentada aqui e no init abaixo
     public getTop10 = (request: any, response: any, next: any) => {
         database.db.collection('players')
             .find()
@@ -105,12 +106,12 @@ export class Player {
                 next();
             })
             .catch(err => this.handleError(err, response, next));
-    }
+    }*/
 
     // Routes for the games
     public init = (server: any, settings: HandlerSettings) => {
         this.settings = settings;
-        server.get(settings.prefix + 'top10', this.getTop10);
+        //server.get(settings.prefix + 'top10', this.getTop10);
         server.get(settings.prefix + 'players', settings.security.authorize, this.getPlayers);
         server.get(settings.prefix + 'players/:id', settings.security.authorize, this.getPlayer);
         server.put(settings.prefix + 'players/:id', settings.security.authorize, this.updatePlayer);

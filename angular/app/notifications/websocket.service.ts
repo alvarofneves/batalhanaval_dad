@@ -27,11 +27,12 @@ export class WebSocketService {
         return this.listenOnChannel('players');
     }
 
+    // Receber mensagens chat dos outros jogadores
     getChatMessages(): Observable<any> {
         return this.listenOnChannel('chat');
     }
 
-    // To    receive a    message    from    the    server
+    // Receive a message from the server
     private listenOnChannel(channel: string): Observable<any> {
         return new Observable((observer:any) => {
             this.socket.on(channel, (data:any) => {
