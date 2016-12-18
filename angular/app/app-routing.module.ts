@@ -28,7 +28,6 @@ const appRoutes: Routes = [
 	{ path: '**', component: PageNotFoundComponent }
 	
 		
-	// { path: "app", component: AppComponent },
 	// { path: 'login', component: LoginComponent }
 	// { path: 'register', component: RegisterComponent }
 	// { path: 'games', component: GamesComponent },
@@ -41,7 +40,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
 	  	// ------------ MODULES ------------
-	  	RouterModule.forRoot(appRoutes, {useHash: true}),		// forRoot - uso só 1x; Depois poderei ter Children		
+	  	RouterModule.forRoot(appRoutes, { useHash: true }),		// forRoot - uso só 1x; Depois poderei ter Children		
   ],
   exports: [
     	RouterModule
