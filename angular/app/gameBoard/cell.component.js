@@ -8,27 +8,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var CellComponent = (function () {
     function CellComponent() {
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], CellComponent.prototype, "column", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], CellComponent.prototype, "line", void 0);
-    CellComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'cell-board',
-            templateUrl: 'cell.component.html',
-        }), 
-        __metadata('design:paramtypes', [])
-    ], CellComponent);
     return CellComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], CellComponent.prototype, "column", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], CellComponent.prototype, "line", void 0);
+CellComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'cell-board',
+        templateUrl: 'cell.component.html',
+    }),
+    __metadata("design:paramtypes", [])
+], CellComponent);
 exports.CellComponent = CellComponent;
 //# sourceMappingURL=cell.component.js.map

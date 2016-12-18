@@ -8,27 +8,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var lobby_component_1 = require('./lobby.component');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var lobby_component_1 = require("./lobby.component");
 var LobbyModule = (function () {
     function LobbyModule() {
     }
-    LobbyModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-            ],
-            declarations: [
-                lobby_component_1.LobbyComponent
-            ],
-            exports: [
-                lobby_component_1.LobbyComponent
-            ]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], LobbyModule);
     return LobbyModule;
 }());
+LobbyModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            platform_browser_1.BrowserModule,
+        ],
+        declarations: [
+            lobby_component_1.LobbyComponent
+        ],
+        exports: [
+            lobby_component_1.LobbyComponent
+        ]
+    }),
+    __metadata("design:paramtypes", [])
+], LobbyModule);
 exports.LobbyModule = LobbyModule;
 //# sourceMappingURL=lobby.module.js.map

@@ -3,7 +3,7 @@
     <h1>Player Register Form</h1>
     
     <!--<form #playerForm="ngForm"  novalidate <!--*ngIf="active" (ngSubmit)="onSubmit()">-->
-    <form #playerForm="ngForm"  novalidate (ngSubmit)="onSubmit()">
+    <form #playerForm="ngForm" >
       
       <div class="form-group">
         <label for="name">Player Name</label>
@@ -44,11 +44,10 @@
         name="confirmPassword" [ngModel]="player.confirmPassword" required validateEqual="password" [(ngModel)]="player.confirmPassword">
       </div>
       
-        
-      <button type="submit" class="btn btn-default"
-             [disabled]="!playerForm.form.valid">Submit</button>
-      <button type="button" class="btn btn-default"
-             (click)="addPlayer()">New Player</button>
+      <div class="form-group">  
+          <button type="submit" class="btn btn-default" (click)="register()" [disabled]="!playerForm.form.valid">Register</button>
+          <!--<button type="button" class="btn btn-default" (click)="addPlayer()">New Player</button>-->
+      </div>       
     </form>
 
   </div>

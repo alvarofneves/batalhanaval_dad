@@ -12,6 +12,8 @@ import { RegisterModule } from './usersRegister/register.module';
 import { GamePageModule } from './gamePage/gamePage.module';		
 import { NotificationsModule } from './notifications/notifications.module';
 
+//services
+import { AlertService, PlayerService } from './services/index';   
 import { WebSocketService } from './notifications/websocket.service';
 
 @NgModule({
@@ -32,7 +34,9 @@ import { WebSocketService } from './notifications/websocket.service';
 		ChatComponent
 	],
 	providers: [
-		WebSocketService
+		WebSocketService,
+		PlayerService,
+		AlertService
 	],
 	bootstrap: [ 
 		AppComponent 

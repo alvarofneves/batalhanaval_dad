@@ -62,7 +62,7 @@ export class Player {
             .catch(err => this.handleError(err, response, next));
     }
     
-    public createPlayer = (request: any, response: any, next: any) => {
+    public insertPlayer = (request: any, response: any, next: any) => {
         const player = request.body;
         if (player === undefined) {
             response.send(400, 'No player data');

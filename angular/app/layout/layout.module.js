@@ -8,27 +8,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var layout_component_1 = require('./layout.component');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var layout_component_1 = require("./layout.component");
 var LayoutModule = (function () {
     function LayoutModule() {
     }
-    LayoutModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule
-            ],
-            declarations: [
-                layout_component_1.LayoutComponent
-            ],
-            exports: [
-                layout_component_1.LayoutComponent
-            ]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], LayoutModule);
     return LayoutModule;
 }());
+LayoutModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            platform_browser_1.BrowserModule
+        ],
+        declarations: [
+            layout_component_1.LayoutComponent
+        ],
+        exports: [
+            layout_component_1.LayoutComponent
+        ]
+    }),
+    __metadata("design:paramtypes", [])
+], LayoutModule);
 exports.LayoutModule = LayoutModule;
 //# sourceMappingURL=layout.module.js.map

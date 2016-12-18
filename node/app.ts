@@ -28,7 +28,7 @@ let security = new Security();
 security.initMiddleware(restifyServer);
 
 // Settings are used on all HTTP (Restify) Handlers
-let settings = new HandlerSettings(socketServer, security,'/api/v1/');
+let settings = new HandlerSettings(socketServer, security,'/api/'); //apaguei v1
 
 // Authentication Handlers
 import { Authentication } from './app.authentication';

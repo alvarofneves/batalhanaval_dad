@@ -8,15 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 // import { AppComponent }   from './app.component';
-var lobby_component_1 = require('./lobby/lobby.component');
-var gamePage_component_1 = require('./gamePage/gamePage.component');
-var board_component_1 = require('./gameBoard/board.component');
-var chat_component_1 = require('./chat/chat.component');
-var register_component_1 = require('./usersRegister/register.component');
-var PageNotFound_component_1 = require('./PageNotFound/PageNotFound.component');
+var lobby_component_1 = require("./lobby/lobby.component");
+var gamePage_component_1 = require("./gamePage/gamePage.component");
+var board_component_1 = require("./gameBoard/board.component");
+var chat_component_1 = require("./chat/chat.component");
+var register_component_1 = require("./usersRegister/register.component");
+var PageNotFound_component_1 = require("./PageNotFound/PageNotFound.component");
 // Array JSON de objectos
 var appRoutes = [
     { path: '', component: lobby_component_1.LobbyComponent },
@@ -33,19 +33,19 @@ var appRoutes = [
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }
-    AppRoutingModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                // ------------ MODULES ------------
-                router_1.RouterModule.forRoot(appRoutes, { useHash: true }) // forRoot - uso só 1x; Depois poderei ter Children 
-            ],
-            exports: [
-                router_1.RouterModule
-            ]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
     return AppRoutingModule;
-}());
-exports.AppRoutingModule = AppRoutingModule; // We'll also export the AppRoutingModule so we can add it to our AppModule imports
+}()); // We'll also export the AppRoutingModule so we can add it to our AppModule imports
+AppRoutingModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            // ------------ MODULES ------------
+            router_1.RouterModule.forRoot(appRoutes, { useHash: true }) // forRoot - uso só 1x; Depois poderei ter Children 
+        ],
+        exports: [
+            router_1.RouterModule
+        ]
+    }),
+    __metadata("design:paramtypes", [])
+], AppRoutingModule);
+exports.AppRoutingModule = AppRoutingModule;
 //# sourceMappingURL=app-routing.module.js.map

@@ -15,13 +15,13 @@ export class PlayerService {
         return this.http.get('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }
 
-    create(player: Player) {
-        return this.http.post('/api/players', player, this.jwt()).map((response: Response) => response.json());
+    create(player: Player) :Observable<any>{
+        return this.http.post('http://localhost:7777//api/players', player, this.jwt()).map((response: Response) => response.json());
     }
 
-    update(player: Player) {
-        return this.http.put('/api/players/' + player.id, player, this.jwt()).map((response: Response) => response.json());
-    }
+    //update(player: Player) {
+      //  return this.http.put('/api/players/' + player.id, player, this.jwt()).map((response: Response) => response.json());
+    //}
 
     delete(id: number) {
         return this.http.delete('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
