@@ -25,14 +25,14 @@ const appRoutes: Routes = [
 	{ path: 'chat', component: ChatComponent },
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
-	{ path: '**', component: PageNotFoundComponent }
+	{ path: '**', component: PageNotFoundComponent },
 	
 		
 	// { path: "app", component: AppComponent },
 	// { path: 'login', component: LoginComponent }
 	// { path: 'register', component: RegisterComponent }
 	// { path: 'games', component: GamesComponent },
-	// { path: 'leaderboard', component: LeaderboardComponent },
+	{ path: 'leaderboard', component: LeaderboardComponent },
 	// { path: 'gamesEnded', component: GamesEndedComponent },		// add GUARD
 	// { path: 'gameRules', component: GameRulesComponent },
 	// { path: 'about', component: AboutComponent },
