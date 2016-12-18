@@ -26,7 +26,7 @@ export class RegisterComponent {
     //this.submitted = true;
   //}
 
-  register(player: Player) :Observable<any>{
+  register(){
       console.log("Player registado");
 
       this.playerService.create(this.model)
@@ -40,17 +40,8 @@ export class RegisterComponent {
                   //this.loading = false;
               });  
 
-     return this.subscribe();
 
-     newUser(player:User):Observable<any>{
-        
-        var headers = new Headers();
-        headers.append("Content-Type", 'application/json');
-        var options = new RequestOptions({headers: headers});
-        return this.http.post('http://localhost:7777/api/v1/players', player, options)
-            .map(r=> r.json());
-
-    }
+ 
 
 
      //depois return o path para o mongodb

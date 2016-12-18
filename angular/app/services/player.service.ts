@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { Player } from '../shared/index';
+import {Observable} from 'rxjs/Rx';
+
 
 @Injectable()
 export class PlayerService {
@@ -16,7 +18,14 @@ export class PlayerService {
     }
 
     create(player: Player) :Observable<any>{
-        return this.http.post('http://localhost:7777//api/players', player, this.jwt()).map((response: Response) => response.json());
+        var headers = new Headers();
+        headers.append("Content-Type", 'application/json');
+        var options = new RequestOptions({headers: headers});
+        
+        return this.http.post('http://localhost:7777//api/players', player, options).map(r=> r.json());
+
+
+        //return this.http.post('http://localhost:7777//api/players', player, this.jwt()).map((response: Response) => response.json());
     }
 
     //update(player: Player) {
@@ -27,10 +36,13 @@ export class PlayerService {
         return this.http.delete('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }
 
-    // private helper methods
+    // private helper methods 
 
+    //ainda nao está a ser utilizado
+    
     private jwt() {
         // create authorization header with jwt token
+        
         let currentPlayer = JSON.parse(localStorage.getItem('currentPlayer'));
         if (currentPlayer && currentPlayer.token) {
             let headers = new Headers({ 'Authorization': 'Bearer ' + currentPlayer.token });
