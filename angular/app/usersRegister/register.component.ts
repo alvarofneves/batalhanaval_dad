@@ -10,12 +10,25 @@ import { Player }      from '../shared/player';
 
 export class RegisterComponent {
   
-  player = new Player(1, 'John Doe', 'john@doe.com','john_password');
-  submitted = false;
-  onSubmit() {
-    this.submitted = true;
+  player = new Player(1,"","","");
+  //submitted = false;
+  //onSubmit() {
+    //this.submitted = true;
+  //}
+
+  onSubmit(){
+     
+     name=player.name;
+
+
+     //depois return o path para o mongodb
+     //observeble subscribe 
+     //TODO criar pasta services + ver tutorial de login
   }
-  addPlayer() {
+  createPlayer() {
     this.player = new Player(2, 'Marie', 'marie@serp.com',"marie_password");
+  }
+
+
   }
 }

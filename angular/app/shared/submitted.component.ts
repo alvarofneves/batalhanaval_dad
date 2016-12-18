@@ -15,16 +15,8 @@ import { Player } from './player';
       <div class="col-xs-3">Email</div>
       <div class="col-xs-9 pull-left">{{ player.email }}</div>
     </div>
-    <div class="row">
-      <div class="col-xs-3">Password</div>
-      <div class="col-xs-9 pull-left">{{ player.password }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Confirm Password</div>
-      <div class="col-xs-9 pull-left">{{ player.confirmPassword }}</div>
-    </div>
     <br>
-    <button class="btn btn-default" (click)="onClick()">Edit</button>
+    <!--<button class="btn btn-default" (click)="onClick()">Edit</button>-->
   </div>`
 })
 export class SubmittedComponent {
@@ -34,9 +26,3 @@ export class SubmittedComponent {
   onClick() { this.submittedChange.emit(false); }
 }
 
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
