@@ -1,7 +1,7 @@
 const mongodb = require('mongodb');
 const util = require('util');
-import {HandlerSettings} from './handler.settings';
-import {databaseConnection as database} from './app.database';
+import { HandlerSettings } from './handler.settings';
+import { databaseConnection as database } from './app.database';
 
 export class Player {
     private settings: HandlerSettings = null;
@@ -62,7 +62,7 @@ export class Player {
             .catch(err => this.handleError(err, response, next));
     }
     
-    public insertPlayer = (request: any, response: any, next: any) => {
+    public createPlayer = (request: any, response: any, next: any) => {
         const player = request.body;
         if (player === undefined) {
             response.send(400, 'No player data');
@@ -114,8 +114,8 @@ export class Player {
         server.get(settings.prefix + 'players', settings.security.authorize, this.getPlayers);
         server.get(settings.prefix + 'players/:id', settings.security.authorize, this.getPlayer);
         server.put(settings.prefix + 'players/:id', settings.security.authorize, this.updatePlayer);
-        server.post(settings.prefix + 'players', settings.security.authorize, this.createPlayer);
+        server.post(settings.prefix + 'players', this.createPlayer);                // Sem 'authorize' porque user ainda não está registado
         server.del(settings.prefix + 'players/:id', settings.security.authorize, this.deletePlayer);
-        console.log("Players routes registered");
+        console.log("$[node] app.players.ts - Players routes registered");
     };
 }

@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { Player } from '../shared/index';
-import {Observable} from 'rxjs/Rx';
-
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class PlayerService {
@@ -22,8 +21,7 @@ export class PlayerService {
         headers.append("Content-Type", 'application/json');
         var options = new RequestOptions({headers: headers});
         
-        return this.http.post('http://localhost:7777//api/players', player, options).map(r=> r.json());
-
+        return this.http.post('/api/players', player, options).map(r=> r.json());
 
         //return this.http.post('http://localhost:7777//api/players', player, this.jwt()).map((response: Response) => response.json());
     }

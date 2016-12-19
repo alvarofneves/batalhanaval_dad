@@ -5,13 +5,6 @@ var platform = platform_browser_dynamic_1.platformBrowserDynamic();
 platform.bootstrapModule(app_module_1.AppModule);
 (function () {
     'use strict';
-    console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[14/12, 11.17h, AS]");
-    /*function resetBoard() {
-        console.log("reset board");
-    }
-
-    function newGame() {
-        console.log("new game");
-    }*/
+    console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[/registerUser; 19, 19.43h]");
 })();
 //# sourceMappingURL=main.js.map

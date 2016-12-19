@@ -7,5 +7,5 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[/registerUser; 19, 11h]");
+	console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[/registerUser; 19, 19.43h]");
 })();

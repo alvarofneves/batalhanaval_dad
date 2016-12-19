@@ -11,15 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
-var app_routing_module_1 = require("./app-routing.module");
-var app_component_1 = require("./app.component");
-var chat_component_1 = require("./chat/chat.component");
-var PageNotFound_module_1 = require("./PageNotFound/PageNotFound.module");
 var lobby_module_1 = require("./lobby/lobby.module");
 var register_module_1 = require("./usersRegister/register.module");
 var gamePage_module_1 = require("./gamePage/gamePage.module");
 var notifications_module_1 = require("./notifications/notifications.module");
-//services
+var PageNotFound_module_1 = require("./PageNotFound/PageNotFound.module");
+var app_component_1 = require("./app.component");
+var app_routing_module_1 = require("./app-routing.module");
+var chat_component_1 = require("./chat/chat.component");
+// ------------ SERVICES ------------
 var index_1 = require("./services/index");
 var websocket_service_1 = require("./notifications/websocket.service");
 var AppModule = (function () {
@@ -35,10 +35,10 @@ AppModule = __decorate([
             forms_1.FormsModule,
             app_routing_module_1.AppRoutingModule,
             lobby_module_1.LobbyModule,
+            register_module_1.RegisterModule,
             gamePage_module_1.GamePageModule,
             notifications_module_1.NotificationsModule,
-            PageNotFound_module_1.PageNotFoundModule,
-            register_module_1.RegisterModule
+            PageNotFound_module_1.PageNotFoundModule
         ],
         declarations: [
             // ------------ COMPONENTS ------------

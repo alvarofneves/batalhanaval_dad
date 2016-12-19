@@ -28,10 +28,10 @@ let security = new Security();
 security.initMiddleware(restifyServer);
 
 // Settings are used on all HTTP (Restify) Handlers
-let settings = new HandlerSettings(socketServer, security,'/api/'); //apaguei v1
+let settings = new HandlerSettings(socketServer, security, '/api/'); 	
 
 // Authentication Handlers
-import { Authentication } from './app.authentication';
+import { Authentication } from './app.authentication';	
 new Authentication().init(restifyServer, settings);
 
 // Players Handler
@@ -43,7 +43,7 @@ import { Game } from './app.games';
 new Game().init(restifyServer, settings);
 
 restifyServer.get(/^\/(?!api\/).*/, restify.serveStatic({
-	directory: './angular',
+	directory: '../angular',
 	default: 'index.html'
 }));
 
@@ -54,5 +54,5 @@ database.connect(url, () => {
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
 
-    console.log("$/node/app.ts  >>> SRV NODE UP <<<  [14/12, 11.17h, AS]");
+    console.log("$/node/app.ts  >>> SRV NODE UP <<<  [19, 18h]");
 });

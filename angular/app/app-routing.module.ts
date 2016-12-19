@@ -32,8 +32,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-  	// ------------ MODULES ------------
-  	RouterModule.forRoot(appRoutes,{ useHash: true} )		// forRoot - uso só 1x; Depois poderei ter Children 
+  		// ------------ MODULES ------------
+  		RouterModule.forRoot(appRoutes,{ useHash: true} )		// forRoot - uso só 1x; Depois poderei ter Children 
   ],
   exports: [
     	RouterModule

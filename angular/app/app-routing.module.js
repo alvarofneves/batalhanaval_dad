@@ -12,19 +12,16 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 // import { AppComponent }   from './app.component';
 var lobby_component_1 = require("./lobby/lobby.component");
-var gamePage_component_1 = require("./gamePage/gamePage.component");
-var board_component_1 = require("./gameBoard/board.component");
-var chat_component_1 = require("./chat/chat.component");
 var register_component_1 = require("./usersRegister/register.component");
+var board_component_1 = require("./gameBoard/board.component");
+var gamePage_component_1 = require("./gamePage/gamePage.component");
 var PageNotFound_component_1 = require("./PageNotFound/PageNotFound.component");
-// Array JSON de objectos
 var appRoutes = [
     { path: '', component: lobby_component_1.LobbyComponent },
     { path: 'lobby', component: lobby_component_1.LobbyComponent },
     { path: 'board', component: board_component_1.BoardComponent },
     { path: 'game', component: gamePage_component_1.GamePageComponent },
     //		children: [ { path: '/id', component: BoardComponent } ]
-    { path: 'chat', component: chat_component_1.ChatComponent },
     //Redireciona para o formulario de registo
     { path: 'register', component: register_component_1.RegisterComponent },
     // Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
