@@ -26,8 +26,7 @@ const appRoutes: Routes = [
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
 	{ path: '**', component: PageNotFoundComponent }
-	
-		
+			
 	// { path: 'login', component: LoginComponent }
 	// { path: 'register', component: RegisterComponent }
 	// { path: 'games', component: GamesComponent },

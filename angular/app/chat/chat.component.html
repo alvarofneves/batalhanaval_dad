@@ -1,5 +1,5 @@
 <form #messageForm="ngForm">
-    <input name="message" placeholder="Say something..." size="50" required
+    <input name="message" placeholder="Enter your message..." size="50" required
             [(ngModel)]="message">
     <button class="btn btn-primary"
         [disabled]="!messageForm.form.valid"
