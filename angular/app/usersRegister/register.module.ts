@@ -6,7 +6,7 @@ import { SharedModule }  from '../shared/shared.module';
 import { RegisterComponent } from './register.component';
 
 @NgModule({
-  imports:      [ 
+  imports: [ 
   		SharedModule, 
   		FormsModule
   ],
@@ -14,10 +14,9 @@ import { RegisterComponent } from './register.component';
   		RegisterComponent
   ],
   
-  exports:      [ 
+  exports: [ 
   		RegisterComponent
   ]
 })
-
 
 export class RegisterModule { }
