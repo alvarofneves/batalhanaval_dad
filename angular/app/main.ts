@@ -1,6 +1,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app.module';
-import {GamePageComponent} from "./gamePage/gamePage.component";
+import { GamePageComponent } from "./gamePage/gamePage.component";
 
 const platform = platformBrowserDynamic();
 platform.bootstrapModule(AppModule);
@@ -8,7 +8,7 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts    [12.50h AS]  main");
+	console.log("$/angular/app/main.ts   [A CORRER] ");
 	
 	//let gpc = new GamePageComponent(4,false); //PLZFIX Plz remove when requested
 

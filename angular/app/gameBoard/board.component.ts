@@ -44,8 +44,6 @@ export class BoardComponent {
 		let submarine4 = new BoatClass("submarine");
 		
 		board.addBoat(new CellClass(2,2), aircraft);
-
-
 	}
 	
 	public getLabel(currentRow) {
@@ -55,6 +53,4 @@ export class BoardComponent {
 	public clickElemento(l,i){
 		console.log(this.id+"-"+l+":"+i);
 	}
-	
-
 }
