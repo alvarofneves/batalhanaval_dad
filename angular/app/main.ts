@@ -1,6 +1,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app.module';
-import {BoardClass} from "./gameBoard/boardClass";
+import {GamePageComponent} from "./gamePage/gamePage.component";
 
 const platform = platformBrowserDynamic();
 platform.bootstrapModule(AppModule);
@@ -9,8 +9,8 @@ platform.bootstrapModule(AppModule);
     'use strict';
 
 	console.log("$/angular/app/main.ts    [12.50h AS]  main");
-
-	new BoardClass();
+	
+	//let gpc = new GamePageComponent(4,false); //PLZFIX Plz remove when requested
 
     /*function resetBoard() {
         console.log("reset board");

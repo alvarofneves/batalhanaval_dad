@@ -30,3 +30,11 @@ Chat Rooms - NÃO IMPLEMENTADO
 Repetição de Jogo - NÃO IMPLEMENTADO
 Mobile App - NÃO IMPLEMENTADO
 
+
+
+
+Curiosidade Produto matricial
+2x3  .   3x2    = 2x2
+a1,1 a2,1  a3,1    .   b1,1  b2,1        a1,1xb1,1+a2,1xb1,2+a3,1xb1,3    a1,1xb2,1+a2,1xb2,2+a3,1xb2,3
+a1,2 a2,2  a3,2        b1,2  b2,2   =    a1,2xb1,1+a2,2xb1,2+a3,2xb1,3    a1,2xb2,1+a2,2xb2,2+a3,2xb2,3
+		       b1,3  b2,3         

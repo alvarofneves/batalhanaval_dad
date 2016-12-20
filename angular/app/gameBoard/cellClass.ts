@@ -2,9 +2,9 @@
 
 export class CellClass {
 
-    private line: string;
+    private line: number;
     
-    private column: string;
+    private column: number;
 
     private value: string;
     
@@ -16,6 +16,22 @@ export class CellClass {
         this.column = column;
         
         this.value = "";
+    }
+
+    public setValue(value) {
+        this.value = value;
+    }
+    
+    public getValue(){
+        return this.value;
+    }
+    
+    public getLine(){
+        return this.line;
+    }
+
+    public getColumn(){
+        return this.column;
     }
 
     
