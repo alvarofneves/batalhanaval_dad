@@ -1,10 +1,21 @@
 <!-- TODO aqui será pag. entrada na app -->
 <div class="container">
-	<div class="headerBar">
+	<div class="headerBar">        <!-- TODO mudar p/ components respectivos -->
 	    <p>header</p>
 	</div>
-	
-	
+	<div class="headerBar2">
+        <nav>
+            <a [routerLink]="['/lobby']" routerLinkActive="active">Lobby</a>
+            <a [routerLink]="['/board']" routerLinkActive="active">Board</a>
+            <a [routerLink]="['/game']" routerLinkActive="active">Game</a>
+            <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
+            <a [routerLink]="['/gameRules']" routerLinkActive="active">Game Rules</a>
+            <a [routerLink]="['/leaderboard']" routerLinkActive="active">Leaderboard</a>
+            <a [routerLink]="['/about']" routerLinkActive="active">About</a>
+        </nav>
+        <hr>
+    </div>
+
 	<router-outlet></router-outlet>
 	
 	

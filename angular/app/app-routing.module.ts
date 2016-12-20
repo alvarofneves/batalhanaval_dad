@@ -19,7 +19,7 @@ const appRoutes: Routes = [
 
 	{ path: 'board', component: BoardComponent },
 
-	//{ path: 'game', component: GamePageComponent },	 		// add GUARD  
+	{ path: 'game', component: GamePageComponent },	 		// add GUARD  
 	//		children: [ { path: '/id', component: BoardComponent } ]
 
 	{ path: 'leaderboard', component: LeaderboardComponent },
