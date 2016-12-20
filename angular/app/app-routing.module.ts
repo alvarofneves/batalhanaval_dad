@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LobbyComponent }   from './lobby/lobby.component';
 import { GamePageComponent }   from './gamePage/gamePage.component';
 import { BoardComponent }   from './gameBoard/board.component';
+import { LeaderboardComponent }   from './leaderboard/leaderboard.component';
 import { InitGameControlsComponent } from './initGameControls/controls.component';
 import { SelectShipsControlsComponent } from './selectShipsControls/selectShips.component';
 import { ChatComponent }   from './chat/chat.component';

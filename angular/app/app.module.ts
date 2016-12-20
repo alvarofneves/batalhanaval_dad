@@ -10,6 +10,7 @@ import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { LobbyModule } from './lobby/lobby.module';
 import { GamePageModule } from './gamePage/gamePage.module';		
 import { NotificationsModule } from './notifications/notifications.module';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 import { WebSocketService } from './notifications/websocket.service';
 
@@ -22,6 +23,7 @@ import { WebSocketService } from './notifications/websocket.service';
 		LobbyModule,
 		GamePageModule,
 		NotificationsModule,
+		LeaderboardComponent,
 		PageNotFoundModule
 	],
 	declarations: [ 
