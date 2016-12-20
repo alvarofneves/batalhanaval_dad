@@ -4,13 +4,11 @@ import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';			
 
 import { AppComponent }   from './app.component';
-import { ChatComponent } from './chat/chat.component';
-
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { LobbyModule } from './lobby/lobby.module';
-import { GamePageModule } from './gamePage/gamePage.module';		
+import { GamePageModule } from './gamePage/gamePage.module';
+import { LeaderboardModule } from './leaderboard/leaderboard.module';		
 import { NotificationsModule } from './notifications/notifications.module';
-import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 import { WebSocketService } from './notifications/websocket.service';
 
@@ -22,14 +20,13 @@ import { WebSocketService } from './notifications/websocket.service';
 		AppRoutingModule,
 		LobbyModule,
 		GamePageModule,
+		LeaderboardModule,
 		NotificationsModule,
-		LeaderboardComponent,
 		PageNotFoundModule
 	],
 	declarations: [ 
 		// ------------ COMPONENTS ------------
-		AppComponent,
-		ChatComponent
+		AppComponent
 	],
 	providers: [
 		WebSocketService
