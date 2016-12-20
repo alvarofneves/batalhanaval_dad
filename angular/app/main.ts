@@ -7,5 +7,5 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[11.45]");
+	console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[14]");
 })();
