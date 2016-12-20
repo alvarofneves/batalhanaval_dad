@@ -1,3 +1,4 @@
 {
-    "ghostMode": false
+    "ghostMode": false,
+    "port": 7777
 }

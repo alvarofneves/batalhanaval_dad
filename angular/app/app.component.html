@@ -4,13 +4,17 @@
 	    <p>header</p>
 	</div>
 	
-	<!--
 	<nav>
-	    <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
-	    <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
-	    <a routerLink="/admin" routerLinkActive="active">Admin</a>
-	</nav>  -->
-	
+		<a [routerLink]="['/lobby']" routerLinkActive="active">Lobby</a>
+	    <a [routerLink]="['/board']" routerLinkActive="active">Board</a>
+	    <a [routerLink]="['/game']" routerLinkActive="active">Game</a>
+	    <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
+	    <a [routerLink]="['/topTen']" routerLinkActive="active">Top Ten</a>
+	    <a [routerLink]="['/gameRules']" routerLinkActive="active">Game Rules</a>
+	    <a [routerLink]="['/about']" routerLinkActive="active">About</a>
+	</nav>
+	<hr>
+
 	<router-outlet></router-outlet>
 
 	<div class="footerBar">

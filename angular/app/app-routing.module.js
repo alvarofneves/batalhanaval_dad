@@ -12,18 +12,25 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 // import { AppComponent }   from './app.component';
 var lobby_component_1 = require("./lobby/lobby.component");
-var register_component_1 = require("./usersRegister/register.component");
+var register_component_1 = require("./playersRegister/register.component");
 var board_component_1 = require("./gameBoard/board.component");
 var gamePage_component_1 = require("./gamePage/gamePage.component");
 var PageNotFound_component_1 = require("./PageNotFound/PageNotFound.component");
 var appRoutes = [
     { path: '', component: lobby_component_1.LobbyComponent },
     { path: 'lobby', component: lobby_component_1.LobbyComponent },
-    { path: 'board', component: board_component_1.BoardComponent },
-    { path: 'game', component: gamePage_component_1.GamePageComponent },
-    //		children: [ { path: '/id', component: BoardComponent } ]
     //Redireciona para o formulario de registo
     { path: 'register', component: register_component_1.RegisterComponent },
+    { path: 'login', component: lobby_component_1.LobbyComponent },
+    { path: 'board', component: board_component_1.BoardComponent },
+    { path: 'game',
+        component: gamePage_component_1.GamePageComponent },
+    //children: [ 
+    //	{ path: '/id', component: BoardComponent } ]
+    //},	 		 
+    { path: 'topTen', component: lobby_component_1.LobbyComponent },
+    { path: 'gameRules', component: lobby_component_1.LobbyComponent },
+    { path: 'about', component: lobby_component_1.LobbyComponent },
     // Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
     { path: '**', component: PageNotFound_component_1.PageNotFoundComponent }
 ];
@@ -36,7 +43,8 @@ AppRoutingModule = __decorate([
     core_1.NgModule({
         imports: [
             // ------------ MODULES ------------
-            router_1.RouterModule.forRoot(appRoutes, { useHash: true }) // forRoot - uso só 1x; Depois poderei ter Children 
+            router_1.RouterModule.forRoot(appRoutes, { useHash: true }),
+            router_1.RouterModule.forChild(appRoutes)
         ],
         exports: [
             router_1.RouterModule

@@ -16,10 +16,10 @@ export class PlayerService {
         return this.http.get('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }
 
-    create(player: Player) :Observable<any>{
+    create(player: Player): Observable<any>{
         var headers = new Headers();
         headers.append("Content-Type", 'application/json');
-        var options = new RequestOptions({headers: headers});
+        var options = new RequestOptions({ headers: headers });
         
         return this.http.post('/api/players', player, options).map(r=> r.json());
 
@@ -39,8 +39,7 @@ export class PlayerService {
     //ainda nao está a ser utilizado
     
     private jwt() {
-        // create authorization header with jwt token
-        
+        // create authorization header with jwt token        
         let currentPlayer = JSON.parse(localStorage.getItem('currentPlayer'));
         if (currentPlayer && currentPlayer.token) {
             let headers = new Headers({ 'Authorization': 'Bearer ' + currentPlayer.token });

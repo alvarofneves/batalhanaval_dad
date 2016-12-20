@@ -6,28 +6,27 @@
         -->
         <form #playerForm="ngForm" >
             <div class="form-group">
-                <label for="name">Player Name</label>
-                <input type="text" id="name" class="form-control" required minlength="4" maxlength="24" name="name" [(ngModel)]="player.name" #name="ngModel" >
-                <div *ngIf="name.errors && (name.dirty || name.touched)"
-                     class="alert alert-danger">
-                    <div [hidden]="!name.errors.required"> Name is required</div>
+                <label>Player Name</label>
+                <input type="text" id="name" class="form-control" required minlength="4" maxlength="24" name="name" [(ngModel)]="player.name" #name="ngModel">
+                <div *ngIf="name.errors && (name.dirty||name.touched)" class="alert alert-danger">
+                    <div [hidden]="!name.errors.required">Name is required</div>
                     <div [hidden]="!name.errors.minlength">Name must be at least 4 characters long.</div>
                     <div [hidden]="!name.errors.maxlength">Name cannot be more than 24 characters long.</div>
-                </div>
+                </div>   
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" class="form-control" name="email" [(ngModel)]="player.email" >
+                <label>Email</label>
+                <input type="email" id="email" class="form-control" name="email" [(ngModel)]="player.email">
                 <!--required pattern="^[a-zA-Z0–9_.+-]+@[a-zA-Z0–9-]+.[a-zA-Z0–9-.]+$"-->
             </div>
             
             <div class="form-group">
-                <label for="password">Password</label>
+                <label>Password</label>
                 <input type="password" id="password" class="form-control" name="password" [ngModel]="player.password" required [(ngModel)]="player.password">
             </div>
 
             <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
+                <label>Confirm Password</label>
                 <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" [ngModel]="player.confirmPassword" required validateEqual="password" [(ngModel)]="player.confirmPassword">
             </div>
             
@@ -37,5 +36,5 @@
             </div>       
         </form>
     </div>
-    <player-submitted [player]="player" [(submitted)]="submitted"></player-submitted>
+    <!--<player-submitted [player]="player" [(submitted)]="submitted"></player-submitted>   -->
 </div>

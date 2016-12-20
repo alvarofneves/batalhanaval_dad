@@ -98,6 +98,6 @@ export class Game {
         server.put(settings.prefix + 'games/:id', settings.security.authorize, this.updateGame);
         server.post(settings.prefix + 'games', settings.security.authorize, this.createGame);
         server.del(settings.prefix + 'games/:id', settings.security.authorize, this.deleteGame);
-        console.log("Games routes registered");
+        console.log("[node] app.games.ts - Games routes registered");
     };    
 }

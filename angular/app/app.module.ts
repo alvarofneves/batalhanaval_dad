@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';		
 
 import { LobbyModule } from './lobby/lobby.module';
-import { RegisterModule } from './usersRegister/register.module';
+import { RegisterModule } from './playersRegister/register.module';
 import { GamePageModule } from './gamePage/gamePage.module';		
 import { NotificationsModule } from './notifications/notifications.module';
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';

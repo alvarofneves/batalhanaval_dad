@@ -116,6 +116,6 @@ export class Player {
         server.put(settings.prefix + 'players/:id', settings.security.authorize, this.updatePlayer);
         server.post(settings.prefix + 'players', this.createPlayer);                // Sem 'authorize' porque user ainda não está registado
         server.del(settings.prefix + 'players/:id', settings.security.authorize, this.deletePlayer);
-        console.log("$[node] app.players.ts - Players routes registered");
+        console.log("[node] app.players.ts - Players routes registered");
     };
 }

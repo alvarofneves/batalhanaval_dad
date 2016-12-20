@@ -16,7 +16,7 @@ export class RegisterComponent {
         private playerService: PlayerService,
         private alertService: AlertService) { }
 
-    player = new Player(1,"","","");
+    //player = new Player(1,"","","");
     //submitted = false;
     //onSubmit() {
       //this.submitted = true;

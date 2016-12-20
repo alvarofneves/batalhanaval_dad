@@ -5,6 +5,6 @@ var platform = platform_browser_dynamic_1.platformBrowserDynamic();
 platform.bootstrapModule(app_module_1.AppModule);
 (function () {
     'use strict';
-    console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[/registerUser; 19, 19.43h]");
+    console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[11.45]");
 })();
 //# sourceMappingURL=main.js.map
