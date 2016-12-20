@@ -5,25 +5,21 @@
     </div>-->
     <table class="battlefield-table">
         <tbody>
-        <!-- Assim fica mais rápido. Podia ser feito no component Angular com ngFor + 1 ciclo FOR -->
-        <tr *ngFor="let row of [1,2,3,4,5,6,7,8,9,10]; let l = index">
-            <td class="game-cell">{{getLabel(l)}}</td>
-            <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index"
-                (click)="clickElemento(l,i)">
-            </td>
-            <!--<cell-board></cell-board>-->
-        </tr>
-        <tr>
-            <td class="__battlefield-cell-label"></td>
-            <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index">
-                {{i+1}}
-            </td>
-            <!--<cell-board>{{i+1}}</cell-board>-->
+            <tr *ngFor="let row of [1,2,3,4,5,6,7,8,9,10]; let l = index">
+                <td class="game-cell">{{getLabel(l)}}
+                </td>
+                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index"
+                    (click)="clickElemento(l,i)">
+                </td>
+                <!--<cell-board></cell-board>-->
+            </tr>
 
-        </tr>
-
+            <tr>
+                <!--<td class="__battlefield-cell-label"></td>-->
+                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index"> {{i+1}}
+                </td>
+                <!--<cell-board>{{i+1}}</cell-board>-->
+            </tr>
         </tbody>
     </table>
-
-
 </div>
