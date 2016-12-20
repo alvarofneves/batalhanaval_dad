@@ -54,5 +54,5 @@ database.connect(url, () => {
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
 
-    console.log("$/node/app.ts  >>> SRV NODE UP <<<  [11.45]");
+    console.log("$/node/app.ts  >>> SRV NODE UP <<<  [18]");
 });

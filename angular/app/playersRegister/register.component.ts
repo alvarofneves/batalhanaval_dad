@@ -9,14 +9,14 @@ import { AlertService, PlayerService } from '../services/index';
 })
 
 export class RegisterComponent {
-    model: any = {};
+    //model: any = {};
     //loading = false;
 
     constructor(
         private playerService: PlayerService,
         private alertService: AlertService) { }
 
-    player = new Player(0,"","","");
+    player = new Player(0, "", "", "");    // mudar aqui o 'id'??
     //submitted = false;
     //onSubmit() {
       //this.submitted = true;
@@ -24,7 +24,7 @@ export class RegisterComponent {
 
     register() {
         console.log("Player registado");
-        this.playerService.create(this.model)
+        this.playerService.create(this.player)
             .subscribe(
                 data => {
                     this.alertService.success('Registration successful', true);
