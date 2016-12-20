@@ -9,14 +9,13 @@ import { AlertService, PlayerService } from '../services/index';
 })
 
 export class RegisterComponent {
-    //model: any = {};
     //loading = false;
 
     constructor(
         private playerService: PlayerService,
         private alertService: AlertService) { }
 
-    player = new Player(0, "", "", "");    // mudar aqui o 'id'??
+    player = new Player(0, "", "", "");      // mudar aqui o 'id'??
     //submitted = false;
     //onSubmit() {
       //this.submitted = true;
@@ -28,7 +27,7 @@ export class RegisterComponent {
             .subscribe(
                 data => {
                     this.alertService.success('Registration successful', true);
-                    //this.router.navigate(['/login']);
+                    //this.router.navigate(['/lobby']);      // testar assim. Depois enviar p/ login
                 },
                 error => {
                     this.alertService.error(error);

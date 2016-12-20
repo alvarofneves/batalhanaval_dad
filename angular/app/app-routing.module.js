@@ -28,7 +28,6 @@ var appRoutes = [
     //children: [ 
     //	{ path: '/id', component: BoardComponent } ]
     //},	 		 
-    { path: 'topTen', component: lobby_component_1.LobbyComponent },
     { path: 'gameRules', component: lobby_component_1.LobbyComponent },
     { path: 'about', component: lobby_component_1.LobbyComponent },
     // Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida

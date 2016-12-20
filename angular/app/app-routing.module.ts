@@ -31,8 +31,6 @@ const appRoutes: Routes = [
 		//children: [ 
 		//	{ path: '/id', component: BoardComponent } ]
 	//},	 		 
-			
-	{ path: 'topTen', component: LobbyComponent },		// alterar
 
 	{ path: 'gameRules', component: LobbyComponent },		// alterar
 
