@@ -4,6 +4,8 @@ import { FormsModule }   from '@angular/forms';
 
 import { LobbyModule } from './lobby/lobby.module';
 import { RegisterModule } from './playersRegister/register.module';
+import { LoginModule } from './playersLogin/login.module';
+import { ListModule } from './playersList/list.module';
 import { GamePageModule } from './gamePage/gamePage.module';		
 import { NotificationsModule } from './notifications/notifications.module';
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
@@ -16,6 +18,7 @@ import { ChatComponent } from './chat/chat.component';
 // ------------ SERVICES ------------
 import { AlertService, PlayerService } from './services/index';   
 import { WebSocketService } from './notifications/websocket.service';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
 	imports: [ 
@@ -25,6 +28,8 @@ import { WebSocketService } from './notifications/websocket.service';
 		AppRoutingModule,
 		LobbyModule,
 		RegisterModule,
+		LoginModule,
+		ListModule,
 		GamePageModule,
 		NotificationsModule,
 		PageNotFoundModule
@@ -37,7 +42,8 @@ import { WebSocketService } from './notifications/websocket.service';
 	providers: [
 		WebSocketService,
 		PlayerService,
-		AlertService
+		AlertService,
+		AuthenticationService
 	],
 	bootstrap: [ 
 		AppComponent 

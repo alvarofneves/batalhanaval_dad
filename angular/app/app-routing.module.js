@@ -13,6 +13,8 @@ var router_1 = require("@angular/router");
 // import { AppComponent }   from './app.component';
 var lobby_component_1 = require("./lobby/lobby.component");
 var register_component_1 = require("./playersRegister/register.component");
+var login_component_1 = require("./playersLogin/login.component");
+var list_component_1 = require("./playersList/list.component");
 var board_component_1 = require("./gameBoard/board.component");
 var gamePage_component_1 = require("./gamePage/gamePage.component");
 var PageNotFound_component_1 = require("./PageNotFound/PageNotFound.component");
@@ -21,7 +23,7 @@ var appRoutes = [
     { path: 'lobby', component: lobby_component_1.LobbyComponent },
     //Redireciona para o formulario de registo
     { path: 'register', component: register_component_1.RegisterComponent },
-    { path: 'login', component: lobby_component_1.LobbyComponent },
+    { path: 'login', component: login_component_1.LoginComponent },
     { path: 'board', component: board_component_1.BoardComponent },
     { path: 'game',
         component: gamePage_component_1.GamePageComponent },
@@ -30,6 +32,7 @@ var appRoutes = [
     //},	 		 
     { path: 'gameRules', component: lobby_component_1.LobbyComponent },
     { path: 'about', component: lobby_component_1.LobbyComponent },
+    { path: 'players', component: list_component_1.ListComponent },
     // Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
     { path: '**', component: PageNotFound_component_1.PageNotFoundComponent }
 ];

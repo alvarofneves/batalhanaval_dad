@@ -13,6 +13,8 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var lobby_module_1 = require("./lobby/lobby.module");
 var register_module_1 = require("./playersRegister/register.module");
+var login_module_1 = require("./playersLogin/login.module");
+var list_module_1 = require("./playersList/list.module");
 var gamePage_module_1 = require("./gamePage/gamePage.module");
 var notifications_module_1 = require("./notifications/notifications.module");
 var PageNotFound_module_1 = require("./PageNotFound/PageNotFound.module");
@@ -22,6 +24,7 @@ var chat_component_1 = require("./chat/chat.component");
 // ------------ SERVICES ------------
 var index_1 = require("./services/index");
 var websocket_service_1 = require("./notifications/websocket.service");
+var authentication_service_1 = require("./services/authentication.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,6 +39,8 @@ AppModule = __decorate([
             app_routing_module_1.AppRoutingModule,
             lobby_module_1.LobbyModule,
             register_module_1.RegisterModule,
+            login_module_1.LoginModule,
+            list_module_1.ListModule,
             gamePage_module_1.GamePageModule,
             notifications_module_1.NotificationsModule,
             PageNotFound_module_1.PageNotFoundModule
@@ -48,7 +53,8 @@ AppModule = __decorate([
         providers: [
             websocket_service_1.WebSocketService,
             index_1.PlayerService,
-            index_1.AlertService
+            index_1.AlertService,
+            authentication_service_1.AuthenticationService
         ],
         bootstrap: [
             app_component_1.AppComponent

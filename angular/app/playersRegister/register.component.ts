@@ -21,6 +21,10 @@ export class RegisterComponent {
       //this.submitted = true;
     //}
 
+    clear() {
+        console.log("clear!! ");
+    }
+
     register() {
         console.log("Player registado");
         this.playerService.create(this.player)

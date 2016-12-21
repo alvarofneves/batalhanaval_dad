@@ -5,6 +5,7 @@ import { AlertService, AuthenticationService } from '../services/index';
 
 @Component({
     moduleId: module.id,
+    selector: 'login',
     templateUrl: 'login.component.html'
 })
 
@@ -18,6 +19,10 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private authenticationService: AuthenticationService,
         private alertService: AlertService) { }
+
+    goToRegister() {                    // Clicar no botão X e enviar p/ pag. de registo
+          this.router.navigate(['/register']);
+    }
 
     ngOnInit() {
         // reset login status

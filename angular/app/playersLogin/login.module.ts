@@ -2,7 +2,7 @@ import { NgModule }     from '@angular/core';
 import { FormsModule }  from '@angular/forms';
 
 import { SharedModule }  from '../shared/shared.module';
-import { RegisterComponent } from './register.component';
+import { LoginComponent } from './login.component';
 
 @NgModule({
   imports: [ 
@@ -10,12 +10,12 @@ import { RegisterComponent } from './register.component';
   		FormsModule
   ],
   declarations: [ 
-  		RegisterComponent
+  		LoginComponent
   ],
   
   exports: [ 
-  		RegisterComponent
+  		LoginComponent
   ]
 })
 
-export class RegisterModule { }
+export class LoginModule { }

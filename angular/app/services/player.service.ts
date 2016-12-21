@@ -8,6 +8,16 @@ import { Observable } from 'rxjs/Rx';
 export class PlayerService {
     constructor(private http: Http) { }
 
+    create(player: Player): Observable<any>{
+        var headers = new Headers();
+        var options = new RequestOptions({ headers: headers });
+
+        headers.append("Content-Type", 'application/json');
+        
+        return this.http.post('/api/players', player, options).map(r=> r.json());
+        //return this.http.post('http://localhost:7777//api/players', player, this.jwt()).map((response: Response) => response.json());
+    }
+
     getAll() {
         return this.http.get('/api/players', this.jwt()).map((response: Response) => response.json());
     }
@@ -15,20 +25,6 @@ export class PlayerService {
     getById(id: number) {
         return this.http.get('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }
-
-    create(player: Player): Observable<any>{
-        var headers = new Headers();
-        headers.append("Content-Type", 'application/json');
-        var options = new RequestOptions({ headers: headers });
-        
-        return this.http.post('/api/players', player, options).map(r=> r.json());
-
-        //return this.http.post('http://localhost:7777//api/players', player, this.jwt()).map((response: Response) => response.json());
-    }
-
-    //update(player: Player) {
-      //  return this.http.put('/api/players/' + player.id, player, this.jwt()).map((response: Response) => response.json());
-    //}
 
     delete(id: number) {
         return this.http.delete('/api/players/' + id, this.jwt()).map((response: Response) => response.json());

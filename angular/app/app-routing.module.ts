@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 // import { AppComponent }   from './app.component';
 import { LobbyComponent }   from './lobby/lobby.component';
 import { RegisterComponent } from './playersRegister/register.component';
+import { LoginComponent } from './playersLogin/login.component';
+import { ListComponent } from './playersList/list.component';
 import { BoardComponent }   from './gameBoard/board.component';
 import { GamePageComponent }   from './gamePage/gamePage.component';
 import { InitGameControlsComponent } from './initGameControls/controls.component';
@@ -22,7 +24,7 @@ const appRoutes: Routes = [
 	//Redireciona para o formulario de registo
 	{ path: 'register', component: RegisterComponent },
 
-	{ path: 'login', component: LobbyComponent },		// alterar
+	{ path: 'login', component: LoginComponent },		
 
 	{ path: 'board', component: BoardComponent },
 
@@ -35,6 +37,8 @@ const appRoutes: Routes = [
 	{ path: 'gameRules', component: LobbyComponent },		// alterar
 
 	{ path: 'about', component: LobbyComponent },			// alterar
+
+	{ path: 'players', component: ListComponent },			
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
 	{ path: '**', component: PageNotFoundComponent }

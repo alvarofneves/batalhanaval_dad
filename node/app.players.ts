@@ -64,6 +64,7 @@ export class Player {
     
     public createPlayer = (request: any, response: any, next: any) => {
         const player = request.body;
+
         if (player === undefined) {
             response.send(400, 'No player data');
             return next();
@@ -76,6 +77,7 @@ export class Player {
 
     public deletePlayer = (request: any, response: any, next: any) => {
         var id = new mongodb.ObjectID(request.params.id);
+
         database.db.collection('players')
             .deleteOne({
                 _id: id
