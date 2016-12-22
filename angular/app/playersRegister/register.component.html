@@ -1,9 +1,6 @@
 <div class="container">
     <div [hidden]="submitted">
         <h1>Register</h1>
-        <!--
-        <form #playerForm="ngForm" novalidate *ngIf="active" (ngSubmit)="onSubmit()">
-        -->
         <form #playerForm="ngForm" >
             <div class="form-group">
                 <label>Player Name</label>
@@ -36,5 +33,4 @@
             </div>       
         </form>
     </div>
-    <!--<player-submitted [player]="player" [(submitted)]="submitted"></player-submitted>   -->
 </div>

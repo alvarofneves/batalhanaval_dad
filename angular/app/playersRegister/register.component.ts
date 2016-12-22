@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Player }      from '../shared/player';
+import { RouterModule } from '@angular/router';
+import { Player }  from '../shared/player';
 import { AlertService, PlayerService } from '../services/index';  
 
 @Component({
@@ -9,20 +10,14 @@ import { AlertService, PlayerService } from '../services/index';
 })
 
 export class RegisterComponent {
-    //loading = false;
 
-    constructor(
-        private playerService: PlayerService,
-        private alertService: AlertService) { }
+    public player: Player;
+    
+    constructor (private playerService: PlayerService, private alertService: AlertService) {
+        // Quando form é carregado, dados do novo Player estão vazios 
+        this.player = new Player("", "", "");
 
-    player = new Player(0, "", "", "");      // mudar aqui o 'id'??
-    //submitted = false;
-    //onSubmit() {
-      //this.submitted = true;
-    //}
 
-    clear() {
-        console.log("clear!! ");
     }
 
     register() {
@@ -35,14 +30,11 @@ export class RegisterComponent {
                 },
                 error => {
                     this.alertService.error(error);
-                    //this.loading = false;
                 });  
+    }
 
-       //depois return o path para o mongodb
-       //observeble subscribe 
-       //TODO criar pasta services + ver tutorial de login
-      }
-      //createPlayer() {
-      //this.player = new Player(2, 'Marie', 'marie@serp.com',"marie_password");
-      //}
+    // Apaga campos preenchidos
+    clear() {
+        console.log("clear!! ");
+    }
 }

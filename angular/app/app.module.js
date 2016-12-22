@@ -21,6 +21,7 @@ var PageNotFound_module_1 = require("./PageNotFound/PageNotFound.module");
 var app_component_1 = require("./app.component");
 var app_routing_module_1 = require("./app-routing.module");
 var chat_component_1 = require("./chat/chat.component");
+var settings_service_1 = require("./services/settings.service");
 // ------------ SERVICES ------------
 var index_1 = require("./services/index");
 var websocket_service_1 = require("./notifications/websocket.service");
@@ -54,7 +55,8 @@ AppModule = __decorate([
             websocket_service_1.WebSocketService,
             index_1.PlayerService,
             index_1.AlertService,
-            authentication_service_1.AuthenticationService
+            authentication_service_1.AuthenticationService,
+            settings_service_1.SettingsService
         ],
         bootstrap: [
             app_component_1.AppComponent

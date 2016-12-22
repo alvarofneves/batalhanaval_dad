@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Rx';
 export class PlayerService {
     constructor(private http: Http) { }
 
+    // Envio dos dados do novo Player para o servidor
     create(player: Player): Observable<any>{
         var headers = new Headers();
         var options = new RequestOptions({ headers: headers });

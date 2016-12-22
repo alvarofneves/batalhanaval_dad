@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ChatComponent } from './chat/chat.component';
 
+import { SettingsService } from './services/settings.service';
+
 // ------------ SERVICES ------------
 import { AlertService, PlayerService } from './services/index';   
 import { WebSocketService } from './notifications/websocket.service';
@@ -43,7 +45,8 @@ import { AuthenticationService } from './services/authentication.service';
 		WebSocketService,
 		PlayerService,
 		AlertService,
-		AuthenticationService
+		AuthenticationService,
+		SettingsService
 	],
 	bootstrap: [ 
 		AppComponent 
