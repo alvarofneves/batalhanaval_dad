@@ -17,6 +17,7 @@ const socketServer = new WebSocketServer();
 
 // Prepare and configure Restify Server
 restify.CORS.ALLOW_HEADERS.push("content-type");
+restify.CORS.ALLOW_HEADERS.push("authorization");		// sugestão do colega Eugénio pelo fórum do Moodle
 restifyServer.use(restify.bodyParser());
 restifyServer.use(restify.queryParser());
 restifyServer.use(restify.CORS());
@@ -35,8 +36,8 @@ import { Authentication } from './app.authentication';
 new Authentication().init(restifyServer, settings);
 
 // Players Handler
-import { Player } from './app.players';
-new Player().init(restifyServer, settings);
+import { PlayerRepository } from './app.players';
+new PlayerRepository().init(restifyServer, settings);
 
 // Games Handler
 import { Game } from './app.games';

@@ -18,9 +18,9 @@ var list_module_1 = require("./playersList/list.module");
 var gamePage_module_1 = require("./gamePage/gamePage.module");
 var notifications_module_1 = require("./notifications/notifications.module");
 var PageNotFound_module_1 = require("./PageNotFound/PageNotFound.module");
-var app_component_1 = require("./app.component");
 var app_routing_module_1 = require("./app-routing.module");
 var chat_component_1 = require("./chat/chat.component");
+var app_component_1 = require("./app.component");
 var settings_service_1 = require("./services/settings.service");
 // ------------ SERVICES ------------
 var index_1 = require("./services/index");

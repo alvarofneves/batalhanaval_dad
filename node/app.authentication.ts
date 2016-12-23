@@ -15,8 +15,6 @@ export class Authentication{
     }  
 
     public init = (server: any, settings: HandlerSettings) => {
-        
-        
         server.post(settings.prefix + 'login', settings.security.passport.authenticate('local', {'session':false}), this.login);
         server.post(settings.prefix + 'logout', settings.security.authorize, this.logout);
         console.log("Authentication routes registered");

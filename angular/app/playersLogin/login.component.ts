@@ -11,18 +11,9 @@ import { AlertService, AuthenticationService } from '../services/index';
 
 export class LoginComponent implements OnInit {
     model: any = {};
-    loading = false;
     returnUrl: string;
 
-    constructor(
-        private route: ActivatedRoute,
-        private router: Router,
-        private authenticationService: AuthenticationService,
-        private alertService: AlertService) { }
-
-    goToRegister() {                    // Clicar no botão X e enviar p/ pag. de registo
-          this.router.navigate(['/register']);
-    }
+    constructor(private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService, private alertService: AlertService) { }
 
     ngOnInit() {
         // reset login status
@@ -33,7 +24,6 @@ export class LoginComponent implements OnInit {
     }
 
     login() {
-        this.loading = true;
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(
                 data => {
@@ -41,12 +31,6 @@ export class LoginComponent implements OnInit {
                 },
                 error => {
                     this.alertService.error(error);
-                    this.loading = false;
                 });
-    }
-
-    // TODO
-    logout() {
-        
     }
 }

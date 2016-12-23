@@ -15,8 +15,8 @@ export class PlayerService {
 
         headers.append("Content-Type", 'application/json');
         
+        //.map((response: Response) => response.json());      // post() : converte dados para JSON
         return this.http.post('/api/players', player, options).map(r=> r.json());
-        //return this.http.post('http://localhost:7777//api/players', player, this.jwt()).map((response: Response) => response.json());
     }
 
     getAll() {
@@ -31,10 +31,10 @@ export class PlayerService {
         return this.http.delete('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }
 
-    // private helper methods 
 
-    //ainda nao está a ser utilizado
-    
+
+
+    // private helper methods 
     private jwt() {
         // create authorization header with jwt token        
         let currentPlayer = JSON.parse(localStorage.getItem('currentPlayer'));

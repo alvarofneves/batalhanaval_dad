@@ -9,11 +9,10 @@ import { ListModule } from './playersList/list.module';
 import { GamePageModule } from './gamePage/gamePage.module';		
 import { NotificationsModule } from './notifications/notifications.module';
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
-
-import { AppComponent }   from './app.component';
 import { AppRoutingModule } from './app-routing.module';	
 
 import { ChatComponent } from './chat/chat.component';
+import { AppComponent }   from './app.component';
 
 import { SettingsService } from './services/settings.service';
 

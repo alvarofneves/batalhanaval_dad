@@ -8,5 +8,9 @@ import { Player } from '../shared/player';
 })
 
 export class ListComponent {
-	
+	//leaderboard: ListPlayers[];
+
+	//constructor() {
+		//this.lustPlayersService.getList().subscribe((list) => this.list = list);
+	//}
 }

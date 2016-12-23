@@ -4,11 +4,11 @@ import { Player } from '../shared/player';
 
 @Injectable()
 export class SettingsService {
-	currentPlayer: Player;
 	authenticated: boolean;
+	currentPlayer: Player;
 
     constructor() { 
-    	this.currentPlayer = null;
     	this.authenticated = false;
+    	this.currentPlayer = null;
     }
 }
