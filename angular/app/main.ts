@@ -7,13 +7,6 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts    [01.19 - new Branch 'AppLayout']");
+	console.log("$/angular/app/main.ts    [*Branch 'AppLayout']");
 
-    /*function resetBoard() {
-        console.log("reset board");
-    }
-
-    function newGame() {
-    	console.log("new game");
-    }*/
 })();

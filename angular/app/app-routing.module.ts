@@ -5,24 +5,36 @@ import { RouterModule, Routes } from '@angular/router';
 import { LobbyComponent }   from './lobby/lobby.component';
 import { GamePageComponent }   from './gamePage/gamePage.component';
 import { BoardComponent }   from './gameBoard/board.component';
-import { LeaderboardComponent }   from './leaderboard/leaderboard.component';
+import { PageTopTenComponent }   from './playersPageTopTen/pageTopTen.component';
+import { TopTenVictoriesComponent }   from './playersPageTopTen/topTenVictories/topTenVictories.component';
+import { TopTenScoreComponent }   from './playersPageTopTen/topTenScore/topTenScore.component';
 import { InitGameControlsComponent } from './initGameControls/controls.component';
 import { SelectShipsControlsComponent } from './selectShipsControls/selectShips.component';
 import { NotificationsModule } from './notifications/notifications.module';
 import { WebSocketService } from './notifications/websocket.service';
 import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
 
-// Array JSON de objectos
 const appRoutes: Routes = [
 	{ path: '', component: LobbyComponent },	
 	{ path: 'lobby', component: LobbyComponent },
+
+	//Redireciona para o formulario de registo
+	{ path: 'register', component: LobbyComponent },
+
+	{ path: 'login', component: LobbyComponent },
 
 	{ path: 'board', component: BoardComponent },
 
 	{ path: 'game', component: GamePageComponent },	 		// add GUARD  
 	//		children: [ { path: '/id', component: BoardComponent } ]
 
-	{ path: 'leaderboard', component: LeaderboardComponent },
+	{ path: 'topten', component: PageTopTenComponent },
+
+	{ path: 'gameRules', component: LobbyComponent },		// alterar
+
+	{ path: 'about', component: LobbyComponent },			// alterar
+
+	{ path: 'players', component: LobbyComponent },			
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
 	{ path: '**', component: PageNotFoundComponent }

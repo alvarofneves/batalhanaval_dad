@@ -7,7 +7,7 @@ import { AppComponent }   from './app.component';
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { LobbyModule } from './lobby/lobby.module';
 import { GamePageModule } from './gamePage/gamePage.module';
-import { LeaderboardModule } from './leaderboard/leaderboard.module';		
+import { PageTopTenModule }   from './playersPageTopTen/pageTopTen.module';
 import { NotificationsModule } from './notifications/notifications.module';
 
 import { WebSocketService } from './notifications/websocket.service';
@@ -20,7 +20,7 @@ import { WebSocketService } from './notifications/websocket.service';
 		AppRoutingModule,
 		LobbyModule,
 		GamePageModule,
-		LeaderboardModule,
+		PageTopTenModule,
 		NotificationsModule,
 		PageNotFoundModule
 	],

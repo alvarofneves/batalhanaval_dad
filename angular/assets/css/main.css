@@ -121,13 +121,14 @@ body {
 }
 
 .headerBar2 a:hover { 
-    text-decoration: none;
-    background-color: #20B2AA;
+    /*text-decoration: none;    
+    background-color: #20B2AA;  */
+    text-decoration-color: red;
 }
 
 .headerBar2 a:active {   
     text-decoration: none;
-    background-color: #20B2AA;
+    /*background-color: #20B2AA;*/
 }
 
 /* ############################## LAYOUT BARRA FOOTER ############################## */
