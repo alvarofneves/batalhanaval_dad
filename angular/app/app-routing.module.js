@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-// import { AppComponent }   from './app.component';
+// import { AppComponent }   	from './app.component';
 var lobby_component_1 = require("./lobby/lobby.component");
 var register_component_1 = require("./playersRegister/register.component");
 var login_component_1 = require("./playersLogin/login.component");

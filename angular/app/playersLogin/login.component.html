@@ -1,22 +1,24 @@
-<div class="col-md-6 col-md-offset-3">
-    <h2>Login</h2>
-    <form #playerLogin="ngForm">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" required/>
-            <!-- <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div> -->
-        </div>
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Login</h1>
+        <form #playerLogin="ngForm">
+            <div class="form-group">
+                <input type="text" class="form-control" name="username" required placeholder="Enter your name"/>
+                <!-- <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div> -->
+            </div>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" required/>
-            <!--  <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div> -->
-        </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" required placeholder="Password"/>
+                <!--  <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div> -->
+            </div>
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Login</button>
-            <!--
-            <a [routerLink]="['/register']" routerLinkActive="active">Register here</a>     -->
-        </div>
-    </form>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+
+            <div>
+                <p>Create an account! <a [routerLink]="['/register']" routerLinkActive="active">Register here</a></p>          
+            </div>
+        </form>
+    </div>
 </div>
