@@ -19,8 +19,7 @@ export class Player {
 	}
 
   	// TODO? receber dados do srv qd USER faz login
-
-
+	
   	// TODO? receber dados qd USER se regista
 
 }

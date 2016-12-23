@@ -10,8 +10,8 @@ export class PlayerService {
 
     // Envio dos dados do novo Player para o servidor
     create(player: Player): Observable<any>{
-        var headers = new Headers();
-        var options = new RequestOptions({ headers: headers });
+        let headers = new Headers();
+        let options = new RequestOptions({ headers: headers });
 
         headers.append("Content-Type", 'application/json');
         

@@ -23,14 +23,15 @@ export class LoginComponent implements OnInit {
         this.returnUrl = this.route.snapshot.params['returnUrl'] || '/';
     }
 
-    login() {
-        this.authenticationService.login(this.model.username, this.model.password)
-            .subscribe(
-                data => {
-                    this.router.navigate([this.returnUrl]);
-                },
-                error => {
-                    this.alertService.error(error);
-                });
-    }
+
+    //login() {
+    //    this.authenticationService.login(this.model.email, this.model.password)
+    //        .subscribe(
+    //            data => {
+    //                this.router.navigate([this.returnUrl]);
+    //            },
+    //            error => {
+    //                this.alertService.error(error);
+    //            });
+    //}
 }

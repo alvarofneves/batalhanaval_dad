@@ -1,28 +1,39 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 
-import { Observable } from 'rxjs/Observable';
+import { Player } from '../shared/index';
+import { Observable } from 'rxjs/Rx';
 
 import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthenticationService {
+
     constructor(private http: Http) { }
 
-    login(username: string, password: string) {
-        return this.http.post('/api/authenticate', JSON.stringify({ username: username, password: password }))
-            .map((response: Response) => {
-                // login successful if there's a jwt token in the response
-                let player = response.json();
-                if (player && player.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentPlayer', JSON.stringify(player));
-                }
-            });
+    login(player: Player) {
+        //console.log(email);
+        //console.log(password);
+        let headers = new Headers();
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post('/api/login', player, options).map((response: Response) => {
+            //return this.http.post('/api/login', JSON.stringify({ email: email, password: password })).map((response: Response) => {
+
+            // login successful if there's a jwt token in the response
+            let player = response.json();
+            console.log('AUTHENTICATION');
+            console.log(player);
+            
+            if (player && player.token) {
+                // store player details and jwt token in local storage to keep player logged in between page refreshes
+                localStorage.setItem('currentplayer', JSON.stringify(player));
+            }
+        });
     }
 
     logout() {
-        // remove user from local storage to log user out
+        // remove player from local storage to log player out
         localStorage.removeItem('currentPlayer');
     }
 }
