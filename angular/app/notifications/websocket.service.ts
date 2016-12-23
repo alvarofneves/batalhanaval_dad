@@ -1,11 +1,14 @@
+// Create a WebSocket Angular Service
+
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
 import * as io from 'socket.io-client';
 
 @Injectable()
+// Connect to the server ....
 export class WebSocketService {
     private socket: SocketIOClient.Socket;
     constructor() {
@@ -15,6 +18,7 @@ export class WebSocketService {
         }
     }
 
+    // Send message to server
     sendChatMessage(message: any) {
         this.socket.emit('chat', message);
     }
@@ -27,6 +31,7 @@ export class WebSocketService {
         return this.listenOnChannel('chat');
     }
 
+    // To    receive a    message    from    the    server
     private listenOnChannel(channel: string): Observable<any> {
         return new Observable((observer:any) => {
             this.socket.on(channel, (data:any) => {
