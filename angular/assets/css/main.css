@@ -113,23 +113,23 @@ body {
 .headerBar2 {
     display: block;
     text-align: center;
-    background-color: #cccc00;
+    background-color: #ebebe0;
 }
 
 .headerBar2 a:hover { 
-    /*text-decoration: none;    
-    background-color: #20B2AA;  */
-    text-decoration-color: red;
+    text-decoration: none;  
+    background-color: #ccccb3;  
+    /* text-decoration-color: red; */
 }
 
 .headerBar2 a:active {   
     text-decoration: none;
-    /*background-color: #20B2AA;*/
+    background-color: #ccccb3;
 }
 
 /* ############################## LAYOUT BARRA FOOTER ############################## */
 .footerBar {
-    background-color: grey;
+    background-color: #ebebe0;
 }
 
 #otherLocation {

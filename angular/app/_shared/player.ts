@@ -6,6 +6,7 @@ export class Player {
 	token: string;
 	numGamesPlayed: number = 0;
 	numGamesWon: number = 0;
+	score: number = 0;
 	percGamesWon: number = 0;
 
 	constructor(name: string, email: string, password: string) {  

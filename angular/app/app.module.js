@@ -23,10 +23,10 @@ var PageNotFound_module_1 = require("./PageNotFound/PageNotFound.module");
 var notifications_module_1 = require("./notifications/notifications.module");
 var app_component_1 = require("./app.component");
 // ------------ SERVICES ------------
-var index_1 = require("./services/index");
+var index_1 = require("./_services/index");
+var authentication_service_1 = require("./_services/authentication.service");
+var settings_service_1 = require("./_services/settings.service");
 var websocket_service_1 = require("./notifications/websocket.service");
-var authentication_service_1 = require("./services/authentication.service");
-var settings_service_1 = require("./services/settings.service");
 var AppModule = (function () {
     function AppModule() {
     }

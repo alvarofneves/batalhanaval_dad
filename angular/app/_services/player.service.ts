@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable }                              from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
-import { Player } from '../shared/index';
+import { Player }     from '../shared/index';
 import { Observable } from 'rxjs/Rx';
 
 @Injectable()
@@ -15,7 +15,7 @@ export class PlayerService {
 
         headers.append("Content-Type", 'application/json');
         
-        //.map((response: Response) => response.json());      // post() : converte dados para JSON
+        // .map((response: Response) => response.json());      // post() : converte dados para JSON
         return this.http.post('/api/players', player, options).map(r=> r.json());
     }
 

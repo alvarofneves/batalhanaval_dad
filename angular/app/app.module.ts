@@ -17,10 +17,10 @@ import { ChatComponent } 	from './chat/chat.component';
 import { AppComponent }   	from './app.component';
 
 // ------------ SERVICES ------------
-import { AlertService, PlayerService } 	from './services/index';   
+import { AlertService, PlayerService } 	from './_services/index';   
+import { AuthenticationService } 		from './_services/authentication.service';
+import { SettingsService } 				from './_services/settings.service';
 import { WebSocketService } 			from './notifications/websocket.service';
-import { AuthenticationService } 		from './services/authentication.service';
-import { SettingsService } 				from './services/settings.service';
 
 @NgModule({
 	imports: [ 

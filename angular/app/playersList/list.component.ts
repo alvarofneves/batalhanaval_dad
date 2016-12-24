@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Player } from '../shared/player'; 
+import { Player } from '../_shared/player'; 
 
 @Component({
     moduleId: module.id,

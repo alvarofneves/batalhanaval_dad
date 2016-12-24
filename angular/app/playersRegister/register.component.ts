@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { Player }  from '../shared/player';
-import { AlertService, PlayerService } from '../services/index';  
+import { Component }  from '@angular/core';
+import { Router }     from '@angular/router';
+
+import { Player }                      from '../_shared/player';
+import { AlertService, PlayerService } from '../_services/index';  
 
 @Component({
     moduleId:  module.id,
