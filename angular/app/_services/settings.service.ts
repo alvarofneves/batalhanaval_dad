@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Player } from '../shared/player';
+import { Player } from '../_shared/player';
 
 @Injectable()
 export class SettingsService {
