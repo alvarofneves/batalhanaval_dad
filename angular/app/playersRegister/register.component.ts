@@ -7,6 +7,7 @@ import { AlertService, PlayerService } from '../services/index';
     moduleId:  module.id,
     selector: 'register',
     templateUrl: 'register.component.html'
+    /*styleUrls: ['../assets/css/forms.css'] */
 })
 
 export class RegisterComponent {
@@ -28,11 +29,5 @@ export class RegisterComponent {
                     this.alertService.error(error);
                 });  
         console.log("Player registado");
-    }
-
-    // Apaga campos preenchidos
-    clear() {
-        console.log("clear!! ");
-
     }
 }

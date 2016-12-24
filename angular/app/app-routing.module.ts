@@ -12,6 +12,7 @@ import { InitGameControlsComponent } 	from './initGameControls/controls.componen
 import { SelectShipsControlsComponent } from './selectShipsControls/selectShips.component';
 import { ChatComponent }   				from './chat/chat.component';
 import { NotificationsModule } 			from './notifications/notifications.module';
+import { AboutComponent }   			from './about/about.component';
 import { PageNotFoundComponent }   		from './PageNotFound/PageNotFound.component';
 
 import { AuthGuard } 		from './guards/auth-guard.service';
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
 
 	{ path: 'gameRules', component: LobbyComponent },		// alterar
 
-	{ path: 'about', component: LobbyComponent },			// alterar
+	{ path: 'about', component: AboutComponent },			// alterar
 
 	{ path: 'players', component: ListComponent },			
 

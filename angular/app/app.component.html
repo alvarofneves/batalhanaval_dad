@@ -3,23 +3,28 @@
 	<div class="headerBar">
 	    <p>header</p>
 	</div>
-	
 	<nav>
 		<a [routerLink]="['/lobby']" routerLinkActive="active">Lobby</a>
-	    <a [routerLink]="['/board']" routerLinkActive="active">Board</a>
-	    <a [routerLink]="['/game']" routerLinkActive="active">Game</a>
 	    <a [routerLink]="['/gameRules']" routerLinkActive="active">Game Rules</a>
-	    <a [routerLink]="['/about']" routerLinkActive="active">About</a>
-	    <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
-	    <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
 	    <a [routerLink]="['/players']" routerLinkActive="active">PlayersList</a>
 	</nav>
 	<hr>
-
+	<a [routerLink]="['/register']" routerLinkActive="active" id="otherLocation">Register</a>
+	<a [routerLink]="['/login']" routerLinkActive="active" id="otherLocation">Login</a>
+	<a [routerLink]="['/board']" routerLinkActive="active" id="otherLocation">Board</a>
+	<a [routerLink]="['/game']" routerLinkActive="active" id="otherLocation">Game</a>
+	
 	<router-outlet></router-outlet>
 
 	<hr>
 	<div class="footerBar">
-	    <p>footer</p>
+		<div class="row">
+			<div class="col-sm-6">
+		    	<p>footer</p>
+		    </div> 
+		    <div class="col-sm-6">
+		    	<a [routerLink]="['/about']" routerLinkActive="active">About us</a>
+		    </div> 
+	    </div> 
 	</div>  
 </div>  

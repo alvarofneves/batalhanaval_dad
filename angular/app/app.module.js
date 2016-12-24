@@ -17,6 +17,7 @@ var login_module_1 = require("./playersLogin/login.module");
 var list_module_1 = require("./playersList/list.module");
 var gamePage_module_1 = require("./gamePage/gamePage.module");
 var notifications_module_1 = require("./notifications/notifications.module");
+var about_module_1 = require("./about/about.module");
 var PageNotFound_module_1 = require("./PageNotFound/PageNotFound.module");
 var app_routing_module_1 = require("./app-routing.module");
 var chat_component_1 = require("./chat/chat.component");
@@ -44,6 +45,7 @@ AppModule = __decorate([
             list_module_1.ListModule,
             gamePage_module_1.GamePageModule,
             notifications_module_1.NotificationsModule,
+            about_module_1.AboutModule,
             PageNotFound_module_1.PageNotFoundModule
         ],
         declarations: [

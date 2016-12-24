@@ -17,6 +17,7 @@ var login_component_1 = require("./playersLogin/login.component");
 var list_component_1 = require("./playersList/list.component");
 var board_component_1 = require("./gameBoard/board.component");
 var gamePage_component_1 = require("./gamePage/gamePage.component");
+var about_component_1 = require("./about/about.component");
 var PageNotFound_component_1 = require("./PageNotFound/PageNotFound.component");
 var appRoutes = [
     { path: '', component: lobby_component_1.LobbyComponent },
@@ -31,7 +32,7 @@ var appRoutes = [
     //	{ path: '/id', component: BoardComponent } ]
     //},	 		 
     { path: 'gameRules', component: lobby_component_1.LobbyComponent },
-    { path: 'about', component: lobby_component_1.LobbyComponent },
+    { path: 'about', component: about_component_1.AboutComponent },
     { path: 'players', component: list_component_1.ListComponent },
     // Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
     { path: '**', component: PageNotFound_component_1.PageNotFoundComponent }

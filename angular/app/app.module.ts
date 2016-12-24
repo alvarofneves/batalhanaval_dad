@@ -8,6 +8,7 @@ import { LoginModule }		from './playersLogin/login.module';
 import { ListModule } 		from './playersList/list.module';
 import { GamePageModule } 	from './gamePage/gamePage.module';		
 import { NotificationsModule } 	from './notifications/notifications.module';
+import { AboutModule }   		from './about/about.module';
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { AppRoutingModule } 	from './app-routing.module';	
 
@@ -33,6 +34,7 @@ import { AuthenticationService } 		from './services/authentication.service';
 		ListModule,
 		GamePageModule,
 		NotificationsModule,
+		AboutModule,
 		PageNotFoundModule
 	],
 	declarations: [ 
