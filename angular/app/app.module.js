@@ -11,22 +11,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
-var lobby_module_1 = require("./lobby/lobby.module");
+var app_routing_module_1 = require("./app-routing.module");
 var register_module_1 = require("./playersRegister/register.module");
 var login_module_1 = require("./playersLogin/login.module");
 var list_module_1 = require("./playersList/list.module");
+var lobby_module_1 = require("./lobby/lobby.module");
+var pageTopTen_module_1 = require("./playersPageTopTen/pageTopTen.module");
 var gamePage_module_1 = require("./gamePage/gamePage.module");
-var notifications_module_1 = require("./notifications/notifications.module");
 var about_module_1 = require("./about/about.module");
 var PageNotFound_module_1 = require("./PageNotFound/PageNotFound.module");
-var app_routing_module_1 = require("./app-routing.module");
-var chat_component_1 = require("./chat/chat.component");
+var notifications_module_1 = require("./notifications/notifications.module");
 var app_component_1 = require("./app.component");
-var settings_service_1 = require("./services/settings.service");
 // ------------ SERVICES ------------
 var index_1 = require("./services/index");
 var websocket_service_1 = require("./notifications/websocket.service");
 var authentication_service_1 = require("./services/authentication.service");
+var settings_service_1 = require("./services/settings.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -44,14 +44,14 @@ AppModule = __decorate([
             login_module_1.LoginModule,
             list_module_1.ListModule,
             gamePage_module_1.GamePageModule,
+            pageTopTen_module_1.PageTopTenModule,
             notifications_module_1.NotificationsModule,
             about_module_1.AboutModule,
             PageNotFound_module_1.PageNotFoundModule
         ],
         declarations: [
             // ------------ COMPONENTS ------------
-            app_component_1.AppComponent,
-            chat_component_1.ChatComponent
+            app_component_1.AppComponent
         ],
         providers: [
             websocket_service_1.WebSocketService,

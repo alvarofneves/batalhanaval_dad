@@ -4,7 +4,7 @@
         <form #playerForm="ngForm">
             <div class="form-group">
                 <label id="labeltest">Name</label>
-                <input type="text" id="name" class="form-control" required minlength="4" maxlength="15" name="name" [(ngModel)]="player.name" #name="ngModel">
+                <input type="text" id="name" class="form-control" required minlength="4" maxlength="15" name="name" placeholder="Enter your name" [(ngModel)]="player.name" #name="ngModel">
                 <div *ngIf="name.errors && (name.dirty||name.touched)" class="alert alert-danger">
                     <div [hidden]="!name.errors.required">Name is required</div>
                     <div [hidden]="!name.errors.minlength">Name must be at least 4 characters long.</div>
@@ -19,18 +19,15 @@
                     <div [hidden]="!email.errors.required">Email is required</div>
                     <div [hidden]="!email.errors.minlength">Email must respect email@test.com pattern</div>
                 </div>   -->
-            </div>
-            
+            </div>            
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" id="password" class="form-control" name="password" placeholder="Must have at least 6 characters" [ngModel]="player.password" required [(ngModel)]="player.password">
             </div>
-
             <div class="form-group">
                 <label>Confirm your password</label>
                 <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" [ngModel]="player.confirmPassword" required validateEqual="password" [(ngModel)]="player.confirmPassword">
             </div>
-            
             <div class="form-group">  
                 <button type="submit" class="btn btn-primary" (click)="register()" [disabled]="!playerForm.form.valid">Register</button>
                 <button type="reset" class="btn btn-danger">Clear Fields</button>

@@ -11,29 +11,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 // import { AppComponent }   	from './app.component';
-var lobby_component_1 = require("./lobby/lobby.component");
 var register_component_1 = require("./playersRegister/register.component");
 var login_component_1 = require("./playersLogin/login.component");
 var list_component_1 = require("./playersList/list.component");
-var board_component_1 = require("./gameBoard/board.component");
+var lobby_component_1 = require("./lobby/lobby.component");
 var gamePage_component_1 = require("./gamePage/gamePage.component");
+var board_component_1 = require("./gameBoard/board.component");
+var pageTopTen_component_1 = require("./playersPageTopTen/pageTopTen.component");
 var about_component_1 = require("./about/about.component");
 var PageNotFound_component_1 = require("./PageNotFound/PageNotFound.component");
 var appRoutes = [
     { path: '', component: lobby_component_1.LobbyComponent },
     { path: 'lobby', component: lobby_component_1.LobbyComponent },
-    //Redireciona para o formulario de registo
     { path: 'register', component: register_component_1.RegisterComponent },
     { path: 'login', component: login_component_1.LoginComponent },
+    { path: 'players', component: list_component_1.ListComponent },
     { path: 'board', component: board_component_1.BoardComponent },
-    { path: 'game',
-        component: gamePage_component_1.GamePageComponent },
+    { path: 'game', component: gamePage_component_1.GamePageComponent },
     //children: [ 
     //	{ path: '/id', component: BoardComponent } ]
     //},	 		 
+    { path: 'topten', component: pageTopTen_component_1.PageTopTenComponent },
     { path: 'gameRules', component: lobby_component_1.LobbyComponent },
     { path: 'about', component: about_component_1.AboutComponent },
-    { path: 'players', component: list_component_1.ListComponent },
     // Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
     { path: '**', component: PageNotFound_component_1.PageNotFoundComponent }
 ];
