@@ -11,6 +11,8 @@ import { NotificationsModule } 	from './notifications/notifications.module';
 import { AboutModule }   		from './about/about.module';
 import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { AppRoutingModule } 	from './app-routing.module';	
+import { PageTopTenModule }   from './playersPageTopTen/pageTopTen.module';
+import { NotificationsModule } from './notifications/notifications.module';
 
 import { ChatComponent } 	from './chat/chat.component';
 import { AppComponent }   	from './app.component';
@@ -33,14 +35,14 @@ import { AuthenticationService } 		from './services/authentication.service';
 		LoginModule,
 		ListModule,
 		GamePageModule,
+		PageTopTenModule,
 		NotificationsModule,
 		AboutModule,
 		PageNotFoundModule
 	],
 	declarations: [ 
 		// ------------ COMPONENTS ------------
-		AppComponent,
-		ChatComponent
+		AppComponent
 	],
 	providers: [
 		WebSocketService,

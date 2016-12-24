@@ -6,7 +6,7 @@
 
 LER ANTES DE CORRER O PROJETO:
 ======================= [client] =======================
-COMO CORRER O ANGULAR:
+COMO CORRER O ANGULAR (1 janela Git Bash):
 
 1) Executar (na linha de comandos 'DAD_projeto_2/angular'):
 $npm install
@@ -19,7 +19,7 @@ Quando alterar o código do 'client', fazer 'F5' à app
 
 
 ======================= [server + BD em Docker] =======================
-COMO CORRER O NODE:
+COMO CORRER O NODE (2 janelas Git Bash):
 
 1) Arrancar servidor MongoDB. Executar na Windows PowerShell (Docker):
 1.1) $docker start <mongo_game>      				// <mongo_game>: nome do container criado para o jogo
@@ -29,10 +29,10 @@ COMO CORRER O NODE:
 $npm install
 
 3) Executar (na linha de comandos):
-$tsc -w  					// Typescript será compilado + watch de alterações
+$tsc -w  											// Typescript será compilado + watch de alterações
 
 4) Executar (na linha de comandos - outra janela):
-$node app  					// Execução do script da App. Recarregar manualmente o SRV quando há alterações porque não está as está a carregar
+$nodemon app.js  									// Nodemon fica à escuta de alterações e recarrega script
 
 
 ======================= AO SAIR =======================

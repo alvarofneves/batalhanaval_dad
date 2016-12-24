@@ -1,12 +1,11 @@
 <!-- TODO aqui será pag. entrada na app -->
 <div class="container">
-	<div class="headerBar">
+	<div class="headerBar">        <!-- TODO mudar p/ components respectivos -->
 	    <p>header</p>
 	</div>
 	<nav>
 		<a [routerLink]="['/lobby']" routerLinkActive="active">Lobby</a>
 	    <a [routerLink]="['/gameRules']" routerLinkActive="active">Game Rules</a>
-	    <a [routerLink]="['/players']" routerLinkActive="active">PlayersList</a>
 	</nav>
 	<hr>
 	<a [routerLink]="['/register']" routerLinkActive="active" id="otherLocation">Register</a>
@@ -14,6 +13,8 @@
 	<a [routerLink]="['/board']" routerLinkActive="active" id="otherLocation">Board</a>
 	<a [routerLink]="['/game']" routerLinkActive="active" id="otherLocation">Game</a>
 	
+            <a [routerLink]="['/topten']" routerLinkActive="active">PlayersTopTen</a>
+            <a [routerLink]="['/players']" routerLinkActive="active">(adm) PlayersList</a>
 	<router-outlet></router-outlet>
 
 	<hr>
