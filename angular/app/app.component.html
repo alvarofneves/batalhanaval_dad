@@ -1,27 +1,34 @@
-<!-- TODO aqui será pag. entrada na app -->
 <div class="container">
-	<div class="headerBar">        <!-- TODO mudar p/ components respectivos -->
+	<div class="headerBar">     
 	    <p>header</p>
 	</div>
 	<div class="headerBar2">
-        <nav>
-            <a [routerLink]="['/lobby']" routerLinkActive="active">Lobby</a>
-            <a [routerLink]="['/board']" routerLinkActive="active">Board</a>
-            <a [routerLink]="['/game']" routerLinkActive="active">Game</a>
-            <a [routerLink]="['/gameRules']" routerLinkActive="active">Game Rules</a>
-            <a [routerLink]="['/about']" routerLinkActive="active">About</a>
-            <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
-            <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
-            <a [routerLink]="['/topten']" routerLinkActive="active">PlayersTopTen</a>
-            <a [routerLink]="['/players']" routerLinkActive="active">(adm) PlayersList</a>
-        </nav>
-        <hr>
-    </div>
+		<nav>
+			<a [routerLink]="['/lobby']" routerLinkActive="active">Lobby</a>
+			<a [routerLink]="['/topten']" routerLinkActive="active">PlayersTopTen</a>
+		    <a [routerLink]="['/gameRules']" routerLinkActive="active">Game Rules</a>
+		</nav>
+	</div>
+
+	<hr>
+	<a [routerLink]="['/register']" routerLinkActive="active" id="otherLocation">Register</a>
+	<a [routerLink]="['/login']" routerLinkActive="active" id="otherLocation">Login</a>
+	<a [routerLink]="['/board']" routerLinkActive="active" id="otherLocation">Board</a>
+	<a [routerLink]="['/game']" routerLinkActive="active" id="otherLocation">Game</a>
+    <a [routerLink]="['/players']" routerLinkActive="active" id="otherLocation">(adm) PlayersList</a>
 
 	<router-outlet></router-outlet>
-	
+
 	<hr>
 	<div class="footerBar">
-	    <p>footer</p>
+		<div class="row">
+			<div class="col-md-6">
+		    	<p>(c) Copyright @2017 DAD_GRUPO_64</p>
+		    </div> 
+		    <div class="col-md-6">
+		    	<a [routerLink]="['/about']" routerLinkActive="active">About us</a>
+		    	<a [routerLink]="['/lobby']" routerLinkActive="active">Share</a>
+		    </div>
+	    </div> 
 	</div>  
 </div>  

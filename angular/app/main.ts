@@ -7,6 +7,5 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts    [*Branch 'AppLayout']");
-
+	console.log("##### BRANCH 'registerUser' | $angular/app/main.ts | >>>ANGULAR UP<<< | 22.52 #####");
 })();

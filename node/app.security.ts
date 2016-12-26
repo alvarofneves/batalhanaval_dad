@@ -35,15 +35,15 @@ passport.use(new LocalStrategy((username, password, done) => {
         }
         player.token = sha1(player.username+ Date.now());
         database.db.collection('players')
-            .updateOne({_id: player._id}, {$set: {token: player.token}})
-            .then(r => r.modifiedCount !== 1 ? done(null, false) : done(null, player))
-            .catch(err => done(err));
+        .updateOne({_id: player._id}, {$set: {token: player.token}})
+        .then(r => r.modifiedCount !== 1 ? done(null, false) : done(null, player))
+        .catch(err => done(err));
     }).catch(err => done(err));
 }));
 
 passport.use(new BearerStrategy((token, done) => {
     database.db.collection('players')
-        .findOne({token: token})
-        .then((user) => user ? done(null, user, {scope:'all'}) : done(null, false))
-        .catch(err => done(err));
+    .findOne({token: token})
+    .then((user) => user ? done(null, user, {scope:'all'}) : done(null, false))
+    .catch(err => done(err));
 }));
