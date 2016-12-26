@@ -2,13 +2,12 @@
 	<div class="col-md-6 col-md-offset-3">
 		<!--<h3>Hi {{currentUser.name}}!</h3>   -->
 	    <h1>Players registered</h1>
-	    <!--
-	    <ul>
-	        <li *ngFor="let player of players">
-	            {{player.name}} | {{player.email}} | <a (click)="deleteUser(user.id)">Delete</a>
-	        </li>
-	    </ul>  -->
-	    <p>listaaaa</p>
+	    
+	    <div *ngFor="let player of players" class="player">
+	    		{{player.name}} | {{player.email}} | <a (click)="deleteUser(user.id)">Delete</a>
+	    </div>
+	        
+	    <p>listaaaa reer</p>
 
 		<!-- Mostrar nome, email, numGamesPlayed, numGamesWon, percGamesWon -->
 		<!--<div *ngIf = "leaderboard">

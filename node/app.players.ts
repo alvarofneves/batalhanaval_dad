@@ -2,7 +2,7 @@ const mongodb = require('mongodb');
 const util = require('util');
 import { HandlerSettings } from './handler.settings';
 import { databaseConnection as database } from './app.database';
-import { Player } from '../angular/app/shared';
+import { Player } from '../angular/app/_shared';
 
 export class PlayerRepository {
     private settings: HandlerSettings = null;

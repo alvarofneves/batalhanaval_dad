@@ -42,11 +42,6 @@
       rxjs: {
         defaultExtension: 'js'
       }
-      // Correção erro: 'zone.js:1382 GET http://localhost:3000/traceur 404 (Not Found)'
-      /*'angular-in-memory-web-api': {
-          main: './index.js',
-          defaultExtension: 'js'
-      }*/
     }
   });
 })(this);

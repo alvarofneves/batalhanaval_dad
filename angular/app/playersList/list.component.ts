@@ -11,6 +11,7 @@ import { PlayerService } from '../_services/index';
 
 export class ListComponent {
 	//leaderboard: ListPlayers[];
+    list: Player[];
 
 	//constructor() {
 		//this.lustPlayersService.getList().subscribe((list) => this.list = list);

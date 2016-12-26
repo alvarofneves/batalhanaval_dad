@@ -3,6 +3,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { Player }     from '../_shared/index';
 import { Observable } from 'rxjs/Rx';
+//import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PlayerService {
@@ -21,6 +22,9 @@ export class PlayerService {
 
     getAll() {
         return this.http.get('/api/players', this.jwt()).map((response: Response) => response.json());
+    }
+    getAllPlayers():Observable<Player[]>{
+        return this.http.get('/api/players').map((response) => response.json());
     }
 
     getById(id: number) {
