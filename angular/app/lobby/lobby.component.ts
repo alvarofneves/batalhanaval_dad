@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
 	templateUrl: 'lobby.component.html',
 })
 
-export class LobbyComponent { }
+export class LobbyComponent { 
+	createGame() {
+        console.log("novo jogo!!");
+    }
+}

@@ -1,12 +1,24 @@
 <div class="container">
 	<div>
 		<h1>Lobby</h1>
-	    <h4>Create a new game</h4>
+	    <button type="submit" class="btn btn-primary" (click)="createGame()">Create a new game</button>
 
-	    <h4>Pendent Games</h4>
-	    <p>(mostrar criador, nr. jogadores à espera, botão 'join')</p>
+	    <h3>Pendent Games</h3>
+	    <p>(criador, nr. jogadores à espera, botão 'join')</p>
+	    <!--
+	    <ul>
+	        <li *ngFor="let player of players">
+	            {{game.playerCreator}} | {{game.numPlayersWaiting}} | <a (click)="joinGame(game.id)">Join</a>
+	        </li>
+	    </ul> -->
 
-	    <h4>Games in Progess</h4>
-	    <p>(mostrar criador, nr. jogadores, tempo decorrido)</p>
+	    <h3>Games in Progess</h3>
+	    <p>(criador, nr. jogadores, tempo decorrido)</p>
+	    <!--
+	    <ul>
+	        <li *ngFor="let player of players">
+	            {{game.playerCreator}} | {{game.numPlayers}} | {{game.gameTime}}
+	        </li>
+	    </ul> -->
 	</div>
 </div>

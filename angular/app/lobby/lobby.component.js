@@ -12,6 +12,9 @@ var core_1 = require("@angular/core");
 var LobbyComponent = (function () {
     function LobbyComponent() {
     }
+    LobbyComponent.prototype.createGame = function () {
+        console.log("novo jogo!!");
+    };
     return LobbyComponent;
 }());
 LobbyComponent = __decorate([

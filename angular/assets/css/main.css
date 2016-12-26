@@ -119,10 +119,9 @@ body {
 .headerBar2 a:hover { 
     text-decoration: none;  
     background-color: #ccccb3;  
-    /* text-decoration-color: red; */
 }
 
-.headerBar2 a:active {   
+.headerBar2 a:active {      /* Quando user clica no link */
     text-decoration: none;
     background-color: #ccccb3;
 }
