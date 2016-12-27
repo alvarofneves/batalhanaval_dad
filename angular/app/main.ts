@@ -7,13 +7,5 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("$/angular/app/main.ts   >>> ANGULAR APP UP <<<	[18, 20h, AS]");
-
-    /*function resetBoard() {
-        console.log("reset board");
-    }
-
-    function newGame() {
-    	console.log("new game");
-    }*/
+	console.log("##### BRANCH 'chat-public-NODE-TS' | $angular/app/main.ts | >>>ANGULAR UP<<< #####");
 })();

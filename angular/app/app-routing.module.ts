@@ -9,10 +9,10 @@ import { InitGameControlsComponent } from './initGameControls/controls.component
 import { SelectShipsControlsComponent } from './selectShipsControls/selectShips.component';
 import { ChatComponent }   from './chat/chat.component';
 import { NotificationsModule } from './notifications/notifications.module';
+import { ChatNewViewComponent }   from './chatNewView/chatNewView.component';
 import { WebSocketService } from './notifications/websocket.service';
 import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
 
-// Array JSON de objectos
 const appRoutes: Routes = [
 	{ path: '', component: LobbyComponent },	
 	{ path: 'lobby', component: LobbyComponent },
@@ -22,18 +22,10 @@ const appRoutes: Routes = [
 	{ path: 'game', component: GamePageComponent },	 		// add GUARD  
 	//		children: [ { path: '/id', component: BoardComponent } ]
 
-	//{ path: 'chat', component: ChatComponent },
+	{ path: 'chat', component: ChatNewViewComponent },
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
 	{ path: '**', component: PageNotFoundComponent }
-			
-	// { path: 'login', component: LoginComponent }
-	// { path: 'register', component: RegisterComponent }
-	// { path: 'games', component: GamesComponent },
-	// { path: 'leaderboard', component: LeaderboardComponent },
-	// { path: 'gamesEnded', component: GamesEndedComponent },		// add GUARD
-	// { path: 'gameRules', component: GameRulesComponent },
-	// { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({

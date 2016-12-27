@@ -1,3 +1,11 @@
+branch: CHAT-PUBLIC-NODE-TS
+app em: http://localhost:3000/#/lobby
+chat + notifs em '/lobby'
+
+
+
+======================= ================================ =======================
+======================= ================================ =======================
 /**
 * @date 14/12
 * @description Instruções para correr a app; info sobre packages necessários; informações sobre nomes & portos usados
