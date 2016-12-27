@@ -8,6 +8,15 @@ import { Component } from '@angular/core';
 
 export class LobbyComponent { 
 	createGame() {
-        console.log("novo jogo!!");
+        this.playerService.create(this.player)
+            .subscribe(
+                data => {
+                    this.alertService.success('Registration successful', true);
+                    this.router.navigate(['/login']);     
+                },
+                error => {
+                    this.alertService.error(error);
+                });  
+        console.log("new game created!");
     }
 }

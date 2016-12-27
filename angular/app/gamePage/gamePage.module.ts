@@ -17,10 +17,7 @@ import { SelectShipsControlsComponent } from '../gameSelectShipsControls/selectS
 		SelectShipsControlsComponent
 	],
 	exports: [ 
-		GamePageComponent,
-		BoardComponent,
-		InitGameControlsComponent,
-		SelectShipsControlsComponent
+		GamePageComponent
 	]
 })
 

@@ -13,7 +13,15 @@ var LobbyComponent = (function () {
     function LobbyComponent() {
     }
     LobbyComponent.prototype.createGame = function () {
-        console.log("novo jogo!!");
+        var _this = this;
+        this.playerService.create(this.player)
+            .subscribe(function (data) {
+            _this.alertService.success('Registration successful', true);
+            _this.router.navigate(['/login']);
+        }, function (error) {
+            _this.alertService.error(error);
+        });
+        console.log("new game created!");
     };
     return LobbyComponent;
 }());
