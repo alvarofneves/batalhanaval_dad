@@ -1,5 +1,5 @@
 /**
-* @date 23/12
+* @date 27/12
 * @description Instruções para correr a app; info sobre packages necessários; informações sobre nomes & portos usados
 * @author AS
 */

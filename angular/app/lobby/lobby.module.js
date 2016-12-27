@@ -10,7 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
 var lobby_component_1 = require("./lobby.component");
+var chat_component_1 = require("../chat/chat.component");
+var notifications_module_1 = require("../notifications/notifications.module");
 var LobbyModule = (function () {
     function LobbyModule() {
     }
@@ -20,9 +23,12 @@ LobbyModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            notifications_module_1.NotificationsModule
         ],
         declarations: [
-            lobby_component_1.LobbyComponent
+            lobby_component_1.LobbyComponent,
+            chat_component_1.ChatComponent
         ],
         exports: [
             lobby_component_1.LobbyComponent
