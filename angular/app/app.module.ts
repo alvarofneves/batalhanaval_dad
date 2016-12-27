@@ -4,13 +4,10 @@ import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';			
 import { AppComponent }   from './app.component';
 
-import { ChatNewViewModule } from './chatNewView/chatNewView.module';
-//import { ChatComponent } from './chat/chat.component';
-//import { NotificationsModule } from './notifications/notifications.module';
-
-import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 import { LobbyModule } from './lobby/lobby.module';
-import { GamePageModule } from './gamePage/gamePage.module';		
+import { GamePageModule } from './gamePage/gamePage.module';	
+//import { ChatNewViewModule } 		from './chatNewView/chat-new-view.module';	
+import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
 
 import { WebSocketService } from './notifications/websocket.service';
 
@@ -22,13 +19,12 @@ import { WebSocketService } from './notifications/websocket.service';
 		AppRoutingModule,
 		LobbyModule,
 		GamePageModule,
-		//NotificationsModule,
+		//ChatNewViewModule,
 		PageNotFoundModule
 	],
 	declarations: [ 
 		// ------------ COMPONENTS ------------
 		AppComponent
-		//ChatComponent
 	],
 	providers: [
 		WebSocketService

@@ -5,12 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LobbyComponent }   from './lobby/lobby.component';
 import { GamePageComponent }   from './gamePage/gamePage.component';
 import { BoardComponent }   from './gameBoard/board.component';
-import { InitGameControlsComponent } from './initGameControls/controls.component';
-import { SelectShipsControlsComponent } from './selectShipsControls/selectShips.component';
-import { ChatComponent }   from './chat/chat.component';
-import { NotificationsModule } from './notifications/notifications.module';
-import { ChatNewViewComponent }   from './chatNewView/chatNewView.component';
-import { WebSocketService } from './notifications/websocket.service';
+	import { ChatNewViewComponent } from './chatNewView/chat-new-view.component';
 import { PageNotFoundComponent }   from './PageNotFound/PageNotFound.component';
 
 const appRoutes: Routes = [
@@ -22,7 +17,7 @@ const appRoutes: Routes = [
 	{ path: 'game', component: GamePageComponent },	 		// add GUARD  
 	//		children: [ { path: '/id', component: BoardComponent } ]
 
-	{ path: 'chat', component: ChatNewViewComponent },
+	{ path: 'chat', component: PageNotFoundComponent },		//ChatNewViewComponent
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
 	{ path: '**', component: PageNotFoundComponent }
