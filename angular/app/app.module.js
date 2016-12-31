@@ -24,7 +24,6 @@ var notifications_module_1 = require("./notifications/notifications.module");
 var app_component_1 = require("./app.component");
 // ------------ SERVICES ------------
 var index_1 = require("./_services/index");
-var authentication_service_1 = require("./_services/authentication.service");
 var settings_service_1 = require("./_services/settings.service");
 var websocket_service_1 = require("./notifications/websocket.service");
 var AppModule = (function () {
@@ -56,8 +55,9 @@ AppModule = __decorate([
         providers: [
             websocket_service_1.WebSocketService,
             index_1.PlayerService,
+            index_1.GameService,
             index_1.AlertService,
-            authentication_service_1.AuthenticationService,
+            index_1.AuthenticationService,
             settings_service_1.SettingsService
         ],
         bootstrap: [

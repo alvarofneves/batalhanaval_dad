@@ -17,8 +17,7 @@ import { ChatComponent } 	from './chat/chat.component';
 import { AppComponent }   	from './app.component';
 
 // ------------ SERVICES ------------
-import { AlertService, PlayerService } 	from './_services/index';   
-import { AuthenticationService } 		from './_services/authentication.service';
+import { AlertService, AuthenticationService, PlayerService, GameService } 	from './_services/index';   
 import { SettingsService } 				from './_services/settings.service';
 import { WebSocketService } 			from './notifications/websocket.service';
 
@@ -45,6 +44,7 @@ import { WebSocketService } 			from './notifications/websocket.service';
 	providers: [
 		WebSocketService,
 		PlayerService,
+		GameService,
 		AlertService,
 		AuthenticationService,
 		SettingsService

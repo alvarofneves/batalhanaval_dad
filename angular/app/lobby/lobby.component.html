@@ -1,12 +1,46 @@
 <div class="container">
 	<div>
 		<h1>Lobby</h1>
-	    <h4>Create a new game</h4>
+	    <button type="submit" class="btn btn-primary" (click)="createGame()">Create a new game</button>
 
 	    <h4>Pendent Games</h4>
-	    <p>(mostrar criador, nr. jogadores à espera, botão 'join')</p>
+		<!--<ul>
+	        <li *ngFor="let player of players">
+	            {{game.playerCreator}} | {{game.numPlayersWaiting}} | <a (click)="joinGame(game.id)">Join</a>
+	        </li>
+	    </ul> -->
+	    <div *ngIf = "listGamesPendent">
+			<table class="table table-striped">
+				<tr>
+					<th>*status</th>
+					<th>Creator</th>
+					<th>Players waiting</th>
+					<th>*join()</th>
+				</tr>
+				<tr *ngFor = "let player of listGamesPendent" class = "player">  
+					<td class = "status">{{game.status}}</td>
+					<td class = "playerCreator">{{game.playerCreator}}</td>
+				</tr>
+			</table>
+		</div>
+	    <hr>
 
 	    <h4>Games in Progess</h4>
-	    <p>(mostrar criador, nr. jogadores, tempo decorrido)</p>
+	    <p>(criador, nr. jogadores, tempo decorrido)</p>
+	    <!--
+	    <ul>
+	        <li *ngFor="let player of players">
+	            {{game.playerCreator}} | {{game.numPlayers}} | {{game.gameTime}}
+	        </li>
+	    </ul> -->
+	    <hr>
+	</div>
+	<div>
+		<h1>websocksets</h1>
+		<!--<notifications-panel></notifications-panel>	-->
+		<p>notifications HERE</p>
+		<!--<chat></chat>	-->
+		<p>chat HERE</p>
+		<hr>
 	</div>
 </div>

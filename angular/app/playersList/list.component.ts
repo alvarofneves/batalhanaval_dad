@@ -16,10 +16,10 @@ export class ListComponent {
     }
 
     ngOnInit() {
-        this.allPlayers();
+        this.listAllPlayers();
     }
 
-    private allPlayers() {
+    private listAllPlayers() {
         this.playerService.getAll()
             .subscribe(list => {
                 //console.log(list); 
@@ -30,9 +30,4 @@ export class ListComponent {
     //deletePlayer(id: number) {
         //this.playerService.delete(id).subscribe(() => { this.loadAllPlayers() });
     //}
-
-    private loadAllPlayers() {
-        this.playerService.getAll().subscribe(players => { this.players = players; });
-
-    }
 }

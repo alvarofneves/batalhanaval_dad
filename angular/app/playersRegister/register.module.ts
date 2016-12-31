@@ -12,7 +12,6 @@ import { SharedModule }   from '../_shared/shared.module';
   declarations: [ 
   		RegisterComponent
   ],
-  
   exports: [ 
   		RegisterComponent
   ]

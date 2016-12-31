@@ -26,9 +26,11 @@ export class GameRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
+    // @request Recebe string com tipo de jogo: pendent, etc
     public getGames = (request: any, response: any, next: any) => {
         database.db.collection('games')
-            .find()
+            .find(
+                { status: request.status }) 
             .toArray()
             .then(games => {
                 response.json(games || []);
@@ -94,10 +96,10 @@ export class GameRepository {
 
     // Routes for the games
     public init = (server: any, settings: HandlerSettings) => {
-        server.get(settings.prefix + 'games', settings.security.authorize, this.getGames);
+        server.post(settings.prefix + 'games', this.createGame);
+        server.get(settings.prefix + 'games', this.getGames);
         server.get(settings.prefix + 'games/:id', settings.security.authorize, this.getGame);
         server.put(settings.prefix + 'games/:id', settings.security.authorize, this.updateGame);
-        server.post(settings.prefix + 'games', settings.security.authorize, this.createGame);
         server.del(settings.prefix + 'games/:id', settings.security.authorize, this.deleteGame);
         console.log("[node] app.games.ts - Games routes registered");
     };    
