@@ -34,15 +34,40 @@ export class ListComponent {
 
 	constructor(private playerService: PlayerService, private alertService: AlertService, private router: Router) {
 
-        this.player = new Player("", "", ""); 
+        //this.player = new Player("", "", ""); 
 
     }
 
-    listAllPlayers() {
-        console.log("inicio de listagem")
-            this.playerService.getAll().subscribe(players => { this.player = players; });
-        console.log("fim de listagem");
+    ngOnInit() {
+        console.log("inicio de list");
+
+        this.playerService.getAllPlayers()
+        .subscribe(
+            data => {
+                console.log(data);
+                this.alertService.success('ListPlayers successful', true);
+            },
+            error => {
+                this.alertService.error(error);  
+            });
+       
+
+
+    //listAllPlayers() {
+      //  console.log("inicio de listagemkkkkkkk")
+        //    this.playerService.getAllPlayers()
+         //   .subscribe(
+           //     data => {
+             //       this.alertService.success('ListPlayers successful', true);
+               // },
+               // error => {
+                 //   this.alertService.error(error);  
+                //});
+        //console.log("fim de listagem lkkkkl");
     }
+
+
+    
 
 
 }

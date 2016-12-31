@@ -20,12 +20,38 @@ export class PlayerService {
         return this.http.post('/api/players', player, options).map(r=> r.json());
     }
 
-    getAll() {
-        return this.http.get('/api/players', this.jwt()).map((response: Response) => response.json());
-    }
+    //getAll() {
+      //  return this.http.get('/api/players', this.jwt()).map((response: Response) => response.json()); //jwc token
+    //}
     getAllPlayers():Observable<Player[]>{
-        return this.http.get('/api/players').map((response) => response.json());
+        return this.http.get('http://localhost:7777/api/players').map((response) =>{ 
+            let players = <Player[]>response.json();
+            console.log(players);
+            return players;
+
+        });
+
     }
+
+
+
+    fillPlayers():void {
+        let players = this.getAllPlayers();
+        
+        console.log(players);
+        //for(let player of players){
+
+          //  let p = new Player(player.name, player.email, player.numGamesPlayed, player.numGamesWon, player.percGamesWon);
+            //        console.log(p);
+
+        //}
+
+        
+
+
+
+    }
+
 
     getById(id: number) {
         return this.http.get('/api/players/' + id, this.jwt()).map((response: Response) => response.json());

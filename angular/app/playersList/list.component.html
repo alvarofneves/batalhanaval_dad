@@ -7,13 +7,19 @@
 
 		
 		<!-- <div *ngIf = "players" > -->
-		<div *ngFor= "let player of players" class="player">
-			{{player.name}} <a (click)="deleteUser(player._id)">Delete</a>
+		<div *ngFor="let player of players" class="player">
+			
+			<div class="name">{{player.name}}</div>
+			<div class="email">{{player.email}}</div>
+			<div class="numGamesPlayed">{{player.numGamesPlayed}}</div>
+			<div class="numGamesWon">{{player.numGamesWon}}</div>
+			<div class="percGamesWon">{{player.percGamesWon}}</div>
+
 		</div>
 		<!-- </div> -->
-		<p>listaaaa reer</p>
+		<p>lista plareersss</p>
 
-		<button type="submit" class="btn btn-primary" (click)="listAllPlayers()" >Load Players</button>
+		<!-- <button type="submit" class="btn btn-primary" (click)="listAllPlayers()" >Load Players</button> -->
 
 		<!-- Mostrar nome, email, numGamesPlayed, numGamesWon, percGamesWon -->
 		<!--<div *ngIf = "leaderboard">
@@ -23,13 +29,8 @@
 				<div class = "avatar">
 					<img [src] = "player.avatar">
 				</div>  -->
-				<!--<div class = "name">{{player.name}}</div>
-				<div class = "email">{{player.email}}</div>
-				<div class = "numGamesPlayed">{{player.numGamesPlayed}}</div>
-				<div class = "numGamesWon">{{player.numGamesWon}}</div>
-				<div class = "percGamesWon">{{player.percGamesWon}}</div>
-			</div>
+				
 		</div>
-	-->
-</div>
+
+
 </div>
