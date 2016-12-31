@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthenticationService {
-
     constructor(private http: Http) { }
 
     login(player: Player) {

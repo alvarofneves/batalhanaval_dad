@@ -10,25 +10,29 @@ import { PlayerService } from '../_services/index';
 })
 
 export class ListComponent {
-	//leaderboard: ListPlayers[];
+    listPlayers: any[] = [];
 
-	//constructor() {
-		//this.lustPlayersService.getList().subscribe((list) => this.list = list);
-	//}
+    constructor(private playerService: PlayerService) { 
+    }
 
-	//constructor(private playerService: PlayerService) {
-        //this.currentPlayer = JSON.parse(localStorage.getItem('currentPlayer'));
-    //}
+    ngOnInit() {
+        this.allPlayers();
+    }
 
-    //ngOnInit() {
-        //this.loadAllPlayers();
-    //}
+    private allPlayers() {
+        this.playerService.getAll()
+            .subscribe(list => {
+                //console.log(list); 
+                this.listPlayers = list; 
+        });
+    }
 
     //deletePlayer(id: number) {
         //this.playerService.delete(id).subscribe(() => { this.loadAllPlayers() });
     //}
 
-	//private loadAllPlayers() {
-        //this.playerService.getAll().subscribe(players => { this.players = players; });
-    //}
+    private loadAllPlayers() {
+        this.playerService.getAll().subscribe(players => { this.players = players; });
+
+    }
 }

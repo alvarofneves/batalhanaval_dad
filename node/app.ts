@@ -40,8 +40,8 @@ import { PlayerRepository } from './app.players';
 new PlayerRepository().init(restifyServer, settings);
 
 // Games Handler
-import { Game } from './app.games';
-new Game().init(restifyServer, settings);
+import { GameRepository } from './app.games';
+new GameRepository().init(restifyServer, settings);
 
 restifyServer.get(/^\/(?!api\/).*/, restify.serveStatic({
 	directory: '../angular',

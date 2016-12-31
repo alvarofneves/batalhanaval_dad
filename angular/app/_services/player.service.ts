@@ -20,7 +20,7 @@ export class PlayerService {
     }
 
     getAll() {
-        return this.http.get('/api/players', this.jwt()).map((response: Response) => response.json());
+        return this.http.get('/api/players').map((response: Response) => response.json());
     }
 
     getById(id: number) {
@@ -30,9 +30,6 @@ export class PlayerService {
     delete(id: number) {
         return this.http.delete('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }
-
-
-
 
     // private helper methods 
     private jwt() {

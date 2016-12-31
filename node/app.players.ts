@@ -1,8 +1,9 @@
+import { HandlerSettings }                 from './handler.settings';
+import { databaseConnection as database }  from './app.database';
+import { Player }                          from '../angular/app/_shared';
+
 const mongodb = require('mongodb');
 const util = require('util');
-import { HandlerSettings } from './handler.settings';
-import { databaseConnection as database } from './app.database';
-import { Player } from '../angular/app/shared';
 
 export class PlayerRepository {
     private settings: HandlerSettings = null;
@@ -17,15 +18,22 @@ export class PlayerRepository {
             response.send(400, 'No player data');
             return next();
         }
-        //console.log(request.body);
-
         const player = Player.fromBody(request.body);
-
-        //console.log(player);
 
         database.db.collection('players')
             .insertOne(player)
             .then(result => this.returnPlayer(result.insertedId, response, next))
+            .catch(err => this.handleError(err, response, next));
+    }
+
+    public getAllPlayers = (request: any, response: any, next: any) => {
+        database.db.collection('players')
+            .find()
+            .toArray()
+            .then(players => {
+                response.json(players || []);
+                next();
+            })
             .catch(err => this.handleError(err, response, next));
     }
 
@@ -45,22 +53,10 @@ export class PlayerRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
-    public getPlayers = (request: any, response: any, next: any) => {
-        database.db.collection('players')
-            .find()
-            .toArray()
-            .then(players => {
-                response.json(players || []);
-                next();
-            })
-            .catch(err => this.handleError(err, response, next));
-    }
-
     public getPlayer =  (request: any, response: any, next: any) => {
         const id = new mongodb.ObjectID(request.params.id);
         this.returnPlayer(id, response, next);
     }  
-
 
     public updatePlayer = (request: any, response: any, next: any) => {
         const id = new mongodb.ObjectID(request.params.id);
@@ -119,7 +115,7 @@ export class PlayerRepository {
     public init = (server: any, settings: HandlerSettings) => {
         this.settings = settings;
         server.post(settings.prefix + 'players', this.createPlayer);                // Sem 'authorize' porque user ainda não está registado
-        server.get(settings.prefix + 'players', this.getPlayers);
+        server.get(settings.prefix + 'players', this.getAllPlayers);
         server.get(settings.prefix + 'top10', this.getTop10);
         server.get(settings.prefix + 'players/:id', settings.security.authorize, this.getPlayer);
         server.put(settings.prefix + 'players/:id', settings.security.authorize, this.updatePlayer);

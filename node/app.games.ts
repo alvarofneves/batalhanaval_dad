@@ -1,9 +1,10 @@
+import { HandlerSettings }                from './handler.settings';
+import { databaseConnection as database } from './app.database';
+
 const mongodb = require('mongodb');
 const util = require('util');
-import {HandlerSettings} from './handler.settings';
-import {databaseConnection as database} from './app.database';
 
-export class Game {
+export class GameRepository {
     private handleError = (err: string, response: any, next: any) => {
         response.send(500, err);
         next();
