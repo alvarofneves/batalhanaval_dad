@@ -13,7 +13,6 @@ import { AlertService, PlayerService } from '../_services/index';
 
 export class RegisterComponent {
     public player: Player;
-    
     constructor (private playerService: PlayerService, private alertService: AlertService, private router: Router) {
         // Quando form é carregado, dados do novo Player estão vazios 
         this.player = new Player("", "", "");      // @params: name, email, password

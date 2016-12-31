@@ -9,18 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var game_1 = require("../_shared/game");
+var index_1 = require("../_services/index");
 var LobbyComponent = (function () {
-    function LobbyComponent() {
+    function LobbyComponent(gameService, alertService, router) {
+        this.gameService = gameService;
+        this.alertService = alertService;
+        this.router = router;
+        this.game = new game_1.Game("", ""); // @params: gameCreator: string, beginDate: string
     }
     LobbyComponent.prototype.createGame = function () {
-        var _this = this;
-        this.playerService.create(this.player)
-            .subscribe(function (data) {
-            _this.alertService.success('Registration successful', true);
-            _this.router.navigate(['/login']);
-        }, function (error) {
-            _this.alertService.error(error);
-        });
+        /*this.gameService.create(this.game)
+            .subscribe(
+                data => {
+                    this.alertService.success('Registration successful', true);
+                    this.router.navigate(['/lobby']);     // quero entrar no meu board e colocar barcos
+                },
+                error => {
+                    this.alertService.error(error);
+                });  */
         console.log("new game created!");
     };
     return LobbyComponent;
@@ -31,7 +39,7 @@ LobbyComponent = __decorate([
         selector: 'lobby',
         templateUrl: 'lobby.component.html',
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [index_1.GameService, index_1.AlertService, router_1.Router])
 ], LobbyComponent);
 exports.LobbyComponent = LobbyComponent;
 //# sourceMappingURL=lobby.component.js.map

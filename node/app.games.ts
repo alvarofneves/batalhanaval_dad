@@ -1,12 +1,25 @@
 const mongodb = require('mongodb');
 const util = require('util');
-import {HandlerSettings} from './handler.settings';
-import {databaseConnection as database} from './app.database';
+import { HandlerSettings } from './handler.settings';
+import { databaseConnection as database } from './app.database';
+import { Game } from '../angular/app/_shared';
 
-export class Game {
+export class GameRepository {
     private handleError = (err: string, response: any, next: any) => {
         response.send(500, err);
         next();
+    }
+
+    public createGame =  (request: any, response: any, next: any) => {
+        var game = request.body;
+        if (game === undefined) {
+            response.send(400, 'No game data');
+            return next();
+        }
+        database.db.collection('games')
+            .insertOne(game)
+            .then(result => this.returnGame(result.insertedId, response, next))
+            .catch(err => this.handleError(err, response, next));
     }
 
     private returnGame = (id:string, response: any, next: any) => {
@@ -57,18 +70,6 @@ export class Game {
                 $set: game
             })
             .then(result => this.returnGame(id, response, next))
-            .catch(err => this.handleError(err, response, next));
-    }
-
-    public createGame =  (request: any, response: any, next: any) => {
-        var game = request.body;
-        if (game === undefined) {
-            response.send(400, 'No game data');
-            return next();
-        }
-        database.db.collection('games')
-            .insertOne(game)
-            .then(result => this.returnGame(result.insertedId, response, next))
             .catch(err => this.handleError(err, response, next));
     }
 
