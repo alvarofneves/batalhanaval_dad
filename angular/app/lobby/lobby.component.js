@@ -25,8 +25,8 @@ var LobbyComponent = (function () {
     LobbyComponent.prototype.ngOnInit = function () {
         //chamar 2x método getAllGames(): 'pendent' e 2x 'progress'
         this.listGames();
-        //this.listGamesStr('pendent');
-        //this.listGamesStr('progress');
+        this.listGamesByStat('pendent');
+        //this.listGamesByStat('progress');
     };
     LobbyComponent.prototype.createGame = function () {
         var _this = this;
@@ -40,15 +40,16 @@ var LobbyComponent = (function () {
     };
     LobbyComponent.prototype.listGames = function () {
         var _this = this;
-        this.gameService.getGamesCreated()
+        this.gameService.getAllGames()
             .subscribe(function (list) {
             _this.listGamesArray = list;
         });
     };
-    LobbyComponent.prototype.listGamesStr = function (string) {
+    LobbyComponent.prototype.listGamesByStat = function (string) {
         var _this = this;
         // Guardar para array Games c/ status == 'pendent'
         if (string == 'pendent') {
+            //console.log('if do pendent');
             this.gameService.getGamesByStatus(string)
                 .subscribe(function (list) {
                 _this.listGamesPendent = list;
@@ -61,6 +62,9 @@ var LobbyComponent = (function () {
                 _this.listGamesProgress = list;
             });
         }
+    };
+    LobbyComponent.prototype.joinGame = function () {
+        console.log('join! - enviar player_id + game_id');
     };
     return LobbyComponent;
 }());

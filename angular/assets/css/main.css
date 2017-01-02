@@ -104,6 +104,10 @@ body {
     border: thin solid black;
 }  */
 
+#tableSubtitle, #tableList {
+    text-align: center;
+}
+
 /* ############################## LAYOUT BARRA HEADER ############################## */
 .headerBar {
     display: block;
@@ -133,6 +137,13 @@ body {
 }
 
 #otherLocation {
-    /* color: red; */
     font-style: italic;
+} 
+
+/* ############################## VIEW LOBBY ############################## */
+#listsTitle {
+    color: #00802b;
+    font-size: 160%;
+    text-align: center;
+    font-family: monospace;
 } 

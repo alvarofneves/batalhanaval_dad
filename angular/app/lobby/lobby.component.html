@@ -1,58 +1,65 @@
 <div class="container">
 	<div>
-		<h1>Lobby</h1>
-	    <button type="submit" class="btn btn-primary" (click)="createGame()">Create a new game</button>
-
-	    <h4>Games *ALL GAMES</h4>
-		<!--<ul>
-	        <li *ngFor="let player of players">
-	            {{game.playerCreator}} | {{game.numPlayersWaiting}} | <a (click)="joinGame(game.id)">Join</a>
-	        </li>
-	    </ul> -->
-	    <div *ngIf = "listGamesArray">
+	    <button type="submit" class="btn btn-primary" (click)="createGame()">New game</button>
+	    <h4 id="listsTitle">Games Pendent</h4>
+	    <div *ngIf = "listGamesPendent">
 			<table class="table table-striped">
 				<tr>
-					<th>*status</th>
-					<th>_id</th>
-					<th>Player Creator</th>
-					<th>Players waiting</th>
-					<th>Begin date</th>
-					<!-- <th>*join()</th> -->
+					<th id="tableSubtitle">*_id</th>
+					<th id="tableSubtitle">*status</th>
+					<th id="tableSubtitle">Creator</th>
+					<th id="tableSubtitle">Players waiting</th>
+					<th id="tableSubtitle"></th>
 				</tr>
-				<tr *ngFor = "let game of listGamesArray">  
-					<td class = "status">{{game.status}}</td>
-					<td class = "_id">{{game._id}}</td>
-					<td class = "playerCreator">{{game.playerCreator}}</td>
-					<td class = "totWaitingPlayers">{{game.totWaitingPlayers}}</td>
-					<td class = "beginDate">{{game.beginDate}}</td>
+				<tr *ngFor = "let game of listGamesPendent">  
+					<td id="tableList">{{game._id}}</td>
+					<td id="tableList">{{game.status}}</td>
+					<td id="tableList">{{game.playerCreator}}</td>
+					<td id="tableList">{{game.totWaitingPlayers}}</td>
+					<td><button type="submit" class="btn btn-primary" (click)="joinGame()">Join</button></td>
 				</tr>
 			</table>
 		</div>
 		<hr>
-	    <h4>Games In Progress</h4>
-	    <!--
-	    <ul>
-	        <li *ngFor="let player of players">
-	            {{game.playerCreator}} | {{game.numPlayers}} | {{game.gameTime}}
-	        </li>
-	    </ul> -->
+	    <h4 id="listsTitle">Games In Progress</h4>
 	    <div *ngIf = "listGamesProgress">
 			<table class="table table-striped">
 				<tr>
-					<th>*status</th>
-					<th>Player Creator</th>
-					<th>Players in game</th>
-					<th>*gameDuration</th>
+					<th id="tableSubtitle">*_id</th>
+					<th id="tableSubtitle">*status</th>
+					<th id="tableSubtitle">Creator</th>
+					<th id="tableSubtitle">Players in game</th>
+					<th id="tableSubtitle">*gameDuration</th>
 				</tr>
-				<tr *ngFor = "let game of listGamesProgress" >  
-					<td class = "status">{{game.status}}</td>
-					<td class = "playerCreator">{{game.playerCreator}}</td>
-					<td class = "totPlayers">{{game.totPlayers}}</td>
-					<td class = "duration">{{game.duration}}</td>
+				<tr *ngFor = "let game of listGamesProgress">  
+					<td id="tableList">{{game._id}}</td>
+					<td id="tableList">{{game.status}}</td>
+					<td id="tableList">{{game.playerCreator}}</td>
+					<td id="tableList">{{game.totPlayers}}</td>
+					<td id="tableList">{{game.duration}}</td>
 				</tr>
 			</table>
 		</div>
 	    <hr>
+	    <h4 id="listsTitle">*All games created</h4>
+		<div *ngIf = "listGamesArray">
+			<table class="table table-striped">
+				<tr>
+					<th id="tableSubtitle">*_id</th>
+					<th id="tableSubtitle">*status</th>
+					<th id="tableSubtitle">Creator</th>
+					<th id="tableSubtitle">Begin date</th>
+					<th id="tableSubtitle">Winner</th>
+				</tr>
+				<tr *ngFor = "let game of listGamesArray">  
+					<td id="tableList">{{game._id}}</td>
+					<td id="tableList">{{game.status}}</td>
+					<td id="tableList">{{game.playerCreator}}</td>
+					<td id="tableList">{{game.beginDate}}</td>
+					<td id="tableList">{{game.winnerPlayer}}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	<div>
 		<h1>websocksets</h1>

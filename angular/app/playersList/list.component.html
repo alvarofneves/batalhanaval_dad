@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="col-md-6 col-md-offset-3">
-	    <h1>Players registered</h1>
+	    <h4 id="listsTitle">Players registered</h4>
 	    <!--
 	    <ul>
 	        <li *ngFor="let player of players">
@@ -12,18 +12,18 @@
 		<div *ngIf = "listPlayers">
 			<table class="table table-striped">
 				<tr>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Games Played</th>
+					<th id="tableSubtitle">Name</th>
+					<th id="tableSubtitle">Email</th>
+					<th id="tableSubtitle">Games Played</th>
 				</tr>
 				<tr *ngFor = "let player of listPlayers" class="player">  
 					<!--
 					<div class = "avatar">
 						<img [src] = "player.avatar">
 					</div>  -->
-					<td class = "name">{{player.name}}</td>
-					<td class = "email">{{player.email}}</td>
-					<td class = "numGamesPlayed">{{player.numGamesPlayed}}</td>
+					<td id="tableList" class="name">{{player.name}}</td>
+					<td id="tableList" class="email">{{player.email}}</td>
+					<td id="tableList" class="numGamesPlayed">{{player.numGamesPlayed}}</td>
 				</tr>
 			</table>
 		</div>

@@ -22,7 +22,6 @@ export class ListComponent {
     private listAllPlayers() {
         this.playerService.getAll()
             .subscribe(list => {
-                //console.log(list); 
                 this.listPlayers = list; 
         });
     }

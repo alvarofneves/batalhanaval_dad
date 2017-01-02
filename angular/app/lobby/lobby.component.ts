@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component }  from '@angular/core';
 import { Router }     from '@angular/router';
 
 import { Game }                      from '../_shared/game';
@@ -24,8 +24,8 @@ export class LobbyComponent {
     ngOnInit() {
     	//chamar 2x método getAllGames(): 'pendent' e 2x 'progress'
     	this.listGames();
-    	//this.listGamesStr('pendent');
-    	//this.listGamesStr('progress');
+    	this.listGamesByStat('pendent');
+    	//this.listGamesByStat('progress');
     }
 
 	createGame() {
@@ -41,15 +41,16 @@ export class LobbyComponent {
     }
 
     listGames() {
-    	this.gameService.getGamesCreated()
+    	this.gameService.getAllGames()
 	    	.subscribe(list => {
 	    		this.listGamesArray = list;
 	    	});
     }
 
-    listGamesStr(string) {
+    listGamesByStat(string) {
     	// Guardar para array Games c/ status == 'pendent'
     	if (string == 'pendent') {
+    		//console.log('if do pendent');
     		this.gameService.getGamesByStatus(string)
 	    		.subscribe(list => {
 	    			this.listGamesPendent = list;
@@ -62,5 +63,9 @@ export class LobbyComponent {
 	    			this.listGamesProgress = list;
 	    		});
     	}     	
+    }
+
+    joinGame() {
+    	console.log('join! - enviar player_id + game_id');
     }
 }
