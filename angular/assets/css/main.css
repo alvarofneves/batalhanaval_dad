@@ -133,5 +133,6 @@ body {
 }
 
 #otherLocation {
-    color: red;
-}
+    /* color: red; */
+    font-style: italic;
+} 

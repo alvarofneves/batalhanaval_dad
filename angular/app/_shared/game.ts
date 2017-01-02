@@ -1,6 +1,6 @@
 export class Game {
 	playerCreator: any;
-	status: string;				// status = 'pendent'; 'started', finished' 
+	status: string;				// status = 'pendent'; 'progress', 'finished' 
 	beginDate: any;	
 	endDate: any;
 	winnerPlayer: string;
@@ -12,6 +12,6 @@ export class Game {
 	constructor(playerCreator: any, beginDate: any, status: string) {  
 		this.playerCreator = 1;		//test
 		this.beginDate = Date.now();
-		this.status = 'pendent';
+		this.status = 'pendent';	
 	}
-}
+}	

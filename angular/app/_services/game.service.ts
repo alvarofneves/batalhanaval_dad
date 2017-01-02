@@ -9,16 +9,16 @@ export class GameService {
     constructor(private http: Http) { }
 
     newGame(game: Game): Observable<any> {
-    	console.log('aqui');
     	console.log(game);
     	return this.http.post('/api/games', game).map(r=> r.json());
     }
 
-    getGames(status: string) {
-    	return this.http.get('/api/games').map((response: Response) => response.json());
+    getGamesCreated() {   
+        return this.http.get('/api/games').map((response: Response) => response.json());
     }
 
-    //getGamesInProgress() {
-    	//return this.http.get('/api/games'.map((response: Response) => response.json()));
-    //}
+    getGamesByStatus(string: String) {   
+        console.log('func. game.service | ' + string);
+    	return this.http.get('/api/games', string).map((response: Response) => response.json());
+    }
 }

@@ -13,16 +13,20 @@ var router_1 = require("@angular/router");
 var game_1 = require("../_shared/game");
 var index_1 = require("../_services/index");
 var LobbyComponent = (function () {
-    function LobbyComponent(gameService, alertServicevice, router) {
+    function LobbyComponent(gameService, alertService, router) {
         this.gameService = gameService;
-        this.alertServicevice = alertServicevice;
+        this.alertService = alertService;
         this.router = router;
+        this.listGamesArray = [];
         this.listGamesPendent = [];
         this.listGamesProgress = [];
         this.game = new game_1.Game('', '', '');
     }
     LobbyComponent.prototype.ngOnInit = function () {
-        //chamar 2x método getAllGames(): 'pendet' e 2x 'progress'
+        //chamar 2x método getAllGames(): 'pendent' e 2x 'progress'
+        this.listGames();
+        //this.listGamesStr('pendent');
+        //this.listGamesStr('progress');
     };
     LobbyComponent.prototype.createGame = function () {
         var _this = this;
@@ -33,7 +37,30 @@ var LobbyComponent = (function () {
         }, function (error) {
             _this.alertService.error(error);
         });
-        console.log("new game created!");
+    };
+    LobbyComponent.prototype.listGames = function () {
+        var _this = this;
+        this.gameService.getGamesCreated()
+            .subscribe(function (list) {
+            _this.listGamesArray = list;
+        });
+    };
+    LobbyComponent.prototype.listGamesStr = function (string) {
+        var _this = this;
+        // Guardar para array Games c/ status == 'pendent'
+        if (string == 'pendent') {
+            this.gameService.getGamesByStatus(string)
+                .subscribe(function (list) {
+                _this.listGamesPendent = list;
+            });
+        }
+        // Guardar para array Games c/ status == 'progress'
+        if (string == 'progress') {
+            this.gameService.getGamesByStatus(string)
+                .subscribe(function (list) {
+                _this.listGamesProgress = list;
+            });
+        }
     };
     return LobbyComponent;
 }());

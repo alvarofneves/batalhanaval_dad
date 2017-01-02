@@ -11,17 +11,21 @@ import { AlertService, GameService } from '../_services/index';
 })
 
 export class LobbyComponent { 
+	listGamesArray: any[] = [];
 	listGamesPendent: any[] = [];
 	listGamesProgress: any[] = [];
+	public string: String;
 	public game: Game;
 
-    constructor (private gameService: GameService, private alertServicevice: AlertService, private router: Router) {
+    constructor (private gameService: GameService, private alertService: AlertService, private router: Router) {
     	this.game = new Game('', '', '');
     }
 
     ngOnInit() {
-    	//chamar 2x método getAllGames(): 'pendet' e 2x 'progress'
-
+    	//chamar 2x método getAllGames(): 'pendent' e 2x 'progress'
+    	this.listGames();
+    	//this.listGamesStr('pendent');
+    	//this.listGamesStr('progress');
     }
 
 	createGame() {
@@ -34,12 +38,29 @@ export class LobbyComponent {
                 error => {
                     this.alertService.error(error);
                 }); 
-
-        console.log("new game created!");
     }
 
-    //listGames() {
-    	//this.gameService.getGames();
-    	//console.log('dentro funcao listGames()');
-    //}
+    listGames() {
+    	this.gameService.getGamesCreated()
+	    	.subscribe(list => {
+	    		this.listGamesArray = list;
+	    	});
+    }
+
+    listGamesStr(string) {
+    	// Guardar para array Games c/ status == 'pendent'
+    	if (string == 'pendent') {
+    		this.gameService.getGamesByStatus(string)
+	    		.subscribe(list => {
+	    			this.listGamesPendent = list;
+	    		});
+    	} 
+    	// Guardar para array Games c/ status == 'progress'
+    	if (string == 'progress') {
+    		this.gameService.getGamesByStatus(string)
+	    		.subscribe(list => {
+	    			this.listGamesProgress = list;
+	    		});
+    	}     	
+    }
 }

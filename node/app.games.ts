@@ -26,11 +26,16 @@ export class GameRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
-    // @request Recebe string com tipo de jogo: pendent, etc
+    // @request Recebe string do status (pendent, progress ou ended)
     public getGames = (request: any, response: any, next: any) => {
+        //var stringStatus = request.body;
+        //if (stringStatus === undefined) {
+            //response.send(400, 'No status data');
+            //return next();
+        //}
         database.db.collection('games')
-            .find(
-                { status: request.status }) 
+            .find()
+                //( { status: request.status }) 
             .toArray()
             .then(games => {
                 response.json(games || []);
