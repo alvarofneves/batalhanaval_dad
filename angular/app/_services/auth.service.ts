@@ -8,6 +8,9 @@ import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthService {
+    isLoggedIn: boolean = false;
+    redirectUrl: string;        // store the URL so we can redirect after logging in
+
     constructor(private http: Http) { }
 
     login(player: Player) {
@@ -34,5 +37,6 @@ export class AuthService {
     logout() {
         // remove player from local storage to log player out
         localStorage.removeItem('currentPlayer');
+        this.isLoggedIn = false;
     }
 }

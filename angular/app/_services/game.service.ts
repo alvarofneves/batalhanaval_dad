@@ -17,9 +17,11 @@ export class GameService {
         return this.http.get('/api/games').map((response: Response) => response.json());
     }
 
-    getGamesByStatus(string: String) {   
-        //console.log('func. game.service | ' + string);
-    	//return this.http.get('/api/games', string).map((response: Response) => response.json());
+    getGamesByStatus(status: String) {   
+        return this.http.get('/api/gamesSearch/' + status).map((response: Response) => response.json());
+    }
+
+    getGamesByCreator(idPlayer: Number) {   
         return this.http.get('/api/games').map((response: Response) => response.json());
     }
 }

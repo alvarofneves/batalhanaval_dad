@@ -19,7 +19,7 @@ export class RegisterComponent {
         this.player = new Player("", "", "");      // @params: name, email, password
     }
 
-    register() {
+    registerPlayer() {
         this.playerService.create(this.player)
             .subscribe(
                 data => {

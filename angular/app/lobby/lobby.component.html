@@ -27,7 +27,7 @@
 				<tr>
 					<th id="tableSubtitle">*_id</th>
 					<th id="tableSubtitle">*status</th>
-					<th id="tableSubtitle">Creator</th>
+					<th id="tableSubtitle">Player creator</th>
 					<th id="tableSubtitle">Players in game</th>
 					<th id="tableSubtitle">*gameDuration</th>
 				</tr>
@@ -42,7 +42,7 @@
 		</div>
 	    <hr>
 	    <h5 id="listsTitle">*All games created</h5>
-		<div *ngIf = "listGamesArray">
+		<div *ngIf = "listTotGames">
 			<table class="table table-striped">
 				<tr>
 					<th id="tableSubtitle">*_id</th>
@@ -51,7 +51,7 @@
 					<th id="tableSubtitle">Begin date</th>
 					<th id="tableSubtitle">Winner</th>
 				</tr>
-				<tr *ngFor = "let game of listGamesArray">  
+				<tr *ngFor = "let game of listTotGames">  
 					<td id="tableList">{{game._id}}</td>
 					<td id="tableList">{{game.status}}</td>
 					<td id="tableList">{{game.playerCreator}}</td>
@@ -60,6 +60,9 @@
 				</tr>
 			</table>
 		</div>
+
+		<h5 id="listsTitle">*My Games</h5>
+		<p id="otherLocation">id: 1 | game_id: 2</p>
 	</div>
 	<div>
 		<notifications-panel></notifications-panel>

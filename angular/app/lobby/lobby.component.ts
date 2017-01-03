@@ -13,10 +13,11 @@ import { AlertService, GameService } from '../_services/index';
 export class LobbyComponent { 
 	listGamesPendent: any[] = [];
 	listGamesProgress: any[] = [];
-	listGamesArray: any[] = [];
+	listTotGames: any[] = [];
+    listMyGames: any[] = [];
+
 	public string: String;
 	public game: Game;
-
     constructor (private gameService: GameService, private alertService: AlertService, private router: Router) {
     	this.game = new Game('', '', '');
     }
@@ -49,13 +50,13 @@ export class LobbyComponent {
     listGames() {
     	this.gameService.getAllGames()
 	    	.subscribe(list => {
-	    		this.listGamesArray = list;
+	    		this.listTotGames = list;
 	    	});
     }
 
-    listGamesByStatus(string) {
+    listGamesByStatus(status) {
     	// Guardar para array Games c/ status == 'pendent'
-    	if (string == 'pendent') {
+    	if (status == 'pendent') {
     		//console.log('if do pendent');
     		this.gameService.getGamesByStatus('pendent')
 	    		.subscribe(list => {
@@ -63,11 +64,18 @@ export class LobbyComponent {
 	    		});
     	} 
     	// Guardar para array Games c/ status == 'progress'
-    	if (string == 'progress') {
+    	if (status == 'progress') {
     		this.gameService.getGamesByStatus('progress')
 	    		.subscribe(list => {
 	    			this.listGamesProgress = list;
 	    		});
     	}     	
+    }
+
+    listMyGames(idPlayer) {
+        this.gameService.getGamesByCreator(idPlayer)
+            .subscribe(list => {
+                this.listMyGames = list;
+            });
     }
 }

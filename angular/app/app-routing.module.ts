@@ -19,8 +19,7 @@ import { ChatComponent }   				from './chat/chat.component';
 
 import { NotificationsModule } 			from './notifications/notifications.module';
 
-import { WebSocketService } from './notifications/websocket.service';
-
+import { WebSocketService } from './_services/websocket.service';
 import { AuthGuard } 		from './_guards/auth-guard.service';
 
 const appRoutes: Routes = [

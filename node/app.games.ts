@@ -40,13 +40,13 @@ export class GameRepository {
 
     // @request Recebe string com status do jogo *inc
     public getGamesByStatusN = (request: any, response: any, next: any) => {
-        if (request.status === undefined) {
+        if (request.params.status === undefined) {
             response.send(400, 'No Status received');
             return next();
         }
         database.db.collection('games')
             .find(
-                { status: request.status }) 
+                { status: request.params.status }) 
             .toArray()
             .then(games => {
                 response.json(games || []);
@@ -117,7 +117,7 @@ export class GameRepository {
     public init = (server: any, settings: HandlerSettings) => {
         server.post(settings.prefix + 'games', this.createGameN);
         server.get(settings.prefix + 'games', this.getGamesN);
-        //server.get(settings.prefix + 'games', this.getGamesByStatusN);
+        server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatusN);
         server.get(settings.prefix + 'games/:id', settings.security.authorize, this.getGame);
         server.put(settings.prefix + 'games/:id', settings.security.authorize, this.updateGame);
         server.del(settings.prefix + 'games/:id', settings.security.authorize, this.deleteGame);
