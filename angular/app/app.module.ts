@@ -17,9 +17,7 @@ import { ChatComponent } 	from './chat/chat.component';
 import { AppComponent }   	from './app.component';
 
 // ------------ SERVICES ------------
-import { AlertService, AuthenticationService, PlayerService, GameService } 	from './_services/index';   
-import { SettingsService } 				from './_services/settings.service';
-import { WebSocketService } 			from './notifications/websocket.service';
+import { AlertService, AuthService, SettingsService, PlayerService, GameService, WebSocketService } from './_services/index';   
 
 @NgModule({
 	imports: [ 
@@ -42,12 +40,12 @@ import { WebSocketService } 			from './notifications/websocket.service';
 		AppComponent
 	],
 	providers: [
-		WebSocketService,
+		SettingsService,
 		PlayerService,
 		GameService,
 		AlertService,
-		AuthenticationService,
-		SettingsService
+		WebSocketService,
+		AuthService
 	],
 	bootstrap: [ 
 		AppComponent 

@@ -1,7 +1,7 @@
 <div class="container">
 	<div>
 	    <button type="submit" class="btn btn-primary" (click)="createGame()">New game</button>
-	    <h4 id="listsTitle">Games Pendent</h4>
+	    <h5 id="listsTitle">Games Pendent</h5>
 	    <div *ngIf = "listGamesPendent">
 			<table class="table table-striped">
 				<tr>
@@ -21,7 +21,7 @@
 			</table>
 		</div>
 		<hr>
-	    <h4 id="listsTitle">Games In Progress</h4>
+	    <h5 id="listsTitle">Games In Progress</h5>
 	    <div *ngIf = "listGamesProgress">
 			<table class="table table-striped">
 				<tr>
@@ -41,7 +41,7 @@
 			</table>
 		</div>
 	    <hr>
-	    <h4 id="listsTitle">*All games created</h4>
+	    <h5 id="listsTitle">*All games created</h5>
 		<div *ngIf = "listGamesArray">
 			<table class="table table-striped">
 				<tr>
