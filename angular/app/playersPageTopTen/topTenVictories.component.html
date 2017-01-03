@@ -1,20 +1,17 @@
 <div class="col-md-8 col-md-offset-2">
 	<h4 id="tableTitle">Players with most victories</h4>
-	<!--
-	<div *ngIf = "listPlayersVictories">
+	<div *ngIf = "listTopTenVict">
 		<table class="table table-striped">
 			<tr>
-				<th id="tableSubtitle">*_id</th>
 				<th id="tableSubtitle">Name</th>
 				<th id="tableSubtitle">Games played</th>
 				<th id="tableSubtitle">Games won</th>
 			</tr>
-			<tr *ngFor = "let player of listPlayersVictories">  
-				<td id="tableList">{{player._id}}</td>
+			<tr *ngFor = "let player of listTopTenVict" class="player">  
 				<td id="tableList">{{player.name}}</td>
 				<td id="tableList">{{player.numGamesPlayed}}</td>
 				<td id="tableList">{{player.numGamesWon}}</td>
 			</tr>
 		</table>
-	</div> -->
+	</div>
 </div>

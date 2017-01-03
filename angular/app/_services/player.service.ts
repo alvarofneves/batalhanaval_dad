@@ -21,35 +21,17 @@ export class PlayerService {
 
     getAll() {
         return this.http.get('/api/players').map((response: Response) => response.json());
-    getAllPlayers():Observable<Player[]>{
-        return this.http.get('http://localhost:7777/api/players').map((response) =>{ 
-            let players = <Player[]>response.json();
-            console.log(players);
-            return players;
-
-        });
-
     }
 
+    //Alterado pelo VC
+    
+    //getAllPlayers():Observable<Player[]>{
+    //    return this.http.get('http://localhost:7777/api/players').map((response) =>{ 
+      //      let players = <Player[]>response.json();
+        //    console.log(players);
+          //  return players;
 
-
-    fillPlayers():void {
-        let players = this.getAllPlayers();
-        
-        console.log(players);
-        //for(let player of players){
-
-          //  let p = new Player(player.name, player.email, player.numGamesPlayed, player.numGamesWon, player.percGamesWon);
-            //        console.log(p);
-
-        //}
-
-        
-
-
-
-    }
-
+        //});
 
     getById(id: number) {
         return this.http.get('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
@@ -58,6 +40,10 @@ export class PlayerService {
     getTopScore() {
         return this.http.get('/api/topscore').map((response: Response) => response.json());
     }
+
+    getTopVict() {
+        return this.http.get('/api/topvict').map((response: Response) => response.json());
+    }    
 
     delete(id: number) {
         return this.http.delete('/api/players/' + id, this.jwt()).map((response: Response) => response.json());

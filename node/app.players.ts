@@ -101,12 +101,12 @@ export class PlayerRepository {
     public getTopVict = (request: any, response: any, next: any) => {
         database.db.collection('players')
             .find()
-            .sort({totalVictories:-1})
-            .limit(10)
+            .sort({numGamesWon:-1})
+            .limit(5)
             .toArray()
             .then(players => {
                 response.json(players || []);
-                this.settings.wsServer.notifyAll('players', Date.now() + ': Somebody accessed top 10 victories');
+                //this.settings.wsServer.notifyAll('players', Date.now() + ': Somebody accessed top 10 victories');
                 next();
             })
             .catch(err => this.handleError(err, response, next));
@@ -115,7 +115,7 @@ export class PlayerRepository {
     public getTopScore = (request: any, response: any, next: any) => {
         database.db.collection('players')
             .find()
-            .sort({totalScore:-1})
+            .sort({score:-1})
             .limit(10)
             .toArray()
             .then(players => {

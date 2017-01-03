@@ -4,13 +4,13 @@
 		<table class="table table-striped">
 			<tr>
 				<th id="tableSubtitle">Name</th>
-				<th id="tableSubtitle">Games Played</th>
-				<th id="tableSubtitle">Player Score</th>
+				<th id="tableSubtitle">Games played</th>
+				<th id="tableSubtitle">Total score</th>
 			</tr>
 			<tr *ngFor = "let player of listTopTenScore" class="player">  
-				<td id="tableList" class="name">{{player.name}}</td>
-				<td id="tableList" class="numGamesPlayed">{{player.numGamesPlayed}}</td>
-				<td id="tableList" class="numGamesPlayed">{{player.score}}</td>
+				<td id="tableList">{{player.name}}</td>
+				<td id="tableList">{{player.numGamesPlayed}}</td>
+				<td id="tableList">{{player.score}}</td>
 			</tr>
 		</table>
 	</div>
