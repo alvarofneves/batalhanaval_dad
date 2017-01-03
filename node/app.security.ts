@@ -19,9 +19,9 @@ let validPassword = (player: any, password: any) => {
     return sha1(password) === player.passwordHash;
 }
 
-passport.use(new LocalStrategy((username, password, done) => {
+passport.use(new LocalStrategy((email, password, done) => {
     database.db.collection('players').findOne({
-        username: username
+        email: email
     }).then(player => {
         if (player === null) {
             return done(null, false, {
@@ -33,7 +33,7 @@ passport.use(new LocalStrategy((username, password, done) => {
                 message: 'Incorrect credentials.'
             });
         }
-        player.token = sha1(player.username + Date.now());
+        player.token = sha1(player.email + Date.now());
         database.db.collection('players')
             .updateOne({_id: player._id}, {$set: {token: player.token}})
             .then(r => r.modifiedCount !== 1 ? done(null, false) : done(null, player))

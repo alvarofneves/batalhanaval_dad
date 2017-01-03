@@ -6,6 +6,7 @@
 		<nav>
 			<a [routerLink]="['/lobby']" routerLinkActive="active">Lobby</a>
 			<a [routerLink]="['/topten']" routerLinkActive="active">Top Ten</a>
+			<a [routerLink]="['/admin']" routerLinkActive="active">Admin Panel</a>
 		</nav>
 	</div>
 	<hr>
@@ -13,7 +14,6 @@
 	<a [routerLink]="['/login']" routerLinkActive="active" id="otherLocation">Login</a>
 	<a [routerLink]="['/board']" routerLinkActive="active" id="otherLocation">Board</a>
 	<a [routerLink]="['/game']" routerLinkActive="active" id="otherLocation">Game</a>
-    <a [routerLink]="['/players']" routerLinkActive="active" id="otherLocation">(adm) PlayersList</a>
 
 	<router-outlet></router-outlet>
 

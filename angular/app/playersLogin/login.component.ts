@@ -6,7 +6,8 @@ import { AlertService, AuthService } from '../_services/index';
 @Component({
     moduleId: module.id,
     selector: 'login',
-    templateUrl: 'login.component.html'
+    templateUrl: 'login.component.html',
+    styleUrls: ['../playersRegister/forms.css'] 
 })
 
 export class LoginComponent implements OnInit {
@@ -23,15 +24,12 @@ export class LoginComponent implements OnInit {
         this.returnUrl = this.route.snapshot.params['returnUrl'] || '/';
     }
 
-
-    //login() {
-    //    this.authService.login(this.model.email, this.model.password)
-    //        .subscribe(
-    //            data => {
-    //                this.router.navigate([this.returnUrl]);
-    //            },
-    //            error => {
-    //                this.alertService.error(error);
-    //            });
-    //}
+    onSubmit(form: any) {
+        this.authService.login(form.email, form.password)
+            .subscribe((result) => {
+                if (result) {
+                    this.router.navigate(['/lobby']);
+                }
+            });
+        }
 }

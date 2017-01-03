@@ -4,6 +4,7 @@ import { Player }                          from '../angular/app/_shared';
 
 const mongodb = require('mongodb');
 const util = require('util');
+const sha1 = require('sha1');
 
 export class PlayerRepository {
     private settings: HandlerSettings = null;

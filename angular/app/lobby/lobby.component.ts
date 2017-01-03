@@ -25,7 +25,6 @@ export class LobbyComponent {
     ngOnInit() {
     	this.listGamesByStatus('pendent');
     	this.listGamesByStatus('progress');
-    	this.listGames();
     }
 
     createGame() {
@@ -47,16 +46,9 @@ export class LobbyComponent {
     	//this.router.navigate(['/game', idGame]);
     }
 
-    listGames() {
-    	this.gameService.getAllGames()
-	    	.subscribe(list => {
-	    		this.listTotGames = list;
-	    	});
-    }
-
-    listGamesByStatus(status) {
+    listGamesByStatus(string) {
     	// Guardar para array Games c/ status == 'pendent'
-    	if (status == 'pendent') {
+    	if (string == 'pendent') {
     		//console.log('if do pendent');
     		this.gameService.getGamesByStatus('pendent')
 	    		.subscribe(list => {
@@ -64,7 +56,7 @@ export class LobbyComponent {
 	    		});
     	} 
     	// Guardar para array Games c/ status == 'progress'
-    	if (status == 'progress') {
+    	if (string == 'progress') {
     		this.gameService.getGamesByStatus('progress')
 	    		.subscribe(list => {
 	    			this.listGamesProgress = list;
@@ -72,7 +64,7 @@ export class LobbyComponent {
     	}     	
     }
 
-    listMyGames(idPlayer) {
+    listGamesCurrentPlayer(idPlayer) {
         this.gameService.getGamesByCreator(idPlayer)
             .subscribe(list => {
                 this.listMyGames = list;

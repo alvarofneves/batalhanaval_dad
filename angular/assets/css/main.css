@@ -28,6 +28,7 @@ body {
     box-sizing: inherit;
 }
 
+/* ############################## LAYOUT BOARD / GAME ############################## */
 .board {
     width: 350px;
     height: 350px;
@@ -104,10 +105,6 @@ body {
     border: thin solid black;
 }  */
 
-#tableSubtitle, #tableList {
-    text-align: center;
-}
-
 /* ############################## LAYOUT BARRA HEADER ############################## */
 .headerBar {
     display: block;
@@ -135,15 +132,40 @@ body {
     background-color: #ebebe0;
 }
 
-#otherLocation {
-    /* font-style: italic; */
-    color: red; 
-} 
+/* ############################## LAYOUT PARA TABELAS ############################## */
+#tableSubtitle, #tableList {
+    text-align: center;
+}
 
-/* ############################## VIEW LOBBY ############################## */
-#listsTitle {
+#tableList {
+    line-height: 15px; 
+}
+
+#tableTitle {
     color: #369;   /*#00802b; */
     font-size: 160%;
     text-align: center;
     font-family: monospace;
+}
+
+/*tr > td > .btn-primary { */
+.btn-game-join {
+    padding: 0px 30px;
+    font-size: 17px;
+    border-radius: 4px; 
+    background: #008000;
+    color: #ffffff;
+    
+    /*border-color: black;*/
+}
+
+.btn-game-join:hover { 
+    background: #006600;
+    color: #ffffff;
+}
+
+/* ############################## OTHERS ############################## */
+#otherLocation {
+    /* font-style: italic; */
+    color: red; 
 } 

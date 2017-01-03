@@ -7,8 +7,8 @@ import { AlertService, PlayerService } from '../_services/index';
 @Component({
     moduleId:  module.id,
     selector: 'register',
-    templateUrl: 'register.component.html'
-    /*styleUrls: ['../assets/css/forms.css'] */
+    templateUrl: 'register.component.html',
+    styleUrls: ['forms.css'] 
 })
 
 export class RegisterComponent {

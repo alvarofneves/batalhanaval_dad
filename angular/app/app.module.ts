@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { RegisterModule } 	from './playersRegister/register.module';
 import { LoginModule }		from './playersLogin/login.module';
-import { ListModule } 		from './playersList/list.module';
+import { AdminPanelModule } from './adminPanel/admin.module';
 import { LobbyModule } 		from './lobby/lobby.module';
 import { PageTopTenModule }   	from './playersPageTopTen/pageTopTen.module';
 import { GamePageModule } 		from './gamePage/gamePage.module';		
@@ -28,7 +28,7 @@ import { AlertService, AuthService, SettingsService, PlayerService, GameService,
 		LobbyModule,
 		RegisterModule,
 		LoginModule,
-		ListModule,
+		AdminPanelModule,
 		GamePageModule,
 		PageTopTenModule,
 		NotificationsModule,

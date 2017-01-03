@@ -1,0 +1,19 @@
+<h5 id="tableTitle">Games Pendent</h5>
+<div *ngIf = "listGamesPendent">
+	<table class="table table-striped">
+		<tr>
+			<th id="tableSubtitle">*_id</th>
+			<th id="tableSubtitle">*status</th>
+			<th id="tableSubtitle">Player creator</th>
+			<th id="tableSubtitle">Players waiting</th>
+			<th id="tableSubtitle"></th>
+		</tr>
+		<tr *ngFor = "let game of listGamesPendent">  
+			<td id="tableList">{{game._id}}</td>
+			<td id="tableList">{{game.status}}</td>
+			<td id="tableList">{{game.playerCreator}}</td>
+			<td id="tableList">{{game.totWaitingPlayers}}</td>
+			<td><button type="submit" class="btn btn-primary" (click)="joinGame()">Join</button></td>
+		</tr>
+	</table>
+</div>
