@@ -102,7 +102,7 @@ export class PlayerRepository {
         database.db.collection('players')
             .find()
             .sort({numGamesWon:-1})
-            .limit(5)
+            .limit(10)
             .toArray()
             .then(players => {
                 response.json(players || []);
