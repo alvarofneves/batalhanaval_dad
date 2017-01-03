@@ -123,7 +123,6 @@ body {
 .headerBar2 a:hover { 
     text-decoration: none;  
     background-color: #ccccb3;  
-    /* text-decoration-color: red; */
 }
 
 .headerBar2 a:active {   
@@ -137,7 +136,8 @@ body {
 }
 
 #otherLocation {
-    font-style: italic;
+    /* font-style: italic; */
+    color: red; 
 } 
 
 /* ############################## VIEW LOBBY ############################## */
