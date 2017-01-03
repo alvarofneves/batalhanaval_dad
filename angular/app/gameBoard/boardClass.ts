@@ -20,24 +20,64 @@ export class BoardClass {
     }
     
     public addBoat(startingCell:CellClass, boat:BoatClass) {
-        
+
+        let cellArr: CellClass[] = [];
+        let protectedSea: CellClass[] = [];
+        let boatLabel = "C";
+
         for(let cell of this.cells){
-            for(let c of boat.getCells()){
+            if(cell.getValue()) {
+                return -1;
+            }
+            for (let c of boat.getCells()) {
 
-                if (cell.getLine() == startingCell.getLine()+c.getLine() &&
-                    cell.getColumn() == startingCell.getColumn()+c.getColumn()) {
+                if (cell.getLine() == startingCell.getLine() + c.getLine() &&
+                    cell.getColumn() == startingCell.getColumn() + c.getColumn()) {
 
-                    cell.setValue(c.getValue());
+                    if (c.getValue() != "" && c.getValue() != "~") {
+                        if (cell.getLine() >= 0 && cell.getLine() <= 9) {
+                            if (cell.getColumn() >= 0 && cell.getColumn() <= 9) {
 
+                                cellArr.push(cell);
+                                boatLabel = c.getValue();
+                            } else {
+                                return -1;
+                            }
+                        } else {
+                            return -1;
+                        }
+                    } else {
+                        if (c.getValue() == "~") {
+                            if (cell.getLine() >= 0 && cell.getLine() <= 9) {
+                                if (cell.getColumn() >= 0 && cell.getColumn() <= 9) {
+                                    protectedSea.push(cell);
+                                }
+                            }
+                        }
+                    }
                 }
+
             }
 
+
         }
+        for(let c of cellArr){
+            c.setValue(boatLabel);
+        }
+        for(let c of protectedSea){
+            c.setValue("~");
+        }
+
+        return 0;
     }
 
     getId() {
         
         return this.id;
+    }
+
+    public getCells(){
+        return this.cells;
     }
 }
 
