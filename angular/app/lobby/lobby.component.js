@@ -17,19 +17,19 @@ var LobbyComponent = (function () {
         this.gameService = gameService;
         this.alertService = alertService;
         this.router = router;
-        this.listGamesArray = [];
         this.listGamesPendent = [];
         this.listGamesProgress = [];
+        this.listGamesArray = [];
         this.game = new game_1.Game('', '', '');
     }
     LobbyComponent.prototype.ngOnInit = function () {
-        //chamar 2x método getAllGames(): 'pendent' e 2x 'progress'
+        this.listGamesByStatus('pendent');
+        this.listGamesByStatus('progress');
         this.listGames();
-        this.listGamesByStat('pendent');
-        //this.listGamesByStat('progress');
     };
     LobbyComponent.prototype.createGame = function () {
         var _this = this;
+        //createGame(idUser: number) {
         this.gameService.newGame(this.game)
             .subscribe(function (data) {
             _this.alertService.success('Registration successful', true);
@@ -38,6 +38,11 @@ var LobbyComponent = (function () {
             _this.alertService.error(error);
         });
     };
+    LobbyComponent.prototype.joinGame = function () {
+        //joinGame(idGame : number) {
+        console.log('join! - enviar player_id + game_id');
+        //this.router.navigate(['/game', idGame]);
+    };
     LobbyComponent.prototype.listGames = function () {
         var _this = this;
         this.gameService.getAllGames()
@@ -45,26 +50,23 @@ var LobbyComponent = (function () {
             _this.listGamesArray = list;
         });
     };
-    LobbyComponent.prototype.listGamesByStat = function (string) {
+    LobbyComponent.prototype.listGamesByStatus = function (string) {
         var _this = this;
         // Guardar para array Games c/ status == 'pendent'
         if (string == 'pendent') {
             //console.log('if do pendent');
-            this.gameService.getGamesByStatus(string)
+            this.gameService.getGamesByStatus('pendent')
                 .subscribe(function (list) {
                 _this.listGamesPendent = list;
             });
         }
         // Guardar para array Games c/ status == 'progress'
         if (string == 'progress') {
-            this.gameService.getGamesByStatus(string)
+            this.gameService.getGamesByStatus('progress')
                 .subscribe(function (list) {
                 _this.listGamesProgress = list;
             });
         }
-    };
-    LobbyComponent.prototype.joinGame = function () {
-        console.log('join! - enviar player_id + game_id');
     };
     return LobbyComponent;
 }());

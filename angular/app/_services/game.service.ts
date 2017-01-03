@@ -19,6 +19,7 @@ export class GameService {
 
     getGamesByStatus(string: String) {   
         //console.log('func. game.service | ' + string);
-    	return this.http.get('/api/games').map((response: Response) => response.json());
+    	//return this.http.get('/api/games', string).map((response: Response) => response.json());
+        return this.http.get('/api/games').map((response: Response) => response.json());
     }
 }

@@ -26,7 +26,7 @@ export class GameRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
-    // @request Recebe string do status (pendent, progress ou ended)
+    // Vai buscar todos os jogos
     public getGamesN = (request: any, response: any, next: any) => {
         database.db.collection('games')
             .find()
@@ -38,16 +38,15 @@ export class GameRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
-    // @request Recebe string com status do jogo (pendent, progress ou ended)
+    // @request Recebe string com status do jogo *inc
     public getGamesByStatusN = (request: any, response: any, next: any) => {
-        const strStatus = request.body;
-        if (strStatus === undefined) {
-            response.send(400, 'No status data');
+        if (request.status === undefined) {
+            response.send(400, 'No Status received');
             return next();
         }
         database.db.collection('games')
-            .find()
-                //( { status: request.status }) 
+            .find(
+                { status: request.status }) 
             .toArray()
             .then(games => {
                 response.json(games || []);
@@ -58,6 +57,7 @@ export class GameRepository {
 
     public getGame =  (request: any, response: any, next: any) => {
         const id = new mongodb.ObjectID(request.params.id);
+
         this.returnGame(id, response, next);
     }
 
@@ -95,7 +95,7 @@ export class GameRepository {
 
     public deleteGame =  (request: any, response: any, next: any) => {
         const id = new mongodb.ObjectID(request.params.id);
-        
+
         database.db.collection('games')
             .deleteOne({
                 _id: id
@@ -117,7 +117,7 @@ export class GameRepository {
     public init = (server: any, settings: HandlerSettings) => {
         server.post(settings.prefix + 'games', this.createGameN);
         server.get(settings.prefix + 'games', this.getGamesN);
-        server.get(settings.prefix + 'games', this.getGamesByStatusN);
+        //server.get(settings.prefix + 'games', this.getGamesByStatusN);
         server.get(settings.prefix + 'games/:id', settings.security.authorize, this.getGame);
         server.put(settings.prefix + 'games/:id', settings.security.authorize, this.updateGame);
         server.del(settings.prefix + 'games/:id', settings.security.authorize, this.deleteGame);

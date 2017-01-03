@@ -42,8 +42,6 @@ const appRoutes: Routes = [
 
 	{ path: 'topten', component: PageTopTenComponent },
 
-	{ path: 'gameRules', component: LobbyComponent },		// alterar
-
 	{ path: 'about', component: AboutComponent },		
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
