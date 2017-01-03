@@ -4,18 +4,16 @@
 	</div>
 	<div class="headerBar2">
 		<nav>
-			<a [routerLink]="['/lobby']" routerLinkActive="active">Lobby</a>
-			<a [routerLink]="['/topten']" routerLinkActive="active">PlayersTopTen</a>
-		    <a [routerLink]="['/gameRules']" routerLinkActive="active">Game Rules</a>
+			<a [routerLink]="['/lobby']" routerLinkActive="active" id="menuSpaceOpts">Lobby</a>
+			<a [routerLink]="['/topten']" routerLinkActive="active" id="menuSpaceOpts">Top Ten</a>
+			<a [routerLink]="['/admin']" routerLinkActive="active" id="menuSpaceOpts">Admin Panel</a>
 		</nav>
 	</div>
-
 	<hr>
 	<a [routerLink]="['/register']" routerLinkActive="active" id="otherLocation">Register</a>
 	<a [routerLink]="['/login']" routerLinkActive="active" id="otherLocation">Login</a>
 	<a [routerLink]="['/board']" routerLinkActive="active" id="otherLocation">Board</a>
 	<a [routerLink]="['/game']" routerLinkActive="active" id="otherLocation">Game</a>
-    <a [routerLink]="['/players']" routerLinkActive="active" id="otherLocation">(adm) PlayersList</a>
 
 	<router-outlet></router-outlet>
 
@@ -27,7 +25,6 @@
 		    </div> 
 		    <div class="col-md-6">
 		    	<a [routerLink]="['/about']" routerLinkActive="active">About us</a>
-		    	<a [routerLink]="['/lobby']" routerLinkActive="active">Share</a>
 		    </div>
 	    </div> 
 	</div>  

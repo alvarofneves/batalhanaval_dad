@@ -55,6 +55,8 @@ jspm_packages
 .idea/
 
 # Extensions of Angular compiled files (@AS - 06/12)
+angular/app/*.js
+angular/app/*.map
 angular/app/**/*.js
 angular/app/**/*.map
 angular/app/**/*.log

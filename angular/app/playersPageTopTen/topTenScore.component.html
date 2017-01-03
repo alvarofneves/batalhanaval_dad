@@ -1,0 +1,17 @@
+<div class="col-md-8 col-md-offset-2">
+	<h4 id="tableTitle">Players with best score</h4> 
+	<div *ngIf = "listTopTenScore">
+		<table class="table table-striped">
+			<tr>
+				<th id="tableSubtitle">Name</th>
+				<th id="tableSubtitle">Games Played</th>
+				<th id="tableSubtitle">Player Score</th>
+			</tr>
+			<tr *ngFor = "let player of listTopTenScore" class="player">  
+				<td id="tableList" class="name">{{player.name}}</td>
+				<td id="tableList" class="numGamesPlayed">{{player.numGamesPlayed}}</td>
+				<td id="tableList" class="numGamesPlayed">{{player.score}}</td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,37 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { AlertService, AuthenticationService } from '../_services/index';
+import { AlertService, AuthService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
     selector: 'login',
-    templateUrl: 'login.component.html'
+    templateUrl: 'login.component.html',
+    styleUrls: ['../playersRegister/forms.css'] 
 })
 
 export class LoginComponent implements OnInit {
     model: any = {};
     returnUrl: string;
 
-    constructor(private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService, private alertService: AlertService) { }
+    constructor(private route: ActivatedRoute, private router: Router, private authService: AuthService, private alertService: AlertService) { }
 
     ngOnInit() {
         // reset login status
-        this.authenticationService.logout();
+        this.authService.logout();
 
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.params['returnUrl'] || '/';
     }
 
-
-    //login() {
-    //    this.authenticationService.login(this.model.email, this.model.password)
-    //        .subscribe(
-    //            data => {
-    //                this.router.navigate([this.returnUrl]);
-    //            },
-    //            error => {
-    //                this.alertService.error(error);
-    //            });
-    //}
+    onSubmit(form: any) {
+        this.authService.login(form.email, form.password)
+            .subscribe((result) => {
+                if (result) {
+                    this.router.navigate(['/lobby']);
+                }
+            });
+        }
 }

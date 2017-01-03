@@ -24,8 +24,6 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       // other libraries
       'rxjs':                      'npm:rxjs',
-
-      // Correção erro: 'zone.js:1382 GET http://localhost:3000/traceur 404 (Not Found)'
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
 
       // Original (Socket.io-client versão 1.6)

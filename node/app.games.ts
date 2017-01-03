@@ -1,9 +1,10 @@
+import { HandlerSettings }                from './handler.settings';
+import { databaseConnection as database } from './app.database';
+
 const mongodb = require('mongodb');
 const util = require('util');
-import {HandlerSettings} from './handler.settings';
-import {databaseConnection as database} from './app.database';
 
-export class Game {
+export class GameRepository {
     private handleError = (err: string, response: any, next: any) => {
         response.send(500, err);
         next();
@@ -25,7 +26,8 @@ export class Game {
             .catch(err => this.handleError(err, response, next));
     }
 
-    public getGames = (request: any, response: any, next: any) => {
+    // Vai buscar todos os jogos
+    public getGamesN = (request: any, response: any, next: any) => {
         database.db.collection('games')
             .find()
             .toArray()
@@ -36,8 +38,26 @@ export class Game {
             .catch(err => this.handleError(err, response, next));
     }
 
+    // @request Recebe string com status do jogo *inc
+    public getGamesByStatusN = (request: any, response: any, next: any) => {
+        if (request.params.status === undefined) {
+            response.send(400, 'No Status received');
+            return next();
+        }
+        database.db.collection('games')
+            .find(
+                { status: request.params.status }) 
+            .toArray()
+            .then(games => {
+                response.json(games || []);
+                next();
+            })
+            .catch(err => this.handleError(err, response, next));
+    }
+
     public getGame =  (request: any, response: any, next: any) => {
         const id = new mongodb.ObjectID(request.params.id);
+
         this.returnGame(id, response, next);
     }
 
@@ -60,8 +80,9 @@ export class Game {
             .catch(err => this.handleError(err, response, next));
     }
 
-    public createGame =  (request: any, response: any, next: any) => {
-        var game = request.body;
+    public createGameN =  (request: any, response: any, next: any) => {
+        const game = request.body;
+
         if (game === undefined) {
             response.send(400, 'No game data');
             return next();
@@ -74,6 +95,7 @@ export class Game {
 
     public deleteGame =  (request: any, response: any, next: any) => {
         const id = new mongodb.ObjectID(request.params.id);
+
         database.db.collection('games')
             .deleteOne({
                 _id: id
@@ -93,10 +115,11 @@ export class Game {
 
     // Routes for the games
     public init = (server: any, settings: HandlerSettings) => {
-        server.get(settings.prefix + 'games', settings.security.authorize, this.getGames);
+        server.post(settings.prefix + 'games', this.createGameN);
+        server.get(settings.prefix + 'games', this.getGamesN);
+        server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatusN);
         server.get(settings.prefix + 'games/:id', settings.security.authorize, this.getGame);
         server.put(settings.prefix + 'games/:id', settings.security.authorize, this.updateGame);
-        server.post(settings.prefix + 'games', settings.security.authorize, this.createGame);
         server.del(settings.prefix + 'games/:id', settings.security.authorize, this.deleteGame);
         console.log("[node] app.games.ts - Games routes registered");
     };    

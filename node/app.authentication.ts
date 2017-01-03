@@ -1,11 +1,12 @@
 import { HandlerSettings } from './handler.settings';
 
 export class Authentication{
-   
+    // Receber email + password inseridos pelo Player na pag. LOGIN
     public login = (request: any, response: any, next: any) => {
-        let player = request.player;
-        console.log(player);
-        response.json(player);
+        let email = request.email;
+        let password = request.password;
+
+        //response.json(player);
         return next();
     }
 
@@ -16,7 +17,8 @@ export class Authentication{
     }  
 
     public init = (server: any, settings: HandlerSettings) => {
-        server.post(settings.prefix + 'login', settings.security.passport.authenticate('local', {'session':false}), this.login);
+        server.post(settings.prefix + 'login', this.login);
+        //server.post(settings.prefix + 'login', settings.security.passport.authenticate('local', {'session':false}), this.login);
         server.post(settings.prefix + 'logout', settings.security.authorize, this.logout);
         console.log("Authentication routes registered");
     }  

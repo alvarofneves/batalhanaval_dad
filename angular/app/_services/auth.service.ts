@@ -1,22 +1,37 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Injectable }                              from '@angular/core';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
+import { Player }     from '../_shared/index';
+import { Observable } from 'rxjs/Rx';
+
+import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthService {
-  	isLoggedIn: boolean = false;
+    isLoggedIn: boolean = false;
+    redirectUrl: string;        // store the URL so we can redirect after logging in
 
-	// store the URL so we can redirect after logging in
-	redirectUrl: string;
+    constructor(private http: Http) { }
 
- 	login(): Observable<boolean> {
-    	return Observable.of(true).delay(1000).do(val => this.isLoggedIn = true);
-  	}
+    login(email, password) {
+        let headers = new Headers();
+        //let options = new RequestOptions({ headers: headers });
 
-  	logout(): void {
-    	this.isLoggedIn = false;
-  	}
+        return this.http.post('/api/login', JSON.stringify({ email, password })).map((response: Response) => {
+            let player = response.json();
+            
+            console.log('AUTHENTICATION');
+            console.log(player);
+            if (player && player.token) {
+                // store player details and jwt token in local storage to keep player logged in between page refreshes
+                localStorage.setItem('currentplayer', JSON.stringify(player));
+            }
+            this.isLoggedIn = true;
+        });
+    }
+
+    logout() {
+        localStorage.removeItem('currentPlayer');
+        this.isLoggedIn = false;
+    }
 }

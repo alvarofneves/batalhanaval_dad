@@ -1,36 +1,30 @@
 <div class="container">
-	<div class="col-md-6 col-md-offset-3">
-		<!--<h3>Hi {{currentUser.name}}!</h3>   -->
-		<h1>Players registered</h1>
+	<div class="col-md-8 col-md-offset-2">
+	    <h4 id="tableTitle">Players registered</h4>
+	    <!-- <ul>
+	        <li *ngFor="let player of players">
+	            {{player.name}} | {{player.email}} | <a (click)="deleteUser(user.id)">Delete</a>
+	        </li>
+	    </ul>  -->
 
-		
-
-		
-		<!-- <div *ngIf = "players" > -->
-		<div *ngFor="let player of players" class="player">
-			
-			<div class="name">{{player.name}}</div>
-			<div class="email">{{player.email}}</div>
-			<div class="numGamesPlayed">{{player.numGamesPlayed}}</div>
-			<div class="numGamesWon">{{player.numGamesWon}}</div>
-			<div class="percGamesWon">{{player.percGamesWon}}</div>
-
+		<!-- TODO Mostrar nome, email, numGamesPlayed, numGamesWon, percGamesWon -->
+		<div *ngIf = "listPlayers">
+			<table class="table table-striped">
+				<tr>
+					<th id="tableSubtitle">Name</th>
+					<th id="tableSubtitle">Email</th>
+					<th id="tableSubtitle">Games Played</th>
+				</tr>
+				<tr *ngFor = "let player of listPlayers" class="player">  
+					<!--
+					<div class = "avatar">
+						<img [src] = "player.avatar">
+					</div>  -->
+					<td id="tableList" class="name">{{player.name}}</td>
+					<td id="tableList" class="email">{{player.email}}</td>
+					<td id="tableList" class="numGamesPlayed">{{player.numGamesPlayed}}</td>
+				</tr>
+			</table>
 		</div>
-		<!-- </div> -->
-		<p>lista plareersss</p>
-
-		<!-- <button type="submit" class="btn btn-primary" (click)="listAllPlayers()" >Load Players</button> -->
-
-		<!-- Mostrar nome, email, numGamesPlayed, numGamesWon, percGamesWon -->
-		<!--<div *ngIf = "leaderboard">
-		<div *ngFor = "let player of leaderboard" class = "player">   -->
-
-				<!--
-				<div class = "avatar">
-					<img [src] = "player.avatar">
-				</div>  -->
-				
-		</div>
-
-
+    </div>
 </div>

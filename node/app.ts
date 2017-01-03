@@ -40,8 +40,8 @@ import { PlayerRepository } from './app.players';
 new PlayerRepository().init(restifyServer, settings);
 
 // Games Handler
-import { Game } from './app.games';
-new Game().init(restifyServer, settings);
+import { GameRepository } from './app.games';
+new GameRepository().init(restifyServer, settings);
 
 restifyServer.get(/^\/(?!api\/).*/, restify.serveStatic({
 	directory: '../angular',
@@ -55,5 +55,5 @@ database.connect(url, () => {
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
 
-    console.log("##### BRANCH 'registerUser' | $node/app.ts | >>>SRV NODE UP<<< | 19 #####");
+    console.log("##### BRANCH 'registerUser' | $node/app.ts | >>>SRV NODE UP<<< #####");
 });

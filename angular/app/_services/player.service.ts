@@ -9,20 +9,18 @@ import { Observable } from 'rxjs/Rx';
 export class PlayerService {
     constructor(private http: Http) { }
 
-    // Envio dos dados do novo Player para o servidor
     create(player: Player): Observable<any>{
         let headers = new Headers();
         let options = new RequestOptions({ headers: headers });
 
         headers.append("Content-Type", 'application/json');
         
-        // .map((response: Response) => response.json());      // post() : converte dados para JSON
+        // NOTE: .map((response: Response) => response.json());      // post() : converte dados para JSON
         return this.http.post('/api/players', player, options).map(r=> r.json());
     }
 
-    //getAll() {
-      //  return this.http.get('/api/players', this.jwt()).map((response: Response) => response.json()); //jwc token
-    //}
+    getAll() {
+        return this.http.get('/api/players').map((response: Response) => response.json());
     getAllPlayers():Observable<Player[]>{
         return this.http.get('http://localhost:7777/api/players').map((response) =>{ 
             let players = <Player[]>response.json();
@@ -57,12 +55,13 @@ export class PlayerService {
         return this.http.get('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }
 
+    getTopScore() {
+        return this.http.get('/api/topscore').map((response: Response) => response.json());
+    }
+
     delete(id: number) {
         return this.http.delete('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }
-
-
-
 
     // private helper methods 
     private jwt() {
