@@ -1,7 +1,7 @@
 import { Component }  from '@angular/core';
 import { Router }     from '@angular/router';
 
-import { Game }                      from '../_shared/game';
+import { Game }                      from '../_shared/index';
 import { AlertService, GameService } from '../_services/index';  
 
 @Component({

@@ -127,6 +127,10 @@ body {
     background-color: #ccccb3;
 }
 
+.headerBar2 > a {
+    padding-right: 30px;
+}
+
 /* ############################## LAYOUT BARRA FOOTER ############################## */
 .footerBar {
     background-color: #ebebe0;

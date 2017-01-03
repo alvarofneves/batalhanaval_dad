@@ -36,4 +36,9 @@ export class AdminPanelComponent {
                 this.listTotGames = list;
             });
     }
+
+    // @param Recebe data ??? e converte para formato dd-mm-aaaa
+    convertDate() {
+        dateConverted = getTime();
+    }
 }
