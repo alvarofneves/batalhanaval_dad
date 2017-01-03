@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Player }         from '../_shared/player'; 
-import { PlayerService }  from '../_services/index';
+import { Player } from '../_shared/index'; 
+import { PlayerService } from '../_services/index';
 
 @Component({
     moduleId: module.id,

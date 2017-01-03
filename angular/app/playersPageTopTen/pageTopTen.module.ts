@@ -2,8 +2,8 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { PageTopTenComponent } 		from './pageTopTen.component';
-import { TopTenVictoriesComponent } from './topTenVictories/topTenVictories.component';
-import { TopTenScoreComponent }   	from './topTenScore/topTenScore.component';
+import { TopTenVictoriesComponent } from './topTenVictories.component';
+import { TopTenScoreComponent }   	from './topTenScore.component';
 
 @NgModule({
 	imports: [ 
