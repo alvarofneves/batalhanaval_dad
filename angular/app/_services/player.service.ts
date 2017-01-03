@@ -1,8 +1,10 @@
 import { Injectable }                              from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Observable }     from 'rxjs/Observable';
 
 import { Player }     from '../_shared/index';
-import { Observable } from 'rxjs/Rx';
+
+import * as io from 'socket.io-client';
 
 @Injectable()
 export class PlayerService {
@@ -20,6 +22,15 @@ export class PlayerService {
 
     getAll() {
         return this.http.get('/api/players').map((response: Response) => response.json());
+    }
+
+    // Actualizar lista de jogadores quando há novo registo
+    getAllWS(): Observable<Player[]> {
+        return this.http.get('/api/players').map((response: Response) => { 
+            let players = <Player[]>response.json();
+            //console.log(players);
+            //return players;
+        });
     }
 
     getById(id: number) {
