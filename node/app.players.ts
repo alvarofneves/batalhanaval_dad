@@ -98,7 +98,7 @@ export class PlayerRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
-    public getTop10 = (request: any, response: any, next: any) => {
+    public getTopVict = (request: any, response: any, next: any) => {
         database.db.collection('players')
             .find()
             .sort({totalVictories:-1})
@@ -106,7 +106,20 @@ export class PlayerRepository {
             .toArray()
             .then(players => {
                 response.json(players || []);
-                this.settings.wsServer.notifyAll('players', Date.now() + ': Somebody accessed top 10');
+                this.settings.wsServer.notifyAll('players', Date.now() + ': Somebody accessed top 10 victories');
+                next();
+            })
+            .catch(err => this.handleError(err, response, next));
+    }
+
+    public getTopScore = (request: any, response: any, next: any) => {
+        database.db.collection('players')
+            .find()
+            .sort({totalScore:-1})
+            .limit(10)
+            .toArray()
+            .then(players => {
+                response.json(players || []);
                 next();
             })
             .catch(err => this.handleError(err, response, next));
@@ -117,7 +130,8 @@ export class PlayerRepository {
         this.settings = settings;
         server.post(settings.prefix + 'players', this.createPlayer);                // Sem 'authorize' porque user ainda não está registado
         server.get(settings.prefix + 'players', this.getAllPlayers);
-        server.get(settings.prefix + 'top10', this.getTop10);
+        server.get(settings.prefix + 'topvict', this.getTopVict);
+        server.get(settings.prefix + 'topscore', this.getTopScore);
         server.get(settings.prefix + 'players/:id', settings.security.authorize, this.getPlayer);
         server.put(settings.prefix + 'players/:id', settings.security.authorize, this.updatePlayer);
         server.del(settings.prefix + 'players/:id', settings.security.authorize, this.deletePlayer);

@@ -38,7 +38,7 @@ export class AdminPanelComponent {
     }
 
     // @param Recebe data ??? e converte para formato dd-mm-aaaa
-    convertDate() {
-        dateConverted = getTime();
-    }
+    //convertDate() {
+        //dateConverted = getTime();
+    //}
 }

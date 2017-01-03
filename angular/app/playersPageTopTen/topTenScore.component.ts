@@ -10,21 +10,19 @@ import { PlayerService } from '../_services/index';
 })
 
 export class TopTenScoreComponent { 
-
-    listTopTenScorePlayers: any[] = [];
+    listTopTenScore: any[] = [];
 
     constructor(private playerService: PlayerService) { 
     }
 
     ngOnInit() {
-        this.listAllPlayers();
+        this.listPlayersTopScore();
     }
 
-    private listAllPlayers() {
-        this.playerService.getAll()
+    private listPlayersTopScore() {
+        this.playerService.getTopScore()
             .subscribe(list => {
-                this.listTopTenScorePlayers = list; 
+                this.listTopTenScore = list; 
         });
     }
-
 }
