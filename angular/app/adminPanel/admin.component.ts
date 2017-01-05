@@ -1,9 +1,10 @@
 import { Component }      from '@angular/core';
 
-import { Player }         from '../_shared/player'; 
-import { PlayerService }  from '../_services/index';
-import { Game }           from '../_shared/game';
-import { AlertService, GameService } from '../_services/index'; 
+import { Player }         from '../_shared/index'; 
+import { Game }           from '../_shared/index';
+import { Observable }     from 'rxjs/Rx';
+
+import { PlayerService, AlertService, GameService, WebSocketService }  from '../_services/index';
 
 @Component({
     moduleId: module.id,
@@ -34,11 +35,15 @@ export class AdminPanelComponent {
         this.gameService.getAllGames()
             .subscribe(list => {
                 this.listTotGames = list;
+                //for (let game of this.listTotGames) {
+                    //console.log(game.beginDate);
+                //}
             });
+        
+        // @param Recebe data num Long e converte para formato dd-mm-aaaa
+        //for (let game in this.listTotGames) {
+            //game.dateConverted = getTime();
+        //}
     }
 
-    // @param Recebe data ??? e converte para formato dd-mm-aaaa
-    //convertDate() {
-        //dateConverted = getTime();
-    //}
 }

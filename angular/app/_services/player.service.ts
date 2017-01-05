@@ -3,7 +3,6 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { Player }     from '../_shared/index';
 import { Observable } from 'rxjs/Rx';
-//import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PlayerService {
@@ -19,12 +18,11 @@ export class PlayerService {
         return this.http.post('/api/players', player, options).map(r=> r.json());
     }
 
-    getAll() {
+    getAll(): Observable<any> {
         return this.http.get('/api/players').map((response: Response) => response.json());
     }
 
-    //Alterado pelo VC
-    
+    //Alterado pelo VC    
     //getAllPlayers():Observable<Player[]>{
     //    return this.http.get('http://localhost:7777/api/players').map((response) =>{ 
       //      let players = <Player[]>response.json();

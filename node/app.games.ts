@@ -5,6 +5,8 @@ const mongodb = require('mongodb');
 const util = require('util');
 
 export class GameRepository {
+    private settings: HandlerSettings = null;
+
     private handleError = (err: string, response: any, next: any) => {
         response.send(500, err);
         next();
@@ -89,7 +91,10 @@ export class GameRepository {
         }
         database.db.collection('games')
             .insertOne(game)
-            .then(result => this.returnGame(result.insertedId, response, next))
+            .then(result => {
+                    this.settings.wsServer.notifyAll('games', 'New game created');
+                    this.returnGame(result.insertedId, response, next);
+            })
             .catch(err => this.handleError(err, response, next));
     }
 
@@ -115,6 +120,9 @@ export class GameRepository {
 
     // Routes for the games
     public init = (server: any, settings: HandlerSettings) => {
+        // sem isto -> erro 500
+        this.settings = settings;  
+
         server.post(settings.prefix + 'games', this.createGameN);
         server.get(settings.prefix + 'games', this.getGamesN);
         server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatusN);

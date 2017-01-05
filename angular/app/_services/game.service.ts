@@ -13,7 +13,7 @@ export class GameService {
     	return this.http.post('/api/games', game).map(r=> r.json());
     }
 
-    getAllGames() {   
+    getAllGames(): Observable<any> {   
         return this.http.get('/api/games').map((response: Response) => response.json());
     }
 

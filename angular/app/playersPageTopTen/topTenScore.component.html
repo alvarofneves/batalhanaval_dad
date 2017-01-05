@@ -3,12 +3,12 @@
 	<div *ngIf = "listTopTenScore">
 		<table class="table table-striped">
 			<tr>
-				<th id="tableSubtitle">#</th>
+				<th id="tableSubtitle">Pos.</th>
 				<th id="tableSubtitle">Name</th>
 				<th id="tableSubtitle">Games played</th>
 				<th id="tableSubtitle">Total score</th>
 			</tr>
-			<tr *ngFor = "let player of listTopTenScore; let i = index" class="player">  
+			<tr *ngFor = "let player of listTopTenScore; let i = index">  
 				<td id="tableList">{{i+1}}</td>
 				<td id="tableList">{{player.name}}</td>
 				<td id="tableList">{{player.numGamesPlayed}}</td>

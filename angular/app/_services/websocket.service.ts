@@ -38,4 +38,9 @@ export class WebSocketService {
             return () => this.socket.disconnect();
         });
     }
+
+    // Receber novos jogos criados
+    getNewGamesCreated(): Observable<any> {
+        return this.listenOnChannel('games');
+    }
 }
