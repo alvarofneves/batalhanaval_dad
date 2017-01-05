@@ -25,13 +25,13 @@ export class PlayerService {
     }
 
     // Actualizar lista de jogadores quando há novo registo
-    getAllWS(): Observable<Player[]> {
-        return this.http.get('/api/players').map((response: Response) => { 
-            let players = <Player[]>response.json();
+    //getAllWS(): Observable<Player[]> {
+        //return this.http.get('/api/players').map((response: Response) => { 
+            //let players = <Player[]>response.json();
             //console.log(players);
             //return players;
-        });
-    }
+        //});
+    //}
 
     getById(id: number) {
         return this.http.get('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
