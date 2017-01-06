@@ -11,8 +11,8 @@ export class Game {
 
 	constructor(playerCreator: any, beginDate: any, status: string) {  
 		this.playerCreator = 5;			//test
-		//this.status = 'pendent';	
-		this.status = 'progress';
+		this.status = 'pendent';	
+		//this.status = 'progress';
 		this.beginDate = new Date(new Date().toUTCString().substr(0, 25));
 	}
 }	

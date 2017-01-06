@@ -15,13 +15,18 @@ import { PlayerService, AlertService, GameService, WebSocketService }  from '../
 export class AdminPanelComponent {
     listPlayers: any[] = [];
     listTotGames: any[] = [];
+    // Arrays usados nos channels / websockets
+    listPlayersChannel: string[] = [];
+    listAllGamesChannel: string[] = [];
 
-    constructor(private playerService: PlayerService, private gameService: GameService, ) { 
+    constructor(private playerService: PlayerService, private gameService: GameService, private wsService: WebSocketService) { 
     }
 
     ngOnInit() {
         this.listAllPlayers();
         this.listAllGames();
+        //this.wsService.getAllPlayers().subscribe((m:any) => this.listPlayersChannel.push(<string>m));
+        //this.wsService.getAllGames().subscribe((m:any) => this.listAllGamesChannel.push(<string>m));
     }
 
     private listAllPlayers() {

@@ -35,6 +35,7 @@ export class GameRepository {
             .toArray()
             .then(games => {
                 response.json(games || []);
+                this.settings.wsServer.actLists('gamesLists', '');
                 next();
             })
             .catch(err => this.handleError(err, response, next));
@@ -92,6 +93,7 @@ export class GameRepository {
         database.db.collection('games')
             .insertOne(game)
             .then(result => {
+                    //console.log(this.settings);
                     this.settings.wsServer.notifyAll('games', 'New game created');
                     this.returnGame(result.insertedId, response, next);
             })

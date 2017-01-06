@@ -22,15 +22,6 @@ export class PlayerService {
         return this.http.get('/api/players').map((response: Response) => response.json());
     }
 
-    //Alterado pelo VC    
-    //getAllPlayers():Observable<Player[]>{
-    //    return this.http.get('http://localhost:7777/api/players').map((response) =>{ 
-      //      let players = <Player[]>response.json();
-        //    console.log(players);
-          //  return players;
-
-        //});
-
     getById(id: number) {
         return this.http.get('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }

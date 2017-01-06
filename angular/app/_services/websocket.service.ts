@@ -5,8 +5,7 @@ import { Observable }     from 'rxjs/Observable';
 import * as io from 'socket.io-client';
 
 @Injectable()
-// Connect to the server ....
-export class WebSocketService {
+export class WebSocketService {        // Connect to the server ....
     private socket: SocketIOClient.Socket;
     constructor() {
         if (!this.socket) {
@@ -42,5 +41,21 @@ export class WebSocketService {
     // Receber novos jogos criados
     getNewGamesCreated(): Observable<any> {
         return this.listenOnChannel('games');
+    }
+
+    getGamesPendent(): Observable<any> {
+        return this.listenOnChannel('gamesLists');
+    }
+
+    getGamesProgress(): Observable<any> {
+        return this.listenOnChannel('gamesLists');
+    }
+
+    getAllPlayers(): Observable<any> {
+        return this.listenOnChannel('playersList');
+    }
+
+    getAllGames(): Observable<any> {
+        return this.listenOnChannel('gamesList');
     }
 }

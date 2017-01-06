@@ -13,20 +13,21 @@ Credenciais de acesso -
 
 
 /* ___________________________________________________________________________ */
-Funcionalidades implementadas:  [OK, PARCIAL, NÃO IMPLEMENTADO]
+Funcionalidades implementadas:  [OK, PARCIAL, NÃO IMPLEMENTADO]    
+// TODO: estado a 05/01
 
-Jogo - NÃO IMPLEMENTADO
-Top Ten - NÃO IMPLEMENTADO
-Identificação e Autorização - NÃO IMPLEMENTADO
-Histórico de Jogos – NÃO IMPLEMENTADO
-Game Lobby – NÃO IMPLEMENTADO
+	Jogo - PARCIAL (Nota: )
+Top Ten - OK
+	Identificação e Autorização - PARCIAL
+	Histórico de Jogos – PARCIAL
+	Game Lobby – OK
 Jogos Múltiplos - NÃO IMPLEMENTADO
 
 Outras Funcionalidades: 
 Bots - NÃO IMPLEMENTADO
-Serviços de Autenticação Externos - NÃO IMPLEMENTADO
+	Serviços de Autenticação Externos - NÃO IMPLEMENTADO
 Avatares - NÃO IMPLEMENTADO
-Chat Rooms - NÃO IMPLEMENTADO
+	Chat Rooms - PARCIAL (Nota: Existe Chat público em '/lobby')
 Repetição de Jogo - NÃO IMPLEMENTADO
 Mobile App - NÃO IMPLEMENTADO
 

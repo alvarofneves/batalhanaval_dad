@@ -12,7 +12,11 @@ export class WebSocketServer {
         });
     };
 
-   public notifyAll = (channel: string, message: string) => {
+    public notifyAll = (channel: string, message: string) => {
         this.io.sockets.emit(channel, Date.now() + ': ' + message);       // só chamada qd p.ex. se avisam tds players q Top10 foi consultado     
     }; 
+
+    public actLists = (channel: string, data: string) => {
+        this.io.sockets.emit(channel, 'data');         
+    };
 };
