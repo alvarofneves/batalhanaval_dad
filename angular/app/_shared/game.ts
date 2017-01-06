@@ -5,8 +5,8 @@ export class Game {
 	endDate: any;
 	winnerPlayer: string;
 	gamePlayers: any = []; 		
-	totPlayers: number = 0;	
-	totWaitingPlayers: number = 0;
+	totPlayers: number = 1;	
+	totWaitingPlayers: number = 1;
 	duration: number = 0;
 
 	constructor(playerCreator: any, beginDate: any, status: string) {  

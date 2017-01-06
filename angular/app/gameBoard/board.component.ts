@@ -9,17 +9,18 @@ import { WebSocketService } from '../_services/index';
 	moduleId: module.id,
 	selector: 'game-board',	
 	templateUrl: 'board.component.html',
+	styleUrls: ['./board.component.css']
 })
 
 export class BoardComponent implements OnInit { 
-	public id:number;
+	public id: number;
 	public cells: CellClass[];
 	public elementos: number[] = [];
 	
 	public constructor(private wsService: WebSocketService){
-		this.id = 0;
+		/*this.id = 0;
 		
-		let board = new BoardClass(/*id*/0);
+		let board = new BoardClass();
 
 		let aircraft = new BoatClass("aircraft");
 		
@@ -43,19 +44,19 @@ export class BoardComponent implements OnInit {
 
 		let submarine4 = new BoatClass("submarine");
 		
-		board.addBoat(new CellClass(2,2), aircraft);
+		board.addBoat(new CellClass(2,2), aircraft);*/
 	}
 
 	ngOnInit() {
         this.elementos = [];
         this.wsService.getBoardMessages().subscribe((m:any) => {
-            console.log(m);
             this.elementos = m;
         });
     }
 	
 	clickElemento(index: number){
-        this.wsService.sendClickElementMessage(index);
+        //this.wsService.sendClickElementMessage(index);
+        console.log(index);
     }
 
     getColor(elemento: number){
@@ -72,7 +73,7 @@ export class BoardComponent implements OnInit {
 		//console.log(this.id+"-"+l+":"+i);
 	//}
 
-	public getLabel(currentRow) {
-		return String.fromCharCode(65+currentRow);
-	}
+	//public getLabel(currentRow) {
+		//return String.fromCharCode(65+currentRow);
+	//}
 }

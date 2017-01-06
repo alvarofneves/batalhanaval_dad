@@ -9,31 +9,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var boardClass_1 = require("./boardClass");
-var boatClass_1 = require("./boatClass");
-var cellClass_1 = require("./cellClass");
+var index_1 = require("../_services/index");
 var BoardComponent = (function () {
-    function BoardComponent() {
-        this.id = 0 /*id*/;
-        var board = new boardClass_1.BoardClass(/*id*/ 0);
-        var aircraft = new boatClass_1.BoatClass("aircraft");
-        var battleship = new boatClass_1.BoatClass("battleship");
-        var cruiser1 = new boatClass_1.BoatClass("cruiser");
-        var cruiser2 = new boatClass_1.BoatClass("cruiser");
-        var destroyer1 = new boatClass_1.BoatClass("destroyer");
-        var destroyer2 = new boatClass_1.BoatClass("destroyer");
-        var destroyer3 = new boatClass_1.BoatClass("destroyer");
-        var submarine1 = new boatClass_1.BoatClass("submarine");
-        var submarine2 = new boatClass_1.BoatClass("submarine");
-        var submarine3 = new boatClass_1.BoatClass("submarine");
-        var submarine4 = new boatClass_1.BoatClass("submarine");
-        board.addBoat(new cellClass_1.CellClass(2, 2), aircraft);
+    function BoardComponent(wsService) {
+        this.wsService = wsService;
+        this.elementos = [];
+        /*this.id = 0;
+        
+        let board = new BoardClass();
+
+        let aircraft = new BoatClass("aircraft");
+        
+        let battleship = new BoatClass("battleship");
+
+        let cruiser1 = new BoatClass("cruiser");
+
+        let cruiser2 = new BoatClass("cruiser");
+        
+        let destroyer1 = new BoatClass("destroyer");
+
+        let destroyer2 = new BoatClass("destroyer");
+
+        let destroyer3 = new BoatClass("destroyer");
+        
+        let submarine1 = new BoatClass("submarine");
+
+        let submarine2 = new BoatClass("submarine");
+
+        let submarine3 = new BoatClass("submarine");
+
+        let submarine4 = new BoatClass("submarine");
+        
+        board.addBoat(new CellClass(2,2), aircraft);*/
     }
-    BoardComponent.prototype.getLabel = function (currentRow) {
-        return String.fromCharCode(65 + currentRow);
+    BoardComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.elementos = [];
+        this.wsService.getBoardMessages().subscribe(function (m) {
+            _this.elementos = m;
+        });
     };
-    BoardComponent.prototype.clickElemento = function (l, i) {
-        console.log(this.id + "-" + l + ":" + i);
+    BoardComponent.prototype.clickElemento = function (index) {
+        //this.wsService.sendClickElementMessage(index);
+        console.log(index);
+    };
+    BoardComponent.prototype.getColor = function (elemento) {
+        switch (elemento) {
+            case 0: return 'lightgray';
+            case 1: return 'blue';
+            case 2: return 'red';
+        }
+        return 'white';
     };
     return BoardComponent;
 }());
@@ -42,8 +68,9 @@ BoardComponent = __decorate([
         moduleId: module.id,
         selector: 'game-board',
         templateUrl: 'board.component.html',
+        styleUrls: ['./board.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [index_1.WebSocketService])
 ], BoardComponent);
 exports.BoardComponent = BoardComponent;
 //# sourceMappingURL=board.component.js.map

@@ -5,7 +5,7 @@ export class WebSocketServer {
     public io: any;
 
     public initBoard(){
-        for(let i=0; i<100; i++) {
+        for(let i = 0; i < 100; i++) {
             this.board[i]=0;
         }
     }
@@ -30,8 +30,8 @@ export class WebSocketServer {
         });
     };
 
-    public notifyAll = (channel: string, message: string) => {
-        this.io.sockets.emit(channel, Date.now() + ': ' + message);       // só chamada qd p.ex. se avisam tds players q Top10 foi consultado     
+    public notifyAll = (channel: string, message: any) => {
+        this.io.sockets.emit(channel, Date.now() + ': ' + message);       
     }; 
 
     public actLists = (channel: string, data: string) => {
