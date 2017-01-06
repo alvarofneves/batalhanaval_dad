@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { BoardClass} from "./boardClass";
-import { BoatClass } from "./boatClass";
-import { CellClass } from "./cellClass";
+import { BoardClass} 		from "./boardClass";
+import { BoatClass } 		from "./boatClass";
+import { CellClass } 		from "./cellClass";
+import { WebSocketService } from '../_services/index';
 
 @Component({
 	moduleId: module.id,
@@ -10,12 +11,13 @@ import { CellClass } from "./cellClass";
 	templateUrl: 'board.component.html',
 })
 
-export class BoardComponent { 
+export class BoardComponent implements OnInit { 
 	public id:number;
 	public cells: CellClass[];
+	public elementos: number[] = [];
 	
-	public constructor(/*id*/){
-		this.id = 0/*id*/;
+	public constructor(private wsService: WebSocketService){
+		this.id = 0;
 		
 		let board = new BoardClass(/*id*/0);
 
@@ -43,12 +45,34 @@ export class BoardComponent {
 		
 		board.addBoat(new CellClass(2,2), aircraft);
 	}
+
+	ngOnInit() {
+        this.elementos = [];
+        this.wsService.getBoardMessages().subscribe((m:any) => {
+            console.log(m);
+            this.elementos = m;
+        });
+    }
 	
+	clickElemento(index: number){
+        this.wsService.sendClickElementMessage(index);
+    }
+
+    getColor(elemento: number){
+        switch (elemento) {
+            case 0: return 'lightgray';
+            case 1: return 'blue';
+            case 2: return 'red';
+        }
+        return 'white';
+    }
+
+	// função do TIAGO
+	//public clickElemento(l,i){
+		//console.log(this.id+"-"+l+":"+i);
+	//}
+
 	public getLabel(currentRow) {
 		return String.fromCharCode(65+currentRow);
-	}
-
-	public clickElemento(l,i){
-		console.log(this.id+"-"+l+":"+i);
 	}
 }
