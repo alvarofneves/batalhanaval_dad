@@ -1,10 +1,10 @@
 import { Injectable }                              from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { Observable }     from 'rxjs/Observable';
+import { Observable }                              from 'rxjs/Observable';
 
-import { Player }     from '../_shared/index';
+import { Player } from '../_shared/index';
 
-import * as io from 'socket.io-client';
+import * as io    from 'socket.io-client';
 
 @Injectable()
 export class PlayerService {

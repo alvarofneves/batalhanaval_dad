@@ -34,4 +34,8 @@ export class AuthService {
         localStorage.removeItem('currentPlayer');
         this.isLoggedIn = false;
     }
+
+    // TODO função chamada em todos os pedidos que precisam de autenticação
+    // ver txt 'callSome' na Dropbox
+    // callSomeService() {   }
 }
