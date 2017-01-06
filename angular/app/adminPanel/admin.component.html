@@ -21,7 +21,7 @@
 				<td id="tableList">{{game._id}}</td>
 				<td id="tableList">{{game.status}}</td>
 				<td id="tableList">{{game.playerCreator}}</td>
-				<td id="tableList">{{game.beginDate}}</td>
+				<td id="tableList">{{game.beginDate | date : format : short }}</td>
 				<td id="tableList">{{game.winnerPlayer}}</td>
 			</tr>
 		</table>

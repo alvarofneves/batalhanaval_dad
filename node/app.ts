@@ -55,5 +55,5 @@ database.connect(url, () => {
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
 
-    console.log("##### BRANCH 'listPlayers' | $node/app.ts | >>>SRV NODE UP<<< #####");
+    console.log("##### BRANCH 'webSocket-Tiros' | $node/app.ts | >>>SRV NODE UP<<< #####");
 });

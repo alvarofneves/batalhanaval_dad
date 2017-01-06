@@ -25,13 +25,17 @@ export class WebSocketServer {
                 if (this.board[indexElement] > 2) {
                     this.board[indexElement] = 0;
                 }
-                this.notifyAll('board', this.board);
+                this.notifyAllBoards('board', this.board);
             });
         });
     };
 
-    public notifyAll = (channel: string, message: any) => {
+    public notifyAll = (channel: string, message: string) => {
         this.io.sockets.emit(channel, Date.now() + ': ' + message);       
+    }; 
+
+    public notifyAllBoards = (channel: string, message: any) => {
+        this.io.sockets.emit(channel, message);       
     }; 
 
     public actLists = (channel: string, data: string) => {

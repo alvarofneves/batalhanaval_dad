@@ -1,6 +1,6 @@
 .board {
-  display: inline-block;
-  width: 250px;
+    display: inline-block;
+    width: 250px;
 }
 
 .game-cell {
@@ -10,7 +10,7 @@
     display: inline-block;
     border: 1px solid;*/
     float:left;
-    border-style:   solid;
+    border-style: solid;
     border-width: 1px;
     margin: 0;
     padding: 0;
@@ -28,8 +28,6 @@
 .cell-hit-ship {
     color: #ff3333;
 }
-
-
 
 /* **************************************** DESENHO ANTIGO */
 .battlefield-table {

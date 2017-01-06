@@ -12,7 +12,7 @@ import { WebSocketService } from '../_services/index';
 	styleUrls: ['./board.component.css']
 })
 
-export class BoardComponent implements OnInit { 
+export class BoardComponent { 
 	public id: number;
 	public cells: CellClass[];
 	public elementos: number[] = [];
@@ -51,11 +51,12 @@ export class BoardComponent implements OnInit {
         this.elementos = [];
         this.wsService.getBoardMessages().subscribe((m:any) => {
             this.elementos = m;
+            console.log(m);
         });
     }
 	
 	clickElemento(index: number){
-        //this.wsService.sendClickElementMessage(index);
+        this.wsService.sendClickElementMessage(index);
         console.log(index);
     }
 

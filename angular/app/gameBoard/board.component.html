@@ -1,20 +1,19 @@
-<div class="container">
-    <div class="board" *ngIf="elementos">
-        <div class="game-cell" *ngFor="let elemento of elementos; let i = index" (click)="clickElemento(i)" [style.background-color]="getColor(elemento)">
-        </div>
+<div class="board" *ngIf="elementos">
+    <div class="game-cell" *ngFor="let elemento of elementos; let i = index" (click)="clickElemento(i)" [style.background-color]="getColor(elemento)">
     </div>
-
-        <!--
-        <table class="battlefield-table">
-            <tbody>
-                <tr *ngFor="let row of [1,2,3,4,5,6,7,8,9,10]; let l = index">
-                    <td class="game-cell">{{getLabel(l)}}</td>
-                    <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index" (click)="clickElemento(l,i)"></td>
-                </tr>
-                <tr>
-                    <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index"> {{i+1}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div> -->
 </div>
+
+    <!--
+    <table class="battlefield-table">
+        <tbody>
+            <tr *ngFor="let row of [1,2,3,4,5,6,7,8,9,10]; let l = index">
+                <td class="game-cell">{{getLabel(l)}}</td>
+                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index" (click)="clickElemento(l,i)"></td>
+            </tr>
+            <tr>
+                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index"> {{i+1}}</td>
+            </tr>
+        </tbody>
+    </table>
+    -->
+

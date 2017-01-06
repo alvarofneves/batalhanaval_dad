@@ -106,7 +106,7 @@ export class PlayerRepository {
             .toArray()
             .then(players => {
                 response.json(players || []);
-                this.settings.wsServer.notifyAll('players', 'Somebody accessed Top Ten list');
+                this.settings.wsServer.notifyAll('players', 'Somebody accessed Top Ten');
                 next();
             })
             .catch(err => this.handleError(err, response, next));

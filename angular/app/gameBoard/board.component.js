@@ -47,10 +47,11 @@ var BoardComponent = (function () {
         this.elementos = [];
         this.wsService.getBoardMessages().subscribe(function (m) {
             _this.elementos = m;
+            console.log(m);
         });
     };
     BoardComponent.prototype.clickElemento = function (index) {
-        //this.wsService.sendClickElementMessage(index);
+        this.wsService.sendClickElementMessage(index);
         console.log(index);
     };
     BoardComponent.prototype.getColor = function (elemento) {
