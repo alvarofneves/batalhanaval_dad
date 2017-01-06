@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
     templateUrl: 'controls.component.html'
 })
 
-export class InitGameControlsComponent { }
+export class InitGameControlsComponent {
+
+    constructor(){
+        
+    }
+    
+    public startGame(){
+            
+    }
+}

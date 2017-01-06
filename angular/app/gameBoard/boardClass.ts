@@ -3,13 +3,14 @@ import {BoatClass} from "./boatClass";
 
 export class BoardClass {
 
-    private id: number;
+    private id: any;
 
     private cells: CellClass[];
+    
+    public constructor() {
 
-    public constructor(numBoards) {
-
-        this.id = numBoards;
+        this.receivingBoats = false;
+        this.id = "Board"+new Date();
         this.cells = [];
         for (let line=1; line<=10; line++) {
             for(let column=1; column<=10; column++) {
@@ -19,7 +20,7 @@ export class BoardClass {
         }
     }
     
-    public addBoat(startingCell:CellClass, boat:BoatClass) {
+    public addBoat(startingCell:CellClass, boat:BoatClass): number {
 
         let cellArr: CellClass[] = [];
         let protectedSea: CellClass[] = [];
@@ -71,13 +72,21 @@ export class BoardClass {
         return 0;
     }
 
-    getId() {
+    getId(): any {
         
         return this.id;
     }
 
-    public getCells(){
+    public getCells(): CellClass[]{
         return this.cells;
+    }
+    
+    public getReceivingBoats(): boolean{
+        return this.receivingBoats;
+    }
+    
+    public setReceivingBoats(status: boolean): void{
+        this.receivingBoats = status;
     }
 }
 

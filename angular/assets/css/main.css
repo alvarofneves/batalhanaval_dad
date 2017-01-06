@@ -46,6 +46,16 @@ boats-container{
     margin: 0 auto;
 }
 
+.centeredLbl{
+    display: block;
+    margin: 0 auto;
+
+}
+
+.centeredText{
+    text-align: center;
+}
+
 .board {
     width: 350px;
     height: 350px;

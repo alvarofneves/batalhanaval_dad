@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BoardComponent } from '../gameBoard/board.component';
 
 @Component({
 	moduleId: module.id,

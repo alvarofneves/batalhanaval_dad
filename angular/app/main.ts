@@ -1,6 +1,5 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app.module';
-import { GamePageComponent } from "./gamePage/gamePage.component";
 
 const platform = platformBrowserDynamic();
 platform.bootstrapModule(AppModule);
