@@ -21,8 +21,6 @@ export class LoginComponent {
     constructor(private route: ActivatedRoute, private router: Router, private authService: AuthService, private alertService: AlertService) { } 
 
 
-
-
     ngOnInit() {
         // reset login status
         this.authService.logout();
@@ -53,16 +51,12 @@ export class LoginComponent {
                     // }
                     //});
                     //}
-<<<<<<< Updated upstream
-                }
-            });
-        }
+                //}
+            //});
+       // }
 
     loginGoogle() {
         console.log('login.comp');
         this.authService.sendLoginGoogle();
     }
 }
-=======
-                }
->>>>>>> Stashed changes

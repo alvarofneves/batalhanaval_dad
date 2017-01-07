@@ -15,7 +15,7 @@ export class AuthService {
 
     constructor(private http: Http) { }
 
-    login(email, password, token) {
+    login(email, password) {
         let headers = new Headers();
         //let options = new RequestOptions({ headers: headers });
 
