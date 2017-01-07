@@ -55,7 +55,6 @@ export class BoardComponent {
 		
 		for(let boat of this.boats){
 			do {
-
 				randomCoord = Math.floor(Math.random() * (99 - 0 + 1)) + 0;
 				console.log("random:"+randomCoord);
 

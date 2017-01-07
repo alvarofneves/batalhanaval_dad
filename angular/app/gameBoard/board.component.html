@@ -10,13 +10,12 @@
         <tbody>
             <tr *ngFor="let row of [1,2,3,4,5,6,7,8,9,10]; let l = index">
                 <td class="game-cell">{{getLabel(l)}}</td>
-                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index"(click)="cellClick(l,i)">
-                </td>
+                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i=index"(click)="cellClick(l,i)"></td>
             </tr>
             <tr>
                 <td class="game-cell"></td>
-                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i = index"> {{i+1}}</td>
+                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i=index"> {{i+1}}</td>
             </tr>
         </tbody>
     </table>
-</div> -->
+</div>

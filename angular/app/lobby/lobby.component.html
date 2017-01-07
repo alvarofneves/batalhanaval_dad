@@ -12,8 +12,8 @@
 			<tr *ngFor = "let game of listGamesPendent">  
 				<td id="tableList">{{game._id}}</td>
 				<td id="tableList">{{game.playerCreator}}</td>
-				<td id="tableList">{{game.totWaitingPlayers}}</td>
-				<td><button type="submit" class="btn btn-primary btn-game-join" (click)="joinGame()">Join</button></td>
+				<td id="tableList">{{game.playersCount}}</td>
+				<td><button type="submit" class="btn btn-primary btn-game-join" (click)="joinGame(game._id, '2')">Join</button></td>
 			</tr>
 		</table>
 		<hr>
@@ -30,7 +30,7 @@
 			<tr *ngFor = "let game of listGamesProgress">  
 				<td id="tableList">{{game._id}}</td>
 				<td id="tableList">{{game.playerCreator}}</td>
-				<td id="tableList">{{game.totPlayers}}</td>
+				<td id="tableList">{{game.playersCount}}</td>
 				<td id="tableList">{{game.duration}}</td>
 			</tr>
 		</table>
