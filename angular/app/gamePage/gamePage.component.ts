@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 	moduleId: module.id,
 	selector: 'game-page',	
 	templateUrl: 'gamePage.component.html',
+	styleUrls: ['./gamePage.component.css']
 })
 
 export class GamePageComponent {

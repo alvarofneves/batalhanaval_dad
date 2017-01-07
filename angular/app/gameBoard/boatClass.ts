@@ -1,26 +1,22 @@
 import {CellClass} from "./cellClass";
-export class BoatClass {
 
+export class BoatClass {
     private id: any;
     private name: string;
     private cellValue: string;
     private cells: CellClass[];
 
     public constructor(name) {
-
         this.id = new Date()+"BOAT"+name;
         this.name = name;
         this.cells = [];
         for (let line=0; line<6; line++){
             for(let column=0; column<6; column++){
-
                 this.cells.push(new CellClass(line, column));
-
             }
         }
 
         let protectedSea = "~";
-
         switch (name.toUpperCase()){
             case "AIRCRAFT":
                 this.cellValue="P";
@@ -183,6 +179,4 @@ export class BoatClass {
     public getName(){
         return this.name;
     }
-
-
 }

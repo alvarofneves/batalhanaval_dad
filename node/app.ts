@@ -55,5 +55,5 @@ database.connect(url, () => {
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
 
-    console.log("##### BRANCH 'registerUser' | $node/app.ts | >>>SRV NODE UP<<< #####");
+    console.log("##### BRANCH 'insertBoats' | $node/app.ts | >>>SRV NODE UP<<< #####");
 });

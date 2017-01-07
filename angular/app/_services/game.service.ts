@@ -1,11 +1,12 @@
 import { Injectable }                              from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import {BoardClass} from "./../gameBoard/boardClass";
-import {BOARDS} from "./../gameBoard/mock-boards";
-import {BOATS} from "./../gameBoard/mock-boats";
+
 import { Game }       from '../_shared/index';
 import { Observable } from 'rxjs/Rx';
+import {BoardClass} from "./../gameBoard/boardClass";
 import {BoatClass} from "../gameBoard/boatClass";
+import {BOARDS} from "./../gameBoard/mock-boards";
+import {BOATS} from "./../gameBoard/mock-boats";
 
 @Injectable()
 export class GameService {
@@ -14,6 +15,22 @@ export class GameService {
     newGame(game: Game): Observable<any> {
         console.log(game);
         return this.http.post('/api/games', game).map(r=> r.json());
+    }
+
+    getBoards(): BoardClass[] {
+        return BOARDS;
+    }
+
+    addGame(board: BoardClass): void {
+        BOARDS.push(board);
+    }
+
+    addBoatToBoard(boardID: number, boat: string): void {
+        //BOARDS[boardID].addBoat(boat);
+    }
+
+    getBoats(): BoatClass[] {
+        return BOATS;
     }
 
     getAllGames() {
@@ -26,22 +43,5 @@ export class GameService {
 
     getGamesByCreator(idPlayer: Number) {
         return this.http.get('/api/games').map((response: Response) => response.json());
-    }
-
-    getBoards(): BoardClass[] {
-        return BOARDS;
-    }
-
-    addGame(board: BoardClass): void {
-        BOARDS.push(board);
-    }
-
-    addBoatToBoard(boardID: number, boat: string): void {
-
-        //BOARDS[boardID].addBoat(boat);
-    }
-
-    getBoats(): BoatClass[] {
-        return BOATS;
     }
 }

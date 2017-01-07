@@ -1,10 +1,8 @@
 import { Component }  from '@angular/core';
 import { Router }     from '@angular/router';
 
-import { Game }                      from '../_shared/index';
+import { Game, Player }              from '../_shared/index';
 import { AlertService, GameService } from '../_services/index';  
-import { Player }                    from '../_shared/index';  
-
 
 @Component({
 	moduleId: module.id,
@@ -18,7 +16,6 @@ export class LobbyComponent {
 	listTotGames: any[] = [];
     listMyGames: any[] = [];
     player: any[] = [];
-
 
 	public string: String;
 	public game: Game;

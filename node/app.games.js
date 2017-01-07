@@ -1,9 +1,9 @@
 "use strict";
+var app_database_1 = require("./app.database");
 var mongodb = require('mongodb');
 var util = require('util');
-var app_database_1 = require("./app.database");
-var Game = (function () {
-    function Game() {
+var GameRepository = (function () {
+    function GameRepository() {
         var _this = this;
         this.handleError = function (err, response, next) {
             response.send(500, err);
@@ -25,9 +25,25 @@ var Game = (function () {
             })
                 .catch(function (err) { return _this.handleError(err, response, next); });
         };
-        this.getGames = function (request, response, next) {
+        // Vai buscar todos os jogos
+        this.getGamesN = function (request, response, next) {
             app_database_1.databaseConnection.db.collection('games')
                 .find()
+                .toArray()
+                .then(function (games) {
+                response.json(games || []);
+                next();
+            })
+                .catch(function (err) { return _this.handleError(err, response, next); });
+        };
+        // @request Recebe string com status do jogo *inc
+        this.getGamesByStatusN = function (request, response, next) {
+            if (request.params.status === undefined) {
+                response.send(400, 'No Status received');
+                return next();
+            }
+            app_database_1.databaseConnection.db.collection('games')
+                .find({ status: request.params.status })
                 .toArray()
                 .then(function (games) {
                 response.json(games || []);
@@ -56,7 +72,7 @@ var Game = (function () {
                 .then(function (result) { return _this.returnGame(id, response, next); })
                 .catch(function (err) { return _this.handleError(err, response, next); });
         };
-        this.createGame = function (request, response, next) {
+        this.createGameN = function (request, response, next) {
             var game = request.body;
             if (game === undefined) {
                 response.send(400, 'No game data');
@@ -88,14 +104,15 @@ var Game = (function () {
         };
         // Routes for the games
         this.init = function (server, settings) {
-            server.get(settings.prefix + 'games', settings.security.authorize, _this.getGames);
+            server.post(settings.prefix + 'games', _this.createGameN);
+            server.get(settings.prefix + 'games', _this.getGamesN);
+            server.get(settings.prefix + 'gamesSearch/:status', _this.getGamesByStatusN);
             server.get(settings.prefix + 'games/:id', settings.security.authorize, _this.getGame);
             server.put(settings.prefix + 'games/:id', settings.security.authorize, _this.updateGame);
-            server.post(settings.prefix + 'games', settings.security.authorize, _this.createGame);
             server.del(settings.prefix + 'games/:id', settings.security.authorize, _this.deleteGame);
-            console.log("Games routes registered");
+            console.log("[node] app.games.ts - Games routes registered");
         };
     }
-    return Game;
+    return GameRepository;
 }());
-exports.Game = Game;
+exports.GameRepository = GameRepository;

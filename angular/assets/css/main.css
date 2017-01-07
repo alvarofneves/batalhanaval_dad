@@ -29,13 +29,9 @@ body {
 }
 
 /* ############################## LAYOUT BOARD / GAME ############################## */
-/*h1,h2{
-  text-align: center;
-  font-family: monospace;
-}*/
-td{
+/*td{
     border:  thin solid black;
-}
+}*/
 
 boats-container{
     border:  thin solid black;
@@ -57,58 +53,9 @@ boats-container{
     text-align: center;
 }
 
-.board {
-    width: 350px;
-    height: 350px;
-    display: inline-block;
-    margin-left: 350px;
-}
-
-.battlefield-table {
-    margin: 10px auto;
-    table-layout: fixed;
-    width: 330px;       /* 330px / 11 colunas,linhas = 30px cd */
-    height: 330px;
-}
-
-.battlefield-table tr td {
-    width: 30px;
-    height: 30px;
-
-}
-
-.battlefield-table tr td:first-child {
-    border-color: transparent;
-    border-right: black;
-}
-
-.battlefield-table tr:last-child td {
-    border-color: transparent;
-    border-top: black;
-    text-align: center;
-}
-
-.game-cell {
-    color: #4286f4;
-}
-
-.cell-hit-water {
-    color: #4286f4;
-}
-
-.cell-hit-ship {
-    color: #ff3333;
-}
-
 /* TODO usar na board do 2º player. Qd grid estiver bloqueada */
 .boardPlayer2 {
     background-color: #adad85;
-}
-
-#labelPlayerName {
-    color: #ff3333;
-    font-size: 15px;
-    text-align: center;
 }
 
 .controls {

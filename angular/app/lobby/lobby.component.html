@@ -1,18 +1,4 @@
 <div class="container">
-	
-		<!--Users from secure api end point:
-		<ul>
-			<li *ngFor="let player of players">{{player.name}}</li>
-		</ul>--> 
-		
-		<p>Player Logged</p>
-		
-
-	<!--<a [routerLink]="['/login']" routerLinkActive="active" >Logout</a>
-
-	<a [routerLink]="['/login']" routerLinkActive="active" id="otherLocation">Login</a>--> 
-	
-
 	<div class="col-md-10 col-md-offset-1" *ngIf="listGamesPendent">
 		<button type="submit" class="btn btn-primary" (click)="createGame('1')">New game</button>
 		<h5 id="tableTitle">Games Pendent</h5>

@@ -1,20 +1,11 @@
-
-
 export class CellClass {
-
     private line: number;
-    
     private column: number;
-
     private value: string;
     
-    
     public constructor(line, column) {
-
         this.line = line;
-
         this.column = column;
-        
         this.value = "";
     }
 
@@ -33,6 +24,4 @@ export class CellClass {
     public getColumn(){
         return this.column;
     }
-
-    
 }

@@ -9,31 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var index_1 = require("../_services/index");
+var multiComponent_service_1 = require("../_services/multiComponent.service");
 var boardClass_1 = require("./boardClass");
-var boatClass_1 = require("./boatClass");
-var cellClass_1 = require("./cellClass");
 var BoardComponent = (function () {
-    function BoardComponent() {
-        this.id = 0 /*id*/;
-        var board = new boardClass_1.BoardClass(/*id*/ 0);
-        var aircraft = new boatClass_1.BoatClass("aircraft");
-        var battleship = new boatClass_1.BoatClass("battleship");
-        var cruiser1 = new boatClass_1.BoatClass("cruiser");
-        var cruiser2 = new boatClass_1.BoatClass("cruiser");
-        var destroyer1 = new boatClass_1.BoatClass("destroyer");
-        var destroyer2 = new boatClass_1.BoatClass("destroyer");
-        var destroyer3 = new boatClass_1.BoatClass("destroyer");
-        var submarine1 = new boatClass_1.BoatClass("submarine");
-        var submarine2 = new boatClass_1.BoatClass("submarine");
-        var submarine3 = new boatClass_1.BoatClass("submarine");
-        var submarine4 = new boatClass_1.BoatClass("submarine");
-        board.addBoat(new cellClass_1.CellClass(2, 2), aircraft);
+    function BoardComponent(gameService, multiComponentService /*id*/) {
+        var _this = this;
+        this.gameService = gameService;
+        this.multiComponentService = multiComponentService; /*id*/
+        var board = new boardClass_1.BoardClass();
+        this.id = board.getId();
+        this.gameService.addGame(board);
+        this.flag = false;
+        this.boats = this.gameService.getBoats();
+        this.subscription = multiComponentService.boatPlacement$.subscribe(function (f) { return _this.flag = f; });
+        console.log(this.flag);
+        //board.addBoat(new CellClass(2,2), aircraft);
+        //this.randomAddBoats(board);  // AS coment
+        //console.table(board.getCells());
     }
     BoardComponent.prototype.getLabel = function (currentRow) {
         return String.fromCharCode(65 + currentRow);
     };
-    BoardComponent.prototype.clickElemento = function (l, i) {
-        console.log(this.id + "-" + l + ":" + i);
+    BoardComponent.prototype.cellClick = function (l, i) {
+        if (this.flag == true) {
+            console.log("placing boat at:" + this.id + "-" + l + ":" + i);
+        }
+        console.log(this.flag);
     };
     return BoardComponent;
 }());
@@ -42,8 +44,10 @@ BoardComponent = __decorate([
         moduleId: module.id,
         selector: 'game-board',
         templateUrl: 'board.component.html',
+        styleUrls: ['./board.component.css'],
+        providers: [index_1.GameService, multiComponent_service_1.MultiComponentService]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [index_1.GameService, multiComponent_service_1.MultiComponentService /*id*/])
 ], BoardComponent);
 exports.BoardComponent = BoardComponent;
 //# sourceMappingURL=board.component.js.map
