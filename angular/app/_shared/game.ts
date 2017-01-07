@@ -1,4 +1,5 @@
 export class Game {
+    _id: string;
     status: string;				// status = 'pendent'; 'progress', 'ended' 
     beginDate: any;
     playersArray: any = [];

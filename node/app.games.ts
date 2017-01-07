@@ -80,6 +80,41 @@ export class GameRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
+    public updateGamePlayersCount =  (request: any, response: any, next: any) => {
+        const playersCount = new mongodb.ObjectID(request.params.playersCount);
+        const game = request.body;
+
+        if (game === undefined) {
+            response.send(400, 'No game data');
+            return next();
+        }
+        delete game.playersCount;
+        database.db.collection('games')
+            .updateOne({
+                playersCount: playersCount
+            }, {
+                $set: game
+            })
+            .then(result => this.returnGame(playersCount, response, next))
+            .catch(err => this.handleError(err, response, next));
+    }
+
+    public updateAllGameN =  (request: any, response: any, next: any) => {
+        //console.log('inicio updateAllGameN');
+        
+        const game = request.body;
+        console.log(game);
+
+        if (game === undefined) {
+            response.send(400, 'No game data');
+            return next();
+        }
+        database.db.collection('games')
+            .updateOne(game)
+            .then(result => this.returnGame(result._id, response, next))
+            .catch(err => this.handleError(err, response, next));
+    }
+
     public createGameN =  (request: any, response: any, next: any) => {
         const game = request.body;
 
@@ -119,7 +154,8 @@ export class GameRepository {
         server.get(settings.prefix + 'games', this.getGamesN);
         server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatusN);
         server.get(settings.prefix + 'games/:id', settings.security.authorize, this.getGame);
-        server.put(settings.prefix + 'games/:id', settings.security.authorize, this.updateGame);
+        server.put(settings.prefix + 'games', this.updateGamePlayersCount);
+            //server.put(settings.prefix + 'games/:id', this.updateGame);
         server.del(settings.prefix + 'games/:id', settings.security.authorize, this.deleteGame);
         console.log("[node] app.games.ts - Games routes registered");
     };    

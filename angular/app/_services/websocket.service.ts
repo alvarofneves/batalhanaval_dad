@@ -29,6 +29,11 @@ export class WebSocketService {
         return this.listenOnChannel('chat');
     }
 
+    // Channel para cada jogo novo criado
+    getChatMessage(): Observable<any> {
+        return this.listenOnChannel('chat');
+    }
+
     // Receive a message from the server
     private listenOnChannel(channel: string): Observable<any> {
         return new Observable((observer:any) => {

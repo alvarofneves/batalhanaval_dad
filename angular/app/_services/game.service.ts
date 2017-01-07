@@ -17,6 +17,16 @@ export class GameService {
         return this.http.post('/api/games', game).map(r=> r.json());
     }
 
+    updateGame(playersCount: Number): Observable<any> {
+        return this.http.put('/api/games', playersCount).map(r=> r.json());
+    }
+
+    /*updateGame(game: Game): Observable<any> {
+        console.log('obj. game com dados alterados p SRV: ');
+        //console.log(game);
+        return this.http.put('/api/games', game).map(r=> r.json());
+    }*/
+
     getBoards(): BoardClass[] {
         return BOARDS;
     }

@@ -36,7 +36,7 @@ export class LobbyComponent {
         this.gameService.newGame(this.game)
             .subscribe(
                 data => {
-                    this.alertService.success('Registration successful', true);
+                    //this.alertService.success('Registration successful', true);
                     this.router.navigate(['/game']);     // TODO entrar no board do criador do jogo atual jogo
                 },
                 error => {
@@ -45,28 +45,35 @@ export class LobbyComponent {
     }
 
     // Quando player faz join() e entra para o jogo selecionado
-    joinGame(idGame: number, idPlayer: number) {            // TODO associar idPlayer que estiver logado. A receber '2' do html
-        console.log('game, player: ' + idGame + ', ' + idPlayer);
-        console.log('players.count-' + this.game.playersCount);
+    joinGame(game: Game, idPlayer: number) {            // TODO associar idPlayer que estiver logado. A receber '2' do html
+        console.log('join(): game | player: ' + game._id + ' | ' + idPlayer);
         /*
         se players = 4, ñ entrar
         se n = players++; por idPlayer na playersList[]
         entrar nesse game/ mostrar board vazio
         */
-        if (this.game.playersCount >= 4) {
-            console.log('jogo cheio');
-            window.alert('jogo cheio');
-            this.router.navigate(['/lobby']);
+        if (game.playersCount >= 4) {
+            window.alert('Jogo cheio. Procure outro jogo!');
         }
         else {
-            console.log('pode entrar');
-            console.log('jogadores existentes- ' + this.game.playersCount);
-            this.game.playersArray[this.game.playersCount + 1] = idPlayer; 
-            this.game.playersCount++;
-            this.router.navigate(['/game']);    // this.router.navigate(['/game', idGame]);
-
-
-            console.log('jogadores existentes apos- ' + this.game.playersCount);
+            console.log('playersCount (else)= ' + game.playersCount);
+            //game.playersArray[game.playersCount] = idPlayer; 
+            //console.log('ANTES PUSH. idPlayer: ' + idPlayer);
+            //console.log(game.playersArray);
+            //game.playersArray[0] = 0;
+            //game.playersArray.push(idPlayer);
+            game.playersCount++;
+ 
+            this.gameService.updateGame(game.playersCount)
+                .subscribe(
+                    data => {
+                        //this.alertService.success('Update successful', true);
+                        this.router.navigate(['/game']);     // TODO    // this.router.navigate(['/game', idGame]);
+                    },
+                    error => {
+                        this.alertService.error(error);
+                    }); 
+            //console.log('jogadores existentes apos- ' + this.game.playersCount);
         }
     }
 
