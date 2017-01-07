@@ -26,14 +26,10 @@ passport.use(new LocalStrategy((email, password, done) => {
         email: email
     }).then(player => {
         if (player === null) {
-            return done(null, false, {
-                message: 'Incorrect credentials.'
-            });
+            return done(null, false, {message: 'Incorrect credentials.'});
         }
         if (!validPassword(player, password)) {
-            return done(null, false, {
-                message: 'Incorrect credentials.'
-            });
+            return done(null, false, {message: 'Incorrect credentials.'});
         }
         player.token = sha1(player.email + Date.now());
         database.db.collection('players')

@@ -2,7 +2,9 @@ import { Component }  from '@angular/core';
 import { Router }     from '@angular/router';
 
 import { Player }                      from '../_shared/player';
-import { AlertService, PlayerService } from '../_services/index';  
+import { AlertService, PlayerService } from '../_services/index'; 
+
+
 
 @Component({
     moduleId:  module.id,
@@ -16,7 +18,7 @@ export class RegisterComponent {
     
     constructor (private playerService: PlayerService, private alertService: AlertService, private router: Router) {
         // Quando form é carregado, dados do novo Player estão vazios 
-        this.player = new Player("", "", "", "");      // @params: name, email, password
+        this.player = new Player("", "", "", "");      // @params: name, email, password, confirmPassword
     }
 
     registerPlayer() {
@@ -30,5 +32,16 @@ export class RegisterComponent {
                     this.alertService.error(error);
                 });  
         console.log("Player registado");
+    }
+    comparePassword(password:string, confirmPassword:string){
+
+        if(password === confirmPassword) {   //if(formPlayer.password.value === formPlayer.confirmPassword.value) {
+
+            return true;
+        }
+        return false ; //{message : 'Password not Match'}
+
+
+
     }
 }

@@ -2,6 +2,7 @@ export class Player {
 	name: string;
 	email: string;
 	password: string;
+	confirmPassword: string;
 	token: string;
 	numGamesPlayed: number = 0;
 	numGamesWon: number = 0;
