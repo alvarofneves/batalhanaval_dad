@@ -28,6 +28,7 @@ body {
     box-sizing: inherit;
 }
 
+/* ############################## LAYOUT BOARD / GAME ############################## */
 /*h1,h2{
   text-align: center;
   font-family: monospace;
@@ -104,7 +105,7 @@ boats-container{
     background-color: #adad85;
 }
 
-.labelPlayerName {
+#labelPlayerName {
     color: #ff3333;
     font-size: 15px;
     text-align: center;
@@ -132,10 +133,71 @@ boats-container{
     border: thin solid black;
 }  */
 
+/* ############################## LAYOUT BARRA HEADER ############################## */
 .headerBar {
+    display: block;
     background-color: yellow;
 }
 
-.footerBar {
-    background-color: grey;
+.headerBar2 {
+    display: block;
+    text-align: center;
+    background-color: #ebebe0;
 }
+
+.headerBar2 a:hover { 
+    text-decoration: none;  
+    background-color: #ccccb3;  
+}
+
+.headerBar2 a:active {   
+    text-decoration: none;
+    background-color: #ccccb3;
+}
+
+.headerBar2 > a {
+    padding-right: 30px;
+}
+
+/* ############################## LAYOUT BARRA FOOTER ############################## */
+.footerBar {
+    background-color: #ebebe0;
+}
+
+/* ############################## LAYOUT PARA TABELAS ############################## */
+#tableSubtitle, #tableList {
+    text-align: center;
+}
+
+#tableList {
+    line-height: 15px; 
+}
+
+#tableTitle {
+    color: #369;   /*#00802b; */
+    font-size: 160%;
+    text-align: center;
+    font-family: monospace;
+}
+
+/*tr > td > .btn-primary { */
+.btn-game-join {
+    padding: 0px 30px;
+    font-size: 17px;
+    border-radius: 4px; 
+    background: #008000;
+    color: #ffffff;
+    
+    /*border-color: black;*/
+}
+
+.btn-game-join:hover { 
+    background: #006600;
+    color: #ffffff;
+}
+
+/* ############################## OTHERS ############################## */
+#otherLocation {
+    /* font-style: italic; */
+    color: red; 
+} 

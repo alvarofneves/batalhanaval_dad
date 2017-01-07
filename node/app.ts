@@ -1,6 +1,6 @@
 const restify = require('restify');
 const passport = require('passport');
-const path = require('path');
+const path = require('path');		
 
 import { databaseConnection as database } from './app.database';
 import { WebSocketServer } from './app.websockets';
@@ -17,6 +17,7 @@ const socketServer = new WebSocketServer();
 
 // Prepare and configure Restify Server
 restify.CORS.ALLOW_HEADERS.push("content-type");
+restify.CORS.ALLOW_HEADERS.push("authorization");		// sugestão do colega Eugénio pelo fórum do Moodle
 restifyServer.use(restify.bodyParser());
 restifyServer.use(restify.queryParser());
 restifyServer.use(restify.CORS());
@@ -28,28 +29,31 @@ let security = new Security();
 security.initMiddleware(restifyServer);
 
 // Settings are used on all HTTP (Restify) Handlers
-let settings = new HandlerSettings(socketServer, security,'/api/v1/');
+let settings = new HandlerSettings(socketServer, security, '/api/'); 	
 
 // Authentication Handlers
-import { Authentication } from './app.authentication';
+import { Authentication } from './app.authentication';	
 new Authentication().init(restifyServer, settings);
 
 // Players Handler
-import { Player } from './app.players';
-new Player().init(restifyServer, settings);
+import { PlayerRepository } from './app.players';
+new PlayerRepository().init(restifyServer, settings);
 
 // Games Handler
-import { Game } from './app.games';
-new Game().init(restifyServer, settings);
+import { GameRepository } from './app.games';
+new GameRepository().init(restifyServer, settings);
 
 restifyServer.get(/^\/(?!api\/).*/, restify.serveStatic({
-	directory: './angular',
+	directory: '../angular',
 	default: 'index.html'
 }));
 
-// Use connect method to connect to the server
+// Use connect method to connect to the servers
 database.connect(url, () => {
     restifyServer.listen(7777, () => console.log('%s listening at %s', restifyServer.name, restifyServer.url));
+
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
+
+    console.log("##### BRANCH 'registerUser' | $node/app.ts | >>>SRV NODE UP<<< #####");
 });

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WebSocketService } from './websocket.service';
+import { WebSocketService }  from '../_services/index';
 
 @Component({
     moduleId: module.id,

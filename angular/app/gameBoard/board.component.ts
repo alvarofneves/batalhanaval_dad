@@ -7,7 +7,9 @@ import {GameService} from "../_services/index";
 import { Subscription }   from 'rxjs/Subscription';
 import {MultiComponentService} from "../_services/multiComponent.service";
 
-
+import { BoardClass} from "./boardClass";
+import { BoatClass } from "./boatClass";
+import { CellClass } from "./cellClass";
 
 @Component({
 	moduleId: module.id,

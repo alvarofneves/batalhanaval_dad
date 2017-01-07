@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Login</h1>
+        <form #playerLogin="ngForm" (ngSubmit)="onSubmit(playerLogin.value)">
+            <div class="form-group">
+                <input [(ngModel)]="model.email" type="text" class="form-control" name="email" required placeholder="Enter your email"/>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="model.password" type="password" class="form-control" name="password" required placeholder="Password"/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button><tr>
+                <button class="btn btn-primary" >Login with Google</button>  <!-- (click)="LoginGoogle()" -->
+                <button class="btn btn-primary">Login with Facebook</button>
+            </div>
+            <div>
+                <p>Create an account! <a [routerLink]="['/register']" routerLinkActive="active">Register here</a></p>          
+            </div>
+        </form>
+    </div>
+</div>
