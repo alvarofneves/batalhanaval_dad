@@ -8,7 +8,7 @@ import { AlertService, PlayerService } from '../_services/index';
     moduleId:  module.id,
     selector: 'register',
     templateUrl: 'register.component.html',
-    styleUrls: ['forms.css'] 
+    styleUrls: ['./forms.css'] 
 })
 
 export class RegisterComponent {
@@ -16,7 +16,7 @@ export class RegisterComponent {
     
     constructor (private playerService: PlayerService, private alertService: AlertService, private router: Router) {
         // Quando form é carregado, dados do novo Player estão vazios 
-        this.player = new Player("", "", "");      // @params: name, email, password
+        this.player = new Player("", "", "", "");      // @params: name, email, password
     }
 
     registerPlayer() {
