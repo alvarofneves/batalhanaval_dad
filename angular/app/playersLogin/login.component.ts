@@ -53,6 +53,7 @@ export class LoginComponent {
                     // }
                     //});
                     //}
+<<<<<<< Updated upstream
                 }
             });
         }
@@ -62,3 +63,6 @@ export class LoginComponent {
         this.authService.sendLoginGoogle();
     }
 }
+=======
+                }
+>>>>>>> Stashed changes
