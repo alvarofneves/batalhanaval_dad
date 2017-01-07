@@ -6,7 +6,7 @@ export class WebSocketServer {
 
     public initBoard(){
         for(let i = 0; i < 100; i++) {
-            this.board[i]=0;
+            this.board[i] = 0;
         }
     }
 
@@ -20,6 +20,7 @@ export class WebSocketServer {
 
             // Para tiros serem enviados a todos intervenientes
             client.emit('board', this.board);
+                console.log('board vindo do srv:: ' + this.board);
             client.on('clickElement', (indexElement) => {
                 this.board[indexElement]++;
                 if (this.board[indexElement] > 2) {

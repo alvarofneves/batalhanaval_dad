@@ -45,9 +45,10 @@ export class LobbyComponent {
                 }); 
     }
 
-    joinGame() {
+    joinGame(idGame: any) {
     //joinGame(idGame : number) {
-    	console.log('join! - enviar player_id + game_id');
+        console.log('game_id (586edb914a250a278838ec9e) = ' + idGame);
+        this.router.navigate(['/game']);
     	//this.router.navigate(['/game', idGame]);
     }
 

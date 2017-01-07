@@ -13,7 +13,7 @@
 				<td id="tableList">{{game._id}}</td>
 				<td id="tableList">{{game.playerCreator}}</td>
 				<td id="tableList">{{game.totWaitingPlayers}}</td>
-				<td><button type="submit" class="btn btn-primary btn-game-join" (click)="joinGame()">Join</button></td>
+				<td><button type="submit" class="btn btn-primary btn-game-join" (click)="joinGame(game._id)">Join</button></td>
 			</tr>
 		</table>
 		<hr>

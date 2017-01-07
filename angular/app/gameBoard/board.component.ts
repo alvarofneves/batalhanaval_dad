@@ -50,7 +50,7 @@ export class BoardComponent {
 	ngOnInit() {
         this.elementos = [];
         this.wsService.getBoardMessages().subscribe((m:any) => {
-            this.elementos = m;
+        	this.elementos = m;
             console.log(m);
         });
     }

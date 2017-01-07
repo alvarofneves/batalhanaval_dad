@@ -61,10 +61,13 @@ export class WebSocketService {
 
     // Receive a message from the server
     private listenOnChannel(channel: string): Observable<any> {
+        //console.log('listenOnChannel()');
         return new Observable((observer:any) => {
             this.socket.on(channel, (data:any) => {
                 observer.next(data);
+                //console.log('####');
             });
+                //console.log('disconnect');
             return () => this.socket.disconnect();
         });
     }
