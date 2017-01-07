@@ -6,6 +6,7 @@ export class Authentication{
     public login = (request: any, response: any, next: any) => {
         let email = request.email;
         let password = request.password;
+        //let token = request.token;
 
         //response.json(player);
         return next();

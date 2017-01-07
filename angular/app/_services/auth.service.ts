@@ -8,12 +8,14 @@ import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthService {
+    public token: string;
     isLoggedIn: boolean = false;
     redirectUrl: string;        // store the URL so we can redirect after logging in
 
+
     constructor(private http: Http) { }
 
-    login(email, password) {
+    login(email, password, token) {
         let headers = new Headers();
         //let options = new RequestOptions({ headers: headers });
 

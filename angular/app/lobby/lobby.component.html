@@ -1,7 +1,21 @@
-<div class="container">   
-    <div class="col-md-10 col-md-offset-1" *ngIf = "listGamesPendent">
-    	<button type="submit" class="btn btn-primary" (click)="createGame()">New game</button>
-    	<h5 id="tableTitle">Games Pendent</h5>
+<div class="container">
+	
+		<!--Users from secure api end point:
+		<ul>
+			<li *ngFor="let player of players">{{player.name}}</li>
+		</ul>--> 
+		
+		<p>Player Logged</p>
+		
+
+	<!--<a [routerLink]="['/login']" routerLinkActive="active" >Logout</a>
+
+	<a [routerLink]="['/login']" routerLinkActive="active" id="otherLocation">Login</a>--> 
+	
+
+	<div class="col-md-10 col-md-offset-1" *ngIf="listGamesPendent">
+		<button type="submit" class="btn btn-primary" (click)="createGame('1')">New game</button>
+		<h5 id="tableTitle">Games Pendent</h5>
 		<table class="table table-striped">
 			<tr>
 				<th id="tableSubtitle">*_id</th>
@@ -18,8 +32,8 @@
 		</table>
 		<hr>
 	</div>	
-    <div class="col-md-10 col-md-offset-1" *ngIf = "listGamesProgress">
-    	<h5 id="tableTitle">Games In Progress</h5>
+	<div class="col-md-10 col-md-offset-1" *ngIf="listGamesProgress">
+		<h5 id="tableTitle">Games In Progress</h5>
 		<table class="table table-striped">
 			<tr>
 				<th id="tableSubtitle">*_id</th>

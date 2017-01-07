@@ -1,7 +1,7 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 
-export let fakeBackendProvider = {
+export let backendProvider = {
     // use fake backend in place of Http service for backend-less development
     provide: Http,
     useFactory: (backend: MockBackend, options: BaseRequestOptions) => {
@@ -20,7 +20,7 @@ export let fakeBackendProvider = {
 
                     // find if any player matches login credentials
                     let filteredPlayers = players.filter(player => {
-                        return player.username === params.username && player.password === params.password;
+                        return player.email === params.email && player.password === params.password;
                     });
 
                     if (filteredPlayers.length) {
@@ -30,9 +30,9 @@ export let fakeBackendProvider = {
                             status: 200,
                             body: {
                                 id: player.id,
-                                username: player.username,
+                                email: player.email,
                                 playerName: player.name,
-                                token: 'fake-jwt-token'
+                                token: 'jwt-token'
                             }
                         })));
                     } else {

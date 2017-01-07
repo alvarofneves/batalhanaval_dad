@@ -3,6 +3,8 @@ import { Router }     from '@angular/router';
 
 import { Game }                      from '../_shared/index';
 import { AlertService, GameService } from '../_services/index';  
+import { Player }                    from '../_shared/index';  
+
 
 @Component({
 	moduleId: module.id,
@@ -15,6 +17,8 @@ export class LobbyComponent {
 	listGamesProgress: any[] = [];
 	listTotGames: any[] = [];
     listMyGames: any[] = [];
+    player: any[] = [];
+
 
 	public string: String;
 	public game: Game;
@@ -27,8 +31,8 @@ export class LobbyComponent {
     	this.listGamesByStatus('progress');
     }
 
-    createGame() {
-	//createGame(idUser: number) {
+    createGame(idPlayer: number) {
+        console.log("player_id: " + idPlayer);
         this.gameService.newGame(this.game)
             .subscribe(
                 data => {

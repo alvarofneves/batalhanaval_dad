@@ -21,6 +21,8 @@ import { NotificationsModule } 			from './notifications/notifications.module';
 
 import { WebSocketService } 			from './_services/websocket.service';
 import { AuthGuard } 					from './_guards/auth-guard.service';
+import { AuthService } 					from './_services/auth.service';
+
 
 const appRoutes: Routes = [
 	{ path: '', component: LobbyComponent },	

@@ -2,13 +2,17 @@ import { Injectable }                              from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable }                              from 'rxjs/Observable';
 
-import { Player } from '../_shared/index';
+import 'rxjs/add/operator/map'
 
-import * as io    from 'socket.io-client';
+import { Player }     from '../_shared/index';
+import { AuthService } from '../_services/index';
+
+
+import * as io from 'socket.io-client';
 
 @Injectable()
 export class PlayerService {
-    constructor(private http: Http) { }
+    constructor(private http: Http, private authService: AuthService) { }
 
     create(player: Player): Observable<any>{
         let headers = new Headers();
@@ -45,6 +49,17 @@ export class PlayerService {
         return this.http.delete('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
     }
 
+    getPlayers(): Observable<Player[]> {
+        // add authorization header with jwt token
+        let headers = new Headers({ 'Authorization': 'Bearer ' + this.authService.token });
+        let options = new RequestOptions({ headers: headers });
+ 
+        // get users from api
+        return this.http.get('/api/users', options)
+            .map((response: Response) => response.json());
+    }
+
+    
     // private helper methods 
     private jwt() {
         // create authorization header with jwt token        
@@ -55,3 +70,7 @@ export class PlayerService {
         }
     }
 }
+
+ 
+
+    
