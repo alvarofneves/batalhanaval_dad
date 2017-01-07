@@ -31,7 +31,9 @@
             <div class="form-group">  
                 <button type="submit" class="btn btn-primary" (click)="registerPlayer()" [disabled]="!playerForm.form.valid">Register</button>
                 <button type="reset" class="btn btn-danger">Clear Fields</button>
-            </div>       
+                <hr>
+                <p>Already have an account? <a [routerLink]="['/login']" routerLinkActive="active">Login here</a></p> 
+            </div>         
         </form>
     </div>
 </div>

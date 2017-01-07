@@ -18,7 +18,8 @@ export class Authentication{
     }  
 
     public googleAuth = () => {
-        passport.authenticate('google', { scope: ['profile'] })
+        console.log('google auth srv');
+        //passport.authenticate('google', { scope: ['profile'] })
     }  
 
     public googleAuthCb = () => {

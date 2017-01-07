@@ -9,7 +9,9 @@
                 <input [(ngModel)]="model.password" type="password" class="form-control" name="password" required placeholder="Password"/>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">Login</button><tr>
+                <button class="btn btn-primary" >Login with Google</button>  <!-- (click)="LoginGoogle()" -->
+                <button class="btn btn-primary">Login with Facebook</button>
             </div>
             <div>
                 <p>Create an account! <a [routerLink]="['/register']" routerLinkActive="active">Register here</a></p>          

@@ -1,13 +1,15 @@
 import { NgModule }       from '@angular/core';
 import { FormsModule }    from '@angular/forms';
+import { RouterModule }     from '@angular/router';
+import { SharedModule }      from '../_shared/shared.module';
 
 import { RegisterComponent } from './register.component';
-import { SharedModule }      from '../_shared/shared.module';
 
 @NgModule({
   imports: [ 
   		SharedModule, 
-  		FormsModule
+  		FormsModule,
+      RouterModule
   ],
   declarations: [ 
   		RegisterComponent

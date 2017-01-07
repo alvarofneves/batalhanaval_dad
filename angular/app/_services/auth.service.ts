@@ -35,6 +35,10 @@ export class AuthService {
         this.isLoggedIn = false;
     }
 
+    sendLoginGoogle() {
+        return this.http.get('/auth/google');
+    }
+
     // TODO função chamada em todos os pedidos que precisam de autenticação
     // ver txt 'callSome' na Dropbox
     // callSomeService() {   }

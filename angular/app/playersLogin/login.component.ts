@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService, AuthService } from '../_services/index';
@@ -10,7 +10,7 @@ import { AlertService, AuthService } from '../_services/index';
     styleUrls: ['../playersRegister/forms.css'] 
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
     model: any = {};
     returnUrl: string;
 
@@ -32,4 +32,9 @@ export class LoginComponent implements OnInit {
                 }
             });
         }
+
+    loginGoogle() {
+        console.log('login.comp');
+        this.authService.sendLoginGoogle();
+    }
 }
