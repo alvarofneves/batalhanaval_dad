@@ -1,7 +1,7 @@
 /**
-* @date 23/12
+* @date 01/01/2017
 * @description Instruções para correr a app; info sobre packages necessários; informações sobre nomes & portos usados
-* @author AS
+* @author Afonso Santos
 */
 
 LER ANTES DE CORRER O PROJETO:
@@ -55,9 +55,11 @@ mongodb
 nodemon
 socket.io
 socket.io-client
+? auth gogle
+? auth fb
 @types
 
-Nota: instalar cada um globalmente. Se faltar aqui algum, consultar os ficheiros 'package.json'
+Nota: instalar globalmente. Se faltar aqui algum, consultar os ficheiros 'package.json'
 
 
 ======================= INFO: NOMES & PORTOS =======================

@@ -14,8 +14,6 @@ export class PlayerRepository {
         next();
     }
 
-
-
     public createPlayer = (request: any, response: any, next: any) => {
         if (request.body === undefined) {
             response.send(400, 'No player data');
