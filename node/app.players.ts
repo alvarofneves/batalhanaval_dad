@@ -139,7 +139,7 @@ export class PlayerRepository {
         server.get(settings.prefix + 'players', this.getAllPlayers);
         server.get(settings.prefix + 'topvict', this.getTopVict);
         server.get(settings.prefix + 'topscore', this.getTopScore);
-        server.get(settings.prefix + 'players/:id', settings.security.authorize, this.getPlayer);
+        server.get(settings.prefix + 'players/:id', this.getPlayer);
         server.put(settings.prefix + 'players/:id', settings.security.authorize, this.updatePlayer);
         server.del(settings.prefix + 'players/:id', settings.security.authorize, this.deletePlayer);
         console.log("[node] app.players.ts - Players routes registered");
