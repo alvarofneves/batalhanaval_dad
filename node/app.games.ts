@@ -100,22 +100,13 @@ export class GameRepository {
     }
 
     public updateGameN =  (request: any, response: any, next: any) => {
-        //console.log('inicio updateAllGameN');
-        
         const game = request.body;
-        console.log(game);
-
+        
         if (game === undefined) {
             response.send(400, 'No game data');
             return next();
         }
-        /*database.db.collection('games')
-            .updateOne(game)
-            .then(result => this.returnGame(result._id, response, next))
-            .catch(err => this.handleError(err, response, next));*/
-
             let idGame = new mongodb.ObjectID(game._id); // PROF caso a rota não tenha o id
-            console.log('srv-update: gameId: ' + idGame);
             delete game._id;                         // PROF para evitar manipulação do _id
             database.db.collection('games')
                 .updateOne({
@@ -125,6 +116,7 @@ export class GameRepository {
                 })
                 .then(result => this.returnGame(result._id, response, next))
                 .catch(err => this.handleError(err, response, next));
+        console.log(game);
     }
 
     public createGameN =  (request: any, response: any, next: any) => {

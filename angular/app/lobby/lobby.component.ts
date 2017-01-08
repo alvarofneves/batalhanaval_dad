@@ -57,11 +57,7 @@ export class LobbyComponent {
             window.alert('Jogo cheio. Procure outro jogo!');
         }
         else {
-            console.log('playersWaiting - antes de incremento= ' + game.playersWaiting);
-            //game.playersArray[game.playersWaiting] = idPlayer; 
-            //console.log('ANTES PUSH. idPlayer: ' + idPlayer);
-            //console.log(game.playersArray);
-            //game.playersArray[0] = 0;
+            console.log('playersWaiting-antes incremento= ' + game.playersWaiting);
             game.playersArray.push(idPlayer);
             game.playersCount++; 
             game.playersWaiting++;
@@ -74,7 +70,7 @@ export class LobbyComponent {
                     error => {
                         this.alertService.error(error);
                     }); 
-            //console.log('jogadores existentes apos- ' + this.game.playersCount);
+            console.log('playersWaiting-apos incremento= ' + game.playersWaiting);
         }
     }
 
