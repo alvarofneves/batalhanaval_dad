@@ -3,6 +3,8 @@ import { Router }     from '@angular/router';
 
 import { Game, Player }              from '../_shared/index';
 import { AlertService, GameService } from '../_services/index';  
+import { Game }                                        from '../_shared/index';
+import { AlertService, GameService, WebSocketService } from '../_services/index';  
 
 @Component({
 	moduleId: module.id,
@@ -16,16 +18,21 @@ export class LobbyComponent {
 	listTotGames: any[] = [];
     listMyGames: any[] = [];
     player: any[] = [];
+    // Arrays usados nos channels / websockets
+    listGamesPeChannel: string[] = [];
+    listGamesPgChannel: string[] = [];
 
 	public string: String;
 	public game: Game;
-    constructor (private gameService: GameService, private alertService: AlertService, private router: Router) {
+    constructor (private gameService: GameService, private alertService: AlertService, private router: Router, private wsService: WebSocketService) {
     	this.game = new Game('', '', '');
     }
 
     ngOnInit() {
     	this.listGamesByStatus('pendent');
     	this.listGamesByStatus('progress');
+        this.wsService.getGamesPendent().subscribe((m:any) => this.listGamesPeChannel.push(<string>m));
+        this.wsService.getGamesProgress().subscribe((m:any) => this.listGamesPgChannel.push(<string>m));
     }
 
     createGame(idPlayer: number) {

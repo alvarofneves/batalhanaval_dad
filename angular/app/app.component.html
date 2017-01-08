@@ -1,17 +1,17 @@
 <div class="container">
-	<div class="headerBar">     
-	    <p>header</p>
+	<div class="headerBar">   
+		<a [routerLink]="['/register']" routerLinkActive="active" id="otherLocation">Register | </a>
+		<a [routerLink]="['/login']" routerLinkActive="active" id="otherLocation"> Login</a>
 	</div>
 	<div class="headerBar2">
 		<nav>
-			<a [routerLink]="['/lobby']" routerLinkActive="active" id="menuSpaceOpts">Lobby</a>
-			<a [routerLink]="['/topten']" routerLinkActive="active" id="menuSpaceOpts">Top Ten</a>
+			<a [routerLink]="['/lobby']" routerLinkActive="active" id="menuSpaceOpts">Lobby | </a>
+			<a [routerLink]="['/topten']" routerLinkActive="active" id="menuSpaceOpts">Top Ten | </a>
 			<a [routerLink]="['/admin']" routerLinkActive="active" id="menuSpaceOpts">Admin Panel</a>
 		</nav>
 	</div>
 	<hr>
-	<a [routerLink]="['/register']" routerLinkActive="active" id="otherLocation">Register</a>
-	<a [routerLink]="['/login']" routerLinkActive="active" id="otherLocation">Login</a>
+	
 	<a [routerLink]="['/board']" routerLinkActive="active" id="otherLocation">Board</a>
 	<a [routerLink]="['/game']" routerLinkActive="active" id="otherLocation">Game</a>
 

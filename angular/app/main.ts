@@ -7,5 +7,5 @@ platform.bootstrapModule(AppModule);
 (function() {
     'use strict';
 
-	console.log("##### BRANCH 'insertBoats' | $angular/app/main.ts | >>>ANGULAR UP<<< #####");
+	console.log("##### BRANCH 'webSocket-Tiros' | $angular/app/main.ts | >>>ANGULAR UP<<< #####");
 })();

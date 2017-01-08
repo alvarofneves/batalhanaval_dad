@@ -7,6 +7,17 @@ import { Component } from '@angular/core';
 })
 
 export class InitGameControlsComponent { 
+	// TODO limpar peças do array e apagar do board
+	resetBoard() {
+		console.log('reset....');
+	}
+
+	// TODO início ao jogo
+	startGame() {
+		console.log('start....');
+	}
+}
+export class InitGameControlsComponent { 
 	boatsRandom() {
 		console.log('jgfkgh');
 	}

@@ -3,8 +3,8 @@ const passport = require('passport');
 const path = require('path');		
 
 import { databaseConnection as database } from './app.database';
-import { WebSocketServer } from './app.websockets';
-import { HandlerSettings } from './handler.settings';
+import { WebSocketServer } 			      from './app.websockets';
+import { HandlerSettings } 			      from './handler.settings';
 
 // Connection URL to DB; 27017 - default port
 const url = 'mongodb://localhost:27017/db_battlefield_game';	
@@ -55,5 +55,5 @@ database.connect(url, () => {
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
 
-    console.log("##### BRANCH 'insertBoats' | $node/app.ts | >>>SRV NODE UP<<< #####");
+    console.log("##### BRANCH 'webSocket-Tiros' | $node/app.ts | >>>SRV NODE UP<<< #####");
 });

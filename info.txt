@@ -1,40 +1,29 @@
 GRUPO 64
 
 Afonso Santos - nr. 2130653
-Alvaro Neves - nr. 2120771
+Álvaro Neves - nr. 2120771
 Tiago Rodrigues - nr. 2092015
 
 Turno PL1 - Regime Pós-Laboral
 
 URL da App - 
-
 Credenciais de acesso - 
 
 
-
 /* ___________________________________________________________________________ */
-Funcionalidades implementadas:  [OK, PARCIAL, NÃO IMPLEMENTADO]
+Funcionalidades implementadas:  [OK, PARCIAL, NÃO IMPLEMENTADO]    
 
-Jogo - NÃO IMPLEMENTADO
-Top Ten - NÃO IMPLEMENTADO
-Identificação e Autorização - NÃO IMPLEMENTADO
-Histórico de Jogos – NÃO IMPLEMENTADO
-Game Lobby – NÃO IMPLEMENTADO
+Jogo - PARCIAL (Nota: )
+Top Ten - OK
+Identificação e Autorização - PARCIAL
+Histórico de Jogos – PARCIAL
+Game Lobby – OK
 Jogos Múltiplos - NÃO IMPLEMENTADO
 
 Outras Funcionalidades: 
 Bots - NÃO IMPLEMENTADO
 Serviços de Autenticação Externos - NÃO IMPLEMENTADO
 Avatares - NÃO IMPLEMENTADO
-Chat Rooms - NÃO IMPLEMENTADO
+Chat Rooms - PARCIAL (Nota: Existe Chat público em '/lobby')
 Repetição de Jogo - NÃO IMPLEMENTADO
 Mobile App - NÃO IMPLEMENTADO
-
-
-
-
-Curiosidade Produto matricial
-2x3  .   3x2    = 2x2
-a1,1 a2,1  a3,1    .   b1,1  b2,1        a1,1xb1,1+a2,1xb1,2+a3,1xb1,3    a1,1xb2,1+a2,1xb2,2+a3,1xb2,3
-a1,2 a2,2  a3,2        b1,2  b2,2   =    a1,2xb1,1+a2,2xb1,2+a3,2xb1,3    a1,2xb2,1+a2,2xb2,2+a3,2xb2,3
-		       b1,3  b2,3         

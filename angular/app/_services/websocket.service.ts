@@ -5,8 +5,7 @@ import { Observable }     from 'rxjs/Observable';
 import * as io from 'socket.io-client';
 
 @Injectable()
-// Connect to the server ....
-export class WebSocketService {
+export class WebSocketService {        
     private socket: SocketIOClient.Socket;
     constructor() {
         if (!this.socket) {
@@ -34,12 +33,46 @@ export class WebSocketService {
         return this.listenOnChannel('chat');
     }
 
+    // Envia mensagem quando 1 certo elemento é clicado
+    sendClickElementMessage(index: number) {
+        this.socket.emit('clickElement', index);
+    }
+
+    // recebe mensagens do channel 'board'
+    getBoardMessages(): Observable<any> {
+        return this.listenOnChannel('board');
+    }
+
+    // Receber novos jogos criados
+    getNewGamesCreated(): Observable<any> {
+        return this.listenOnChannel('games');
+    }
+
+    getGamesPendent(): Observable<any> {
+        return this.listenOnChannel('gamesLists');
+    }
+
+    getGamesProgress(): Observable<any> {
+        return this.listenOnChannel('gamesLists');
+    }
+
+    getAllPlayers(): Observable<any> {
+        return this.listenOnChannel('playersList');
+    }
+
+    getAllGames(): Observable<any> {
+        return this.listenOnChannel('gamesList');
+    }
+
     // Receive a message from the server
     private listenOnChannel(channel: string): Observable<any> {
+        //console.log('listenOnChannel()');
         return new Observable((observer:any) => {
             this.socket.on(channel, (data:any) => {
                 observer.next(data);
+                //console.log('####');
             });
+                //console.log('disconnect');
             return () => this.socket.disconnect();
         });
     }

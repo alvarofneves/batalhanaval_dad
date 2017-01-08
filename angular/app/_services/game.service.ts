@@ -49,6 +49,7 @@ export class GameService {
     }
 
     getAllGames() {
+    getAllGames(): Observable<any> {   
         return this.http.get('/api/games').map((response: Response) => response.json());
     }
 
