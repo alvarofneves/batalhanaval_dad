@@ -13,7 +13,7 @@ var WebSocketServer = (function () {
                 +client.on('chat', function (data) { return _this.io.emit('chat', Date.now() + ': ' + data); });
                 // Para tiros serem enviados a todos intervenientes
                 client.emit('board', _this.board);
-                console.log('board vindo do srv:: ' + _this.board);
+                //console.log('board vindo do srv:: ' + this.board);
                 client.on('clickElement', function (indexElement) {
                     _this.board[indexElement]++;
                     if (_this.board[indexElement] > 2) {
