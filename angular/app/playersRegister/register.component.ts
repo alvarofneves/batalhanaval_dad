@@ -18,7 +18,7 @@ export class RegisterComponent {
     
     constructor (private playerService: PlayerService, private alertService: AlertService, private router: Router) {
         // Quando form é carregado, dados do novo Player estão vazios 
-        this.player = new Player("", "", "", "");      // @params: name, email, password, confirmPassword
+        this.player = new Player("", "", "", "", false);      // @params: name, email, password, confirmPassword
     }
 
     registerPlayer() {

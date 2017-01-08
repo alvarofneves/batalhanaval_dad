@@ -29,16 +29,7 @@ export class LoginComponent {
         console.log('on submit'); 
     }
 
-    onSubmit(form: any) { 
-        this.authService.login(form.email, form.password) 
-        .subscribe((result) => { 
-            if (result) { 
-                this.router.navigate(['/lobby']); 
-
-            } 
-        }); 
-    } 
-
+    
     login(form : any) {
         console.log(form);
         console.log(form.email);
@@ -47,18 +38,15 @@ export class LoginComponent {
 
         this.authService.login(form.email, form.password)
           .subscribe(result => {
-                //if (result = true) {
                        console.log('login successful');
                 this.alertService.success('Loggin successful', true);
                 this.router.navigate(['/lobby']);
-                 //} else {
-                    //login failed
-                   //  this.error = 'Username or password is incorrect';
-                     //this.loading = false;
-                    // }
-                });
-            }
-            
+               });
+          //alterar estado do jogador
+          //console.log(result.id);
+      }
+
+
             
 
     //loginGoogle() {
