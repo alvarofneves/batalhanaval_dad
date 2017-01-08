@@ -4,11 +4,18 @@ const passport = require('passport');
 export class Authentication{
     // Receber email + password inseridos pelo Player na pag. LOGIN
     public login = (request: any, response: any, next: any) => {
-        let email = request.email;
-        let password = request.password;
-        //let token = request.token;
+        console.log(request.body);
+        if (request.body === undefined) {
+            response.send(400, 'No player data');
+            return next();
+        }
+        console.log(JSON.parse(request.body).email);
 
+        let user = JSON.parse(request.body);
+//        let password = JSON.parse(request.body).passport;
+        //let token = request.token;
         //response.json(player);
+        
         return next();
     }
 

@@ -11,7 +11,6 @@ import 'rxjs/add/operator/map'
 export class AuthService {
     public token: string;
     isLoggedIn: boolean = false;
-    redirectUrl: string;        // store the URL so we can redirect after logging in
 
 
     constructor(private http : Http, private _router: Router) { }

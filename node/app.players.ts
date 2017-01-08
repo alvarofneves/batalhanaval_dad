@@ -1,4 +1,4 @@
-    import { HandlerSettings }                 from './handler.settings';
+import { HandlerSettings }                 from './handler.settings';
 import { databaseConnection as database }  from './app.database';
 import { Player }                          from '../angular/app/_shared';
 
@@ -17,11 +17,16 @@ export class PlayerRepository {
 
 
     public createPlayer = (request: any, response: any, next: any) => {
+
+
         if (request.body === undefined) {
             response.send(400, 'No player data');
             return next();
         }
-        const player = Player.fromBody(request.body);
+        let player = Player.fromBody(request.body);
+        console.log(player);
+        player.password = sha1(player.password);
+        console.log(player);
 
         database.db.collection('players')
             .insertOne(player)

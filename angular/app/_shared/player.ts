@@ -17,6 +17,7 @@ export class Player {
 	}
 
 	static fromBody(body: any):Player {
+
 		return new Player(body.name, body.email, body.password, body.token);	
 	}
 
