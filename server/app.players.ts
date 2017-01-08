@@ -1,6 +1,6 @@
-    import { HandlerSettings }                 from './handler.settings';
+import { HandlerSettings }                 from './handler.settings';
 import { databaseConnection as database }  from './app.database';
-import { Player }                          from '../angular/app/_shared';
+import { Player }                          from '../client/app/_shared';
 
 const mongodb = require('mongodb');
 const util = require('util');

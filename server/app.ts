@@ -44,7 +44,7 @@ import { GameRepository } from './app.games';
 new GameRepository().init(restifyServer, settings);
 
 restifyServer.get(/^\/(?!api\/).*/, restify.serveStatic({
-	directory: '../angular',
+	directory: '../client',		// Originalmente estava '../angular'
 	default: 'index.html'
 }));
 

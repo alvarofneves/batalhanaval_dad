@@ -54,11 +54,11 @@ jspm_packages
 .idea/
 
 # Angular compiled files (@AS - 06/12)
-angular/app/*.js
-angular/app/*.map
-angular/app/**/*.js
-angular/app/**/*.map
-angular/app/**/*.log
+client/app/*.js
+client/app/*.map
+client/app/**/*.js
+client/app/**/*.map
+client/app/**/*.log
 
 # Extensions of Node compiled files (@AS - 07/01)
-node/*.js
+server/*.js

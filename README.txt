@@ -6,9 +6,9 @@
 
 LER ANTES DE CORRER O PROJETO:
 ======================= [client] =======================
-COMO CORRER O ANGULAR (1 janela Git Bash):
+COMO CORRER O CLIENT (1 janela Git Bash):
 
-1) Executar (na linha de comandos 'DAD_projeto_2/angular'):
+1) Executar (na linha de comandos 'DAD_projeto_2/client'):
 $npm install
 
 2) Executar (na linha de comandos):
@@ -19,13 +19,13 @@ Quando alterar o código do 'client', fazer 'F5' à app
 
 
 ======================= [server + BD em Docker] =======================
-COMO CORRER O NODE (2 janelas Git Bash):
+COMO CORRER O SERVER (2 janelas Git Bash):
 
 1) Arrancar servidor MongoDB. Executar na Windows PowerShell (Docker):
 1.1) $docker start <mongo_game>      				// <mongo_game>: nome do container criado para o jogo
 1.2) $docker exec -it <mongo_game> mongo     		// entra na CLI do mongo
 
-2) Executar (na linha de comandos 'DAD_projeto_2/node' - outra janela):
+2) Executar (na linha de comandos 'DAD_projeto_2/server' - outra janela):
 $npm install
 
 3) Executar (na linha de comandos):
@@ -36,10 +36,10 @@ $nodemon app.js  									// Nodemon fica à escuta de alterações e recarrega 
 
 
 ======================= AO SAIR =======================
-* ANGULAR - Executar (na linha de comandos 'DAD_projeto_2/angular'):
+* CLIENT - Executar (na linha de comandos 'DAD_projeto_2/angular'):
 $CTRL + C 
 
-* NODE - Executar (nas 2 linhas de comandos 'DAD_projeto_2/node'):
+* SERVER - Executar (nas 2 linhas de comandos 'DAD_projeto_2/node'):
 $CTRL + C 
 
 * DOCKER / BD: 
@@ -69,9 +69,9 @@ Base de Dados MongoDB:
 nome: db_battlefield_game
 porto: 27017
 
-NODE:
+NODE / server:
 nome: srv_node
 porto: 7777
 
-ANGULAR:
+ANGULAR / client:
 porto: 3000 (agora usado o 7777)
