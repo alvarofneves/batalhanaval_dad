@@ -1,17 +1,23 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';			
+import { NgModule }      	from '@angular/core';
+import { BrowserModule } 	from '@angular/platform-browser';
+import { FormsModule }   	from '@angular/forms';		
+import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent }   from './app.component';
-import { ChatComponent } from './chat/chat.component';
+import { RegisterModule } 	from './playersRegister/register.module';
+import { LoginModule }		from './playersLogin/login.module';
+import { AdminPanelModule } from './adminPanel/admin.module';
+import { LobbyModule } 		from './lobby/lobby.module';
+import { PageTopTenModule }   	from './playersPageTopTen/pageTopTen.module';
+import { GamePageModule } 		from './gamePage/gamePage.module';		
+import { AboutModule }   		from './about/about.module';
+import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';	
+import { NotificationsModule } 	from './notifications/notifications.module';
 
-import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';
-import { LobbyModule } from './lobby/lobby.module';
-import { GamePageModule } from './gamePage/gamePage.module';		
-import { NotificationsModule } from './notifications/notifications.module';
+import { ChatComponent } 	from './chat/chat.component';
+import { AppComponent }   	from './app.component';
 
-import { WebSocketService } from './notifications/websocket.service';
+// ------------ SERVICES ------------
+import { AlertService, AuthService, SettingsService, PlayerService, GameService, WebSocketService } from './_services/index';   
 
 @NgModule({
 	imports: [ 
@@ -20,17 +26,26 @@ import { WebSocketService } from './notifications/websocket.service';
 		FormsModule,
 		AppRoutingModule,
 		LobbyModule,
+		RegisterModule,
+		LoginModule,
+		AdminPanelModule,
 		GamePageModule,
+		PageTopTenModule,
 		NotificationsModule,
+		AboutModule,
 		PageNotFoundModule
 	],
 	declarations: [ 
 		// ------------ COMPONENTS ------------
-		AppComponent,
-		ChatComponent
+		AppComponent
 	],
 	providers: [
-		WebSocketService
+		SettingsService,
+		PlayerService,
+		GameService,
+		AlertService,
+		WebSocketService,
+		AuthService
 	],
 	bootstrap: [ 
 		AppComponent 

@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+	    <h4 id="tableTitle">Players registered</h4>
+	    <!-- <ul>
+	        <li *ngFor="let player of players">
+	            {{player.name}} | {{player.email}} | <a (click)="deleteUser(user.id)">Delete</a>
+	        </li>
+	    </ul>  -->
+
+		<!-- TODO Mostrar nome, email, numGamesPlayed, numGamesWon, percGamesWon -->
+		<div *ngIf = "listPlayers">
+			<table class="table table-striped">
+				<tr>
+					<th id="tableSubtitle">Name</th>
+					<th id="tableSubtitle">Email</th>
+					<th id="tableSubtitle">Games Played</th>
+				</tr>
+				<tr *ngFor = "let player of listPlayers" class="player">  
+					<!--
+					<div class = "avatar">
+						<img [src] = "player.avatar">
+					</div>  -->
+					<td id="tableList" class="name">{{player.name}}</td>
+					<td id="tableList" class="email">{{player.email}}</td>
+					<td id="tableList" class="numGamesPlayed">{{player.numGamesPlayed}}</td>
+				</tr>
+			</table>
+		</div>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 /**
-* @date 14/12
+* @date 01/01/2017
 * @description Instruções para correr a app; info sobre packages necessários; informações sobre nomes & portos usados
-* @author AS
+* @author Afonso Santos
 */
 
 LER ANTES DE CORRER O PROJETO:
@@ -14,8 +14,11 @@ $npm install
 2) Executar (na linha de comandos):
 $npm start  						// App será carregada num novo separador do browser
 
+Browser irá mostrar a app com o URL 'http://localhost:3000/#/'. Mudar para porto 7777 e usá-lo sempre. 
+Quando alterar o código do 'client', fazer 'F5' à app 
 
-======================= [server] =======================
+
+======================= [server + BD em Docker] =======================
 COMO CORRER O NODE (2 janelas Git Bash):
 
 1) Arrancar servidor MongoDB. Executar na Windows PowerShell (Docker):
@@ -52,9 +55,11 @@ mongodb
 nodemon
 socket.io
 socket.io-client
+? auth gogle
+? auth fb
 @types
 
-Nota: instalar cada um globalmente. Se faltar aqui algum, consultar os ficheiros 'package.json'
+Nota: instalar globalmente. Se faltar aqui algum, consultar os ficheiros 'package.json'
 
 
 ======================= INFO: NOMES & PORTOS =======================

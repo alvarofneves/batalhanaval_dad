@@ -1,150 +1,21 @@
+<!-- 
+<div class="board">
+    <div class="game-cell" *ngFor="let elemento of elementos; let i = index" (click)="clickElemento(i)" [style.background-color]="getColor(elemento)">
+    </div>
+</div> -->
+
+
 <div class="board">
     <table class="battlefield-table">
         <tbody>
-        <!-- Assim fica mais rápido. Podia ser feito no component Angular com ngFor + 1 ciclo FOR -->
-        <tr> 
-            <td class="__battlefield-cell-label">A</td>
-            <td class="game-cell" data-line="1" data-column="1"></td>
-            <td class="game-cell" data-line="1" data-column="2"></td>
-            <td class="game-cell" data-line="1" data-column="3"></td>
-            <td class="game-cell" data-line="1" data-column="4"></td>
-            <td class="game-cell" data-line="1" data-column="5"></td>
-            <td class="game-cell" data-line="1" data-column="6"></td>
-            <td class="game-cell" data-line="1" data-column="7"></td>
-            <td class="game-cell" data-line="1" data-column="8"></td>
-            <td class="game-cell" data-line="1" data-column="9"></td>
-            <td class="game-cell" data-line="1" data-column="10"></td>
-        </tr>
-        <tr> 
-            <td class="__battlefield-cell-label">B</td>
-            <td class="game-cell" data-line="2" data-column="1"></td>
-            <td class="game-cell" data-line="2" data-column="2"></td>
-            <td class="game-cell" data-line="2" data-column="3"></td>
-            <td class="game-cell" data-line="2" data-column="4"></td>
-            <td class="game-cell" data-line="2" data-column="5"></td>
-            <td class="game-cell" data-line="2" data-column="6"></td>
-            <td class="game-cell" data-line="2" data-column="7"></td>
-            <td class="game-cell" data-line="2" data-column="8"></td>
-            <td class="game-cell" data-line="2" data-column="9"></td>
-            <td class="game-cell" data-line="2" data-column="10"></td>
-        </tr>
-        <tr> 
-            <td class="__battlefield-cell-label">C</td>
-            <td class="game-cell" data-line="3" data-column="1"></td>
-            <td class="game-cell" data-line="3" data-column="2"></td>
-            <td class="game-cell" data-line="3" data-column="3"></td>
-            <td class="game-cell" data-line="3" data-column="4"></td>
-            <td class="game-cell" data-line="3" data-column="5"></td>
-            <td class="game-cell" data-line="3" data-column="6"></td>
-            <td class="game-cell" data-line="3" data-column="7"></td>
-            <td class="game-cell" data-line="3" data-column="8"></td>
-            <td class="game-cell" data-line="3" data-column="9"></td>
-            <td class="game-cell" data-line="3" data-column="10"></td>
-        </tr>
-        <tr>
-            <td class="__battlefield-cell-label">D</td>
-            <td class="game-cell" data-line="4" data-column="1"></td>
-            <td class="game-cell" data-line="4" data-column="2"></td>
-            <td class="game-cell" data-line="4" data-column="3"></td>
-            <td class="game-cell" data-line="4" data-column="4"></td>
-            <td class="game-cell" data-line="4" data-column="5"></td>
-            <td class="game-cell" data-line="4" data-column="6"></td>
-            <td class="game-cell" data-line="4" data-column="7"></td>
-            <td class="game-cell" data-line="4" data-column="8"></td>
-            <td class="game-cell" data-line="4" data-column="9"></td>
-            <td class="game-cell" data-line="4" data-column="10"></td>
-        </tr>
-        <tr> 
-            <td class="__battlefield-cell-label">E</td>
-            <td class="game-cell" data-line="5" data-column="1"></td>
-            <td class="game-cell" data-line="5" data-column="2"></td>
-            <td class="game-cell" data-line="5" data-column="3"></td>
-            <td class="game-cell" data-line="5" data-column="4"></td>
-            <td class="game-cell" data-line="5" data-column="5"></td>
-            <td class="game-cell" data-line="5" data-column="6"></td>
-            <td class="game-cell" data-line="5" data-column="7"></td>
-            <td class="game-cell" data-line="5" data-column="8"></td>
-            <td class="game-cell" data-line="5" data-column="9"></td>
-            <td class="game-cell" data-line="5" data-column="10"></td>
-        </tr>
-        <tr> 
-            <td class="__battlefield-cell-label">F</td>
-            <td class="game-cell" data-line="6" data-column="1"></td>
-            <td class="game-cell" data-line="6" data-column="2"></td>
-            <td class="game-cell" data-line="6" data-column="3"></td>
-            <td class="game-cell" data-line="6" data-column="4"></td>
-            <td class="game-cell" data-line="6" data-column="5"></td>
-            <td class="game-cell" data-line="6" data-column="6"></td>
-            <td class="game-cell" data-line="6" data-column="7"></td>
-            <td class="game-cell" data-line="6" data-column="8"></td>
-            <td class="game-cell" data-line="6" data-column="9"></td>
-            <td class="game-cell" data-line="6" data-column="10"></td>
-        </tr>
-        <tr> 
-            <td class="__battlefield-cell-label">G</td>
-            <td class="game-cell" data-line="7" data-column="1"></td>
-            <td class="game-cell" data-line="7" data-column="2"></td>
-            <td class="game-cell" data-line="7" data-column="3"></td>
-            <td class="game-cell" data-line="7" data-column="4"></td>
-            <td class="game-cell" data-line="7" data-column="5"></td>
-            <td class="game-cell" data-line="7" data-column="6"></td>
-            <td class="game-cell" data-line="7" data-column="7"></td>
-            <td class="game-cell" data-line="7" data-column="8"></td>
-            <td class="game-cell" data-line="7" data-column="9"></td>
-            <td class="game-cell" data-line="7" data-column="10"></td>
-        </tr>
-        <tr> 
-            <td class="__battlefield-cell-label">H</td>
-            <td class="game-cell" data-line="8" data-column="1"></td>
-            <td class="game-cell" data-line="8" data-column="2"></td>
-            <td class="game-cell" data-line="8" data-column="3"></td>
-            <td class="game-cell" data-line="8" data-column="4"></td>
-            <td class="game-cell" data-line="8" data-column="5"></td>
-            <td class="game-cell" data-line="8" data-column="6"></td>
-            <td class="game-cell" data-line="8" data-column="7"></td>
-            <td class="game-cell" data-line="8" data-column="8"></td>
-            <td class="game-cell" data-line="8" data-column="9"></td>
-            <td class="game-cell" data-line="8" data-column="10"></td>
-        </tr>
-        <tr>
-            <td class="__battlefield-cell-label">I</td>
-            <td class="game-cell" data-line="9" data-column="1"></td>
-            <td class="game-cell" data-line="9" data-column="2"></td>
-            <td class="game-cell" data-line="9" data-column="3"></td>
-            <td class="game-cell" data-line="9" data-column="4"></td>
-            <td class="game-cell" data-line="9" data-column="5"></td>
-            <td class="game-cell" data-line="9" data-column="6"></td>
-            <td class="game-cell" data-line="9" data-column="7"></td>
-            <td class="game-cell" data-line="9" data-column="8"></td>
-            <td class="game-cell" data-line="9" data-column="9"></td>
-            <td class="game-cell" data-line="9" data-column="10"></td>
-        </tr>
-        <tr>
-            <td class="__battlefield-cell-label">J</td>
-            <td class="game-cell" data-line="10" data-column="1"></td>
-            <td class="game-cell" data-line="10" data-column="2"></td>
-            <td class="game-cell" data-line="10" data-column="3"></td>
-            <td class="game-cell" data-line="10" data-column="4"></td>
-            <td class="game-cell" data-line="10" data-column="5"></td>
-            <td class="game-cell" data-line="10" data-column="6"></td>
-            <td class="game-cell" data-line="10" data-column="7"></td>
-            <td class="game-cell" data-line="10" data-column="8"></td>
-            <td class="game-cell" data-line="10" data-column="9"></td>
-            <td class="game-cell" data-line="10" data-column="10"></td>
-        </tr>
-        <tr> 
-            <td class="__battlefield-cell-label"></td>
-            <td class="__battlefield-cell-label">1</td>
-            <td class="__battlefield-cell-label">2</td>
-            <td class="__battlefield-cell-label">3</td>
-            <td class="__battlefield-cell-label">4</td>
-            <td class="__battlefield-cell-label">5</td>
-            <td class="__battlefield-cell-label">6</td>
-            <td class="__battlefield-cell-label">7</td>
-            <td class="__battlefield-cell-label">8</td>
-            <td class="__battlefield-cell-label">9</td>
-            <td class="__battlefield-cell-label">10</td>
-        </tr>
+            <tr *ngFor="let row of [1,2,3,4,5,6,7,8,9,10]; let l = index">
+                <td class="game-cell">{{getLabel(l)}}</td>
+                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i=index"(click)="cellClick(l,i)"></td>
+            </tr>
+            <tr>
+                <td class="game-cell"></td>
+                <td class="game-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10]; let i=index"> {{i+1}}</td>
+            </tr>
         </tbody>
     </table>
 </div>

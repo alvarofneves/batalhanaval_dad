@@ -1,0 +1,29 @@
+<div class="container">
+	<!-- <div class="col-md-6 col-md-offset-3">  
+		<h4 id="listsTitle">Players registered</h4>
+		<p>testeee</p>
+	</div> -->
+
+	<!-- Lista players -->
+	<list></list>
+	
+	<h5 id="tableTitle">Games created</h5>
+	<div class="col-md-10 col-md-offset-1" *ngIf = "listTotGames">
+		<table class="table table-striped">
+			<tr>
+				<th id="tableSubtitle">*_id</th>
+				<th id="tableSubtitle">*status</th>
+				<th id="tableSubtitle">Creator</th>
+				<th id="tableSubtitle">Begin date</th>
+				<th id="tableSubtitle">Winner</th>
+			</tr>
+			<tr *ngFor = "let game of listTotGames">  
+				<td id="tableList">{{game._id}}</td>
+				<td id="tableList">{{game.status}}</td>
+				<td id="tableList">{{game.playerCreator}}</td>
+				<td id="tableList">{{game.beginDate | date : format : shortTime}}</td>
+				<td id="tableList">{{game.winnerPlayer}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
