@@ -14,7 +14,7 @@ import { PageTopTenComponent }   		from './playersPageTopTen/pageTopTen.componen
 import { TopTenVictoriesComponent }   	from './playersPageTopTen/topTenVictories.component';
 import { TopTenScoreComponent }   		from './playersPageTopTen/topTenScore.component';
 import { AboutComponent }   			from './about/about.component';
-import { PageNotFoundComponent }   		from './PageNotFound/PageNotFound.component';
+import { PageNotFoundComponent }   		from './pageNotFound/pageNotFound.component';
 import { ChatComponent }   				from './chat/chat.component';
 
 import { NotificationsModule } 						from './notifications/notifications.module';

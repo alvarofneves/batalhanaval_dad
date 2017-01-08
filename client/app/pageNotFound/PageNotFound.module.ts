@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { PageNotFoundComponent }   from './PageNotFound.component';
+import { PageNotFoundComponent }   from './pageNotFound.component';
 
 @NgModule({
 	imports: [ 
