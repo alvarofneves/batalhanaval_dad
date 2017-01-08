@@ -29,10 +29,11 @@ export class LobbyComponent {
     }
 
     createGame(idPlayer: number) {
-        console.log("player_id: " + idPlayer);
+        console.log("creator-player_id: " + idPlayer);
         this.game.playersArray[0] = idPlayer;           // TODO associar idPlayer que estiver logado. A receber '1' do html
         this.game.playerCreator = idPlayer;            // TODO associar idPlayer que estiver logado
         this.game.playersCount++;
+        this.game.playersWaiting++;
         this.gameService.newGame(this.game)
             .subscribe(
                 data => {
@@ -45,26 +46,26 @@ export class LobbyComponent {
     }
 
     // Quando player faz join() e entra para o jogo selecionado
-    joinGame(game: Game, idPlayer: number) {            // TODO associar idPlayer que estiver logado. A receber '2' do html
+    joinGame(game: Game, idPlayer: number) {                // TODO associar idPlayer que estiver logado. A receber '2' do html
         console.log('join(): game | player: ' + game._id + ' | ' + idPlayer);
         /*
-        se players = 4, ñ entrar
-        se n = players++; por idPlayer na playersList[]
+        se playersWaiting >= 4, ñ entrar
+        se < 4: playersWaiting++; waitingPlayers++; por idPlayer na playersList[]
         entrar nesse game/ mostrar board vazio
         */
-        if (game.playersCount >= 4) {
+        if (game.playersWaiting >= 4) {
             window.alert('Jogo cheio. Procure outro jogo!');
         }
         else {
-            console.log('playersCount (else)= ' + game.playersCount);
-            //game.playersArray[game.playersCount] = idPlayer; 
+            console.log('playersWaiting - antes de incremento= ' + game.playersWaiting);
+            //game.playersArray[game.playersWaiting] = idPlayer; 
             //console.log('ANTES PUSH. idPlayer: ' + idPlayer);
             //console.log(game.playersArray);
             //game.playersArray[0] = 0;
-            //game.playersArray.push(idPlayer);
-            game.playersCount++;
- 
-            this.gameService.updateGame(game.playersCount)
+            game.playersArray.push(idPlayer);
+            game.playersCount++; 
+            game.playersWaiting++;
+            this.gameService.updateGame(game)
                 .subscribe(
                     data => {
                         //this.alertService.success('Update successful', true);

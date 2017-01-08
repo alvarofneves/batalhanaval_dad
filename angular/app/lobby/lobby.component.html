@@ -12,7 +12,7 @@
 			<tr *ngFor = "let game of listGamesPendent">  
 				<td id="tableList">{{game._id}}</td>
 				<td id="tableList">{{game.playerCreator}}</td>
-				<td id="tableList">{{game.playersCount}}</td>
+				<td id="tableList">{{game.playersWaiting}}</td>
 				<td><button type="submit" class="btn btn-primary btn-game-join" (click)="joinGame(game, '2')">Join</button></td>
 			</tr>
 		</table>

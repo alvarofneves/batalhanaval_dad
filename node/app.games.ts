@@ -99,7 +99,7 @@ export class GameRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
-    public updateAllGameN =  (request: any, response: any, next: any) => {
+    public updateGameN =  (request: any, response: any, next: any) => {
         //console.log('inicio updateAllGameN');
         
         const game = request.body;
@@ -109,10 +109,22 @@ export class GameRepository {
             response.send(400, 'No game data');
             return next();
         }
-        database.db.collection('games')
+        /*database.db.collection('games')
             .updateOne(game)
             .then(result => this.returnGame(result._id, response, next))
-            .catch(err => this.handleError(err, response, next));
+            .catch(err => this.handleError(err, response, next));*/
+
+            let idGame = new mongodb.ObjectID(game._id); // PROF caso a rota não tenha o id
+            console.log('srv-update: gameId: ' + idGame);
+            delete game._id;                         // PROF para evitar manipulação do _id
+            database.db.collection('games')
+                .updateOne({
+                    _id: idGame 
+                }, {
+                    $set: game 
+                })
+                .then(result => this.returnGame(result._id, response, next))
+                .catch(err => this.handleError(err, response, next));
     }
 
     public createGameN =  (request: any, response: any, next: any) => {
@@ -154,8 +166,8 @@ export class GameRepository {
         server.get(settings.prefix + 'games', this.getGamesN);
         server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatusN);
         server.get(settings.prefix + 'games/:id', settings.security.authorize, this.getGame);
-        server.put(settings.prefix + 'games', this.updateGamePlayersCount);
-            //server.put(settings.prefix + 'games/:id', this.updateGame);
+        server.put(settings.prefix + 'games', this.updateGameN);
+            //server.put(settings.prefix + 'games', this.updateGamePlayersCountN);
         server.del(settings.prefix + 'games/:id', settings.security.authorize, this.deleteGame);
         console.log("[node] app.games.ts - Games routes registered");
     };    

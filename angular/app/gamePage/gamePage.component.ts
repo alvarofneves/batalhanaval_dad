@@ -36,4 +36,8 @@ export class GamePageComponent {
 		// Envio do board p 'boardsArray' desse jogo
 			//this.game.push(board);
 	}
+
+	public endGame() {
+		console.log('end game client');
+	}
 }

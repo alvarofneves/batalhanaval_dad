@@ -4,9 +4,10 @@ export class Game {
     beginDate: any;
     playersArray: any = [];
     playersCount: number;
+    playersWaiting: number;
     playerCreator: number;
     boardsArray: any = [];
-    winnerPlayer: string;
+    playerWinner: string;
     endDate: any;
     duration: number = 0;
 
@@ -15,5 +16,6 @@ export class Game {
         //this.status = 'progress';
         this.beginDate = Date.now();
         this.playersCount = 0;
+        this.playersWaiting = 0;
     }
 }	
