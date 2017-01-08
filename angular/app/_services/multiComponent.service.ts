@@ -17,5 +17,4 @@ export class MultiComponentService {
     boatPrepared(flag: boolean) {
         this.boatPlacementSource.next(flag);
     }
-
 }

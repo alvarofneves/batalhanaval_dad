@@ -76,15 +76,12 @@ body {
     font-family: monospace;
 }
 
-/*tr > td > .btn-primary { */
 .btn-game-join {
     padding: 0px 30px;
     font-size: 17px;
     border-radius: 4px; 
-    background: #008000;
+    background: #24b458;
     color: #ffffff;
-    
-    /*border-color: black;*/
 }
 
 .btn-game-join:hover { 
@@ -92,11 +89,29 @@ body {
     color: #ffffff;
 }
 
-/* ############################## OTHERS ############################## */
-#otherLocation {
-    /* font-style: italic; */
-    color: red; 
-} 
+.btn-game-log {
+    padding: 0px 30px;
+    font-size: 17px;
+    border-radius: 4px; 
+    background: #e1e1e1;
+    color: #ffffff;
+}
+
+#btn-game-g {
+    padding: 0px 30px;
+    font-size: 17px;
+    border-radius: 4px; 
+    background: #ffffff;
+    color: #dd4b39;
+}
+
+#btn-game-fb {
+    padding: 0px 30px;
+    font-size: 17px;
+    border-radius: 4px; 
+    background: #ffffff;
+    color: #3b5999;
+}
 
 /* ############################## GamePage ############################## */
 /* TODO usar na board do 2º player. Qd grid estiver bloqueada */
@@ -131,3 +146,8 @@ body {
 .boatPreviewCell {
     border: thin solid black;
 }  */
+
+#otherLocation {
+    /* font-style: italic; */
+    color: red; 
+} 

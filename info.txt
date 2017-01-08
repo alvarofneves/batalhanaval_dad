@@ -6,14 +6,16 @@ Tiago Rodrigues - nr. 2092015
 
 Turno PL1 - Regime Pós-Laboral
 
-URL da App - 
-Credenciais de acesso - 
+URL da App - (Prof. Marco Ferreira disse-me por e-mail, que poderíamos enviar 1 ou 2 dias após a entrega)
+Credenciais de acesso - (enviado mais tarde)
+
+NOTA: packages instalados e outras informações em '/README.txt'
 
 
 /* ___________________________________________________________________________ */
 Funcionalidades implementadas:  [OK, PARCIAL, NÃO IMPLEMENTADO]    
 
-Jogo - PARCIAL (Nota: )
+Jogo - PARCIAL
 Top Ten - OK
 Identificação e Autorização - PARCIAL
 Histórico de Jogos – PARCIAL

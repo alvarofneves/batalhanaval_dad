@@ -74,6 +74,41 @@ var GameRepository = (function () {
                 .then(function (result) { return _this.returnGame(id, response, next); })
                 .catch(function (err) { return _this.handleError(err, response, next); });
         };
+        this.updateGamePlayersCount = function (request, response, next) {
+            var playersCount = new mongodb.ObjectID(request.params.playersCount);
+            var game = request.body;
+            if (game === undefined) {
+                response.send(400, 'No game data');
+                return next();
+            }
+            delete game.playersCount;
+            app_database_1.databaseConnection.db.collection('games')
+                .updateOne({
+                playersCount: playersCount
+            }, {
+                $set: game
+            })
+                .then(function (result) { return _this.returnGame(playersCount, response, next); })
+                .catch(function (err) { return _this.handleError(err, response, next); });
+        };
+        this.updateGameN = function (request, response, next) {
+            var game = request.body;
+            if (game === undefined) {
+                response.send(400, 'No game data');
+                return next();
+            }
+            var idGame = new mongodb.ObjectID(game._id); // PROF caso a rota não tenha o id
+            delete game._id; // PROF para evitar manipulação do _id
+            app_database_1.databaseConnection.db.collection('games')
+                .updateOne({
+                _id: idGame
+            }, {
+                $set: game
+            })
+                .then(function (result) { return _this.returnGame(result._id, response, next); })
+                .catch(function (err) { return _this.handleError(err, response, next); });
+            console.log(game);
+        };
         this.createGameN = function (request, response, next) {
             var game = request.body;
             if (game === undefined) {
@@ -116,7 +151,8 @@ var GameRepository = (function () {
             server.get(settings.prefix + 'games', _this.getGamesN);
             server.get(settings.prefix + 'gamesSearch/:status', _this.getGamesByStatusN);
             server.get(settings.prefix + 'games/:id', settings.security.authorize, _this.getGame);
-            server.put(settings.prefix + 'games/:id', settings.security.authorize, _this.updateGame);
+            server.put(settings.prefix + 'games', _this.updateGameN);
+            //server.put(settings.prefix + 'games', this.updateGamePlayersCountN);
             server.del(settings.prefix + 'games/:id', settings.security.authorize, _this.deleteGame);
             console.log("[node] app.games.ts - Games routes registered");
         };

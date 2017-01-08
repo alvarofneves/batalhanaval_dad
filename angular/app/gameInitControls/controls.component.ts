@@ -16,10 +16,8 @@ export class InitGameControlsComponent {
 	startGame() {
 		console.log('start....');
 	}
-}
-export class InitGameControlsComponent { 
-	boatsRandom() {
-		console.log('jgfkgh');
-	}
 
+	boatsRandom() {
+		console.log('random.... a caminho');
+	}
 }

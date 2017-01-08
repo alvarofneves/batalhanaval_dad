@@ -7,22 +7,22 @@
 	<!-- Lista players -->
 	<list></list>
 	
-	<h5 id="tableTitle">All games</h5>
+	<h5 id="tableTitle">All games history</h5>
 	<div class="col-md-10 col-md-offset-1" *ngIf = "listTotGames">
 		<table class="table table-striped">
 			<tr>
 				<th id="tableSubtitle">*_id</th>
 				<th id="tableSubtitle">*status</th>
-				<th id="tableSubtitle">Creator</th>
 				<th id="tableSubtitle">Begin date</th>
 				<th id="tableSubtitle">Winner</th>
+				<th id="tableSubtitle">Plays log</th>
 			</tr>
 			<tr *ngFor = "let game of listTotGames">  
 				<td id="tableList">{{game._id}}</td>
 				<td id="tableList">{{game.status}}</td>
-				<td id="tableList">{{game.playerCreator}}</td>
 				<td id="tableList">{{game.beginDate | date : format : shortTime}}</td>
 				<td id="tableList">{{game.winnerPlayer}}</td>
+				<td><button type="submit" class="btn btn-primary btn-game-log">Log</button></td>
 			</tr>
 		</table>
 	</div>

@@ -1,44 +1,30 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-<<<<<<< HEAD
 import { Subscription }   from 'rxjs/Subscription';
-import {GameService} from "../_services/index";
-import {MultiComponentService} from "../_services/multiComponent.service";
-import { BoardClass} from "./boardClass";
-import { BoatClass } from "./boatClass";
-import { CellClass } from "./cellClass";
-=======
+
 import { BoardClass} 		from "./boardClass";
 import { BoatClass } 		from "./boatClass";
 import { CellClass } 		from "./cellClass";
-import { WebSocketService } from '../_services/index';
->>>>>>> websockets-tiros-v2
+
+import { GameService, WebSocketService, MultiComponentService } from '../_services/index';
 
 @Component({
 	moduleId: module.id,
 	selector: 'game-board',	
 	templateUrl: 'board.component.html',
-<<<<<<< HEAD
 	styleUrls: ['./board.component.css'],
 	providers: [GameService, MultiComponentService]
-})
-
-export class BoardComponent {
-	private id:number;
-	private cells: CellClass[];
-	private boats: BoatClass[];
-	subscription: Subscription;
-	flag: boolean;
-=======
-	styleUrls: ['./board.component.css']
 })
 
 export class BoardComponent { 
 	public id: number;
 	public cells: CellClass[];
+	private boats: BoatClass[];
+	subscription: Subscription;
+	flag: boolean;
+
 	public elementos: number[] = [];
 	
-	public constructor(private wsService: WebSocketService){
+	public constructor(private wsService: WebSocketService, private gameService: GameService, private multiComponentService: MultiComponentService){
 		/*this.id = 0;
 		
 		let board = new BoardClass();
@@ -51,10 +37,8 @@ export class BoardComponent {
 
 		let cruiser2 = new BoatClass("cruiser");
 		
-		let destroyer1 = new BoatClass("destroyer");
->>>>>>> websockets-tiros-v2
+		let destroyer1 = new BoatClass("destroyer"); */
 
-	public constructor(private gameService: GameService, private multiComponentService: MultiComponentService/*id*/){
 		let board = new BoardClass();
 		this.id = board.getId();
 		this.gameService.addGame(board);
@@ -64,34 +48,20 @@ export class BoardComponent {
 		console.log(this.flag);
 		
 		//board.addBoat(new CellClass(2,2), aircraft);
-		
-<<<<<<< HEAD
+
 		//this.randomAddBoats(board);  // AS coment
 		//console.table(board.getCells());
-=======
-		board.addBoat(new CellClass(2,2), aircraft);*/
->>>>>>> websockets-tiros-v2
+
+		//board.addBoat(new CellClass(2,2), aircraft);
 	}
 
 	ngOnInit() {
         this.elementos = [];
         this.wsService.getBoardMessages().subscribe((m:any) => {
         	this.elementos = m;
-            console.log(m);
+            console.log('Array com valores: ' + m);		
         });
     }
-	
-<<<<<<< HEAD
-	public getLabel(currentRow) {
-		 return String.fromCharCode(65+currentRow);
-	}
-
-	public cellClick(l,i){
-		if(this.flag==true){
-			console.log("placing boat at:"+this.id+"-"+l+":"+i);
-		}
-		console.log(this.flag);
-	}
 
 	/*
 	public randomAddBoats(board:BoardClass){
@@ -108,10 +78,10 @@ export class BoardComponent {
 			}while (result == -1)
 		}
 	} */
-=======
+
 	clickElemento(index: number){
         this.wsService.sendClickElementMessage(index);
-        console.log(index);
+        console.log('Posição:' + index);
     }
 
     getColor(elemento: number){
@@ -124,12 +94,14 @@ export class BoardComponent {
     }
 
 	// função do TIAGO
-	//public clickElemento(l,i){
-		//console.log(this.id+"-"+l+":"+i);
+	//public cellClick(l,i){
+		//if(this.flag==true){
+		//	console.log("placing boat at:"+this.id+"-"+l+":"+i);
+		//}
+		//console.log(this.flag);
 	//}
 
 	//public getLabel(currentRow) {
 		//return String.fromCharCode(65+currentRow);
 	//}
->>>>>>> websockets-tiros-v2
 }

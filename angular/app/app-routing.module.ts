@@ -17,12 +17,9 @@ import { AboutComponent }   			from './about/about.component';
 import { PageNotFoundComponent }   		from './PageNotFound/PageNotFound.component';
 import { ChatComponent }   				from './chat/chat.component';
 
-import { NotificationsModule } 			from './notifications/notifications.module';
+import { NotificationsModule } 						from './notifications/notifications.module';
 
-import { WebSocketService } 			from './_services/websocket.service';
-import { AuthGuard } 					from './_guards/auth-guard.service';
-import { AuthService } 					from './_services/auth.service';
-
+import { AuthService, AuthGuard, WebSocketService } from './_services/index';
 
 const appRoutes: Routes = [
 	{ path: '', component: LobbyComponent },	
@@ -32,7 +29,7 @@ const appRoutes: Routes = [
 
 	{ path: 'login', component: LoginComponent },	
 
-	{ path: 'board', component: BoardComponent },
+		{ path: 'board', component: BoardComponent },
 
 	{ path: 'game', component: GamePageComponent },
 		//children: [ 
@@ -43,7 +40,7 @@ const appRoutes: Routes = [
 
 	{ path: 'about', component: AboutComponent },		
 
-		// criar Guard. Só admin aqui entra
+	// criar Guard. Só admin aqui entra
 	{ path: 'admin', component: AdminPanelComponent },
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida

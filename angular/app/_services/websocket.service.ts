@@ -28,11 +28,6 @@ export class WebSocketService {
         return this.listenOnChannel('chat');
     }
 
-    // Channel para cada jogo novo criado
-    getChatMessage(): Observable<any> {
-        return this.listenOnChannel('chat');
-    }
-
     // Envia mensagem quando 1 certo elemento é clicado
     sendClickElementMessage(index: number) {
         this.socket.emit('clickElement', index);
