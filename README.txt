@@ -1,7 +1,7 @@
 /**
-* @date 23/12
+* @date 09/01/2017
 * @description Instruções para correr a app; info sobre packages necessários; informações sobre nomes & portos usados
-* @author AS
+* @author Afonso Santos
 */
 
 LER ANTES DE CORRER O PROJETO:
@@ -55,6 +55,8 @@ mongodb
 nodemon
 socket.io
 socket.io-client
+passport-google-oauth20
+passport-facebook
 @types
 
 Nota: instalar cada um globalmente. Se faltar aqui algum, consultar os ficheiros 'package.json'
@@ -67,9 +69,9 @@ Base de Dados MongoDB:
 nome: db_battlefield_game
 porto: 27017
 
-Servidor NODE:
+NODE:
 nome: srv_node
 porto: 7777
 
 ANGULAR:
-porto: 80 ???
+porto: 3000

@@ -32,6 +32,7 @@ body {
 .headerBar {
     display: block;
     background-color: yellow;
+    margin-bottom: 8px;
 }
 
 .headerBar2 {
