@@ -6,7 +6,7 @@ export class Game {
     playersCount: number;
     playersWaiting: number;
     playerCreator: number;
-    boardsArray: any = [];
+    boardsArray: any = [];      // Array para guardar boards dos players
     playsLogArray: any = [];    // Array para guardar jogadas do jogo
     playerWinner: string;
     endDate: any;

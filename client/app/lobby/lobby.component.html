@@ -25,19 +25,17 @@
 				<th id="tableSubtitle">*_id</th>
 				<th id="tableSubtitle">Player creator</th>
 				<th id="tableSubtitle">Players in game</th>
-				<th id="tableSubtitle">*gameDuration</th>
 			</tr>
 			<tr *ngFor = "let game of listGamesProgress">  
 				<td id="tableList">{{game._id}}</td>
 				<td id="tableList">{{game.playerCreator}}</td>
 				<td id="tableList">{{game.playersCount}}</td>
-				<td id="tableList">{{game.duration}}</td>
 			</tr>
 		</table>
 		<hr>
 	</div>
 	<div class="col-md-10 col-md-offset-1">
-		<h5 id="tableTitle">*My Games</h5>
+		<h5 id="tableTitle">My Games</h5>
 		<p id="otherLocation">id: x | game_id: y</p>
 		<hr>
 	</div>

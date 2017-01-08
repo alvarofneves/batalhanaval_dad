@@ -23,19 +23,7 @@ export class GamePageComponent {
 			}
 		}
 	}*/
-	
-	// Quando player acabou de inserir os barcos e clica em Ready!
-	public addBoardToGame(idGame: number) {
-		// mostrar qts boards game já tem - debug
-		//console.log(this.boards.length);
 
-			//let board = new BoardComponent(this.boards.length);
-		
-		// 
-
-		// Envio do board p 'boardsArray' desse jogo
-			//this.game.push(board);
-	}
 
 	public endGame() {
 		console.log('end game client');

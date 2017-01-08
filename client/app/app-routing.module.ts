@@ -34,7 +34,9 @@ const appRoutes: Routes = [
 	{ path: 'game', component: GamePageComponent },
 		//children: [ 
 		//	{ path: '/id', component: BoardComponent } ]
-	//},	 		 
+	//},	
+
+	{ path: 'game/:id', component: GamePageComponent }, 		 
 
 	{ path: 'topten', component: PageTopTenComponent },
 

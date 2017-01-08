@@ -29,7 +29,7 @@ export class GameRepository {
     }
 
     // Vai buscar todos os jogos
-    public getGamesN = (request: any, response: any, next: any) => {
+    public getGamesSrv = (request: any, response: any, next: any) => {
         database.db.collection('games')
             .find()
             .toArray()
@@ -42,7 +42,7 @@ export class GameRepository {
     }
 
     // @request Recebe string com status do jogo *inc
-    public getGamesByStatusN = (request: any, response: any, next: any) => {
+    public getGamesByStatusSrv = (request: any, response: any, next: any) => {
         if (request.params.status === undefined) {
             response.send(400, 'No Status received');
             return next();
@@ -102,27 +102,27 @@ export class GameRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
-    public updateGameN =  (request: any, response: any, next: any) => {
+    public updateGameSrv =  (request: any, response: any, next: any) => {
         const game = request.body;
         
         if (game === undefined) {
             response.send(400, 'No game data');
             return next();
         }
-            let idGame = new mongodb.ObjectID(game._id); // PROF caso a rota não tenha o id
-            delete game._id;                         // PROF para evitar manipulação do _id
-            database.db.collection('games')
-                .updateOne({
-                    _id: idGame 
-                }, {
-                    $set: game 
-                })
-                .then(result => this.returnGame(result._id, response, next))
-                .catch(err => this.handleError(err, response, next));
-        console.log(game);
+        let idGame = new mongodb.ObjectID(game._id); // PROF caso a rota não tenha o id
+        delete game._id;                             // PROF para evitar manipulação do _id
+        database.db.collection('games')
+            .updateOne({
+                _id: idGame 
+            }, {
+                $set: game 
+            })
+            .then(result => this.returnGame(result._id, response, next))
+            .catch(err => this.handleError(err, response, next));
+        //console.log(game);
     }
 
-    public createGameN =  (request: any, response: any, next: any) => {
+    public createGameSrv =  (request: any, response: any, next: any) => {
         const game = request.body;
 
         if (game === undefined) {
@@ -132,11 +132,58 @@ export class GameRepository {
         database.db.collection('games')
             .insertOne(game)
             .then(result => {
-                    //console.log(this.settings);
-                    this.settings.wsServer.notifyAll('games', 'New game created');
-                    this.returnGame(result.insertedId, response, next);
+                //console.log(this.settings);
+                this.settings.wsServer.notifyAll('games', 'New game created');
+                this.returnGame(result.insertedId, response, next);
             })
             .catch(err => this.handleError(err, response, next));
+    }
+
+    // Criar board com todas posições vazias ('0')
+    /*public createBoardEmpty() {
+        for(let i = 0; i < 100; i++) {
+            this.board[i] = 0;
+        }
+        return this.board;
+    }*/
+
+    public joinGameSrv =  (request: any, response: any, next: any) => {
+        const game = request.body;
+        
+        console.log(request);
+        if (game === undefined) {
+            response.send(400, 'No game data');
+            return next();
+        }
+        /*console.log('antes getGameN');
+        getGame(game, response, next);
+        console.log('game vindo de getGame(): ' + game); */
+        // Verificar se player q está a entrar já se encontra nesse jogo
+        /*for (let i = 0; i < game.playersArray.lenght; i++) {
+            if (game._id == game.playersArray[i]) {
+                console.log('existe');
+            }
+            else {
+                console.log('naoooo existe');
+            }
+        }*/
+        let idGame = new mongodb.ObjectID(game._id); // PROF caso a rota não tenha o id
+        delete game._id;                             // PROF para evitar manipulação do _id
+        database.db.collection('games')
+            .updateOne({
+                _id: idGame 
+            }, {
+                $set: game 
+            })
+            .then(result => {
+                //this.returnGame(result._id, response, next)
+                // v find
+                const id = new mongodb.ObjectID(idGame);
+                this.returnGame(id, response, next);
+                })
+            .catch(err => this.handleError(err, response, next));
+        /*console.log('game - fim ');
+        console.log(game);*/
     }
 
     public deleteGame =  (request: any, response: any, next: any) => {
@@ -164,12 +211,13 @@ export class GameRepository {
         // sem isto -> erro 500
         this.settings = settings;  
 
-        server.post(settings.prefix + 'games', this.createGameN);
-        server.get(settings.prefix + 'games', this.getGamesN);
-        server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatusN);
+        server.post(settings.prefix + 'games', this.createGameSrv);
+        server.get(settings.prefix + 'games', this.getGamesSrv);
+        server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatusSrv);
         server.get(settings.prefix + 'games/:id', settings.security.authorize, this.getGame);
-        server.put(settings.prefix + 'games', this.updateGameN);
+            //server.put(settings.prefix + 'games', this.updateGameN);
             //server.put(settings.prefix + 'games', this.updateGamePlayersCountN);
+        server.post(settings.prefix + 'game', this.joinGameSrv);
         server.del(settings.prefix + 'games/:id', settings.security.authorize, this.deleteGame);
         console.log("[node] app.games.ts - Games routes registered");
     };    

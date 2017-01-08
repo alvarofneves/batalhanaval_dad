@@ -13,10 +13,20 @@ export class GameService {
     constructor(private http: Http) {    }
 
     newGame(game: Game): Observable<any> {
-        console.log(game);
+        //console.log(game);
         return this.http.post('/api/games', game).map(r=> r.json());
     }
 
+    joinGame(game: Game): Observable<any> {
+        return this.http.post('/api/game', game).map(
+            /* r=> {
+                console.log('xpto R - ');
+                console.log(r); 
+            }); */
+            r=> r.json());
+    }
+
+    // Não usada
     updateGame(game: Game): Observable<any> {
         return this.http.put('/api/games', game).map(r=> r.json());
     }

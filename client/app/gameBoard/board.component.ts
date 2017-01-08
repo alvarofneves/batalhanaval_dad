@@ -45,7 +45,7 @@ export class BoardComponent {
 		this.flag=false;
 		this.boats = this.gameService.getBoats();
 		this.subscription = multiComponentService.boatPlacement$.subscribe((f : any) => this.flag = f);
-		console.log(this.flag);
+			//console.log(this.flag);
 		
 		//board.addBoat(new CellClass(2,2), aircraft);
 
@@ -63,22 +63,6 @@ export class BoardComponent {
         });
     }
 
-	/*
-	public randomAddBoats(board:BoardClass){
-		let randomCoord = 0;
-		let result = 0;
-		
-		for(let boat of this.boats){
-			do {
-				randomCoord = Math.floor(Math.random() * (99 - 0 + 1)) + 0;
-				console.log("random:"+randomCoord);
-
-				result = board.addBoat(board.getCells()[randomCoord], boat)
-				console.log("result:"+result);
-			}while (result == -1)
-		}
-	} */
-
 	clickElemento(index: number){
         this.wsService.sendClickElementMessage(index);
         console.log('Posição:' + index);
@@ -93,15 +77,50 @@ export class BoardComponent {
         return 'white';
     }
 
-	// função do TIAGO
-	//public cellClick(l,i){
-		//if(this.flag==true){
-		//	console.log("placing boat at:"+this.id+"-"+l+":"+i);
-		//}
-		//console.log(this.flag);
-	//}
+	/* 
+	public cellClick(l,i){
+		if(this.flag==true){
+			console.log("placing boat at:"+this.id+"-"+l+":"+i);
+		}
+		console.log(this.flag);
+	}
 
-	//public getLabel(currentRow) {
-		//return String.fromCharCode(65+currentRow);
-	//}
+	public getLabel(currentRow) {
+		return String.fromCharCode(65+currentRow);
+	} */
+
+/*
+	public randomAddBoats(board: BoardClass){
+		let randomCoord = 0;
+		let result = 0;
+		
+		for(let boat of this.boats){
+			do {
+				randomCoord = Math.floor(Math.random() * (99 - 0 + 1)) + 0;
+				console.log("random:"+randomCoord);
+
+				result = board.addBoat(board.getCells()[randomCoord], boat)
+				console.log("result:"+result);
+			}while (result == -1)
+		}
+	} */
+
+	// Gerar posições para 4 submarino (ocupam 1 cell)
+	public randomAddBoats(board: BoardClass) {
+		let randomIndex = new Array(4);		// 4 nums random
+		let arrayIndexs = new Array(100);
+		//console.log(arrayIndexs);
+		
+		for (let i = 0; i < randomIndex.length; i++) {
+			randomIndex[i] = Math.floor(Math.random() * (99 - 0)) + 0;	
+			console.log('pos: ' + randomIndex);
+		}
+
+		console.log('tam. array ' + arrayIndexs.length);
+		/*for (let j = 0; j < arrayIndexs.length; j++) {
+			arrayIndexs[randomIndex] = 1;
+		}
+		console.log('array com 4 subs: ');
+		console.log(arrayIndexs); */
+	} 
 }
