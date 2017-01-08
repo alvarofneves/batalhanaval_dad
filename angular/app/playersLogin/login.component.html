@@ -1,12 +1,16 @@
 <div class="container">
     <div class="col-md-6 col-md-offset-3">
         <h1>Login</h1>
-        <form #playerLogin="ngForm" (ngSubmit)="onSubmit(playerLogin.value)">
-            <div class="form-group">
-                <input [(ngModel)]="model.email" type="text" class="form-control" name="email" required placeholder="Enter your email"/>
+        <!--<form name="form" #playerLogin="ngForm" novalidate (ngSubmit)="onSubmit(playerLogin.value)">-->
+        <!--<form name="form" #playerLogin="ngForm" novalidate (ngSubmit)="playerLogin.form.valid && login()">-->
+        <form name="form" #playerLogin="ngForm" novalidate (ngSubmit)="login(playerLogin.value)">
+            <div class="form-group" [ngClass]="{ 'has-error': playerLogin.submitted && !email.valid }">
+                <input [(ngModel)]="model.email" type="text" class="form-control" name="email" #email="ngModel" required placeholder="Enter your email"/>
+                <div *ngIf="playerLogin.submitted && !email.valid" class="help-block">Email is required</div>
             </div>
-            <div class="form-group">
-                <input [(ngModel)]="model.password" type="password" class="form-control" name="password" required placeholder="Password"/>
+            <div class="form-group" [ngClass]="{ 'has-error': playerLogin.submitted && !password.valid }">
+                <input [(ngModel)]="model.password" type="password" class="form-control" name="password" #password="ngModel" required placeholder="Password"/>
+                <div *ngIf="playerLogin.submitted && !password.valid" class="help-block">Password is required</div>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Login</button><tr>
@@ -16,6 +20,7 @@
             <div>
                 <p>Create an account! <a [routerLink]="['/register']" routerLinkActive="active">Register here</a></p>          
             </div>
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
         </form>
     </div>
 </div>
