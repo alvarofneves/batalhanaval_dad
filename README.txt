@@ -1,7 +1,7 @@
 /**
 * @date 09/01/2017
 * @description Instruções para correr a app; info sobre packages necessários; informações sobre nomes & portos usados
-* @author Afonso Santos
+* @author Afonso
 */
 
 LER ANTES DE CORRER O PROJETO:
@@ -75,3 +75,13 @@ porto: 7777
 
 ANGULAR / client:
 porto: 3000 (agora usado o 7777)
+
+
+======================= PLAYERS =======================
+nome- aluno
+email- aluno@ipleiria.pt
+password- aluno123
+
+nome- rita
+email- rita@pt.pt
+password- rita123

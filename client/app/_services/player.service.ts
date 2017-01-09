@@ -7,7 +7,6 @@ import 'rxjs/add/operator/map'
 import { Player }     from '../_shared/index';
 import { AuthService } from '../_services/index';
 
-
 import * as io from 'socket.io-client';
 
 @Injectable()
@@ -63,7 +62,6 @@ export class PlayerService {
             .map((response: Response) => response.json());
     }
 
-    
     // private helper methods 
     private jwt() {
         // create authorization header with jwt token        
@@ -74,7 +72,3 @@ export class PlayerService {
         }
     }
 }
-
- 
-
-    

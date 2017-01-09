@@ -1,10 +1,8 @@
 import { Component }  from '@angular/core';
 import { Router }     from '@angular/router';
 
-import { Player }                      from '../_shared/player';
+import { Player }                      from '../_shared/index';
 import { AlertService, PlayerService } from '../_services/index'; 
-
-
 
 @Component({
     moduleId:  module.id,
@@ -33,16 +31,13 @@ export class RegisterComponent {
                 });  
         console.log("Player registado");
     }
-    comparePassword(password:string, confirmPassword:string){
 
+    comparePassword(password:string, confirmPassword:string){
         if(password === confirmPassword) {   //if(formPlayer.password.value === formPlayer.confirmPassword.value) {
             console.log('confirma');
             return true;
         }
         console.log('não confirmado');
         return false ; //{message : 'Password not Match'}
-
-
-
     }
 }

@@ -66,13 +66,12 @@ export class BoardComponent {
 	clickElemento(index: number){
         this.wsService.sendClickElementMessage(index);
         console.log('Posição:' + index);
-        //this.game. 
     }
 
     getColor(elemento: number){
         switch (elemento) {
-            case 0: return 'ffffff';   // lightgray
-            case 1: return '#4286f4';	//blue   #ccf5ff
+            case 0: return 'ffffff'; 
+            case 1: return '#4286f4';	
             case 2: return 'red';
         }
         return 'white';

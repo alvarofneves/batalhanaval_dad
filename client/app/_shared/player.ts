@@ -14,17 +14,11 @@ export class Player {
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.token = 'Benfica Campeão';
+		this.token = 'olhaUmToken';
 		this.logged = false;
 	}
 
 	static fromBody(body: any):Player {
-
 		return new Player(body.name, body.email, body.password, body.token, body.logged);	
 	}
-
-  	// TODO? receber dados do srv qd USER faz login
-	
-  	// TODO? receber dados qd USER se regista
-
 }

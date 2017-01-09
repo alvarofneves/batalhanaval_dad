@@ -69,7 +69,7 @@ export class LobbyComponent {
                 error => {
                     this.alertService.error(error);
                 }); 
-        this.renderBoard(this.game, 0);
+        //this.renderBoard(this.game, 0);
     }
 
     // Quando player faz join() e entra para o jogo selecionado
@@ -110,16 +110,16 @@ export class LobbyComponent {
 
     // Pintar cells com Boat ou Água
     public renderBoard(game: Game, indexBoard: number) {
-        console.log('desenhar');
-        /*for(let i = 0; i < 100; i++) {
+        console.log('desenhar.... ');
+        for(let i = 0; i < this.game.boardsArray[indexBoard].length; i++) {
             // board[i] = 0;
-            if (i == 1) {
-                //pintar verde
+            if (this.game.boardsArray[indexBoard].board[i] == 1) {    
+                // Elem = água - pintar azul
             }
-            else {
-                //pintar azul
+            else {        
+                /// Elem = barco - pintar vermelho
             }
-        }*/
+        }
     }
 
     listGamesByStatus(string) {

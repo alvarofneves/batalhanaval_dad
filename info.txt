@@ -18,13 +18,13 @@ Funcionalidades implementadas:  [OK, PARCIAL, NÃO IMPLEMENTADO]
 Jogo - PARCIAL
 Top Ten - OK
 Identificação e Autorização - PARCIAL
-Histórico de Jogos – PARCIAL
+Histórico de Jogos – OK
 Game Lobby – OK
 Jogos Múltiplos - NÃO IMPLEMENTADO
 
 Outras Funcionalidades: 
 Bots - NÃO IMPLEMENTADO
-Serviços de Autenticação Externos - NÃO IMPLEMENTADO
+Serviços de Autenticação Externos - PARCIAL
 Avatares - NÃO IMPLEMENTADO
 Chat Rooms - PARCIAL (Nota: Existe Chat público em '/lobby')
 Repetição de Jogo - NÃO IMPLEMENTADO
