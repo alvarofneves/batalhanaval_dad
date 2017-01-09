@@ -105,7 +105,7 @@ export class BoardComponent {
 		}
 	} */
 
-	// Gerar posições para 4 submarinos (ocupam 1 cell)
+	// Gerar posições para 4 submarinos (ocupam 1 cell); Passou a ser usado no lobby.comp
 	public randomAddBoats(board: BoardClass) {
 		let arrayIndexs = new Array(100);
 

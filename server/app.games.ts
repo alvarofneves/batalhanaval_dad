@@ -29,7 +29,7 @@ export class GameRepository {
     }
 
     // Vai buscar todos os jogos
-    public getGamesSrv = (request: any, response: any, next: any) => {
+    public getGames_Node = (request: any, response: any, next: any) => {
         database.db.collection('games')
             .find()
             .toArray()
@@ -42,7 +42,7 @@ export class GameRepository {
     }
 
     // @request Recebe string com status do jogo *inc
-    public getGamesByStatusSrv = (request: any, response: any, next: any) => {
+    public getGamesByStatus_Node = (request: any, response: any, next: any) => {
         if (request.params.status === undefined) {
             response.send(400, 'No Status received');
             return next();
@@ -83,26 +83,7 @@ export class GameRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
-    public updateGamePlayersCount =  (request: any, response: any, next: any) => {
-        const playersCount = new mongodb.ObjectID(request.params.playersCount);
-        const game = request.body;
-
-        if (game === undefined) {
-            response.send(400, 'No game data');
-            return next();
-        }
-        delete game.playersCount;
-        database.db.collection('games')
-            .updateOne({
-                playersCount: playersCount
-            }, {
-                $set: game
-            })
-            .then(result => this.returnGame(playersCount, response, next))
-            .catch(err => this.handleError(err, response, next));
-    }
-
-    public updateGameSrv =  (request: any, response: any, next: any) => {
+    public updateGame_Node =  (request: any, response: any, next: any) => {
         const game = request.body;
         
         if (game === undefined) {
@@ -122,7 +103,7 @@ export class GameRepository {
         //console.log(game);
     }
 
-    public createGameSrv =  (request: any, response: any, next: any) => {
+    public createGame_Node =  (request: any, response: any, next: any) => {
         const game = request.body;
 
         if (game === undefined) {
@@ -147,10 +128,10 @@ export class GameRepository {
         return this.board;
     }*/
 
-    public joinGameSrv =  (request: any, response: any, next: any) => {
+    public joinGame_Node =  (request: any, response: any, next: any) => {
         const game = request.body;
         
-        console.log(request);
+        //console.log(request);
         if (game === undefined) {
             response.send(400, 'No game data');
             return next();
@@ -211,13 +192,12 @@ export class GameRepository {
         // sem isto -> erro 500
         this.settings = settings;  
 
-        server.post(settings.prefix + 'games', this.createGameSrv);
-        server.get(settings.prefix + 'games', this.getGamesSrv);
-        server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatusSrv);
+        server.post(settings.prefix + 'games', this.createGame_Node);
+        server.get(settings.prefix + 'games', this.getGames_Node);
+        server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatus_Node);
         server.get(settings.prefix + 'games/:id', settings.security.authorize, this.getGame);
-            //server.put(settings.prefix + 'games', this.updateGameN);
-            //server.put(settings.prefix + 'games', this.updateGamePlayersCountN);
-        server.post(settings.prefix + 'game', this.joinGameSrv);
+        //server.put(settings.prefix + 'games', this.updateGameN);
+        server.post(settings.prefix + 'game', this.joinGame_Node);
         server.del(settings.prefix + 'games/:id', settings.security.authorize, this.deleteGame);
         console.log("[node] app.games.ts - Games routes registered");
     };    

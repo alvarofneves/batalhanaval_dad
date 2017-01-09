@@ -20,6 +20,7 @@ export class LobbyComponent {
     listGamesPeChannel: string[] = [];
     listGamesPgChannel: string[] = [];
 
+    public isLoggedIn = true;
 	public string: String;
 	public game: Game;
     constructor (private gameService: GameService, private alertService: AlertService, private router: Router, private wsService: WebSocketService) {
@@ -34,23 +35,31 @@ export class LobbyComponent {
     }
 
     createGame(idPlayer: any) {
-        //console.log("creator-player_id: " + idPlayer);
-        let board = [];
+        /*let board = new Array(100);
         for(let i = 0; i < 100; i++) {
             board[i] = 0;
         }
-        let boardArray = [{
+        for (let j = 0; j < 4; j++) {
+            board[Math.floor(Math.random() * (99 - 0)) + 0] = 1;    
+        }
+        let arrayPlayerBoard = [{
             'idPlayer': idPlayer,
             'board': board
-        }];
+        }];*/
+        let board = new Array(100);
+        for(let i = 0; i < 100; i++) {
+            board[i] = 0;
+        }
+        for (let j = 0; j < 4; j++) {
+            board[Math.floor(Math.random() * (99 - 0)) + 0] = 1;    
+        }        
         console.log('board player creator: ');
-        console.log(boardArray);
-
+        console.log(board);
         this.game.playersArray.push(idPlayer);         // TODO associar idPlayer que estiver logado. A receber '1' do html
         this.game.playerCreator = idPlayer;            // TODO associar idPlayer que estiver logado
         this.game.playersCount++;
         this.game.playersWaiting++;
-        this.game.boardsArray = boardArray;
+        this.game.boardsArray.push(board);
         this.gameService.newGame(this.game)
             .subscribe(
                 data => {
@@ -60,50 +69,57 @@ export class LobbyComponent {
                 error => {
                     this.alertService.error(error);
                 }); 
+        this.renderBoard(this.game, 0);
     }
 
     // Quando player faz join() e entra para o jogo selecionado
     joinGame(game: Game, idPlayer: number) {                // TODO associar idPlayer que estiver logado. A receber '2' do html
-        //console.log('join(): game | player: ' + game._id + ' | ' + idPlayer);
-        let board = [];
+        let board = new Array(100);
         for(let i = 0; i < 100; i++) {
             board[i] = 0;
         }
-        let boardArray = [{
-            'idPlayer': idPlayer,
-            'board': board
-        }];
+        for (let j = 0; j < 4; j++) {
+            board[Math.floor(Math.random() * (99 - 0)) + 0] = 1;    
+        }
+        console.log('Array com 4 subs do player2: ');
+        console.log(board); 
 
-        /*
-        se playersWaiting >= 4, ñ entrar
-        se < 4: playersWaiting++; waitingPlayers++; por idPlayer na playersList[]
-        entrar nesse game/ mostrar board vazio
-        */
         if (game.playersWaiting >= 4) {
             window.alert('Jogo cheio. Procure outro jogo!');
         }
         else {
-            //console.log('playersWaiting-antes incremento= ' + game.playersWaiting);
             game.playersArray.push(idPlayer);
             game.playersCount++; 
             game.playersWaiting++;
-            game.boardsArray.push(boardArray);
-            //console.log(game);
+            game.boardsArray.push(board);
             this.gameService.joinGame(game)
                 .subscribe(
                     data => {
                         //this.alertService.success('Update successful', true);
                         /*console.log('xpto data');
                         console.log(data);*/
-                        //this.router.navigate(['/game', data._id]);    // TODO    // this.router.navigate(['/game', idGame]);
+                        //this.router.navigate(['/game', data._id]);             
                         window.alert('Bem-vindo! Clique no link da consola para entrar no jogo');
                         console.log('O seu jogo --> http://localhost:7777/#/game/' + game._id);
                     },
                     error => {
                         this.alertService.error(error);
                     }); 
-            //console.log('playersWaiting-apos incremento= ' + game.playersWaiting);
         }
+    }
+
+    // Pintar cells com Boat ou Água
+    public renderBoard(game: Game, indexBoard: number) {
+        console.log('desenhar');
+        /*for(let i = 0; i < 100; i++) {
+            // board[i] = 0;
+            if (i == 1) {
+                //pintar verde
+            }
+            else {
+                //pintar azul
+            }
+        }*/
     }
 
     listGamesByStatus(string) {
