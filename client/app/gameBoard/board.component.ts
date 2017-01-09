@@ -105,22 +105,15 @@ export class BoardComponent {
 		}
 	} */
 
-	// Gerar posições para 4 submarino (ocupam 1 cell)
+	// Gerar posições para 4 submarinos (ocupam 1 cell)
 	public randomAddBoats(board: BoardClass) {
-		let randomIndex = new Array(4);		// 4 nums random
 		let arrayIndexs = new Array(100);
-		//console.log(arrayIndexs);
-		
-		for (let i = 0; i < randomIndex.length; i++) {
-			randomIndex[i] = Math.floor(Math.random() * (99 - 0)) + 0;	
-			console.log('pos: ' + randomIndex);
-		}
 
 		console.log('tam. array ' + arrayIndexs.length);
-		/*for (let j = 0; j < arrayIndexs.length; j++) {
-			arrayIndexs[randomIndex] = 1;
+		for (let j = 0; j < 4; j++) {
+			arrayIndexs[Math.floor(Math.random() * (99 - 0)) + 0] = 1;	
 		}
 		console.log('array com 4 subs: ');
-		console.log(arrayIndexs); */
+		console.log(arrayIndexs); 
 	} 
 }

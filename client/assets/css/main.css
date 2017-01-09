@@ -113,6 +113,10 @@ body {
     color: #3b5999;
 }
 
+.background-divs {
+    background-color: #f5f5f0;
+}
+
 /* ############################## GamePage ############################## */
 /* TODO usar na board do 2º player. Qd grid estiver bloqueada */
 .boardPlayer2 {

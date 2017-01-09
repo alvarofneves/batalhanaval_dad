@@ -7,7 +7,7 @@ import { AlertService, GameService, WebSocketService } from '../_services/index'
 @Component({
 	moduleId: module.id,
 	selector: 'lobby',	
-	templateUrl: 'lobby.component.html',
+	templateUrl: 'lobby.component.html'
 })
 
 export class LobbyComponent { 

@@ -1,10 +1,10 @@
 <div class="container">
-	<div class="col-md-10 col-md-offset-1" *ngIf="listGamesPendent">
-		<button type="submit" class="btn btn-primary" (click)="createGame('1')">New game</button>
+	<div class="col-md-10 col-md-offset-1 background-divs" *ngIf="listGamesPendent">
+		<button type="submit" class="btn btn-primary" (click)="createGame('1')">Create a New Game</button>
 		<h5 id="tableTitle">Games Pendent</h5>
 		<table class="table table-striped">
 			<tr>
-				<th id="tableSubtitle">*_id</th>
+				<th id="tableSubtitle">Game Id</th>
 				<th id="tableSubtitle">Player creator</th>
 				<th id="tableSubtitle">Players waiting</th>
 				<th id="tableSubtitle"></th>
@@ -18,11 +18,11 @@
 		</table>
 		<hr>
 	</div>	
-	<div class="col-md-10 col-md-offset-1" *ngIf="listGamesProgress">
+	<div class="col-md-10 col-md-offset-1 background-divs" id="background-divs" *ngIf="listGamesProgress">
 		<h5 id="tableTitle">Games In Progress</h5>
 		<table class="table table-striped">
 			<tr>
-				<th id="tableSubtitle">*_id</th>
+				<th id="tableSubtitle">Game Id</th>
 				<th id="tableSubtitle">Player creator</th>
 				<th id="tableSubtitle">Players in game</th>
 			</tr>
@@ -34,9 +34,23 @@
 		</table>
 		<hr>
 	</div>
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-10 col-md-offset-1 background-divs" id="background-divs">
 		<h5 id="tableTitle">My Games</h5>
 		<p id="otherLocation">id: x | game_id: y</p>
+		<!--
+		<table class="table table-striped">
+			<tr>
+				<th id="tableSubtitle">Game Id</th>
+				<th id="tableSubtitle">Player creator</th>
+				<th id="tableSubtitle">Players in game</th>
+			</tr>
+			<tr *ngFor = "let game of listGamesProgress">  
+				<td id="tableList">{{game._id}}</td>
+				<td id="tableList">{{game.playerCreator}}</td>
+				<td id="tableList">{{game.playersCount}}</td>
+			</tr>
+		</table> -->
+
 		<hr>
 	</div>
 	<div>

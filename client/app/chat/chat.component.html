@@ -1,4 +1,4 @@
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 col-md-offset-1 background-divs">
 	<form #messageForm="ngForm">
 	    <input name="message" placeholder="Enter your message..." size="50" required [(ngModel)]="message">
 	    <button class="btn btn-primary" [disabled]="!messageForm.form.valid" (click)="send()">Send</button>
