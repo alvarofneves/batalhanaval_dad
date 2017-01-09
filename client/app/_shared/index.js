@@ -4,3 +4,4 @@ function __export(m) {
 }
 __export(require("./player"));
 __export(require("./game"));
+//# sourceMappingURL=index.js.map

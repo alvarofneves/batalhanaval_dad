@@ -42,11 +42,17 @@ var Authentication = (function () {
                 email: user.email,
                 password: user.password,
             }).then(function (player) {
-                if (user === null) {
-                    response.send(404, 'No user not found');
+                if (user != null) {
+                    app_database_1.databaseConnection.db.collection('players').
+                        findOne({
+                        email: user.email,
+                        _id: user.id
+                    });
+                    console.log(player._id);
+                    response.json(player._id).redirect('/lobby');
                 }
                 else {
-                    response.json(user).redirect('/lobby');
+                    response.send(404, 'No user not found');
                 }
                 console.log(player);
             })

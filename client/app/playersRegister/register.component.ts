@@ -36,9 +36,10 @@ export class RegisterComponent {
     comparePassword(password:string, confirmPassword:string){
 
         if(password === confirmPassword) {   //if(formPlayer.password.value === formPlayer.confirmPassword.value) {
-
+            console.log('confirma');
             return true;
         }
+        console.log('não confirmado');
         return false ; //{message : 'Password not Match'}
 
 

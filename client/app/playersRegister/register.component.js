@@ -33,8 +33,10 @@ var RegisterComponent = (function () {
     };
     RegisterComponent.prototype.comparePassword = function (password, confirmPassword) {
         if (password === confirmPassword) {
+            console.log('confirma');
             return true;
         }
+        console.log('não confirmado');
         return false; //{message : 'Password not Match'}
     };
     return RegisterComponent;

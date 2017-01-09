@@ -33,7 +33,7 @@
 
             
             <div class="form-group">  
-                <button type="submit" class="btn btn-primary" (click)="registerPlayer()" [disabled]="!playerForm.form.valid">Register</button> 
+                <button type="submit" class="btn btn-primary" (click)="registerPlayer()" [disabled]="!playerForm.form.valid && comparePassword = false">Register</button> 
                 <button type="reset" class="btn btn-danger">Clear Fields</button>
                 <hr>
                 <p>Already have an account? <a [routerLink]="['/login']" routerLinkActive="active">Login here</a></p> 
