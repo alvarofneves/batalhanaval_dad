@@ -1,0 +1,1 @@
+{"version":3,"file":"topTenVictories.component.js","sourceRoot":"","sources":["topTenVictories.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,sCAA0C;AAQ1C,IAAa,wBAAwB;IAArC;IACA,CAAC;IAAD,+BAAC;AAAD,CAAC,AADD,IACC;AADY,wBAAwB;IANpC,gBAAS,CAAC;QACV,QAAQ,EAAE,MAAM,CAAC,EAAE;QACnB,QAAQ,EAAE,iBAAiB;QAC3B,WAAW,EAAE,gCAAgC;KAC7C,CAAC;;GAEW,wBAAwB,CACpC;AADY,4DAAwB"}

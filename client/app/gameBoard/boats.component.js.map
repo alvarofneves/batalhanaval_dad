@@ -1,0 +1,1 @@
+{"version":3,"file":"boats.component.js","sourceRoot":"","sources":["boats.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,sCAA0C;AAQ1C,IAAa,cAAc;IAA3B;IACA,CAAC;IAAD,qBAAC;AAAD,CAAC,AADD,IACC;AADY,cAAc;IAN1B,gBAAS,CAAC;QACP,QAAQ,EAAE,MAAM,CAAC,EAAE;QACnB,QAAQ,EAAE,iBAAiB;QAC3B,WAAW,EAAE,sBAAsB;KACtC,CAAC;;GAEW,cAAc,CAC1B;AADY,wCAAc"}
