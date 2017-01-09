@@ -1,14 +1,15 @@
 "use strict";
 var Game = (function () {
     function Game(playerCreator, beginDate, status) {
-        this.gamePlayers = [];
-        this.totPlayers = 0;
-        this.totWaitingPlayers = 0;
+        this.playersArray = [];
+        this.boardsArray = []; // Array para guardar boards dos players
+        this.playsLogArray = []; // Array para guardar jogadas do jogo
         this.duration = 0;
-        this.playerCreator = 1; //test
-        //this.status = 'pendent';	
-        this.status = 'progress';
+        this.status = 'pendent';
+        //this.status = 'progress';
         this.beginDate = Date.now();
+        this.playersCount = 0;
+        this.playersWaiting = 0;
     }
     return Game;
 }());

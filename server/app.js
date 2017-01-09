@@ -43,5 +43,5 @@ app_database_1.databaseConnection.connect(url, function () {
     restifyServer.listen(7777, function () { return console.log('%s listening at %s', restifyServer.name, restifyServer.url); });
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
-    console.log("##### BRANCH 'registerUser' | $node/app.ts | >>>SRV NODE UP<<< #####");
+    console.log("##### BRANCH 'master' | $node/app.ts | >>>SRV NODE UP<<< #####");
 });

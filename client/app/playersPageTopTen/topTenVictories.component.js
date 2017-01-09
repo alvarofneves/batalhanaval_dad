@@ -9,9 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var index_1 = require("../_services/index");
 var TopTenVictoriesComponent = (function () {
-    function TopTenVictoriesComponent() {
+    function TopTenVictoriesComponent(playerService) {
+        this.playerService = playerService;
+        this.listTopTenVict = [];
     }
+    TopTenVictoriesComponent.prototype.ngOnInit = function () {
+        this.listPlayersTopVict();
+    };
+    TopTenVictoriesComponent.prototype.listPlayersTopVict = function () {
+        var _this = this;
+        this.playerService.getTopVict()
+            .subscribe(function (list) {
+            _this.listTopTenVict = list;
+        });
+    };
     return TopTenVictoriesComponent;
 }());
 TopTenVictoriesComponent = __decorate([
@@ -20,7 +33,7 @@ TopTenVictoriesComponent = __decorate([
         selector: 'topTenVictories',
         templateUrl: 'topTenVictories.component.html',
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [index_1.PlayerService])
 ], TopTenVictoriesComponent);
 exports.TopTenVictoriesComponent = TopTenVictoriesComponent;
 //# sourceMappingURL=topTenVictories.component.js.map

@@ -19,7 +19,7 @@ var gamePage_component_1 = require("./gamePage/gamePage.component");
 var board_component_1 = require("./gameBoard/board.component");
 var pageTopTen_component_1 = require("./playersPageTopTen/pageTopTen.component");
 var about_component_1 = require("./about/about.component");
-var PageNotFound_component_1 = require("./PageNotFound/PageNotFound.component");
+var pageNotFound_component_1 = require("./pageNotFound/pageNotFound.component");
 var appRoutes = [
     { path: '', component: lobby_component_1.LobbyComponent },
     { path: 'lobby', component: lobby_component_1.LobbyComponent },
@@ -29,13 +29,14 @@ var appRoutes = [
     { path: 'game', component: gamePage_component_1.GamePageComponent },
     //children: [ 
     //	{ path: '/id', component: BoardComponent } ]
-    //},	 		 
+    //},	
+    { path: 'game/:id', component: gamePage_component_1.GamePageComponent },
     { path: 'topten', component: pageTopTen_component_1.PageTopTenComponent },
     { path: 'about', component: about_component_1.AboutComponent },
     // criar Guard. Só admin aqui entra
     { path: 'admin', component: admin_component_1.AdminPanelComponent },
     // Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida
-    { path: '**', component: PageNotFound_component_1.PageNotFoundComponent }
+    { path: '**', component: pageNotFound_component_1.PageNotFoundComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

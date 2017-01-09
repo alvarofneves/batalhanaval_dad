@@ -12,6 +12,23 @@ var core_1 = require("@angular/core");
 var GamePageComponent = (function () {
     function GamePageComponent() {
     }
+    /*private boards: BoardComponent[];
+    private allbBoardsReady: boolean;*/
+    //PLZFIX would you please call this constructor on the "Create Game" on Lobby and "Start" on Game Page? Ty.
+    /*public constructor(numBoards, allBoardsReady) {
+        this.allbBoardsReady = allBoardsReady;
+        
+        if(!allBoardsReady) {
+            this.addBoard();
+        } else {
+            for (let i = 0; i < numBoards; i++) {
+                this.addBoard();
+            }
+        }
+    }*/
+    GamePageComponent.prototype.endGame = function () {
+        console.log('end game client');
+    };
     return GamePageComponent;
 }());
 GamePageComponent = __decorate([
@@ -19,6 +36,7 @@ GamePageComponent = __decorate([
         moduleId: module.id,
         selector: 'game-page',
         templateUrl: 'gamePage.component.html',
+        styleUrls: ['./gamePage.component.css']
     }),
     __metadata("design:paramtypes", [])
 ], GamePageComponent);

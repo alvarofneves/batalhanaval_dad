@@ -10,17 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var index_1 = require("../_services/index");
-var index_2 = require("../_services/index");
 var AdminPanelComponent = (function () {
-    function AdminPanelComponent(playerService, gameService) {
+    function AdminPanelComponent(playerService, gameService, wsService) {
         this.playerService = playerService;
         this.gameService = gameService;
+        this.wsService = wsService;
         this.listPlayers = [];
         this.listTotGames = [];
+        // Arrays usados nos channels / websockets
+        this.listPlayersChannel = [];
+        this.listAllGamesChannel = [];
     }
     AdminPanelComponent.prototype.ngOnInit = function () {
         this.listAllPlayers();
         this.listAllGames();
+        //this.wsService.getAllPlayers().subscribe((m:any) => this.listPlayersChannel.push(<string>m));
+        //this.wsService.getAllGames().subscribe((m:any) => this.listAllGamesChannel.push(<string>m));
     };
     AdminPanelComponent.prototype.listAllPlayers = function () {
         var _this = this;
@@ -34,7 +39,14 @@ var AdminPanelComponent = (function () {
         this.gameService.getAllGames()
             .subscribe(function (list) {
             _this.listTotGames = list;
+            //for (let game of this.listTotGames) {
+            //console.log(game.beginDate);
+            //}
         });
+        // @param Recebe data num Long e converte para formato dd-mm-aaaa
+        //for (let game in this.listTotGames) {
+        //game.dateConverted = getTime();
+        //}
     };
     return AdminPanelComponent;
 }());
@@ -44,7 +56,7 @@ AdminPanelComponent = __decorate([
         selector: 'admin',
         templateUrl: 'admin.component.html'
     }),
-    __metadata("design:paramtypes", [index_1.PlayerService, index_2.GameService])
+    __metadata("design:paramtypes", [index_1.PlayerService, index_1.GameService, index_1.WebSocketService])
 ], AdminPanelComponent);
 exports.AdminPanelComponent = AdminPanelComponent;
 //# sourceMappingURL=admin.component.js.map

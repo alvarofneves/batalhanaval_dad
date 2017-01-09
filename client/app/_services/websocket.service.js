@@ -28,13 +28,40 @@ var WebSocketService = (function () {
     WebSocketService.prototype.getChatMessages = function () {
         return this.listenOnChannel('chat');
     };
+    // Envia mensagem quando 1 certo elemento é clicado
+    WebSocketService.prototype.sendClickElementMessage = function (index) {
+        this.socket.emit('clickElement', index);
+    };
+    // recebe mensagens do channel 'board'
+    WebSocketService.prototype.getBoardMessages = function () {
+        return this.listenOnChannel('board');
+    };
+    // Receber novos jogos criados
+    WebSocketService.prototype.getNewGamesCreated = function () {
+        return this.listenOnChannel('games');
+    };
+    WebSocketService.prototype.getGamesPendent = function () {
+        return this.listenOnChannel('gamesLists');
+    };
+    WebSocketService.prototype.getGamesProgress = function () {
+        return this.listenOnChannel('gamesLists');
+    };
+    WebSocketService.prototype.getAllPlayers = function () {
+        return this.listenOnChannel('playersList');
+    };
+    WebSocketService.prototype.getAllGames = function () {
+        return this.listenOnChannel('gamesList');
+    };
     // Receive a message from the server
     WebSocketService.prototype.listenOnChannel = function (channel) {
         var _this = this;
+        //console.log('listenOnChannel()');
         return new Observable_1.Observable(function (observer) {
             _this.socket.on(channel, function (data) {
                 observer.next(data);
+                //console.log('####');
             });
+            //console.log('disconnect');
             return function () { return _this.socket.disconnect(); };
         });
     };

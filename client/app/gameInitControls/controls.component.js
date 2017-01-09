@@ -12,6 +12,17 @@ var core_1 = require("@angular/core");
 var InitGameControlsComponent = (function () {
     function InitGameControlsComponent() {
     }
+    // TODO limpar peças do array e apagar do board
+    InitGameControlsComponent.prototype.resetBoard = function () {
+        console.log('reset....');
+    };
+    // TODO início ao jogo
+    InitGameControlsComponent.prototype.startGame = function () {
+        console.log('start....');
+    };
+    InitGameControlsComponent.prototype.boatsRandom = function () {
+        console.log('random.... a caminho');
+    };
     return InitGameControlsComponent;
 }());
 InitGameControlsComponent = __decorate([

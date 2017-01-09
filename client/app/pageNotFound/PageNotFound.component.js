@@ -18,7 +18,7 @@ PageNotFoundComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'page-not-found',
-        templateUrl: 'PageNotFound.component.html',
+        templateUrl: 'pageNotFound.component.html',
     }),
     __metadata("design:paramtypes", [])
 ], PageNotFoundComponent);

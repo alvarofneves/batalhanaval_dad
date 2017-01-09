@@ -19,7 +19,7 @@ var lobby_module_1 = require("./lobby/lobby.module");
 var pageTopTen_module_1 = require("./playersPageTopTen/pageTopTen.module");
 var gamePage_module_1 = require("./gamePage/gamePage.module");
 var about_module_1 = require("./about/about.module");
-var PageNotFound_module_1 = require("./PageNotFound/PageNotFound.module");
+var pageNotFound_module_1 = require("./pageNotFound/pageNotFound.module");
 var notifications_module_1 = require("./notifications/notifications.module");
 var app_component_1 = require("./app.component");
 // ------------ SERVICES ------------
@@ -44,7 +44,7 @@ AppModule = __decorate([
             pageTopTen_module_1.PageTopTenModule,
             notifications_module_1.NotificationsModule,
             about_module_1.AboutModule,
-            PageNotFound_module_1.PageNotFoundModule
+            pageNotFound_module_1.PageNotFoundModule
         ],
         declarations: [
             // ------------ COMPONENTS ------------

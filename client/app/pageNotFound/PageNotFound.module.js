@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-var PageNotFound_component_1 = require("./PageNotFound.component");
+var pageNotFound_component_1 = require("./pageNotFound.component");
 var PageNotFoundModule = (function () {
     function PageNotFoundModule() {
     }
@@ -22,7 +22,7 @@ PageNotFoundModule = __decorate([
             platform_browser_1.BrowserModule,
         ],
         declarations: [
-            PageNotFound_component_1.PageNotFoundComponent
+            pageNotFound_component_1.PageNotFoundComponent
         ]
     }),
     __metadata("design:paramtypes", [])

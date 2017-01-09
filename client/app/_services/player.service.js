@@ -41,6 +41,9 @@ var PlayerService = (function () {
     PlayerService.prototype.getTopScore = function () {
         return this.http.get('/api/topscore').map(function (response) { return response.json(); });
     };
+    PlayerService.prototype.getTopVict = function () {
+        return this.http.get('/api/topvict').map(function (response) { return response.json(); });
+    };
     PlayerService.prototype.delete = function (id) {
         return this.http.delete('/api/players/' + id, this.jwt()).map(function (response) { return response.json(); });
     };

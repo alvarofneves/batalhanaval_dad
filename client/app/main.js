@@ -5,6 +5,6 @@ var platform = platform_browser_dynamic_1.platformBrowserDynamic();
 platform.bootstrapModule(app_module_1.AppModule);
 (function () {
     'use strict';
-    console.log("##### BRANCH 'registerUser' | $angular/app/main.ts | >>>ANGULAR UP<<< #####");
+    console.log("##### BRANCH 'master' | $angular/app/main.ts | >>>ANGULAR UP<<< #####");
 })();
 //# sourceMappingURL=main.js.map

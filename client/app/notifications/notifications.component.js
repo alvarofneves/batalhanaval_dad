@@ -11,16 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var index_1 = require("../_services/index");
 var NotificationsComponent = (function () {
-    function NotificationsComponent(websocketService) {
-        this.websocketService = websocketService;
+    function NotificationsComponent(wsService) {
+        this.wsService = wsService;
         this.playersChannel = [];
         this.chatChannel = [];
+        this.gameChannel = [];
     }
     // To use the WebSocket service is necessary to subscribe the observable
     NotificationsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.websocketService.getChatMessages().subscribe(function (m) { return _this.chatChannel.push(m); });
-        this.websocketService.getPlayersMessages().subscribe(function (m) { return _this.playersChannel.push(m); });
+        // NOTA: por à escuta também no HTML 
+        this.wsService.getChatMessages().subscribe(function (m) { return _this.chatChannel.push(m); });
+        this.wsService.getPlayersMessages().subscribe(function (m) { return _this.playersChannel.push(m); });
+        this.wsService.getNewGamesCreated().subscribe(function (m) { return _this.gameChannel.push(m); });
     };
     return NotificationsComponent;
 }());

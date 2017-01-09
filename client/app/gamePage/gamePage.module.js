@@ -14,6 +14,8 @@ var gamePage_component_1 = require("./gamePage.component");
 var board_component_1 = require("../gameBoard/board.component");
 var controls_component_1 = require("../gameInitControls/controls.component");
 var selectShips_component_1 = require("../gameSelectShipsControls/selectShips.component");
+var boats_component_1 = require("../gameBoard/boats.component");
+var cell_component_1 = require("../gameBoard/cell.component");
 //import { PendentGamesComponent } 		from '../gamesPendent/pendent.component';
 var GamePageModule = (function () {
     function GamePageModule() {
@@ -29,13 +31,18 @@ GamePageModule = __decorate([
             gamePage_component_1.GamePageComponent,
             board_component_1.BoardComponent,
             controls_component_1.InitGameControlsComponent,
-            selectShips_component_1.SelectShipsControlsComponent
+            selectShips_component_1.SelectShipsControlsComponent,
+            //PendentGamesComponent
+            boats_component_1.BoatsComponent,
+            cell_component_1.CellComponent
         ],
         exports: [
             gamePage_component_1.GamePageComponent,
             board_component_1.BoardComponent,
             controls_component_1.InitGameControlsComponent,
             selectShips_component_1.SelectShipsControlsComponent,
+            //PendentGamesComponent
+            boats_component_1.BoatsComponent
         ]
     }),
     __metadata("design:paramtypes", [])

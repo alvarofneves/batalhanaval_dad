@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var platform_browser_1 = require("@angular/platform-browser");
 var shared_module_1 = require("../_shared/shared.module");
 var list_component_1 = require("./list.component");
 var ListModule = (function () {
@@ -21,7 +22,8 @@ ListModule = __decorate([
     core_1.NgModule({
         imports: [
             shared_module_1.SharedModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            platform_browser_1.BrowserModule,
         ],
         declarations: [
             list_component_1.ListComponent
