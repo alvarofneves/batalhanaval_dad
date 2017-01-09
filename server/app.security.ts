@@ -50,6 +50,7 @@ passport.use(new BearerStrategy((token, done) => {
         .catch(err => done(err));
 }));
 
+/*
 passport.use(new GoogleStrategy({
     clientID: '553038485273-hnnd0ve2kiqe82e03ko8up3geaki2lhv.apps.googleusercontent.com',
     clientSecret: '0gOLOchvS6iNGxPWLXd_Df6L',
@@ -72,4 +73,4 @@ passport.use(new FacebookStrategy({
         return cb(err, user);
     });
   }
-));
+)); */

@@ -41,6 +41,23 @@ export class GameRepository {
             .catch(err => this.handleError(err, response, next));
     }
 
+    // Devolve todos jogos criados pelo player_id X
+    public getGamesByCreator_Node = (request: any, response: any, next: any) => {
+        if (request.params.playerCreator === undefined) {
+            response.send(400, 'No Status received');
+            return next();
+        }
+        database.db.collection('games')
+            .find(
+                { status: request.params.playerCreator }) 
+            .toArray()
+            .then(games => {
+                response.json(games || []);
+                next();
+            })
+            .catch(err => this.handleError(err, response, next));
+    }
+
     // @request Recebe string com status do jogo *inc
     public getGamesByStatus_Node = (request: any, response: any, next: any) => {
         if (request.params.status === undefined) {
@@ -194,6 +211,7 @@ export class GameRepository {
 
         server.post(settings.prefix + 'games', this.createGame_Node);
         server.get(settings.prefix + 'games', this.getGames_Node);
+        server.get(settings.prefix + 'gamesCreator', this.getGamesByCreator_Node);
         server.get(settings.prefix + 'gamesSearch/:status', this.getGamesByStatus_Node);
         server.get(settings.prefix + 'games/:id', settings.security.authorize, this.getGame);
         //server.put(settings.prefix + 'games', this.updateGameN);

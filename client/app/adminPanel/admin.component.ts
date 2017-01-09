@@ -51,4 +51,12 @@ export class AdminPanelComponent {
         //}
     }
 
+    showGameLog(game: Game) {
+        if (game.status == 'pendent') {
+            window.alert('Registo de jogadas só disponível após conclusão do jogo');
+        }
+        else {
+            window.alert('Registo de jogadas indisponível');
+        }
+    }
 }

@@ -17,7 +17,7 @@ export class WebSocketServer {
             client.emit('players', Date.now() + ': Welcome to battleship');                // data + ': string Welcome'
 +           client.broadcast.emit('players', (new Date()).getTime() + ': A new player has arrived');   // data + ': string Arrived'
 +           client.on('chat', (data) => this.io.emit('chat', Date.now() + ': ' + data));
-
+            
             // Para tiros serem enviados a todos intervenientes
             client.emit('board', this.board);
                 //console.log('board vindo do srv:: ' + this.board);

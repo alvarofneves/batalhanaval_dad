@@ -118,11 +118,6 @@ body {
 }
 
 /* ############################## GamePage ############################## */
-/* TODO usar na board do 2º player. Qd grid estiver bloqueada */
-.boardPlayer2 {
-    background-color: #adad85;
-}
-
 #labelPlayerName {
     color: #ff3333;
     font-size: 15px;

@@ -25,6 +25,10 @@
     text-align: center;
 }
 
+.game-cell: div:hover {
+    background-color: black;
+}
+
 .cell-hit-water {
     color: #4286f4;
 }

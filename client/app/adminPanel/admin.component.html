@@ -23,7 +23,7 @@
 					<td id="tableList">{{game.status}}</td>
 					<td id="tableList">{{game.beginDate | date : shortTime}}</td>
 					<td id="tableList">{{game.winnerPlayer}}</td>
-					<td><button type="submit" class="btn btn-primary btn-game-log">Log</button></td>
+					<td><button type="submit" class="btn btn-primary btn-game-log" (click)="showGameLog(game)">Log</button></td>
 				</tr>
 			</table>
 		</div>

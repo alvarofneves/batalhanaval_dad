@@ -9,10 +9,9 @@ import { Component } from '@angular/core';
 
 export class GamePageComponent {
 	/*private boards: BoardComponent[];
-	private allbBoardsReady: boolean;*/
+	private allbBoardsReady: boolean;
 
-	//PLZFIX would you please call this constructor on the "Create Game" on Lobby and "Start" on Game Page? Ty.
-	/*public constructor(numBoards, allBoardsReady) {
+	public constructor(numBoards, allBoardsReady) {
 		this.allbBoardsReady = allBoardsReady;
 		
 		if(!allBoardsReady) {
@@ -23,7 +22,6 @@ export class GamePageComponent {
 			}
 		}
 	}*/
-
 
 	public endGame() {
 		console.log('end game client');

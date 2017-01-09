@@ -29,20 +29,22 @@ const appRoutes: Routes = [
 
 	{ path: 'login', component: LoginComponent },	
 
-		{ path: 'board', component: BoardComponent },
+	// TODO apagar
+	{ path: 'board', component: BoardComponent },
 
 	{ path: 'game', component: GamePageComponent },
-		//children: [ 
+		//TODO GUARD >> children: [ 
 		//	{ path: '/id', component: BoardComponent } ]
 	//},	
 
+	//TODO GUARD >> 
 	{ path: 'game/:id', component: GamePageComponent }, 		 
 
 	{ path: 'topten', component: PageTopTenComponent },
 
 	{ path: 'about', component: AboutComponent },		
 
-	// criar Guard. Só admin aqui entra
+	//TODO GUARD >> só admins
 	{ path: 'admin', component: AdminPanelComponent },
 
 	// Redireciona para '/' quando outra coisa é escrita no URL que não seja uma rota definida

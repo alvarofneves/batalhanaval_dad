@@ -26,21 +26,16 @@ export class GameService {
             r=> r.json());
     }
 
-    // Não usada
-    updateGame(game: Game): Observable<any> {
-        return this.http.put('/api/games', game).map(r=> r.json());
-    }
-
     endGame(game: Game): Observable<any> {
         console.log('end game GameService');
         return this.http.put('/api/games', game).map(r=> r.json());
     }
 
-    /*updateGame(game: Game): Observable<any> {
+    /* updateGame(game: Game): Observable<any> {
         console.log('obj. game com dados alterados p SRV: ');
         //console.log(game);
         return this.http.put('/api/games', game).map(r=> r.json());
-    }*/
+    }
 
     getBoards(): BoardClass[] {
         return BOARDS;
@@ -51,12 +46,12 @@ export class GameService {
     }
 
     addBoatToBoard(boardID: number, boat: string): void {
-        //BOARDS[boardID].addBoat(boat);
+        BOARDS[boardID].addBoat(boat);
     }
 
     getBoats(): BoatClass[] {
         return BOATS;
-    }
+    } */
 
     getAllGames(): Observable<any> {   
         return this.http.get('/api/games').map((response: Response) => response.json());
@@ -67,6 +62,6 @@ export class GameService {
     }
 
     getGamesByCreator(idPlayer: Number) {
-        return this.http.get('/api/games').map((response: Response) => response.json());
+        return this.http.get('/api/gamesCreator').map((response: Response) => response.json());
     }
 }

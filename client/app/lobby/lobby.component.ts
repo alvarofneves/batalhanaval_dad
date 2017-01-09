@@ -74,20 +74,20 @@ export class LobbyComponent {
 
     // Quando player faz join() e entra para o jogo selecionado
     joinGame(game: Game, idPlayer: number) {                // TODO associar idPlayer que estiver logado. A receber '2' do html
-        let board = new Array(100);
-        for(let i = 0; i < 100; i++) {
-            board[i] = 0;
-        }
-        for (let j = 0; j < 4; j++) {
-            board[Math.floor(Math.random() * (99 - 0)) + 0] = 1;    
-        }
-        console.log('Array com 4 subs do player2: ');
-        console.log(board); 
-
         if (game.playersWaiting >= 4) {
             window.alert('Jogo cheio. Procure outro jogo!');
         }
         else {
+            let board = new Array(100);
+            for(let i = 0; i < 100; i++) {
+                board[i] = 0;
+            }
+            for (let j = 0; j < 4; j++) {
+                board[Math.floor(Math.random() * (99 - 0)) + 0] = 1;    
+            }
+            console.log('Array com 4 subs do player2: ');
+            console.log(board); 
+            
             game.playersArray.push(idPlayer);
             game.playersCount++; 
             game.playersWaiting++;

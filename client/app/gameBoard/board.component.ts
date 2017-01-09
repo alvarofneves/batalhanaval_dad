@@ -37,7 +37,7 @@ export class BoardComponent {
 
 		let cruiser2 = new BoatClass("cruiser");
 		
-		let destroyer1 = new BoatClass("destroyer"); */
+		let destroyer1 = new BoatClass("destroyer"); 
 
 		let board = new BoardClass();
 		this.id = board.getId();
@@ -45,7 +45,7 @@ export class BoardComponent {
 		this.flag=false;
 		this.boats = this.gameService.getBoats();
 		this.subscription = multiComponentService.boatPlacement$.subscribe((f : any) => this.flag = f);
-			//console.log(this.flag);
+		console.log(this.flag); */
 		
 		//board.addBoat(new CellClass(2,2), aircraft);
 
@@ -66,19 +66,19 @@ export class BoardComponent {
 	clickElemento(index: number){
         this.wsService.sendClickElementMessage(index);
         console.log('Posição:' + index);
+        //this.game. 
     }
 
     getColor(elemento: number){
         switch (elemento) {
-            case 0: return 'lightgray';
-            case 1: return 'blue';
+            case 0: return 'ffffff';   // lightgray
+            case 1: return '#4286f4';	//blue   #ccf5ff
             case 2: return 'red';
         }
         return 'white';
     }
 
-	/* 
-	public cellClick(l,i){
+	/* public cellClick(l,i){
 		if(this.flag==true){
 			console.log("placing boat at:"+this.id+"-"+l+":"+i);
 		}
@@ -89,8 +89,7 @@ export class BoardComponent {
 		return String.fromCharCode(65+currentRow);
 	} */
 
-/*
-	public randomAddBoats(board: BoardClass){
+	/* public randomAddBoats(board: BoardClass){
 		let randomCoord = 0;
 		let result = 0;
 		
