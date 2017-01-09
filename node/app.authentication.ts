@@ -12,21 +12,25 @@ export class Authentication{
         response.send(500, err);
         next();
     }
-    private returnPlayer = (id:string, email:string, response: any, next: any) => {
+    private returnPlayer = (id:string, response: any, next: any) => {
         database.db.collection('players')
             .findOne({
-                _id: id,
-                email : email
+                _id: id
             })
-            .then(game => {
-                if (game === null) {
-                    response.send(404, 'Game not found');
+            .then((player) => {
+                if (player === null) {
+                    response.send(404, 'Player not found');
                 } else {
-                    response.json(game);
+                    response.json(player);
                 }
                 next();
             })
             .catch(err => this.handleError(err, response, next));
+    }
+
+    public getPlayer =  (request: any, response: any, next: any) => {
+        const id = new mongodb.ObjectID(request.params.id);
+        this.returnPlayer(id, response, next);
     }
     // Receber email + password inseridos pelo Player na pag. LOGIN
     public login = (request: any, response: any, next: any) => {
@@ -35,20 +39,23 @@ export class Authentication{
         user.password = sha1(user.password);
         user.logged=true;
 
+        //verifica se existe o email na bd e verifica a password na bd
+        //
         database.db.collection('players')
         .findOne({
             email : user.email,
-            password : user.password
-        }).then(result => {
+            password : user.password,
+            
+        }).then(player => {
                 if (user === null) {
                     response.send(404, 'No user not found');
                     
                 } else {
 
-                    response.json(result).redirect('/lobby');
+                    response.json(user).redirect('/lobby');
                 }
-                console.log(user.id);
-                this.returnPlayer(user.id, user.email, response, next);
+                console.log(player);
+                
             })
         .catch(err => this.handleError(err, response, next));
         
@@ -96,6 +103,7 @@ export class Authentication{
         server.post(settings.prefix + 'login', this.login);
         //server.post(settings.prefix + 'login', settings.security.passport.authenticate('local', {'session':false}), this.login);
         server.post(settings.prefix + 'logout', settings.security.authorize, this.logout);
+        server.get(settings.prefix + 'players/:id', this.getPlayer);
         server.get('/auth/google', this.googleAuth);
         server.get('/auth/google/callback', this.googleAuthCb);
         server.get('/auth/facebook', this.fbAuth);

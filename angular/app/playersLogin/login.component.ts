@@ -32,8 +32,7 @@ export class LoginComponent {
     
     login(form : any) {
         console.log(form);
-        console.log(form.email);
-        console.log(form.password);
+        
         this.loading = true;
 
         this.authService.login(form.email, form.password)

@@ -33,6 +33,8 @@ export class LobbyComponent {
 
     createGame(idPlayer: number) {
         console.log("player_id: " + idPlayer);
+        
+
         this.gameService.newGame(this.game)
             .subscribe(
                 data => {

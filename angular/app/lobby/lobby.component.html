@@ -14,7 +14,7 @@
 	
 
 	<div class="col-md-10 col-md-offset-1" *ngIf="listGamesPendent">
-		<button type="submit" class="btn btn-primary" (click)="createGame('1')">New game</button>
+		<button type="submit" class="btn btn-primary" (click)="createGame(1)">New game</button>
 		<h5 id="tableTitle">Games Pendent</h5>
 		<table class="table table-striped">
 			<tr>
@@ -53,7 +53,7 @@
 	<div class="col-md-10 col-md-offset-1">
 		<h5 id="tableTitle">*My Games</h5>
 		<p id="otherLocation">id: 1 | game_id: 2</p>
-		<hr>
+
 	</div>
 	<div>
 		<notifications-panel></notifications-panel>
