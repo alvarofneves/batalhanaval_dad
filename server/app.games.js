@@ -27,7 +27,7 @@ var GameRepository = (function () {
                 .catch(function (err) { return _this.handleError(err, response, next); });
         };
         // Vai buscar todos os jogos
-        this.getGamesSrv = function (request, response, next) {
+        this.getGames_Node = function (request, response, next) {
             app_database_1.databaseConnection.db.collection('games')
                 .find()
                 .toArray()
@@ -38,8 +38,23 @@ var GameRepository = (function () {
             })
                 .catch(function (err) { return _this.handleError(err, response, next); });
         };
+        // Devolve todos jogos criados pelo player_id X
+        this.getGamesByCreator_Node = function (request, response, next) {
+            if (request.params.playerCreator === undefined) {
+                response.send(400, 'No Status received');
+                return next();
+            }
+            app_database_1.databaseConnection.db.collection('games')
+                .find({ status: request.params.playerCreator })
+                .toArray()
+                .then(function (games) {
+                response.json(games || []);
+                next();
+            })
+                .catch(function (err) { return _this.handleError(err, response, next); });
+        };
         // @request Recebe string com status do jogo *inc
-        this.getGamesByStatusSrv = function (request, response, next) {
+        this.getGamesByStatus_Node = function (request, response, next) {
             if (request.params.status === undefined) {
                 response.send(400, 'No Status received');
                 return next();
@@ -74,24 +89,7 @@ var GameRepository = (function () {
                 .then(function (result) { return _this.returnGame(id, response, next); })
                 .catch(function (err) { return _this.handleError(err, response, next); });
         };
-        this.updateGamePlayersCount = function (request, response, next) {
-            var playersCount = new mongodb.ObjectID(request.params.playersCount);
-            var game = request.body;
-            if (game === undefined) {
-                response.send(400, 'No game data');
-                return next();
-            }
-            delete game.playersCount;
-            app_database_1.databaseConnection.db.collection('games')
-                .updateOne({
-                playersCount: playersCount
-            }, {
-                $set: game
-            })
-                .then(function (result) { return _this.returnGame(playersCount, response, next); })
-                .catch(function (err) { return _this.handleError(err, response, next); });
-        };
-        this.updateGameSrv = function (request, response, next) {
+        this.updateGame_Node = function (request, response, next) {
             var game = request.body;
             if (game === undefined) {
                 response.send(400, 'No game data');
@@ -109,7 +107,7 @@ var GameRepository = (function () {
                 .catch(function (err) { return _this.handleError(err, response, next); });
             //console.log(game);
         };
-        this.createGameSrv = function (request, response, next) {
+        this.createGame_Node = function (request, response, next) {
             var game = request.body;
             if (game === undefined) {
                 response.send(400, 'No game data');
@@ -131,9 +129,9 @@ var GameRepository = (function () {
             }
             return this.board;
         }*/
-        this.joinGameSrv = function (request, response, next) {
+        this.joinGame_Node = function (request, response, next) {
             var game = request.body;
-            console.log(request);
+            //console.log(request);
             if (game === undefined) {
                 response.send(400, 'No game data');
                 return next();
@@ -191,13 +189,13 @@ var GameRepository = (function () {
         this.init = function (server, settings) {
             // sem isto -> erro 500
             _this.settings = settings;
-            server.post(settings.prefix + 'games', _this.createGameSrv);
-            server.get(settings.prefix + 'games', _this.getGamesSrv);
-            server.get(settings.prefix + 'gamesSearch/:status', _this.getGamesByStatusSrv);
+            server.post(settings.prefix + 'games', _this.createGame_Node);
+            server.get(settings.prefix + 'games', _this.getGames_Node);
+            server.get(settings.prefix + 'gamesCreator', _this.getGamesByCreator_Node);
+            server.get(settings.prefix + 'gamesSearch/:status', _this.getGamesByStatus_Node);
             server.get(settings.prefix + 'games/:id', settings.security.authorize, _this.getGame);
             //server.put(settings.prefix + 'games', this.updateGameN);
-            //server.put(settings.prefix + 'games', this.updateGamePlayersCountN);
-            server.post(settings.prefix + 'game', _this.joinGameSrv);
+            server.post(settings.prefix + 'game', _this.joinGame_Node);
             server.del(settings.prefix + 'games/:id', settings.security.authorize, _this.deleteGame);
             console.log("[node] app.games.ts - Games routes registered");
         };

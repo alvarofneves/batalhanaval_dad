@@ -12,19 +12,16 @@ export class AuthService {
     public token: string;
     isLoggedIn: boolean = false;
 
-
     constructor(private http : Http, private _router: Router) { }
 
     login(email, password) {
         console.log('AUTHENTICATION');
         let headers = new Headers();
-        console.log(email);
-        console.log(password);
         //let options = new RequestOptions({ headers: headers });
-
-        return this.http.post('/api/login', JSON.stringify({ email, password })).map((response: Response) => {
+        return this.http.post('/api/login', JSON.stringify({ email, password })).map((response: Response) => 
+        {
            r=> r.json()
-       });
+        });
             //if (player && player.token) {
                 // store player details and jwt token in local storage to keep player logged in between page refreshes
               //  localStorage.setItem('currentplayer', JSON.stringify(player));

@@ -14,19 +14,15 @@ export class PlayerRepository {
         next();
     }
 
-
-
     public createPlayer = (request: any, response: any, next: any) => {
-
-
         if (request.body === undefined) {
             response.send(400, 'No player data');
             return next();
         }
         let player = Player.fromBody(request.body);
-        console.log(player);
+        //console.log(player);
         player.password = sha1(player.password);
-        console.log(player);
+        //console.log(player);
 
         database.db.collection('players')
             .insertOne(player)

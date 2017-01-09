@@ -48,6 +48,14 @@ var AdminPanelComponent = (function () {
         //game.dateConverted = getTime();
         //}
     };
+    AdminPanelComponent.prototype.showGameLog = function (game) {
+        if (game.status == 'pendent') {
+            window.alert('Registo de jogadas só disponível após conclusão do jogo');
+        }
+        else {
+            window.alert('Registo de jogadas indisponível');
+        }
+    };
     return AdminPanelComponent;
 }());
 AdminPanelComponent = __decorate([

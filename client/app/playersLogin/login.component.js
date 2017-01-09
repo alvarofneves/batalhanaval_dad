@@ -26,11 +26,9 @@ var LoginComponent = (function () {
         this.authService.logout();
         // get return url from route parameters or default to '/' 
         this.returnUrl = this.route.snapshot.params['returnUrl'] || '/';
-        console.log('on submit');
     };
     LoginComponent.prototype.login = function (form) {
         var _this = this;
-        console.log(form);
         this.loading = true;
         this.authService.login(form.email, form.password)
             .subscribe(function (result) {

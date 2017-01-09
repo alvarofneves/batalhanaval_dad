@@ -47,21 +47,27 @@ passport.use(new BearerStrategy(function (token, done) {
         .then(function (user) { return user ? done(null, user, { scope: 'all' }) : done(null, false); })
         .catch(function (err) { return done(err); });
 }));
+/*
 passport.use(new GoogleStrategy({
     clientID: '553038485273-hnnd0ve2kiqe82e03ko8up3geaki2lhv.apps.googleusercontent.com',
     clientSecret: '0gOLOchvS6iNGxPWLXd_Df6L',
     callbackURL: "http://www.example.com/auth/google/callback"
-}, function (accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    },
+    function(accessToken, refreshToken, profile, cb) {
+      User.findOrCreate({ googleId: profile.id }, function (err, user) {
         return cb(err, user);
-    });
-}));
+      });
+    }
+));
+
 passport.use(new FacebookStrategy({
     clientID: '1846078752336154',
     clientSecret: 'c156ff0efe344fd3906ba3921501800d',
     callbackURL: "http://localhost:3000/auth/facebook/callback"
-}, function (accessToken, refreshToken, profile, cb) {
+  },
+  function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
         return cb(err, user);
     });
-}));
+  }
+)); */ 

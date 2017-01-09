@@ -7,7 +7,6 @@ const passport = require('passport');
 const sha1 = require('sha1');
 
 export class Authentication{
-
     private handleError = (err: string, response: any, next: any) => {
         response.send(500, err);
         next();
@@ -32,51 +31,40 @@ export class Authentication{
         const id = new mongodb.ObjectID(request.params.id);
         this.returnPlayer(id, response, next);
     }
+
     // Receber email + password inseridos pelo Player na pag. LOGIN
     public login = (request: any, response: any, next: any) => {
-
         let user = JSON.parse(request.body);
         user.password = sha1(user.password);
         user.logged=true;
 
         //verifica se existe o email na bd e verifica a password na bd
-        //
         database.db.collection('players')
         .findOne({
             email : user.email,
             password : user.password,
-            
-        }).then(player => {
-                if (user != null) {
-                    database.db.collection('players').
-                    findOne({
-                        email : user.email,
-                        _id: user.id
-                    })
-                    console.log(player._id);    
-                    response.json(player._id).redirect('/lobby');
-                    
-                    
-                } else {
-                    response.send(404, 'No user not found');
-                    
-                }
-                console.log(player);
-                
+        })
+        .then(player => {
+            if (user != null) {
+                database.db.collection('players').
+                findOne({
+                    email : user.email,
+                    _id: user.id
+                })
+                console.log(player._id);    
+                response.json(player._id).redirect('/lobby');
+            } else {
+                response.send(404, 'No user not found');
+            }
+            console.log(player);
             })
         .catch(err => this.handleError(err, response, next));
-        
-        
-        
         //let password = JSON.parse(request.body).passport;
         //let token = request.token;
         //response.json(player);
     }
-    
-   
 
     public logout = (request: any, response: any, next: any) => {
-        
         response.json({msg: 'Logout'});
         return next();
     }  

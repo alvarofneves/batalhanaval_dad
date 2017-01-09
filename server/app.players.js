@@ -18,9 +18,9 @@ var PlayerRepository = (function () {
                 return next();
             }
             var player = _shared_1.Player.fromBody(request.body);
-            console.log(player);
+            //console.log(player);
             player.password = sha1(player.password);
-            console.log(player);
+            //console.log(player);
             app_database_1.databaseConnection.db.collection('players')
                 .insertOne(player)
                 .then(function (result) { return _this.returnPlayer(result.insertedId, response, next); })

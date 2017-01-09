@@ -21,8 +21,6 @@ var AuthService = (function () {
     AuthService.prototype.login = function (email, password) {
         console.log('AUTHENTICATION');
         var headers = new http_1.Headers();
-        console.log(email);
-        console.log(password);
         //let options = new RequestOptions({ headers: headers });
         return this.http.post('/api/login', JSON.stringify({ email: email, password: password })).map(function (response) {
             (function (r) { return r.json(); });

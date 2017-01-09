@@ -36,12 +36,12 @@ var Authentication = (function () {
             user.password = sha1(user.password);
             user.logged = true;
             //verifica se existe o email na bd e verifica a password na bd
-            //
             app_database_1.databaseConnection.db.collection('players')
                 .findOne({
                 email: user.email,
                 password: user.password,
-            }).then(function (player) {
+            })
+                .then(function (player) {
                 if (user != null) {
                     app_database_1.databaseConnection.db.collection('players').
                         findOne({

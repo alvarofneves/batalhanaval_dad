@@ -13,9 +13,9 @@ var GamePageComponent = (function () {
     function GamePageComponent() {
     }
     /*private boards: BoardComponent[];
-    private allbBoardsReady: boolean;*/
-    //PLZFIX would you please call this constructor on the "Create Game" on Lobby and "Start" on Game Page? Ty.
-    /*public constructor(numBoards, allBoardsReady) {
+    private allbBoardsReady: boolean;
+
+    public constructor(numBoards, allBoardsReady) {
         this.allbBoardsReady = allBoardsReady;
         
         if(!allBoardsReady) {

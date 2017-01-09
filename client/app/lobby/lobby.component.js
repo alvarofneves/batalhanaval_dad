@@ -26,6 +26,7 @@ var LobbyComponent = (function () {
         // Arrays usados nos channels / websockets
         this.listGamesPeChannel = [];
         this.listGamesPgChannel = [];
+        this.isLoggedIn = true;
         this.game = new index_1.Game('', '', '');
     }
     LobbyComponent.prototype.ngOnInit = function () {
@@ -37,22 +38,31 @@ var LobbyComponent = (function () {
     };
     LobbyComponent.prototype.createGame = function (idPlayer) {
         var _this = this;
-        //console.log("creator-player_id: " + idPlayer);
-        var board = [];
+        /*let board = new Array(100);
+        for(let i = 0; i < 100; i++) {
+            board[i] = 0;
+        }
+        for (let j = 0; j < 4; j++) {
+            board[Math.floor(Math.random() * (99 - 0)) + 0] = 1;
+        }
+        let arrayPlayerBoard = [{
+            'idPlayer': idPlayer,
+            'board': board
+        }];*/
+        var board = new Array(100);
         for (var i = 0; i < 100; i++) {
             board[i] = 0;
         }
-        var boardArray = [{
-                'idPlayer': idPlayer,
-                'board': board
-            }];
+        for (var j = 0; j < 4; j++) {
+            board[Math.floor(Math.random() * (99 - 0)) + 0] = 1;
+        }
         console.log('board player creator: ');
-        console.log(boardArray);
+        console.log(board);
         this.game.playersArray.push(idPlayer); // TODO associar idPlayer que estiver logado. A receber '1' do html
         this.game.playerCreator = idPlayer; // TODO associar idPlayer que estiver logado
         this.game.playersCount++;
         this.game.playersWaiting++;
-        this.game.boardsArray = boardArray;
+        this.game.boardsArray.push(board);
         this.gameService.newGame(this.game)
             .subscribe(function (data) {
             //this.alertService.success('Registration successful', true);
@@ -60,46 +70,53 @@ var LobbyComponent = (function () {
         }, function (error) {
             _this.alertService.error(error);
         });
+        this.renderBoard(this.game, 0);
     };
     // Quando player faz join() e entra para o jogo selecionado
     LobbyComponent.prototype.joinGame = function (game, idPlayer) {
         var _this = this;
-        //console.log('join(): game | player: ' + game._id + ' | ' + idPlayer);
-        var board = [];
-        for (var i = 0; i < 100; i++) {
-            board[i] = 0;
-        }
-        var boardArray = [{
-                'idPlayer': idPlayer,
-                'board': board
-            }];
-        /*
-        se playersWaiting >= 4, ñ entrar
-        se < 4: playersWaiting++; waitingPlayers++; por idPlayer na playersList[]
-        entrar nesse game/ mostrar board vazio
-        */
         if (game.playersWaiting >= 4) {
             window.alert('Jogo cheio. Procure outro jogo!');
         }
         else {
-            //console.log('playersWaiting-antes incremento= ' + game.playersWaiting);
+            var board = new Array(100);
+            for (var i = 0; i < 100; i++) {
+                board[i] = 0;
+            }
+            for (var j = 0; j < 4; j++) {
+                board[Math.floor(Math.random() * (99 - 0)) + 0] = 1;
+            }
+            console.log('Array com 4 subs do player2: ');
+            console.log(board);
             game.playersArray.push(idPlayer);
             game.playersCount++;
             game.playersWaiting++;
-            game.boardsArray.push(boardArray);
-            //console.log(game);
+            game.boardsArray.push(board);
             this.gameService.joinGame(game)
                 .subscribe(function (data) {
                 //this.alertService.success('Update successful', true);
                 /*console.log('xpto data');
                 console.log(data);*/
-                //this.router.navigate(['/game', data._id]);    // TODO    // this.router.navigate(['/game', idGame]);
+                //this.router.navigate(['/game', data._id]);             
                 window.alert('Bem-vindo! Clique no link da consola para entrar no jogo');
                 console.log('O seu jogo --> http://localhost:7777/#/game/' + game._id);
             }, function (error) {
                 _this.alertService.error(error);
             });
         }
+    };
+    // Pintar cells com Boat ou Água
+    LobbyComponent.prototype.renderBoard = function (game, indexBoard) {
+        console.log('desenhar');
+        /*for(let i = 0; i < 100; i++) {
+            // board[i] = 0;
+            if (i == 1) {
+                //pintar verde
+            }
+            else {
+                //pintar azul
+            }
+        }*/
     };
     LobbyComponent.prototype.listGamesByStatus = function (string) {
         var _this = this;
@@ -129,7 +146,7 @@ LobbyComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'lobby',
-        templateUrl: 'lobby.component.html',
+        templateUrl: 'lobby.component.html'
     }),
     __metadata("design:paramtypes", [index_2.GameService, index_2.AlertService, router_1.Router, index_2.WebSocketService])
 ], LobbyComponent);

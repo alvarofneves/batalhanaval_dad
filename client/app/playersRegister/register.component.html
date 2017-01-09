@@ -24,16 +24,12 @@
                 <label>Password</label>
                 <input type="password" id="password" class="form-control" name="password" placeholder="Must have at least 6 characters" [ngModel]="player.password" required [(ngModel)]="player.password">
             </div>
-
-           
             <div class="form-group">
                 <label>Confirm your password</label>
-                <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" [ngModel]="player.confirmPassword"(keyup)='comparePassword(player.password,player.confirmPassword)' [(ngModel)]="player.confirmPassword">
+                <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" [ngModel]="player.confirmPassword" [(ngModel)]="player.confirmPassword">
             </div>
-
-            
             <div class="form-group">  
-                <button type="submit" class="btn btn-primary" (click)="registerPlayer()" [disabled]="!playerForm.form.valid && comparePassword = false">Register</button> 
+                <button type="submit" class="btn btn-primary" (click)="registerPlayer()" [disabled]="!playerForm.form.valid">Register</button>
                 <button type="reset" class="btn btn-danger">Clear Fields</button>
                 <hr>
                 <p>Already have an account? <a [routerLink]="['/login']" routerLinkActive="active">Login here</a></p> 
