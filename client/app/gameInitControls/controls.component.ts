@@ -6,4 +6,18 @@ import { Component } from '@angular/core';
     templateUrl: 'controls.component.html'
 })
 
-export class InitGameControlsComponent { }
+export class InitGameControlsComponent { 
+	// TODO limpar peças do array e apagar do board
+	resetBoard() {
+		console.log('reset....');
+	}
+
+	// TODO início ao jogo
+	startGame() {
+		console.log('start....');
+	}
+
+	boatsRandom() {
+		console.log('random.... a caminho');
+	}
+}

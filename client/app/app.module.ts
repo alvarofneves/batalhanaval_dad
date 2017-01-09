@@ -10,7 +10,7 @@ import { LobbyModule } 		from './lobby/lobby.module';
 import { PageTopTenModule }   	from './playersPageTopTen/pageTopTen.module';
 import { GamePageModule } 		from './gamePage/gamePage.module';		
 import { AboutModule }   		from './about/about.module';
-import { PageNotFoundModule }   from './PageNotFound/PageNotFound.module';	
+import { PageNotFoundModule }   from './pageNotFound/pageNotFound.module';	
 import { NotificationsModule } 	from './notifications/notifications.module';
 
 import { ChatComponent } 	from './chat/chat.component';

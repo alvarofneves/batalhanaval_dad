@@ -1,93 +1,40 @@
 <div>
-    <h3>Aircraft (1)</h3>
-    <table class="centeredTbl">
-        <thead></thead>
-        <tbody>
-        <tr>
-                <td>P</td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td>P</td><td>P</td><td>P</td><td></td>
-            </tr>
-            <tr>
-                <td>P</td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td>
-            </tr>
-        </tbody>
-    </table>
-    <h3>Battleship (1)</h3>
-    <table class="centeredTbl">
-        <thead></thead>
-        <tbody>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td>N</td><td>N</td><td>N</td><td>N</td>
-        </tr>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        </tbody>
-    </table>
-    <h3>Cruiser (2)</h3>
-    <table class="centeredTbl">
-        <thead></thead>
-        <tbody>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td>N</td><td>N</td><td>N</td><td></td>
-        </tr>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        </tbody>
-    </table>
-    <h3>Destroyer (3)</h3>
-    <table class="centeredTbl">
-        <thead></thead>
-        <tbody>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td></td><td>N</td><td>N</td><td></td>
-        </tr>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        </tbody>
-    </table>
-    <h3>Submarine (4)</h3>
-    <table class="centeredTbl">
-        <thead></thead>
-        <tbody>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td></td><td>N</td><td></td><td></td>
-        </tr>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-
-        </tbody>
-    </table>
+    <legend class="centeredText">Your Boats</legend>
+    <label *ngFor="let boat of boats let i=index" class="centeredLbl" (click)="prepareBoat(boat, i)">
+        <h3>{{boat}} ({{counters[i]}})</h3>
+        <table class="centeredTbl">
+            <thead></thead>
+            <tbody *ngIf="i==0">
+                <tr>
+                    <td>P</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>P</td><td>P</td><td>P</td>
+                </tr>
+                <tr>
+                    <td>P</td><td></td><td></td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="i==1">
+                <tr>
+                    <td>N</td><td>N</td><td>N</td><td>N</td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="i==2">
+                <tr>
+                    <td>N</td><td>N</td><td>N</td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="i==3">
+                <tr>
+                    <td>N</td><td>N</td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="i==4">
+                <tr>
+                    <td>N</td>
+                </tr>
+            </tbody>
+        </table>
+    </label>
 </div>

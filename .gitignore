@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/node
 
 ### Node ###
@@ -54,12 +53,12 @@ jspm_packages
 # Folder from PHP Storm (@TIAGO)
 .idea/
 
-# Extensions of Angular compiled files (@AS - 06/12)
-angular/app/*.js
-angular/app/*.map
-angular/app/**/*.js
-angular/app/**/*.map
-angular/app/**/*.log
+# Angular compiled files (@AS - 06/12)
+client/app/*.js
+client/app/*.map
+client/app/**/*.js
+client/app/**/*.map
+client/app/**/*.log
 
-# Extensions of Node compiled files (@AS - 14/12)
-node/**/*.js
+# Extensions of Node compiled files (@AS - 07/01)
+server/*.js

@@ -5,6 +5,8 @@ import { GamePageComponent } 			from './gamePage.component';
 import { BoardComponent } 				from '../gameBoard/board.component';
 import { InitGameControlsComponent } 	from '../gameInitControls/controls.component';
 import { SelectShipsControlsComponent } from '../gameSelectShipsControls/selectShips.component';
+import { BoatsComponent } from '../gameBoard/boats.component';
+import { CellComponent } from '../gameBoard/cell.component';
 //import { PendentGamesComponent } 		from '../gamesPendent/pendent.component';
 
 @NgModule({
@@ -15,8 +17,10 @@ import { SelectShipsControlsComponent } from '../gameSelectShipsControls/selectS
 		GamePageComponent,
 		BoardComponent,
 		InitGameControlsComponent,
-		SelectShipsControlsComponent
+		SelectShipsControlsComponent,
 		//PendentGamesComponent
+		BoatsComponent,
+		CellComponent
 	],
 	exports: [ 
 		GamePageComponent,
@@ -24,6 +28,7 @@ import { SelectShipsControlsComponent } from '../gameSelectShipsControls/selectS
 		InitGameControlsComponent,
 		SelectShipsControlsComponent,
 		//PendentGamesComponent
+		BoatsComponent
 	]
 })
 

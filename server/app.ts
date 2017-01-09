@@ -3,8 +3,8 @@ const passport = require('passport');
 const path = require('path');		
 
 import { databaseConnection as database } from './app.database';
-import { WebSocketServer } from './app.websockets';
-import { HandlerSettings } from './handler.settings';
+import { WebSocketServer } 			      from './app.websockets';
+import { HandlerSettings } 			      from './handler.settings';
 
 // Connection URL to DB; 27017 - default port
 const url = 'mongodb://localhost:27017/db_battlefield_game';	
@@ -44,7 +44,7 @@ import { GameRepository } from './app.games';
 new GameRepository().init(restifyServer, settings);
 
 restifyServer.get(/^\/(?!api\/).*/, restify.serveStatic({
-	directory: '../client',
+	directory: '../client',		// Originalmente estava '../angular'
 	default: 'index.html'
 }));
 
@@ -55,5 +55,5 @@ database.connect(url, () => {
     // Websocket is initialized after the server
     socketServer.init(restifyServer.server);
 
-    console.log("##### BRANCH 'registerUser' | $node/app.ts | >>>SRV NODE UP<<< #####");
+    console.log("##### BRANCH 'master' | $node/app.ts | >>>SRV NODE UP<<< #####");
 });

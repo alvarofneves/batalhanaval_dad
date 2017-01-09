@@ -1,20 +1,6 @@
 <div class="container">
-	
-		<!--Users from secure api end point:
-		<ul>
-			<li *ngFor="let player of players">{{player.name}}</li>
-		</ul>--> 
-		
-		<p>Player Logged</p>
-		
-
-	<!--<a [routerLink]="['/login']" routerLinkActive="active" >Logout</a>
-
-	<a [routerLink]="['/login']" routerLinkActive="active" id="otherLocation">Login</a>--> 
-	
-
 	<div class="col-md-10 col-md-offset-1" *ngIf="listGamesPendent">
-		<button type="submit" class="btn btn-primary" (click)="createGame(1)">New game</button>
+		<button type="submit" class="btn btn-primary" (click)="createGame('1')">New game</button>
 		<h5 id="tableTitle">Games Pendent</h5>
 		<table class="table table-striped">
 			<tr>
@@ -26,8 +12,8 @@
 			<tr *ngFor = "let game of listGamesPendent">  
 				<td id="tableList">{{game._id}}</td>
 				<td id="tableList">{{game.playerCreator}}</td>
-				<td id="tableList">{{game.totWaitingPlayers}}</td>
-				<td><button type="submit" class="btn btn-primary btn-game-join" (click)="joinGame()">Join</button></td>
+				<td id="tableList">{{game.playersWaiting}}</td>
+				<td><button type="submit" class="btn btn-primary btn-game-join" (click)="joinGame(game, '2')">Join</button></td>
 			</tr>
 		</table>
 		<hr>
@@ -39,21 +25,19 @@
 				<th id="tableSubtitle">*_id</th>
 				<th id="tableSubtitle">Player creator</th>
 				<th id="tableSubtitle">Players in game</th>
-				<th id="tableSubtitle">*gameDuration</th>
 			</tr>
 			<tr *ngFor = "let game of listGamesProgress">  
 				<td id="tableList">{{game._id}}</td>
 				<td id="tableList">{{game.playerCreator}}</td>
-				<td id="tableList">{{game.totPlayers}}</td>
-				<td id="tableList">{{game.duration}}</td>
+				<td id="tableList">{{game.playersCount}}</td>
 			</tr>
 		</table>
 		<hr>
 	</div>
 	<div class="col-md-10 col-md-offset-1">
-		<h5 id="tableTitle">*My Games</h5>
-		<p id="otherLocation">id: 1 | game_id: 2</p>
-
+		<h5 id="tableTitle">My Games</h5>
+		<p id="otherLocation">id: x | game_id: y</p>
+		<hr>
 	</div>
 	<div>
 		<notifications-panel></notifications-panel>

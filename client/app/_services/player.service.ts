@@ -24,7 +24,7 @@ export class PlayerService {
         return this.http.post('/api/players', player, options).map(r=> r.json());
     }
 
-    getAll() {
+    getAll(): Observable<any> {
         return this.http.get('/api/players').map((response: Response) => response.json());
     }
 
@@ -44,6 +44,10 @@ export class PlayerService {
     getTopScore() {
         return this.http.get('/api/topscore').map((response: Response) => response.json());
     }
+
+    getTopVict() {
+        return this.http.get('/api/topvict').map((response: Response) => response.json());
+    }    
 
     delete(id: number) {
         return this.http.delete('/api/players/' + id, this.jwt()).map((response: Response) => response.json());
