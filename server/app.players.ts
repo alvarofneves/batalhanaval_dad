@@ -14,12 +14,19 @@ export class PlayerRepository {
         next();
     }
 
+
+
     public createPlayer = (request: any, response: any, next: any) => {
+
+
         if (request.body === undefined) {
             response.send(400, 'No player data');
             return next();
         }
-        const player = Player.fromBody(request.body);
+        let player = Player.fromBody(request.body);
+        console.log(player);
+        player.password = sha1(player.password);
+        console.log(player);
 
         database.db.collection('players')
             .insertOne(player)
@@ -101,12 +108,12 @@ export class PlayerRepository {
     public getTopVict = (request: any, response: any, next: any) => {
         database.db.collection('players')
             .find()
-            .sort({numGamesWon:-1})
+            .sort({totalVictories:-1})
             .limit(10)
             .toArray()
             .then(players => {
                 response.json(players || []);
-                this.settings.wsServer.notifyAll('players', 'Somebody accessed Top Ten');
+                this.settings.wsServer.notifyAll('players', Date.now() + ': Somebody accessed top 10 victories');
                 next();
             })
             .catch(err => this.handleError(err, response, next));
@@ -115,7 +122,7 @@ export class PlayerRepository {
     public getTopScore = (request: any, response: any, next: any) => {
         database.db.collection('players')
             .find()
-            .sort({score:-1})
+            .sort({totalScore:-1})
             .limit(10)
             .toArray()
             .then(players => {
@@ -132,7 +139,7 @@ export class PlayerRepository {
         server.get(settings.prefix + 'players', this.getAllPlayers);
         server.get(settings.prefix + 'topvict', this.getTopVict);
         server.get(settings.prefix + 'topscore', this.getTopScore);
-        server.get(settings.prefix + 'players/:id', settings.security.authorize, this.getPlayer);
+        server.get(settings.prefix + 'players/:id', this.getPlayer);
         server.put(settings.prefix + 'players/:id', settings.security.authorize, this.updatePlayer);
         server.del(settings.prefix + 'players/:id', settings.security.authorize, this.deletePlayer);
         console.log("[node] app.players.ts - Players routes registered");

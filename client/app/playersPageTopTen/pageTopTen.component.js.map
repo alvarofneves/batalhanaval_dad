@@ -1,0 +1,1 @@
+{"version":3,"file":"pageTopTen.component.js","sourceRoot":"","sources":["pageTopTen.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,sCAA0C;AAQ1C,IAAa,mBAAmB;IAAhC;IACA,CAAC;IAAD,0BAAC;AAAD,CAAC,AADD,IACC;AADY,mBAAmB;IAN/B,gBAAS,CAAC;QACV,QAAQ,EAAE,MAAM,CAAC,EAAE;QACnB,QAAQ,EAAE,YAAY;QACtB,WAAW,EAAE,2BAA2B;KACxC,CAAC;;GAEW,mBAAmB,CAC/B;AADY,kDAAmB"}
