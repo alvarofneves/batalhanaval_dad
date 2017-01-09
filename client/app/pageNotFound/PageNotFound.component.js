@@ -23,4 +23,4 @@ PageNotFoundComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], PageNotFoundComponent);
 exports.PageNotFoundComponent = PageNotFoundComponent;
-//# sourceMappingURL=PageNotFound.component.js.map
+//# sourceMappingURL=pageNotFound.component.js.map

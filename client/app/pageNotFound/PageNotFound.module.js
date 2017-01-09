@@ -28,4 +28,4 @@ PageNotFoundModule = __decorate([
     __metadata("design:paramtypes", [])
 ], PageNotFoundModule);
 exports.PageNotFoundModule = PageNotFoundModule;
-//# sourceMappingURL=PageNotFound.module.js.map
+//# sourceMappingURL=pageNotFound.module.js.map
